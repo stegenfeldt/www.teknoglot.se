@@ -44,8 +44,12 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: technobabble
+default_category: Technobabble
 category_map:
+  Technobabble: tb
+  Microsoft: ms
+  Powershell: posh
+  VBScript: vbs
 tag_map:
 
 # Date / Time format
