@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script] | stegenfeldt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="PoSH,Script,DNS,Invoke-RestMethod,Mikrotik,RouterOS" />
+    
+    <meta name="description" content="I have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home net">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]">
+<meta property="og:url" content="http://stegenfeldt.github.io/Mikrotik/cloudflare-dynamic-dns-mikrotik/index.html">
+<meta property="og:site_name" content="stegenfeldt">
+<meta property="og:description" content="I have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home net">
+<meta property="og:updated_time" content="2016-05-19T09:11:09.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]">
+<meta name="twitter:description" content="I have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home net">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Static. Nothing but static.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Hyper-V/">Hyper-V</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Hyper-V/RedHat-ES/">RedHat ES</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/">Microsoft</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/Windows-2008/">Windows 2008</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Mikrotik/">Mikrotik</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/">OpsMgr 2007</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/OpsMgr-2012/">OpsMgr 2012</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/SLES/">SLES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/SQL-2005/">SQL 2005</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2012/PoSH/">PoSH</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/SQL-2008/">SQL 2008</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/tb/">Technobabble</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Ubuntu/">Ubuntu</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/VBS/">VBS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Windows-Vista/">Windows Vista</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Windows-XP/">Windows XP</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/topics/Mikrotik/">Mikrotik</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-cloudflare-dynamic-dns-mikrotik" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/Mikrotik/cloudflare-dynamic-dns-mikrotik/" class="article-date">
+    <time datetime="2014-08-25T11:37:36.000Z" itemprop="datePublished">2014-08-25</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/DNS/">DNS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Invoke-RestMethod/">Invoke-RestMethod</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Mikrotik/">Mikrotik</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RouterOS/">RouterOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>I have, for a time, been using <a href="http://www.cloudflare.com" title="CloudFlare Website" target="_blank" rel="external">CloudFlare </a>for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using <a href="http://www.dyn.com" title="Dyn DNS" target="_blank" rel="external">DynDNS </a>to provide name resolution to my home network/lab. Browsing around the <a href="https://www.cloudflare.com/docs/client-api.html" title="CloudFlare Client Api" target="_blank" rel="external">CloudFlare JSON API</a> I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by <a href="http://www.mikrotik.com/" title="Mikrotik Website" target="_blank" rel="external">Mikrotiks </a>routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.</p>
+<h2 id="Attribution"><a href="#Attribution" class="headerlink" title="Attribution"></a>Attribution</h2><p>My current script is a modified version of a script developed by Konstantin Antselovich.</p>
+<p>Original script: <a href="http://konstant1n.livejournal.com/9759.html" title="Random Journal" target="_blank" rel="external">http://konstant1n.livejournal.com/9759.html</a></p>
+<p>Original Author website: <a href="http://konstantin.antselovich.com/" title="Konstantin Antselovich" target="_blank" rel="external">http://konstantin.antselovich.com/</a></p>
+<p>Thanks!</p>
+<h2 id="What-you-need"><a href="#What-you-need" class="headerlink" title="What you need"></a>What you need</h2><ul>
+<li>RouterOS v6+ for HTTPS support</li>
+<li>Cloudflare API key, aka “Token”, found at the <a href="https://www.cloudflare.com/my-account" title="CloudFlare Account Page" target="_blank" rel="external">account page</a></li>
+<li>Cloudflare DNS Zone name</li>
+<li>Cloudflare Record Id (more on that later)</li>
+<li>Cloudflare subdomain name</li>
+<li>Name of the external router interface<a id="more"></a>
+</li>
+</ul>
+<h2 id="Getting-the-Record-Id"><a href="#Getting-the-Record-Id" class="headerlink" title="Getting the Record Id"></a>Getting the Record Id</h2><p>To get the record id of the DNS record you want to update, I used the _<a href="https://www.cloudflare.com/docs/client-api.html#s3.3" title="rec_load_all - Get all DNS Records" target="_blank" rel="external">rec_load_all</a>_ function of the API. And since I’m a windows admin, I use powershell for that.</p>
+<p>[powershell]$cfDomain = &quot;homelab&quot;<br>$cfToken = &quot;&lt;your API Key/Token&gt;&quot;<br>$cfZone = &quot;example.com&quot;<br>$cfEmail = &quot;&lt;your CF email address&gt;&quot;<br>$apiLoadAllRecordsURI = &quot;<a href="https://www.cloudflare.com/api_json.html?a=rec_load_all&amp;tkn=$cfToken&amp;email=$cfEmail&amp;z=$cfZone&amp;quot" target="_blank" rel="external">https://www.cloudflare.com/api_json.html?a=rec_load_all&amp;tkn=$cfToken&amp;email=$cfEmail&amp;z=$cfZone&amp;quot</a>;<br>$restRequest = Invoke-RestMethod -Uri $apiLoadAllRecordsURI<br>$restRequest.response.recs.objs | ?{$_.display_name -eq $cfDomain} | fl -Property rec_id,name,display_name,type,ttl,service_mode[/powershell]</p>
+<p>That should, given that you’ve replaced all the example variables produce something like this:</p>
+<p>[plain]rec_id : 16606003<br>name : homelab.example.com<br>display_name : homelab<br>type : A<br>ttl : 1<br>service_mode : 0[/plain]</p>
+<p>And with that done, you should have everything necessary for the RouterOS script.</p>
+<h2 id="Building-the-Script"><a href="#Building-the-Script" class="headerlink" title="Building the Script"></a>Building the Script</h2><p>I’m not going to go into the <a href="http://wiki.mikrotik.com/wiki/Manual:Scripting" title="RouterOS Scripting Manual" target="_blank" rel="external">syntax of ros scripts</a>, but I’ll try to explain the different building block to some degree.</p>
+<h3 id="Defining-our-variables"><a href="#Defining-our-variables" class="headerlink" title="Defining our variables"></a>Defining our variables</h3><p>First, we’ll define out variables used for the script. The global <em>$hostname</em> variable is actually redundant as I could derive the FQDN from  <em>$CFDomain</em> and <em>$CFZone</em>, but it’s used in other scripts in my router so it’s included for that purpose alone.</p>
+<p>[plain]######## Set and collect general variables #########<br>:global hostname &quot;homelab.example.com&quot;<br>:global resolvedIP &quot;&quot;<br>:global externalIP &quot;&quot;<br>:global WANInterface &quot;eth1-ext-internet&quot;</p>
+<p>######## Set CloudFlare variables #################<br>:local CFemail &quot;&lt;same email as in the powershell script&quot;<br>:local CFtkn &quot;&lt;your API key/token&gt;&quot;<br>:local CFzone &quot;example.com&quot;<br>:local CFid &quot;16606003&quot;<br>:local CFtype &quot;A&quot;<br>:local CFttl &quot;1&quot;<br>:local CFservicemode &quot;0&quot;<br>:local CFDomain &quot;homelab&quot;<br>:local CFDebug &quot;true&quot;[/plain]</p>
+<p>Take care to verify and compare the CFxx variables with the ones used in and received from the previous powershell script, but also the <em>$hostname</em> variable.</p>
+<ul>
+<li>hostname: Used in the script to lookup the currently set IP-address.</li>
+<li>WANInterface: The list name of the external interface, used to find the external IP-address.</li>
+<li>CFemail: Your CloudFlare Login email.</li>
+<li>CFtkn: Your API Key/Token.</li>
+<li>CFzone: Your DNS Zone.</li>
+<li>CFid: The rec_id from the powershell script.</li>
+<li>CFtype: A for IPv4 host records, AAAA for IPv6.</li>
+<li>CFttl: Record time-to-live, use “1” for automatic.</li>
+<li>CFservicemode: Use “0” for direct traffic or “1” to go through their CDN, Optimizations and Security features. I recommend “0” for anything but websites.</li>
+<li>CFDomain: Subdomain or rather hostname for your router.</li>
+<li>CFDebug: Use “True” to print some informational stuff to the router logs.</li>
+</ul>
+<h3 id="Resolve-IP-addresses"><a href="#Resolve-IP-addresses" class="headerlink" title="Resolve IP-addresses"></a>Resolve IP-addresses</h3><p>Next, we resolve two IP-addresses. First one, <em>$externalIP</em>, is the routers current external address. And the second, <em>$resolvedIP</em>, is the address currently set for our <em>$hostname</em>.</p>
+<p>[plain]######## Resolve and set IP-variables ##########<br>:local currentIP [/ip address get [/ip address find interface=$WANInterface ] address];<br>:set externalIP [:pick $currentIP 0 [:find $currentIP &quot;/&quot;]];<br>:set resolvedIP [:resolve $hostname];[/plain]</p>
+<h3 id="Build-CF-API-Request-and-log-debug-info"><a href="#Build-CF-API-Request-and-log-debug-info" class="headerlink" title="Build CF API Request and log debug info"></a>Build CF API Request and log debug info</h3><p>Now, build the URI for the API call from our variables.</p>
+<p>[plain]######## Build CF API Url #########################<br>:local CFurl &quot;<a href="https://www.cloudflare.com/api_json.html\3F&amp;quot" target="_blank" rel="external">https://www.cloudflare.com/api_json.html\3F&amp;quot</a>;<br>:set CFurl ($CFurl . &quot;a=rec_edit&amp;tkn=$CFtkn&amp;id=$CFid&quot;);<br>:set CFurl ($CFurl . &quot;&amp;email=$CFemail&amp;z=$CFzone&amp;type=$CFtype&quot;);<br>:set CFurl ($CFurl . &quot;&amp;name=$CFDomain&amp;service_mode=$CFservicemode&amp;ttl=$CFttl&quot;);[/plain]</p>
+<p>And if the <em>$CFdebug</em> variable is set to “true”, write a little info to the router log.</p>
+<p>[plain]######## Write debug info to log #################<br>:if ($CFDebug = &quot;true&quot;) do={<br>:log info (&quot;CF: hostname = $hostname&quot;)<br>:log info (&quot;CF: resolvedIP = $resolvedIP&quot;)<br>:log info (&quot;CF: currentIP = $currentIP&quot;)<br>:log info (&quot;CF: externalIP = $externalIP&quot;)<br>:log info (&quot;CF: CFurl = $CFurl&amp;content=$externalIP&quot;)<br>};[/plain]</p>
+<h3 id="Compare-and-Update"><a href="#Compare-and-Update" class="headerlink" title="Compare and Update"></a>Compare and Update</h3><p>Last step is to compare <em>$externalIP</em> with <em>$resolvedIP</em>. If they don’t match, our external IP-address has been changed and we need to update the DNS record. To execute the HTTP GET request we use a RouterOS tool called <a href="http://wiki.mikrotik.com/wiki/Fetch" title="Mikrotik Manual: Fetch" target="_blank" rel="external">fetch </a>to which we pass the <em>$CFurl</em> variable. The reason this will not work before RouterOS v6+ is that before that there was no support for HTTPS, and CloudFlare does not accept unencrypted traffic for their APIs.</p>
+<p>The script block is pretty straight-forward. Compare, update, flush local DNS-cache and write to the log.</p>
+<p>[plain]######## Compare and update CF if necessary #####<br>:if ($resolvedIP != $externalIP) do={<br>:log info (&quot;CF: Updating CF, setting $CFDomain = $externalIP&quot;)<br>/tool fetch mode=https url=&quot;$CFurl&amp;content=$externalIP&quot; keep-result=no<br>/ip dns cache flush<br>} else={<br>:log info &quot;CF: No Update Needed!&quot;<br>}[/plain]</p>
+<h3 id="Permissions-Policies"><a href="#Permissions-Policies" class="headerlink" title="Permissions/Policies"></a>Permissions/Policies</h3><p>This part, I’m not entirely sure on. The script needs to do name resolution, read settings and set variables and it works for me with these policies configured:</p>
+<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Test</li>
+<li>Sniff</li>
+<li>Sensitive<br>It might be over-doing it a bit, but I have not had occasion to fiddle with them yet.</li>
+</ul>
+<h3 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h3><p>I have this script scheduled to run once every 20 minutes. As it will only try to update the DNS records if there is a difference between them and the current external IP-address I feel fairly sure that I won’t be tagged as a spammer or something by CloudFlare.</p>
+<p>The schedule is configured with:</p>
+<ul>
+<li>Start Time: startup</li>
+<li>Interval: 00:20:00</li>
+<li>On Event: /system script run &lt;Name of your script&gt;</li>
+<li>Policy: Read,Write, Test, Sniff, Sensitive<br>This schedule is also a good place for a <a href="http://wiki.mikrotik.com/wiki/Hairpin_NAT" title="Mikrotik Wiki: Hairpin NAT" target="_blank" rel="external">hairpin</a> update if it’s needed.</li>
+</ul>
+<h2 id="The-Copy-Paste-part"><a href="#The-Copy-Paste-part" class="headerlink" title="The Copy-Paste part"></a>The Copy-Paste part</h2><p>Now, obviously, at least make sure you proof-read the script before putting it into production. I am not a network dude, and I rarely dabble with ROS scripts. I am certain that anyone with a bit more experience could create a smarter, prettier version of this script, so <span style="color: #ff0000;"><strong>use at your own risk</strong></span>. Anyway, here’s the script in it’s entirety.</p>
+<p>[plain]</p>
+<p>######## Set and collect general variables #########<br>:global hostname &quot;homelab.example.com&quot;<br>:global resolvedIP &quot;&quot;<br>:global externalIP &quot;&quot;<br>:global WANInterface &quot;eth1-ext-internet&quot;</p>
+<p>######## Set CloudFlare variables #################<br>:local CFemail &quot;&lt;same email as in the powershell script&quot;<br>:local CFtkn &quot;&lt;your API key/token&gt;&quot;<br>:local CFzone &quot;example.com&quot;<br>:local CFid &quot;16606003&quot;<br>:local CFtype &quot;A&quot;<br>:local CFttl &quot;1&quot;<br>:local CFservicemode &quot;0&quot;<br>:local CFDomain &quot;homelab&quot;<br>:local CFDebug &quot;true&quot;</p>
+<p>######## Resolve and set IP-variables ##########<br>:local currentIP [/ip address get [/ip address find interface=$WANInterface ] address];<br>:set externalIP [:pick $currentIP 0 [:find $currentIP &quot;/&quot;]];<br>:set resolvedIP [:resolve $hostname];</p>
+<p>######## Build CF API Url #########################<br>:local CFurl &quot;<a href="https://www.cloudflare.com/api_json.html\3F&amp;quot" target="_blank" rel="external">https://www.cloudflare.com/api_json.html\3F&amp;quot</a>;<br>:set CFurl ($CFurl . &quot;a=rec_edit&amp;tkn=$CFtkn&amp;id=$CFid&quot;);<br>:set CFurl ($CFurl . &quot;&amp;email=$CFemail&amp;z=$CFzone&amp;type=$CFtype&quot;);<br>:set CFurl ($CFurl . &quot;&amp;name=$CFDomain&amp;service_mode=$CFservicemode&amp;ttl=$CFttl&quot;);</p>
+<p>######## Write debug info to log #################<br>:if ($CFDebug = &quot;true&quot;) do={<br>:log info (&quot;CF: hostname = $hostname&quot;)<br>:log info (&quot;CF: resolvedIP = $resolvedIP&quot;)<br>:log info (&quot;CF: currentIP = $currentIP&quot;)<br>:log info (&quot;CF: externalIP = $externalIP&quot;)<br>:log info (&quot;CF: CFurl = $CFurl&amp;content=$externalIP&quot;)<br>};</p>
+<p>######## Compare and update CF if necessary #####<br>:if ($resolvedIP != $externalIP) do={<br>:log info (&quot;CF: Updating CF, setting $CFDomain = $externalIP&quot;)<br>/tool fetch mode=https url=&quot;$CFurl&amp;content=$externalIP&quot; keep-result=no<br>/ip dns cache flush<br>} else={<br>:log info &quot;CF: No Update Needed!&quot;<br>}[/plain]</p>
+<p>&nbsp;</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://stegenfeldt.github.io/Mikrotik/cloudflare-dynamic-dns-mikrotik/" data-id="cioe2y9bf000g2kgjlcbugqpw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/teknoglot" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/+teknoglot" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/OpsMgr-2012/opsmgr2012r2ur3-field-notes/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/OpsMgr-2007/OpsMgr-2012/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Quick Demo - Add Windows Performance Collection Rule [#opsmgr, #mpauthoring]</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/tb/">Technobabble</a></p>
+                            <p class="item-title"><a href="/tb/hello-world/" class="title">Hehrle wherlhd</a></p>
+                            <p class="item-date"><time datetime="2016-05-17T20:35:07.318Z" itemprop="datePublished">2016-05-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/opsmgr-2012-r2-ur4-field-notes/" class="title">OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-10-30T10:41:47.000Z" itemprop="datePublished">2014-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/squaredup-installation/" class="title">SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]</a></p>
+                            <p class="item-date"><time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/opsmgr2012r2ur3-field-notes/" class="title">OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-09-02T09:30:18.000Z" itemprop="datePublished">2014-09-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/Mikrotik/">Mikrotik</a></p>
+                            <p class="item-title"><a href="/Mikrotik/cloudflare-dynamic-dns-mikrotik/" class="title">Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]</a></p>
+                            <p class="item-date"><time datetime="2014-08-25T11:37:36.000Z" itemprop="datePublished">2014-08-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/Hyper-V/">Hyper-V</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Hyper-V/RedHat-ES/">RedHat ES</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/">Windows 2008</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/Windows-Vista/">Windows Vista</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/Windows-Vista/Windows-XP/">Windows XP</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/">OpsMgr 2007</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/OpsMgr-2012/">OpsMgr 2012</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/PoSH/">PoSH</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SLES/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SQL-2005/">SQL 2005</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SQL-2005/SQL-2008/">SQL 2008</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2012/PoSH/">PoSH</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/PoSH/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/SQL-2008/">SQL 2008</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/VBS/">VBS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Windows-Vista/">Windows Vista</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Windows-XP/">Windows XP</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tag/ACS/">ACS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Checklist/">Checklist</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Conference/">Conference</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/DNS/">DNS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Drivers/">Drivers</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Errors/">Errors</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Exchange/">Exchange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Fail-over/">Fail-over</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Field-Notes/">Field Notes</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Fixed/">Fixed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/GSM/">GSM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Highly-Available/">Highly-Available</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/How-To/">How-To</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Hyper-V/">Hyper-V</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/IIS7/">IIS7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Invoke-RestMethod/">Invoke-RestMethod</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/KB/">KB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Linux/">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/MP-Development/">MP Development</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/MSMQ/">MSMQ</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Management-Pack/">Management Pack</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Mikrotik/">Mikrotik</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/NLB/">NLB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/NVidia/">NVidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/OpenVPN/">OpenVPN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/OpsMgr/">OpsMgr</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/PoSH/">PoSH</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-Reference/">Quick Reference</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-fix/">Quick-fix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-hack/">Quick-hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RHES5/">RHES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Rant/">Rant</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RedHat/">RedHat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Reporting-Services/">Reporting Services</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RouterOS/">RouterOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SMS/">SMS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Express-2005/">SQL Express 2005</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Express-2008/">SQL Express 2008</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server/">SQL Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server-2005/">SQL Server 2005</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server-2008/">SQL Server 2008</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SUSE-11/">SUSE 11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Script/">Script</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Scripts/">Scripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Sillyness/">Sillyness</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SquaredUp/">SquaredUp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Teach-a-Man-to-Fish/">Teach a Man to Fish</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/TechNet/">TechNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Teknoglot/">Teknoglot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/TroubleShooting/">TroubleShooting</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Tutorial/">Tutorial</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Unix/">Unix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Update-Rollup/">Update Rollup</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Video/">Video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Virtual-Appliance/">Virtual Appliance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/WMI/">WMI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Windows/">Windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Windows-Installer/">Windows Installer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/X-Plat/">X-Plat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/x64/">x64</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.teknoglot.se/">teknoglot</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.atea.se/">Atea</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'teknoglot';
+    
+    
+    var disqus_url = 'http://stegenfeldt.github.io/Mikrotik/cloudflare-dynamic-dns-mikrotik/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

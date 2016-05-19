@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Quick-Hack: Send SMS through Powershell [#powershell] | stegenfeldt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="PoSH,GSM,Quick-hack,SMS" />
+    
+    <meta name="description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick-Hack: Send SMS through Powershell [#powershell]">
+<meta property="og:url" content="http://stegenfeldt.github.io/PoSH/quick-hack-send-sms-through-powershell-powershell/index.html">
+<meta property="og:site_name" content="stegenfeldt">
+<meta property="og:description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
+<meta property="og:updated_time" content="2016-05-19T09:11:09.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick-Hack: Send SMS through Powershell [#powershell]">
+<meta name="twitter:description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Static. Nothing but static.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Hyper-V/">Hyper-V</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Hyper-V/RedHat-ES/">RedHat ES</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/">Microsoft</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/Windows-2008/">Windows 2008</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Mikrotik/">Mikrotik</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/">OpsMgr 2007</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/OpsMgr-2012/">OpsMgr 2012</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/SLES/">SLES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2007/SQL-2005/">SQL 2005</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/OpsMgr-2012/PoSH/">PoSH</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/SQL-2008/">SQL 2008</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/tb/">Technobabble</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Ubuntu/">Ubuntu</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/VBS/">VBS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Windows-Vista/">Windows Vista</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Windows-XP/">Windows XP</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/topics/PoSH/">PoSH</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-quick-hack-send-sms-through-powershell-powershell" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Quick-Hack: Send SMS through Powershell [#powershell]
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/PoSH/quick-hack-send-sms-through-powershell-powershell/" class="article-date">
+    <time datetime="2012-05-15T13:14:00.000Z" itemprop="datePublished">2012-05-15</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/GSM/">GSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Quick-hack/">Quick-hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SMS/">SMS</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.</p>
+<p>What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.</p>
+<h3 id="Disclaimer"><a href="#Disclaimer" class="headerlink" title="Disclaimer!"></a>Disclaimer!</h3><p>This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.</p>
+<p>What’s missing in the latest iteration is:</p>
+<ul>
+<li>A working Event-Handler to deal with asynchronous call-backs.</li>
+<li>Support for AT+MSGW (write to modem memory)</li>
+<li>Reusing messages in modem memory for multiple recipients.</li>
+<li>Various error- and exeption-handlers.</li>
+<li>Actually verifying that the modem is AT-capable.</li>
+<li>Querying the system for available modems and their ports.<div><a id="more"></a></div>
+
+</li>
+</ul>
+<h3 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h3><p>So, a short note before digging into the script. Prerequisites for this script is that you have identified which COM-port to use and it’s supported baud-rates and whether it supports DTR or not. If you do not know what the hell I am talking about, you could probably have it work with my preconfigured settings anyway. If you are unsure about if your modem supports AT commands you could open a serial connection to the modem using Hyperterminal or PuTTY and run AT+CMGF=1. If supported, the return should be OK. If it is not supported (you get ERROR instead) you would have to use PDU-mode which require a bit of hex-encoding of your messages. This is nothing I have had to do yet and will not be including in this script. Maybe in the future. Maybe.</p>
+<p>So, looking a some powershelling then. First thing would be to connect to the modem.</p>
+<p>[ps]</p>
+<h1 id="Create-your-instance-of-the-SerialPort-Class"><a href="#Create-your-instance-of-the-SerialPort-Class" class="headerlink" title="Create your instance of the SerialPort Class"></a>Create your instance of the SerialPort Class</h1><p>$serialPort = new-Object System.IO.Ports.SerialPort</p>
+<h1 id="Set-various-COM-port-settings"><a href="#Set-various-COM-port-settings" class="headerlink" title="Set various COM-port settings"></a>Set various COM-port settings</h1><p>$serialPort.PortName = &quot;COM1&quot;<br>$serialPort.BaudRate = 19200<br>$serialPort.WriteTimeout = 500<br>$serialPort.ReadTimeout = 3000<br>$serialPort.DtrEnable = &quot;true&quot;</p>
+<h1 id="Open-the-connection"><a href="#Open-the-connection" class="headerlink" title="Open the connection"></a>Open the connection</h1><p>$serialPort.Open()<br>[/ps]</p>
+<p>With the connection established, you the set to modem in AT-mode and start sending the message to the modem.</p>
+<p>[ps]</p>
+<h1 id="Tell-the-modem-you-want-to-use-AT-mode"><a href="#Tell-the-modem-you-want-to-use-AT-mode" class="headerlink" title="Tell the modem you want to use AT-mode"></a>Tell the modem you want to use AT-mode</h1><p>$serialPort.Write(&quot;AT+CMGF=1<code>r</code>n&quot;)</p>
+<h1 id="Start-feeding-message-data-to-the-modem"><a href="#Start-feeding-message-data-to-the-modem" class="headerlink" title="Start feeding message data to the modem"></a>Start feeding message data to the modem</h1><h1 id="Begin-with-the-phone-number-international"><a href="#Begin-with-the-phone-number-international" class="headerlink" title="Begin with the phone number, international"></a>Begin with the phone number, international</h1><h1 id="style-and-a-lt-CL-gt-…-that’s-the-rn-part"><a href="#style-and-a-lt-CL-gt-…-that’s-the-rn-part" class="headerlink" title="style and a &lt;CL&gt;… that’s the rn part"></a>style and a &lt;CL&gt;… that’s the <code>r</code>n part</h1><p>$serialPort.Write(&quot;AT+CMGS=<code>&amp;quot;+46888888888</code>&quot;<code>r</code>n&quot;)</p>
+<h1 id="Now-write-the-message-to-the-modem"><a href="#Now-write-the-message-to-the-modem" class="headerlink" title="Now, write the message to the modem"></a>Now, write the message to the modem</h1><p>$serialPort.Write(&quot;This is a test!<code>r</code>n&quot;)</p>
+<h1 id="Send-a-Ctrl-Z-to-end-the-message"><a href="#Send-a-Ctrl-Z-to-end-the-message" class="headerlink" title="Send a Ctrl+Z to end the message."></a>Send a Ctrl+Z to end the message.</h1><p>$serialPort.Write($([char] 26))<br>[/ps]</p>
+<p>As you may notice, the message is only stored in the modems memory until you send a Ctrl+z which will end the message and send it. It is possible to add more text to the message before sending it if you would like. Personally, I prefer to store the message into a regular powershell variable and pass that one to the script. The SerialPort library is sort of clever and a local phone number will probably work. For safety, I always use international number with country code as it will work every time.</p>
+<p>Only thing left now is to close the serial port connection and end the script. Like this.</p>
+<p>[ps]$serialPort.Close()[/ps]</p>
+<h3 id="The-Copy-Paste-part…"><a href="#The-Copy-Paste-part…" class="headerlink" title="The Copy/Paste part…"></a>The Copy/Paste part…</h3><p>Here’s the entire script with some added control-features and check to avoid trying to send text messages with no serial connection.</p>
+<p>[ps]</p>
+<h3 id="DISCLAIMER"><a href="#DISCLAIMER" class="headerlink" title="DISCLAIMER"></a>DISCLAIMER</h3><h2 id="This-script-is-a-quick-hack-to-demonstrate"><a href="#This-script-is-a-quick-hack-to-demonstrate" class="headerlink" title="This script is a quick-hack to demonstrate"></a>This script is a quick-hack to demonstrate</h2><h2 id="the-basics-of-sending-an-SMS-using-an-AT"><a href="#the-basics-of-sending-an-SMS-using-an-AT" class="headerlink" title="the basics of sending an SMS using an AT-"></a>the basics of sending an SMS using an AT-</h2><h2 id="compatible-GSM-modem-connected-a-local"><a href="#compatible-GSM-modem-connected-a-local" class="headerlink" title="compatible GSM modem connected a local"></a>compatible GSM modem connected a local</h2><h2 id="serial-port-through-PowerShell"><a href="#serial-port-through-PowerShell" class="headerlink" title="serial port through PowerShell."></a>serial port through PowerShell.</h2><h2 id="No-error-handling-is-implemented-and-this"><a href="#No-error-handling-is-implemented-and-this" class="headerlink" title="No error-handling is implemented and this"></a>No error-handling is implemented and this</h2><h2 id="is-NOT-a-script-fit-for-production"><a href="#is-NOT-a-script-fit-for-production" class="headerlink" title="is NOT a script fit for production."></a>is NOT a script fit for production.</h2><p>##################</p>
+<h1 id="Create-your-instance-of-the-SerialPort-Class-1"><a href="#Create-your-instance-of-the-SerialPort-Class-1" class="headerlink" title="Create your instance of the SerialPort Class"></a>Create your instance of the SerialPort Class</h1><p>$serialPort = new-Object System.IO.Ports.SerialPort</p>
+<h1 id="Set-various-COM-port-settings-1"><a href="#Set-various-COM-port-settings-1" class="headerlink" title="Set various COM-port settings"></a>Set various COM-port settings</h1><p>$serialPort.PortName = &quot;COM1&quot;<br>$serialPort.BaudRate = 19200<br>$serialPort.WriteTimeout = 500<br>$serialPort.ReadTimeout = 3000<br>$serialPort.DtrEnable = &quot;true&quot;</p>
+<h1 id="Open-the-connection-1"><a href="#Open-the-connection-1" class="headerlink" title="Open the connection"></a>Open the connection</h1><p>$serialPort.Open()</p>
+<h1 id="Add-variables-for-phone-number-and-the-message"><a href="#Add-variables-for-phone-number-and-the-message" class="headerlink" title="Add variables for phone number and the message."></a>Add variables for phone number and the message.</h1><p>$phoneNumber = &quot;+46888888888&quot;<br>$textMessage = &quot;This is a test message!&quot;</p>
+<p>try {<br> $serialPort.Open()<br>}<br>catch {</p>
+<h1 id="Wait-for-5s-and-try-again"><a href="#Wait-for-5s-and-try-again" class="headerlink" title="Wait for 5s and try again"></a>Wait for 5s and try again</h1><h1 id="Told-you-this-is-a-quick-hack-right"><a href="#Told-you-this-is-a-quick-hack-right" class="headerlink" title="Told you this is a quick-hack, right?"></a>Told you this is a quick-hack, right?</h1><p> Start-Sleep -Seconds 5<br> $serialPort.Open()<br>}<br>If ($serialPort.IsOpen -eq $true) {</p>
+<h1 id="Tell-the-modem-you-want-to-use-AT-mode-1"><a href="#Tell-the-modem-you-want-to-use-AT-mode-1" class="headerlink" title="Tell the modem you want to use AT-mode"></a>Tell the modem you want to use AT-mode</h1><p> $serialPort.Write(&quot;AT+CMGF=1<code>r</code>n&quot;)</p>
+<h1 id="Start-feeding-message-data-to-the-modem-1"><a href="#Start-feeding-message-data-to-the-modem-1" class="headerlink" title="Start feeding message data to the modem"></a>Start feeding message data to the modem</h1><h1 id="Begin-with-the-phone-number-international-1"><a href="#Begin-with-the-phone-number-international-1" class="headerlink" title="Begin with the phone number, international"></a>Begin with the phone number, international</h1><h1 id="style-and-a-lt-CL-gt-…-that’s-the-rn-part-1"><a href="#style-and-a-lt-CL-gt-…-that’s-the-rn-part-1" class="headerlink" title="style and a &lt;CL&gt;… that’s the rn part"></a>style and a &lt;CL&gt;… that’s the <code>r</code>n part</h1><p> $serialPort.Write(&quot;AT+CMGS=<code>&amp;quot;$phoneNumber</code>&quot;<code>r</code>n&quot;)</p>
+<h1 id="Give-the-modem-some-time-to-react…"><a href="#Give-the-modem-some-time-to-react…" class="headerlink" title="Give the modem some time to react…"></a>Give the modem some time to react…</h1><p> Start-Sleep -Seconds 1</p>
+<h1 id="Now-write-the-message-to-the-modem-1"><a href="#Now-write-the-message-to-the-modem-1" class="headerlink" title="Now, write the message to the modem"></a>Now, write the message to the modem</h1><p> $serialPort.Write(&quot;$textMessage<code>r</code>n&quot;)</p>
+<h1 id="Send-a-Ctrl-Z-to-end-the-message-1"><a href="#Send-a-Ctrl-Z-to-end-the-message-1" class="headerlink" title="Send a Ctrl+Z to end the message."></a>Send a Ctrl+Z to end the message.</h1><p> $serialPort.Write($([char] 26))</p>
+<h1 id="Wait-for-modem-to-send-it"><a href="#Wait-for-modem-to-send-it" class="headerlink" title="Wait for modem to send it"></a>Wait for modem to send it</h1><p> Start-Sleep -Seconds 1<br>}</p>
+<h1 id="Close-the-Serial-Port-connection"><a href="#Close-the-Serial-Port-connection" class="headerlink" title="Close the Serial Port connection"></a>Close the Serial Port connection</h1><p>$serialPort.Close()<br>if ($serialPort.IsOpen -eq $false) {<br> echo &quot;Port Closed!&quot;<br>}</p>
+<h1 id="That’s-all-folks"><a href="#That’s-all-folks" class="headerlink" title="That’s all folks"></a>That’s all folks</h1><h1 id="Now-add-call-backs-event-handlers-and-return"><a href="#Now-add-call-backs-event-handlers-and-return" class="headerlink" title="Now, add call-backs, event-handlers, and return-"></a>Now, add call-backs, event-handlers, and return-</h1><h1 id="message-handling"><a href="#message-handling" class="headerlink" title="message handling."></a>message handling.</h1><p>[/ps]</p>
+<p>Enjoy!</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://stegenfeldt.github.io/PoSH/quick-hack-send-sms-through-powershell-powershell/" data-id="cioe2y9fl00332kgj8eorp44u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/teknoglot" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/+teknoglot" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/OpsMgr-2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Load-balanced SCOM2012 SDK Services for Network Illiterates [#opsmgr, #nlb]
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/tb/rant-the-concept-of-booth-babes/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Rant - The Concept of Booth-Babes</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/tb/">Technobabble</a></p>
+                            <p class="item-title"><a href="/tb/hello-world/" class="title">Hehrle wherlhd</a></p>
+                            <p class="item-date"><time datetime="2016-05-17T20:35:07.318Z" itemprop="datePublished">2016-05-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/opsmgr-2012-r2-ur4-field-notes/" class="title">OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-10-30T10:41:47.000Z" itemprop="datePublished">2014-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/squaredup-installation/" class="title">SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]</a></p>
+                            <p class="item-date"><time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/OpsMgr-2012/opsmgr2012r2ur3-field-notes/" class="title">OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-09-02T09:30:18.000Z" itemprop="datePublished">2014-09-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/Mikrotik/">Mikrotik</a></p>
+                            <p class="item-title"><a href="/Mikrotik/cloudflare-dynamic-dns-mikrotik/" class="title">Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]</a></p>
+                            <p class="item-date"><time datetime="2014-08-25T11:37:36.000Z" itemprop="datePublished">2014-08-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/Hyper-V/">Hyper-V</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Hyper-V/RedHat-ES/">RedHat ES</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/">Windows 2008</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/Windows-Vista/">Windows Vista</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/Windows-2008/Windows-Vista/Windows-XP/">Windows XP</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/">OpsMgr 2007</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/OpsMgr-2012/">OpsMgr 2012</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/PoSH/">PoSH</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SLES/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SQL-2005/">SQL 2005</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2007/SQL-2005/SQL-2008/">SQL 2008</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2012/">OpsMgr 2012</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/OpsMgr-2012/PoSH/">PoSH</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/PoSH/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/SQL-2008/">SQL 2008</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/VBS/">VBS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Windows-Vista/">Windows Vista</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Windows-XP/">Windows XP</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tag/ACS/">ACS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Checklist/">Checklist</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Conference/">Conference</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/DNS/">DNS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Drivers/">Drivers</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Errors/">Errors</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Exchange/">Exchange</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Fail-over/">Fail-over</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Field-Notes/">Field Notes</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Fixed/">Fixed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/GSM/">GSM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Highly-Available/">Highly-Available</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/How-To/">How-To</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Hyper-V/">Hyper-V</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/IIS7/">IIS7</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Invoke-RestMethod/">Invoke-RestMethod</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/KB/">KB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Linux/">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/MP-Development/">MP Development</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/MSMQ/">MSMQ</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Management-Pack/">Management Pack</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Mikrotik/">Mikrotik</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/NLB/">NLB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/NVidia/">NVidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/OpenVPN/">OpenVPN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/OpsMgr/">OpsMgr</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/PoSH/">PoSH</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-Reference/">Quick Reference</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-fix/">Quick-fix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Quick-hack/">Quick-hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RHES5/">RHES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Rant/">Rant</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RedHat/">RedHat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Reporting-Services/">Reporting Services</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/RouterOS/">RouterOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SMS/">SMS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Express-2005/">SQL Express 2005</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Express-2008/">SQL Express 2008</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server/">SQL Server</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server-2005/">SQL Server 2005</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SQL-Server-2008/">SQL Server 2008</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SUSE-11/">SUSE 11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Script/">Script</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Scripts/">Scripts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Sillyness/">Sillyness</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/SquaredUp/">SquaredUp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Teach-a-Man-to-Fish/">Teach a Man to Fish</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/TechNet/">TechNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Teknoglot/">Teknoglot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/TroubleShooting/">TroubleShooting</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Tutorial/">Tutorial</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Unix/">Unix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Update-Rollup/">Update Rollup</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Video/">Video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Virtual-Appliance/">Virtual Appliance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/WMI/">WMI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Windows/">Windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Windows-Installer/">Windows Installer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/X-Plat/">X-Plat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/x64/">x64</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.teknoglot.se/">teknoglot</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.atea.se/">Atea</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'teknoglot';
+    
+    
+    var disqus_url = 'http://stegenfeldt.github.io/PoSH/quick-hack-send-sms-through-powershell-powershell/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
