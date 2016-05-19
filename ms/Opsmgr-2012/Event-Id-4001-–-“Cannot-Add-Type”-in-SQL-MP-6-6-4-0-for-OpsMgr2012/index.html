@@ -3,18 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: Exchange | stegenfeldt</title>
+    <title>Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012] | stegenfeldt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Currently, this is nothing more than a playground for a dynamically generated static website.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="stegenfeldt">
-<meta property="og:url" content="http://stegenfeldt.github.io/tag/Exchange/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
+The event is the generic “Health Service Script” with id 4001.
+´´´Managemen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]">
+<meta property="og:url" content="http://stegenfeldt.github.io/ms/Opsmgr-2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/index.html">
 <meta property="og:site_name" content="stegenfeldt">
-<meta property="og:description" content="Currently, this is nothing more than a playground for a dynamically generated static website.">
+<meta property="og:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
+The event is the generic “Health Service Script” with id 4001.
+´´´Managemen">
+<meta property="og:updated_time" content="2016-05-19T10:24:14.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stegenfeldt">
-<meta name="twitter:description" content="Currently, this is nothing more than a playground for a dynamically generated static website.">
+<meta name="twitter:title" content="Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]">
+<meta name="twitter:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
+The event is the generic “Health Service Script” with id 4001.
+´´´Managemen">
     
 
     
@@ -122,55 +131,122 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Exchange</em>
+    <a class="page-title-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/topics/ms/Opsmgr-2012/">Opsmgr 2012</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2009" class="archive-year"><i class="icon fa fa-calendar-o"></i>2009</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/topics/opsmgr2007/">OpsMgr 2007</a>
-            </p>
-            <p class="date"><time datetime="2009-10-14T10:17:08.000Z" itemprop="datePublished">2009-10-14</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/">Health Rollup not working in Exchange Management Pack</a>
+        Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]
         </h1>
     
 
-        <p class="article-excerpt">
-            I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I 
-        </p>
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/ms/Opsmgr-2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="article-date">
+    <time datetime="2016-05-19T10:22:28.000Z" itemprop="datePublished">2016-05-19</time>
+</a>
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.</p>
+<p>The event is the generic “Health Service Script” with id 4001.</p>
+<p>´´´<br>Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :<br>Computer Name = &#039;REDACTED.redacted.com&#039; WMI = &#039;ComputerManagement11&#039; Service Name = &#039;MSSQLSERVER&#039; SQL Instance Name = &#039;MSSQLSERVER&#039;<br>Error occured during CPU Usage for SQL Instances data source executing.<br>Computer: REDACTED<br>Reason: Cannot add type. Compilation errors occurred.<br>Position:256<br>Offset:21</p>
+<h2 id="Detailed-error-output-Cannot-add-type-Compilation-errors-occurred"><a href="#Detailed-error-output-Cannot-add-type-Compilation-errors-occurred" class="headerlink" title="Detailed error output: Cannot add type. Compilation errors occurred."></a>Detailed error output: Cannot add type. Compilation errors occurred.</h2><p>(0) : No source files specified</p>
+<p>(1) : using System;</p>
+<hr>
+<p>(0) : Source file &#039;C:\Windows\TEMP\njdqtgfb.0.cs&#039; could not be found</p>
+<p>(1) : using System;<br>´´´</p>
+<p>There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention <em>“Cannot add type. Compilation errors occured.”</em><br>In a <a href="https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa" target="_blank" rel="external">thread on the Technet Forums</a> it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the <code>C:\Windows\TEMP</code> folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.<br>We took a quick look using <em>procmon</em>, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.</p>
+<h2>A wild work-around appears!</h2>
+
+<p>The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.<br>Now you just have to manage this on all your SQL-servers! <sup>yaaaay</sup></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://stegenfeldt.github.io/ms/Opsmgr-2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" data-id="cioe5hepv000854gj2cjxiatu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -214,6 +290,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -340,11 +429,13 @@
     var disqus_shortname = 'teknoglot';
     
     
+    var disqus_url = 'http://stegenfeldt.github.io/ms/Opsmgr-2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
