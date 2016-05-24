@@ -12,7 +12,7 @@ timezone: Europe/Stockholm
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://stegenfeldt.github.io
+url: http://test.teknoglot.se
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -36,11 +36,11 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: true
 relative_link: false
-future: true
+future: false
 highlight:
   enable: true
-  line_number: true
-  auto_detect: false
+  line_number: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -49,7 +49,34 @@ category_map:
   Technobabble: tb
   Microsoft: ms
   Powershell: posh
-  VBScript: vbs
+  PoHS: posh
+  VBS: vbs
+  OpsMgr 2007: opsmgr2007
+  OpsMgr 2012: opsmgr2012
+  Linix: linux
+  SQL 2005: sql2005
+  SQL 2008: sql2008
+  SQL 2012: sql2012
+  SQL 2014: sql2014
+  SQL 2016: sql2016
+  SQL Server: sql
+  Windows: windows
+  Windows 2008: win2008
+  Windows Vista: winvista
+  Windows XP: winxp
+  Windows 2012: win2012
+  Windows 2016: win2016
+  Windows Nano: winnano
+  Docker: docker
+  Hyper-V: hyperv
+  VMware: vmware
+#  Mikrotik: mikrotik
+  RedHat: redhat
+  RedHat ES: rhes
+  SLES: sles
+  Debian: debian
+  Ubuntu: ubuntu
+  
 tag_map:
 
 # Date / Time format

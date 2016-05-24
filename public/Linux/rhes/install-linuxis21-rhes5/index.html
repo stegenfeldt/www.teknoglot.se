@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Installing Linux Integration Services v2.1 on Red Hat ES 5 | stegenfeldt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="How-To,Hyper-V,Linux,RedHat,RHES5" />
+    
+    <meta name="description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Installing Linux Integration Services v2.1 on Red Hat ES 5">
+<meta property="og:url" content="http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/index.html">
+<meta property="og:site_name" content="stegenfeldt">
+<meta property="og:description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
+<meta property="og:updated_time" content="2016-05-24T21:54:50.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Installing Linux Integration Services v2.1 on Red Hat ES 5">
+<meta name="twitter:description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Static. Nothing but static.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/">Code</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/vbs/">VBS</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/rhes/">RedHat ES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/sles/">SLES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/">Microsoft</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/sql/">SQL Server</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/windows/">Windows</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/winvista/">Windows Vista</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Mikrotik/">Mikrotik</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/tb/">Technobabble</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/About/">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/topics/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/topics/Linux/rhes/">RedHat ES</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-install-linuxis21-rhes5" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Installing Linux Integration Services v2.1 on Red Hat ES 5
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/Linux/rhes/install-linuxis21-rhes5/" class="article-date">
+    <time datetime="2010-08-31T10:06:04.000Z" itemprop="datePublished">2010-08-31</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Hyper-V/">Hyper-V</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RHES5/">RHES5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RedHat/">RedHat</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.</p>
+<h1 id="Preparations"><a href="#Preparations" class="headerlink" title="Preparations"></a>Preparations</h1><p>Read the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)</p>
+<p>I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># yum groupinstall "Development Tools"</span></span><br><span class="line"><span class="comment"># yum install kernel-headers</span></span><br></pre></td></tr></table></figure>
+<p>I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.</p>
+<p>The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on <a href="http://download.microsoft.com" target="_blank" rel="external">http://download.microsoft.com</a> for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.<br>_Thank you for making it easy for us Microsoft!<br>_Here’s a direct link to the search on the current name: <a href="http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&amp;displaylang=en&amp;stype=s_basic" target="_blank" rel="external">http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&amp;displaylang=en&amp;stype=s_basic</a><br>And here’s a direct link to the actual download page: <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551" target="_blank" rel="external">http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551</a></p>
+<p>This download contains an ISO file that you can mount using the Hyper-V- or VMM-console, or you can do as I did and download the ISO to the virtual machine, mount it locally, copy the files and unmount it. Like this.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mkdir /mnt/ISO</span></span><br><span class="line"><span class="comment"># mount -o loop /root/LinuxIC v21.iso /mnt/ISO</span></span><br><span class="line"><span class="comment"># mkdir /opt/linux_ic_v21_rtm</span></span><br><span class="line"><span class="comment"># cp /mnt/ISO/* -R /opt/linux_ic_v21_rtm/</span></span><br><span class="line"><span class="comment"># umount /mnt/ISO</span></span><br></pre></td></tr></table></figure>
+<p>You probably have to be root to do this by the way.<br>With that done, let’s get to the installation.</p>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>As root, do the following:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># export PATH=$PATH:/sbin</span></span><br><span class="line"><span class="comment"># cd /opt/linux_ic_v21_rtm/</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"> make install</span><br><span class="line"><span class="comment"># reboot</span></span><br></pre></td></tr></table></figure>
+<p>Why the export PATH command? Apparently, on RHES5, /sbin is not in the PATH by default and this is something that the make scripts are completely unaware of. The “make install” will try to run “depmod” which will fail since it’s not in the default path. You could also add “PATH=$PATH/sbin” to the root users ~/.bashrc which will put it back in the PATH but only for the root user, but I don’t know if that’s recommended.<br>And, yes. You DO have to reboot after the install.</p>
+<p>If you are running RHES5 64bit you also have to install the “adjtimex” package. It is in the RHN repository but also on the RHES5 Installation CD in case you have no internet connection. Install it with yum like this:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum install adjtimex</span><br></pre></td></tr></table></figure>
+<p>And from the CD (mount it first) like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rpm –ivh /mnt/cdrom/Server/adjtimex-1.20-2.1.x86_64.rpm</span></span><br></pre></td></tr></table></figure>
+<p>And that’s basically it for the installation.</p>
+<h1 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h1><p>How do you know that the driver are installed?</p>
+<p>Aftr the reboot, try running “modinfo vmbus” which should return something like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># modinfo vmbus</span></span><br><span class="line">filename:       /lib/modules/2.6.18-194.11.1.el5/kernel/drivers/vmbus/vmbus.ko</span><br><span class="line">verion:        2.1.25</span><br><span class="line">licnse:        GPL</span><br><span class="line">srcversion:     3C1899C419665CB2514F2D0</span><br><span class="line">depends:</span><br><span class="line">vermagic:       2.6.18-194.11.1.el5 SMP mod_unload gcc-4.1</span><br><span class="line">parm:           vmbus_irq:int</span><br><span class="line">par:           vmbus_loglevel:int</span><br></pre></td></tr></table></figure>
+<p>Try that with netvsc, storvsc and blkvsc too (replace the <em>vmbus</em> part) and you should get something similar. If you don’t, the installation did not succeed.<br>The documentation also tells us to check that the components are running with “/sbin/lsmod | grep vsc” which should return:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /bin/lsmod | grep vsc</span></span><br><span class="line">blkvsc                 70184  3</span><br><span class="line">storvsc                64264  0</span><br><span class="line">netvsc                 73504  0</span><br><span class="line">vmbus                  88304  3 blkvsc,storvsc,netvsc</span><br><span class="line">scs_mod              196953  6 scsi_dh,sg,blkvsc,storvsc,libata,sd_mod</span><br></pre></td></tr></table></figure>
+<p>The numbers will probably differ from installation to installation depending on blocksizes and allocation.</p>
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>Configuration is pretty straight-forward so I’ll keep this short.</p>
+<p>When you install the drivers you will get a new network card called <strong>seth0</strong>, which I presume stands for Synthetic ETHernet. There’s nothing magic about it regarding configuration and “system-configuration-network” will work just fine.<br>The drivers will also give you a couple of SCSI-devices (if you have one attached) with the regular <strong>/dev/sd*</strong> naming. Simply configure these using fdisk or whatever GUI you might prefer.</p>
+<p>There is also a note in the documentation about changing the grub configuration in the “Additional Information…” section. Do read that section.</p>
+<h1 id="Additional-Comments"><a href="#Additional-Comments" class="headerlink" title="Additional Comments"></a>Additional Comments</h1><p>One thing I tend to do now that disk space is dirt cheap is to copy all ISO-files I use locally instead of mounting them when needed through Hyper-V. Simply because you can bet your insert-shorter-word-for-buttocks that the day you need it again, someone has been kind enough to have done som spring-cleaning or it’s locked by another machine in the cluster. If you have it locally and followed my instructions in the “Preparation” section, you will allready have a /mnt/ISO directory. Only thing you’ll have to do is</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mount -o loop /path/to/your.iso /mnt/ISO</span></span><br></pre></td></tr></table></figure>
+<p>And there you have it. Just remember to unmount it when you’re done.</p>
+<p>I also almost never use the Hyper-V remote connection interface thingy since it will give you a GUI and the mouse just won’t work. If you haven’t configured a network card yet though, you could connect through Hyper-V and hit <em>Ctrl+Alt+F1</em> to get a command prompt. Unfortunatly cut/paste don’t work here, but you could run <em>system-configuration-network</em>, assign an IP-address and then connect with an SSH client. I prefer PuTTY to a degree that I usually install the ported version on my Linux desktops aswell.</p>
+<p>And I never logon using root. People should know this, but it should be stressed anyway. Always logon as regular user and <em>su</em> or <em>sudo</em> when needed. I can’t understand why RHES has root-login enabled by default in the SSH-server config.</p>
+<p>Good luck!</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/" data-id="ciom0nm9m000k2so2h9ta0r9q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/teknoglot" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/+teknoglot" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="bitbucket" href="https://bitbucket.org/stegenfeldt" target="_blank">
+                        <i class="icon fa fa-bitbucket"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/stegenfeldt" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/ms/opsmgr2007/snmp-get-errors-in-eventlog/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            SNMP GET Errors in OpsMgr EventLog
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">MSMQ 4 and MSMQ 5 MP for OpsMgr Released! (finally)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="title">Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]</a></p>
+                            <p class="item-date"><time datetime="2016-02-15T11:22:28.000Z" itemprop="datePublished">2016-02-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/" class="title">OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-10-30T10:41:47.000Z" itemprop="datePublished">2014-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/squaredup-installation/" class="title">SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]</a></p>
+                            <p class="item-date"><time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/" class="title">OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-09-02T09:30:18.000Z" itemprop="datePublished">2014-09-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/Mikrotik/">Mikrotik</a></p>
+                            <p class="item-title"><a href="/Mikrotik/cloudflare-dynamic-dns-mikrotik/" class="title">Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]</a></p>
+                            <p class="item-date"><time datetime="2014-08-25T11:37:36.000Z" itemprop="datePublished">2014-08-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/Code/">Code</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Code/PoSH/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Code/vbs/">VBS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">37</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Teknoglot/" style="font-size: 11.25px;">Teknoglot</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 11.25px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.teknoglot.se/">teknoglot</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.atea.se/">Atea</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'teknoglotse';
+    
+    
+    var disqus_url = 'http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
