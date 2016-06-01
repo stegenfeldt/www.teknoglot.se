@@ -71,7 +71,7 @@ category_map:
   Docker: docker
   Hyper-V: hyperv
   VMware: vmware
-#  Mikrotik: mikrotik
+  Mikrotik: mikrotik
   RedHat: redhat
   RedHat ES: rhes
   SLES: sles
