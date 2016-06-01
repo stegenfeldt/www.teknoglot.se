@@ -163,14 +163,6 @@
 AttributionMy current script is a modified version of a script developed by Konstantin Antselovich.
 Original script: http://konstant1n.livejournal.com/9759.html
 Original Author website: http://konstantin.antselovich.com/
-Thanks!
-How you do itWhat you need
-RouterOS v6+ for HTTPS support
-Cloudflare API key, aka “Token”, found at the account page
-Cloudflare DNS Zone name
-Cloudflare Record Id (more on that later)
-Cloudflare subdomain name
-Name of the external router interface
 
         </p>
     </div>
@@ -213,6 +205,9 @@ Name of the external router interface
             Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
 As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.
 We will pretty quickly go “advanced” this time, so buckle up. ;)
+
+Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.
+
         </p>
     </div>
 </article>
@@ -254,6 +249,9 @@ We will pretty quickly go “advanced” this time, so buckle up. ;)
             Here’s a little something-something for the wicked.
 Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.
 Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.
+
+Although you do configure your forwarders using Operations Manager, removing the management group you were running ACS in does not mean the agents will shut down and disable the AdtAgent service or stop trying to forward audit events to your collector. Now, selecting 10 agents at the time and running the “Disable Audit Collection” task–in case you did not know, there’s a limitation on how many agents you can run a task on in the Operations Console–is not my idea of a jolly good day and since Powershell is a bucket of joy in comparison; here’s a script for you all!
+
         </p>
     </div>
 </article>
@@ -293,7 +291,10 @@ Now, uninstalling the old Management Group from all the agents is a breeze using
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it e
+This time I’ve basically put parameter support in it to make it easier to use.
+Here’s the script anyway.
+Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
+
         </p>
     </div>
 </article>
@@ -332,7 +333,17 @@ This time I’ve basically put parameter support in it to make it e
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig
+            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+Here’s basically what happens:
+
+You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
+The SDK Service (i guess) tells GW1 that “You’re no longer the Primary Management Server for AGENTX”
+GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops talking to AGENTX.
+OpsMgr then tells GW2 to start accepting communication from AGENTX.
+OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
+
+Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+How do I get around this little feature then?
         </p>
     </div>
 </article>
@@ -363,6 +374,7 @@ This time I’ve basically put parameter support in it to make it e
 SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
+
         </p>
     </div>
 </article>

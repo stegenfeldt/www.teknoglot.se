@@ -160,7 +160,10 @@
 
         <p class="article-excerpt">
             Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -Operations Manager
-PreparationThe usual routine applies. Check the KB for instructions and take not ofknown issues. Check if Ke
+PreparationThe usual routine applies. Check the KB for instructions and take not ofknown issues. Check if Kevin Holman has written something about it. As thisis an update roll up, I pre-emptively expect that gotchas in UR3 mayapply. Remember to open the update catalog in IE as the downloader is notworking in other browsers.
+Download, unpack, toss what languages that does not apply to your organization.
+It is advised to disable any mail-generating alert subscriptions during theupgrade process to avoid unnecessary spammage.
+Issues - So Far
         </p>
     </div>
 </article>
@@ -189,6 +192,9 @@ PreparationThe usual routine applies. Check the KB for instructions and take not
         <p class="article-excerpt">
             Story-timeI saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some DB-queries. I kind of liked the look of their product though and have kept an eye on them now and then.Fast-forward to may 21st this year and the release of version 1.8 and a whole slew of nifty little features. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… other products for. That, coupled with some new videos on their Youtube-channel, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.
 One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – PDT is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.
+The InstallationFirst, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.
+Doubleclicked the installation packaged and it now tells me it will install a few pre-requisites and configure the website for me. Next!
+
         </p>
     </div>
 </article>
@@ -223,16 +229,7 @@ One of the interesting points is how, supposedly easy, it is to set the portal u
 PreparationUsual routine, check the KB for instructions and known issues. Double-check with Holman’s blog and take note of any irregularities.Download, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.
 Notify affected parts of the organisation, I’ve had the benefit to work with good release managers at all clients so far, so no biggie. Then try to close as many consoles as possible to avoid any blocks in database.
 Make sure you have the credentials for the Data Access service account at hand.
-Issues - So Far(updated 2014-09-02)
-
-The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.
-A few dashboards (the 2012 versions) went blank. Self-healed after some aggregation job over night. From what I’ve noticed, only the SLA Dashboards are affected but never all of them.
-
-Agents behind daisy-chained Gateways is not identified as in need of an update. “Repairing” them from the Console is one work-around that seems to work consistently.
-
-A few agents that was updated using Windows Update did not report as updated. Repair fixed that nuisance.
-
-Had to flush the cache on a few Gateways to avoid heartbeat failures from their agents. Only daisy-chained ones if I recall correctly.
+Issues - So Far
         </p>
     </div>
 </article>

@@ -159,7 +159,17 @@
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig
+            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+Here’s basically what happens:
+
+You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
+The SDK Service (i guess) tells GW1 that “You’re no longer the Primary Management Server for AGENTX”
+GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops talking to AGENTX.
+OpsMgr then tells GW2 to start accepting communication from AGENTX.
+OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
+
+Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+How do I get around this little feature then?
         </p>
     </div>
 </article>
@@ -246,7 +256,15 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just h
+            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.
+Quick DetailsFile Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msiVersion:        6.0.6573.0Date Published: 4/28/2009Language:       EnglishDownload Size:  519 KB
+Feature Summary
+Monitor the NLB Node status.
+Based on the status of individual cluster nodes, determine the overall state of the cluster.
+Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.
+Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.
+Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.
+
         </p>
     </div>
 </article>
@@ -278,7 +296,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
 
         <p class="article-excerpt">
             Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI                  Version:        6.0.6587.0                  Date Published:        4/24/2009                  Language:        English                  Download Size:        502 KB          
+
+
         </p>
     </div>
 </article>
@@ -309,6 +329,7 @@ Quick Details              File Name:        Message Queuing System Center Opera
 SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
+
         </p>
     </div>
 </article>
@@ -380,7 +401,11 @@ Read more about it at Jon
 
         <p class="article-excerpt">
             Yes, I am officially slow. But never mind.
-Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recover
+Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recovery Manager for SharePoint – but also database and application servers like SAP and Oracle E-business.
+I have lately been working with some of their MOSS-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.
+Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. eXc does it’s thing in the Microsoft SCOM/MOM arena while VizionCore dances with virtualization techniques. At least, that’s where I’ve come across them both.
+How will this affect me, then?Not very much it would seem. Here’s what VizionCore says about their part:
+
         </p>
     </div>
 </article>

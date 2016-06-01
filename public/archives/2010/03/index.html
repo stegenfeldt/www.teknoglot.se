@@ -160,7 +160,10 @@
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it e
+This time I’ve basically put parameter support in it to make it easier to use.
+Here’s the script anyway.
+Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
+
         </p>
     </div>
 </article>
@@ -189,7 +192,8 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>

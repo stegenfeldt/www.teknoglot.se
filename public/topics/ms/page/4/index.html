@@ -187,7 +187,15 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just h
+            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.
+Quick DetailsFile Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msiVersion:        6.0.6573.0Date Published: 4/28/2009Language:       EnglishDownload Size:  519 KB
+Feature Summary
+Monitor the NLB Node status.
+Based on the status of individual cluster nodes, determine the overall state of the cluster.
+Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.
+Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.
+Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.
+
         </p>
     </div>
 </article>
@@ -219,7 +227,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
 
         <p class="article-excerpt">
             Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI                  Version:        6.0.6587.0                  Date Published:        4/24/2009                  Language:        English                  Download Size:        502 KB          
+
+
         </p>
     </div>
 </article>
@@ -250,6 +260,7 @@ Quick Details              File Name:        Message Queuing System Center Opera
 SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
+
         </p>
     </div>
 </article>
@@ -321,7 +332,9 @@ Read more about it at Jon
 
         <p class="article-excerpt">
             I recently got a nice new Lenovo ThinkPad T61 laptop at work to replace the old T42 I had earlier. Totally nice with 2,2GHz dual-core, Windows Vista and stuff.
-Now, there seems to be a problem with so
+Now, there seems to be a problem with some drivers since I get the back-to-the-90s kinda lockups. You know were pretty much everything remotely interactive freeze. No BSOD, no crasches, no reboot. Just a plain freeze and all you can do is to press and hold the powerbutton until the computer powers off.
+Apparently, these problems are caused by some bug or something in the Intel Turbo Memory Driver and the Intel Matrix Storage Manager in combination with some power-save feature in Windows Vista called “Windows Hybrid Hard Disk Power Savings Mode”. (Christ! Whatever happened to abrevations? I think i want those back. “ITMD and IMSM with WHDDPSM causes hickups”… no… wait.)
+
         </p>
     </div>
 </article>

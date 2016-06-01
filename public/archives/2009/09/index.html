@@ -159,7 +159,17 @@
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig
+            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+Here’s basically what happens:
+
+You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
+The SDK Service (i guess) tells GW1 that “You’re no longer the Primary Management Server for AGENTX”
+GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops talking to AGENTX.
+OpsMgr then tells GW2 to start accepting communication from AGENTX.
+OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
+
+Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+How do I get around this little feature then?
         </p>
     </div>
 </article>
@@ -186,7 +196,10 @@
     
 
         <p class="article-excerpt">
-            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedor
+            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedora, I’ll be back on that) and all without too much fuzz.
+First reboot gave me a “let’s FSCK!”. So I FSCK-ed and booted up to the desktop.
+Second reboot gave me a “let’s FSCK!”. And I did. Booted to the desktop.
+Third boot went smoothly, but all of a sudden all the icons decided to go AWOL. Rebooted again.
         </p>
     </div>
 </article>

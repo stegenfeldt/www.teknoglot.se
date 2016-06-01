@@ -161,7 +161,8 @@
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>
@@ -202,7 +203,9 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
         <p class="article-excerpt">
             What do you do when you cannot delete a file or folder on a windows server?
 Check the file permissions! And if that doesn’t help?
-Check the share permissions! Yes, if it is a shared folder. And if tha
+Check the share permissions! Yes, if it is a shared folder. And if that doesn’t help?
+Check the file ownership! Great! But then what?
+Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).Another possible reason could actually be that the path to the file or folder is too long. You won’t actually get an error telling you that the filepath exceeds the 255 characters Windows can handle but a simple “Acces Denied”.
         </p>
     </div>
 </article>

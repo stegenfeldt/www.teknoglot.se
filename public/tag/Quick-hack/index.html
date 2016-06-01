@@ -159,7 +159,18 @@
     
 
         <p class="article-excerpt">
-            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is
+            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.
+What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.
+Disclaimer!This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.
+What’s missing in the latest iteration is:
+
+A working Event-Handler to deal with asynchronous call-backs.
+Support for AT+MSGW (write to modem memory)
+Reusing messages in modem memory for multiple recipients.
+Various error- and exeption-handlers.
+Actually verifying that the modem is AT-capable.
+Querying the system for available modems and their ports.
+
         </p>
     </div>
 </article>

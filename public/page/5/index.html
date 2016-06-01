@@ -159,7 +159,10 @@
     
 
         <p class="article-excerpt">
-            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedor
+            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedora, I’ll be back on that) and all without too much fuzz.
+First reboot gave me a “let’s FSCK!”. So I FSCK-ed and booted up to the desktop.
+Second reboot gave me a “let’s FSCK!”. And I did. Booted to the desktop.
+Third boot went smoothly, but all of a sudden all the icons decided to go AWOL. Rebooted again.
         </p>
     </div>
 </article>
@@ -218,7 +221,10 @@ Some customers have notices the the system-logs on some Unix machines are comple
     
 
         <p class="article-excerpt">
-            BackgroundI get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again
+            BackgroundI get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.
+Don’t get me wrong now.SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.
+My ChecklistHere’s my list of questions you have to ask to find if SQL Express is the correct choice.
+1. Do your applications support SQL Express?If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.
         </p>
     </div>
 </article>
@@ -277,7 +283,15 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just h
+            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.
+Quick DetailsFile Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msiVersion:        6.0.6573.0Date Published: 4/28/2009Language:       EnglishDownload Size:  519 KB
+Feature Summary
+Monitor the NLB Node status.
+Based on the status of individual cluster nodes, determine the overall state of the cluster.
+Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.
+Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.
+Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.
+
         </p>
     </div>
 </article>
@@ -305,7 +319,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
 
         <p class="article-excerpt">
             Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI                  Version:        6.0.6587.0                  Date Published:        4/24/2009                  Language:        English                  Download Size:        502 KB          
+
+
         </p>
     </div>
 </article>
@@ -340,6 +356,7 @@ Quick Details              File Name:        Message Queuing System Center Opera
 SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
+
         </p>
     </div>
 </article>
@@ -440,7 +457,13 @@ Instead of blogging about mostly anything like
 
         <p class="article-excerpt">
             [updated, scroll down if you want to skip some nonsense]
-So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski
+So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
+I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.
+What I have come down to right now is doing the following:
+
+sudo apt-get install module-assistantThis will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
+
+
         </p>
     </div>
 </article>

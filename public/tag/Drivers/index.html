@@ -160,7 +160,13 @@
 
         <p class="article-excerpt">
             [updated, scroll down if you want to skip some nonsense]
-So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski
+So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
+I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.
+What I have come down to right now is doing the following:
+
+sudo apt-get install module-assistantThis will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
+
+
         </p>
     </div>
 </article>
@@ -200,7 +206,9 @@ So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and 
 
         <p class="article-excerpt">
             I recently got a nice new Lenovo ThinkPad T61 laptop at work to replace the old T42 I had earlier. Totally nice with 2,2GHz dual-core, Windows Vista and stuff.
-Now, there seems to be a problem with so
+Now, there seems to be a problem with some drivers since I get the back-to-the-90s kinda lockups. You know were pretty much everything remotely interactive freeze. No BSOD, no crasches, no reboot. Just a plain freeze and all you can do is to press and hold the powerbutton until the computer powers off.
+Apparently, these problems are caused by some bug or something in the Intel Turbo Memory Driver and the Intel Matrix Storage Manager in combination with some power-save feature in Windows Vista called “Windows Hybrid Hard Disk Power Savings Mode”. (Christ! Whatever happened to abrevations? I think i want those back. “ITMD and IMSM with WHDDPSM causes hickups”… no… wait.)
+
         </p>
     </div>
 </article>

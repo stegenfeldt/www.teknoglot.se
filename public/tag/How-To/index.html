@@ -161,6 +161,9 @@
         <p class="article-excerpt">
             I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2.
 Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.
+
+The cmdletFirst of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOMnoun and to list them all in the console you can execute the following command:
+[powershell]get-command SCOM[/powershell]
         </p>
     </div>
 </article>
@@ -232,7 +235,11 @@ Enjoy!
     
 
         <p class="article-excerpt">
-            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s
+            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
+PreparationsRead the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)
+I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
+# yum groupinstall "Development Tools"# yum install kernel-headers
+I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
         </p>
     </div>
 </article>
@@ -261,7 +268,8 @@ Enjoy!
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>
@@ -303,7 +311,9 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
 
         <p class="article-excerpt">
             Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:
-&lt;stdout&gt;Generating certificate with hostnam
+&lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;DataItem type="Microsoft.SSH.SSHCommandData" time="2009-08-05T11:15:01.5800358-04:00" sourceHealthServiceId="0EB1D6DA-202C-7FC5-3D46-BDBB9208547D"&gt;&lt;SSHCommandData&gt;&lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;/SSHCommandData&gt;&lt;/DataItem&gt;
+But first, a little background on the actual “problem”. To generate the certificate, the entropy needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the MS. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What we need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use PuTTY to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.
+Workaround1. Check you current entropycat /proc/sys/kernel/random/entropy_avail
         </p>
     </div>
 </article>
@@ -330,7 +340,22 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
     
 
         <p class="article-excerpt">
-            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin
+            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.
+In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.What to do!?
+Thanks to Raul Carcia’s blog post it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.Here’s what to do:
+
+Open the SQL Server Configuration Manager.
+In SQL Server Services, open the properties for the SQL Server instance you need access to.
+In the Advanced tab, find Startup Parameters.
+Add “;-m” to the end of that line.
+Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))
+Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)
+Execute /A/S ```    (use . for local default instance and .INSTANCE for local named instance)8. In the CLI, execute:  ```sql  EXEC sp_addsrvrolemember &apos;DOMAIN\yourusername&apos;, &apos;sysadmin&apos;;  GO
+
+Return to the SQL Server Configuration Manager and restore the Startup Parameters to it’s previous settings.
+
+Restart the SQL Server instance to allow users to get access to it again.
+
         </p>
     </div>
 </article>
@@ -389,7 +414,17 @@ Still not working? The one thing I forgot, or rather did not find in any of the 
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig
+            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+Here’s basically what happens:
+
+You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
+The SDK Service (i guess) tells GW1 that “You’re no longer the Primary Management Server for AGENTX”
+GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops talking to AGENTX.
+OpsMgr then tells GW2 to start accepting communication from AGENTX.
+OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
+
+Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+How do I get around this little feature then?
         </p>
     </div>
 </article>

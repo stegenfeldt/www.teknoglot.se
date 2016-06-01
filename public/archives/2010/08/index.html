@@ -159,7 +159,11 @@
     
 
         <p class="article-excerpt">
-            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s
+            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
+PreparationsRead the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)
+I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
+# yum groupinstall "Development Tools"# yum install kernel-headers
+I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
         </p>
     </div>
 </article>

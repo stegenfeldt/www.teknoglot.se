@@ -18,7 +18,11 @@
       <pubDate>Wed, 01 Jun 2016 19:03:35 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s b
+        &lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
+&lt;h2 id=&quot;The-reason-s&quot;&gt;&lt;a href=&quot;#The-reason-s&quot; class=&quot;headerlink&quot; title=&quot;The reason(s)&quot;&gt;&lt;/a&gt;The reason(s)&lt;/h2&gt;&lt;p&gt;Ok, so I’ve using &lt;a href=&quot;https://www.wordpress.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wordpress&lt;/a&gt; for quite a long time now and it’s been good. Mostly.&lt;br&gt;It’s a fairly solid platform and has a whole slew of feautures that work nicely.&lt;/p&gt;
+&lt;p&gt;Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with &lt;a href=&quot;https://en.wikipedia.org/wiki/Textile_(markup_language)&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;textile&lt;/a&gt; and&lt;br&gt;similar markup/writing/notation languages. For those unaware, textile is not unlike &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown&lt;/a&gt;.&lt;br&gt;Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.&lt;br&gt;Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.&lt;/p&gt;
+&lt;p&gt;Before that I used Movable Type, and prior to that either Dreamweaver or… well, notepad or vim.&lt;/p&gt;
+
       
       </description>
       
@@ -55,7 +59,9 @@
       <description>
       
         &lt;p&gt;Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.&lt;/p&gt;
-&lt;p&gt;The e
+&lt;p&gt;The event is the generic “Health Service Script” with id 4001.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Computer Name = &amp;quot;REDACTED.redacted.com&amp;quot; WMI = &amp;quot;ComputerManagement11&amp;quot; Service Name = &amp;quot;MSSQLSERVER&amp;quot; SQL Instance Name = &amp;quot;MSSQLSERVER&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Error occured during CPU Usage for SQL Instances data source executing.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Computer: REDACTED&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Reason: Cannot add type. Compilation errors occurred.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Position:256&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Offset:21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Detailed error output: Cannot add type. Compilation errors occurred.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(0) : No source files specified&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(1) : using System;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(0) : Source file &amp;quot;C:\Windows\TEMP\njdqtgfb.0.cs&amp;quot; could not be found&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(1) : using System;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
       
       </description>
       
@@ -77,7 +83,10 @@
       <description>
       
         &lt;p&gt;&lt;em&gt;Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -&lt;br&gt;Operations Manager&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Preparation&quot;&gt;&lt;a href
+&lt;h2 id=&quot;Preparation&quot;&gt;&lt;a href=&quot;#Preparation&quot; class=&quot;headerlink&quot; title=&quot;Preparation&quot;&gt;&lt;/a&gt;Preparation&lt;/h2&gt;&lt;p&gt;The usual routine applies. Check the &lt;a href=&quot;http://support.microsoft.com/kb/2992020&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KB&lt;/a&gt; for instructions and take not of&lt;br&gt;known issues. Check if &lt;a href=&quot;http://blogs.technet.com/b/kevinholman/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kevin Holman&lt;/a&gt; has written something about it. As this&lt;br&gt;is an update &lt;em&gt;roll up&lt;/em&gt;, I pre-emptively expect that &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gotchas in UR3&lt;/a&gt; may&lt;br&gt;apply. Remember to open the update catalog in IE as the downloader is not&lt;br&gt;working in other browsers.&lt;/p&gt;
+&lt;p&gt;Download, unpack, toss what languages that does not apply to your organization.&lt;/p&gt;
+&lt;p&gt;It is advised to disable any mail-generating alert subscriptions during the&lt;br&gt;upgrade process to avoid unnecessary spammage.&lt;/p&gt;
+&lt;h2 id=&quot;Issues-So-Far&quot;&gt;&lt;a href=&quot;#Issues-So-Far&quot; class=&quot;headerlink&quot; title=&quot;Issues - So Far&quot;&gt;&lt;/a&gt;Issues - So Far&lt;/h2&gt;
       
       </description>
       
@@ -128,8 +137,11 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
       <pubDate>Tue, 09 Sep 2014 14:38:36 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Story-time&quot;&gt;&lt;a href=&quot;#Story-time&quot; class=&quot;headerlink&quot; title=&quot;Story-time&quot;&gt;&lt;/a&gt;Story-time&lt;/h1&gt;&lt;p&gt;I saw &lt;a href=&quot;http://www.squaredup.com/&quot; title=&quot;SquaredUp&quot;&gt;SquaredUp&lt;/a&gt; some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some &lt;abbr title=&quot;Database&quot;&gt;DB&lt;/abbr&gt;-queries. I kind of liked the look of their product though and have kept an eye on them now and then.&lt;br&gt;Fast-forward to may 21st this year and the &lt;a href=&quot;http://www.squaredup.com/blog/proudly-announcing-squared-v18&quot; title=&quot;Proudly Announcing v1.8&quot;&gt;release of version 1.8&lt;/a&gt; and a whole slew of &lt;a href=&quot;http://www.squaredup.com/blog/squared-v18-new-features&quot; title=&quot;New Features in v1.8&quot;&gt;nifty little features&lt;/a&gt;. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… &lt;em&gt;other products&lt;/em&gt; for. That, coupled with some new videos on their &lt;a href=&quot;https://www.youtube.com/user/SquaredUpLtd&quot; title=&quot;SquaredUp YouTube Channel&quot;&gt;Youtube-channel&lt;/a&gt;, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.&lt;/p&gt;
-&lt;p&gt;One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – &lt;abbr title=&quot;Powershell Deployment Toolkit&quot;&gt;PDT&lt;/abbr&gt; is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.&lt;br&gt;
+        &lt;h1 id=&quot;Story-time&quot;&gt;&lt;a href=&quot;#Story-time&quot; class=&quot;headerlink&quot; title=&quot;Story-time&quot;&gt;&lt;/a&gt;Story-time&lt;/h1&gt;&lt;p&gt;I saw &lt;a href=&quot;http://www.squaredup.com/&quot; title=&quot;SquaredUp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SquaredUp&lt;/a&gt; some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some &lt;abbr title=&quot;Database&quot;&gt;DB&lt;/abbr&gt;-queries. I kind of liked the look of their product though and have kept an eye on them now and then.&lt;br&gt;Fast-forward to may 21st this year and the &lt;a href=&quot;http://www.squaredup.com/blog/proudly-announcing-squared-v18&quot; title=&quot;Proudly Announcing v1.8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;release of version 1.8&lt;/a&gt; and a whole slew of &lt;a href=&quot;http://www.squaredup.com/blog/squared-v18-new-features&quot; title=&quot;New Features in v1.8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nifty little features&lt;/a&gt;. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… &lt;em&gt;other products&lt;/em&gt; for. That, coupled with some new videos on their &lt;a href=&quot;https://www.youtube.com/user/SquaredUpLtd&quot; title=&quot;SquaredUp YouTube Channel&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Youtube-channel&lt;/a&gt;, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.&lt;/p&gt;
+&lt;p&gt;One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – &lt;abbr title=&quot;Powershell Deployment Toolkit&quot;&gt;PDT&lt;/abbr&gt; is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;The-Installation&quot;&gt;&lt;a href=&quot;#The-Installation&quot; class=&quot;headerlink&quot; title=&quot;The Installation&quot;&gt;&lt;/a&gt;The Installation&lt;/h1&gt;&lt;p&gt;First, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.&lt;br&gt;&lt;img src=&quot;http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png&quot; alt=&quot;SquaredUp - Installation Package&quot; title=&quot;SquaredUp - Installation Package&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Doubleclicked the installation packaged and it now tells me it will install a few pre-requisites and configure the website for me. Next!&lt;/p&gt;
+
       
       </description>
       
@@ -166,19 +178,10 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
       <description>
       
         &lt;p&gt;&lt;em&gt;Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Preparation&quot;&gt;&lt;a href=&quot;#Preparation&quot; class=&quot;headerlink&quot; title=&quot;Preparation&quot;&gt;&lt;/a&gt;Preparation&lt;/h2&gt;&lt;p&gt;Usual routine, check the &lt;a href=&quot;http://support.microsoft.com/kb/2965445&quot; title=&quot;Update Roll-up 3 for System Center 2012 R2 Operations Manager&quot;&gt;KB&lt;/a&gt; for instructions and known issues. Double-check with &lt;a href=&quot;http://blogs.technet.com/b/kevinholman/archive/2014/08/07/ur3-for-scom-2012-r2-step-by-step.aspx&quot; title=&quot;UR3 for SCOM 2012 R2 – Step by Step&quot;&gt;Holman’s&lt;/a&gt; blog and take note of any irregularities.&lt;br&gt;&lt;a href=&quot;http://catalog.update.microsoft.com/v7/site/Search.aspx?q=2965445&quot; title=&quot;Hell-spawn&quot;&gt;Download&lt;/a&gt;, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.&lt;/p&gt;
+&lt;h2 id=&quot;Preparation&quot;&gt;&lt;a href=&quot;#Preparation&quot; class=&quot;headerlink&quot; title=&quot;Preparation&quot;&gt;&lt;/a&gt;Preparation&lt;/h2&gt;&lt;p&gt;Usual routine, check the &lt;a href=&quot;http://support.microsoft.com/kb/2965445&quot; title=&quot;Update Roll-up 3 for System Center 2012 R2 Operations Manager&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KB&lt;/a&gt; for instructions and known issues. Double-check with &lt;a href=&quot;http://blogs.technet.com/b/kevinholman/archive/2014/08/07/ur3-for-scom-2012-r2-step-by-step.aspx&quot; title=&quot;UR3 for SCOM 2012 R2 – Step by Step&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Holman’s&lt;/a&gt; blog and take note of any irregularities.&lt;br&gt;&lt;a href=&quot;http://catalog.update.microsoft.com/v7/site/Search.aspx?q=2965445&quot; title=&quot;Hell-spawn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Download&lt;/a&gt;, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.&lt;/p&gt;
 &lt;p&gt;Notify affected parts of the organisation, I’ve had the benefit to work with good release managers at all clients so far, so no biggie. Then try to close as many consoles as possible to avoid any blocks in database.&lt;/p&gt;
 &lt;p&gt;Make sure you have the credentials for the Data Access service account at hand.&lt;/p&gt;
-&lt;h3 id=&quot;Issues-So-Far&quot;&gt;&lt;a href=&quot;#Issues-So-Far&quot; class=&quot;headerlink&quot; title=&quot;Issues - So Far&quot;&gt;&lt;/a&gt;Issues - So Far&lt;/h3&gt;&lt;p&gt;&lt;em&gt;(updated 2014-09-02)&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A few dashboards (the 2012 versions) went blank. Self-healed after some aggregation job over night. From what I’ve noticed, only the SLA Dashboards are affected but never all of them.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Agents behind daisy-chained Gateways is not identified as in need of an update. “Repairing” them from the Console is one work-around that seems to work consistently.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A few agents that was updated using Windows Update did not report as updated. Repair fixed that nuisance.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Had to flush the cache on a few Gateways to avoid heartbeat failures from their agents. Only daisy-chained ones if I recall correctly.&lt;/p&gt;
+&lt;h3 id=&quot;Issues-So-Far&quot;&gt;&lt;a href=&quot;#Issues-So-Far&quot; class=&quot;headerlink&quot; title=&quot;Issues - So Far&quot;&gt;&lt;/a&gt;Issues - So Far&lt;/h3&gt;
       
       </description>
       
@@ -231,19 +234,11 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
       <pubDate>Mon, 25 Aug 2014 11:37:36 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;I have, for a time, been using &lt;a href=&quot;http://www.cloudflare.com&quot; title=&quot;CloudFlare Website&quot;&gt;CloudFlare&lt;/a&gt; for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using &lt;a href=&quot;http://www.dyn.com&quot; title=&quot;Dyn DNS&quot;&gt;DynDNS&lt;/a&gt; to provide name resolution to my home network/lab. Browsing around the &lt;a href=&quot;https://www.cloudflare.com/docs/client-api.html&quot; title=&quot;CloudFlare Client Api&quot;&gt;CloudFlare JSON API&lt;/a&gt; I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by &lt;a href=&quot;http://www.mikrotik.com/&quot; title=&quot;Mikrotik Website&quot;&gt;Mikrotik’s&lt;/a&gt; routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.&lt;/p&gt;
+        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;I have, for a time, been using &lt;a href=&quot;http://www.cloudflare.com&quot; title=&quot;CloudFlare Website&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CloudFlare&lt;/a&gt; for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using &lt;a href=&quot;http://www.dyn.com&quot; title=&quot;Dyn DNS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DynDNS&lt;/a&gt; to provide name resolution to my home network/lab. Browsing around the &lt;a href=&quot;https://www.cloudflare.com/docs/client-api.html&quot; title=&quot;CloudFlare Client Api&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CloudFlare JSON API&lt;/a&gt; I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by &lt;a href=&quot;http://www.mikrotik.com/&quot; title=&quot;Mikrotik Website&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mikrotik’s&lt;/a&gt; routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.&lt;/p&gt;
 &lt;h1 id=&quot;Attribution&quot;&gt;&lt;a href=&quot;#Attribution&quot; class=&quot;headerlink&quot; title=&quot;Attribution&quot;&gt;&lt;/a&gt;Attribution&lt;/h1&gt;&lt;p&gt;My current script is a modified version of a script developed by Konstantin Antselovich.&lt;/p&gt;
-&lt;p&gt;Original script: &lt;a href=&quot;http://konstant1n.livejournal.com/9759.html&quot; title=&quot;Random Journal&quot;&gt;http://konstant1n.livejournal.com/9759.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Original Author website: &lt;a href=&quot;http://konstantin.antselovich.com/&quot; title=&quot;Konstantin Antselovich&quot;&gt;http://konstantin.antselovich.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Thanks!&lt;/p&gt;
-&lt;h1 id=&quot;How-you-do-it&quot;&gt;&lt;a href=&quot;#How-you-do-it&quot; class=&quot;headerlink&quot; title=&quot;How you do it&quot;&gt;&lt;/a&gt;How you do it&lt;/h1&gt;&lt;h2 id=&quot;What-you-need&quot;&gt;&lt;a href=&quot;#What-you-need&quot; class=&quot;headerlink&quot; title=&quot;What you need&quot;&gt;&lt;/a&gt;What you need&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;RouterOS v6+ for HTTPS support&lt;/li&gt;
-&lt;li&gt;Cloudflare API key, aka “Token”, found at the &lt;a href=&quot;https://www.cloudflare.com/my-account&quot; title=&quot;CloudFlare Account Page&quot;&gt;account page&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Cloudflare DNS Zone name&lt;/li&gt;
-&lt;li&gt;Cloudflare Record Id (more on that later)&lt;/li&gt;
-&lt;li&gt;Cloudflare subdomain name&lt;/li&gt;
-&lt;li&gt;Name of the external router interface&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Original script: &lt;a href=&quot;http://konstant1n.livejournal.com/9759.html&quot; title=&quot;Random Journal&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://konstant1n.livejournal.com/9759.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Original Author website: &lt;a href=&quot;http://konstantin.antselovich.com/&quot; title=&quot;Konstantin Antselovich&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://konstantin.antselovich.com/&lt;/a&gt;&lt;/p&gt;
+
       
       </description>
       
@@ -340,9 +335,12 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
       <pubDate>Thu, 28 Jun 2012 12:28:36 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Now we’re gonna make things even faster! In the &lt;a href=&quot;http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/&quot; title=&quot;OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]&quot;&gt;previous post&lt;/a&gt; on the subject of &lt;a href=&quot;http://www.teknoglot.se/series/om2012-failover-mgmt/&quot;&gt;Agent Fail-over in Operations Manager 2012&lt;/a&gt; we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.&lt;/p&gt;
+        &lt;p&gt;Now we’re gonna make things even faster! In the &lt;a href=&quot;http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/&quot; title=&quot;OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;previous post&lt;/a&gt; on the subject of &lt;a href=&quot;http://www.teknoglot.se/series/om2012-failover-mgmt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Agent Fail-over in Operations Manager 2012&lt;/a&gt; we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.&lt;/p&gt;
 &lt;p&gt;As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.&lt;/p&gt;
 &lt;p&gt;We will pretty quickly go “advanced” this time, so buckle up. ;)&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.&lt;/p&gt;
+
       
       </description>
       
@@ -403,8 +401,11 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Thu, 21 Jun 2012 08:58:13 GMT</pubDate>
       <description>
       
-        &lt;p&gt;In the last post, &lt;a href=&quot;http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/&quot; title=&quot;OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics [#opsmgr, #powershell]&quot;&gt;OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics&lt;/a&gt;, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.&lt;/p&gt;
+        &lt;p&gt;In the last post, &lt;a href=&quot;http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/&quot; title=&quot;OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics [#opsmgr, #powershell]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics&lt;/a&gt;, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.&lt;/p&gt;
 &lt;p&gt;To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Inputs&quot;&gt;&lt;a href=&quot;#Inputs&quot; class=&quot;headerlink&quot; title=&quot;Inputs&quot;&gt;&lt;/a&gt;Inputs&lt;/h3&gt;&lt;p&gt;To use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.&lt;/p&gt;
+&lt;p&gt;[powershell]&lt;/p&gt;
       
       </description>
       
@@ -495,8 +496,11 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Wed, 30 May 2012 12:12:37 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I have &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/&quot; title=&quot;Replace/Change a Gateway Server&quot;&gt;previously&lt;/a&gt; posted a few &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/&quot; title=&quot;Change Gateway Powershell Script&quot;&gt;scripts&lt;/a&gt; on managing and &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/loadbalancing-ps-script-opsmgr/&quot; title=&quot;“Load Balancing” Powershell Script for Operations Manager&quot;&gt;configuring fail-over&lt;/a&gt; management servers on gateways and agents in System Center Operations Manager 2007 R2.&lt;/p&gt;
+        &lt;p&gt;I have &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/&quot; title=&quot;Replace/Change a Gateway Server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;previously&lt;/a&gt; posted a few &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/&quot; title=&quot;Change Gateway Powershell Script&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;scripts&lt;/a&gt; on managing and &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/loadbalancing-ps-script-opsmgr/&quot; title=&quot;“Load Balancing” Powershell Script for Operations Manager&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;configuring fail-over&lt;/a&gt; management servers on gateways and agents in System Center Operations Manager 2007 R2.&lt;/p&gt;
 &lt;p&gt;Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;The-cmdlet&quot;&gt;&lt;a href=&quot;#The-cmdlet&quot; class=&quot;headerlink&quot; title=&quot;The cmdlet&quot;&gt;&lt;/a&gt;The cmdlet&lt;/h3&gt;&lt;p&gt;First of all, the cmdlets of OpsMgr powershell have all got new names looking like &lt;em&gt;Verb&lt;/em&gt;-SCOM&lt;em&gt;noun&lt;/em&gt; and to list them all in the console you can execute the following command:&lt;/p&gt;
+&lt;p&gt;[powershell]get-command &lt;em&gt;SCOM&lt;/em&gt;[/powershell]&lt;/p&gt;
       
       </description>
       
@@ -558,7 +562,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
         &lt;h1 id=&quot;Prelude&quot;&gt;&lt;a href=&quot;#Prelude&quot; class=&quot;headerlink&quot; title=&quot;Prelude&quot;&gt;&lt;/a&gt;Prelude&lt;/h1&gt;&lt;p&gt;Now that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fully Highly Available SCOM-environment both complex and frustrating to support and with little gain at that. With that gone and the SDK Service, or Data Access Service, thriving on all the Management Servers HA suddenly became pretty simple. All you have to do in SCOM2012 to make sure your management groups keep on kicking is to have at-least two Management Servers and your databases clustered.&lt;/p&gt;
 &lt;p&gt;This new distributed architecture does not only give easy HA, it also makes it possible to connect to the SDK-service—be it using the Operations Console or powershell to name two options—on &lt;em&gt;any&lt;/em&gt; Management Server. This, in turn, provides for a completely new level of scalability. Choked on sessions? Deploy a new Management Server!&lt;/p&gt;
 &lt;p&gt;Anyway… given all this scalability and HA, would it not be nice if you could load-balance all these SDK-sessions you will be running from System Center Virtual Machine Manager, System Center Service Manager, System Center Orchestrator, regular scheduled powershell scripts and what-not?&lt;/p&gt;
-&lt;p&gt;Of course it would! And you can! The simple solution is to use the built-in Network Load Balancer (NLB for short) feature in Windows Server and that’s what we’re going to discuss in this post.&lt;br&gt;Before we go, I’d like to point to a &lt;a href=&quot;http://systemcentertech.com/2012/02/07/load-balance-scom-2012-operations-console-connections/&quot;&gt;great article&lt;/a&gt; written by &lt;a href=&quot;http://systemcentertech.com/&quot;&gt;Justin Cook&lt;/a&gt; that is covering most bases but in a less for-dummies way. So, yeah… I suppose this is the for-dummies version then. ;)&lt;/p&gt;
+&lt;p&gt;Of course it would! And you can! The simple solution is to use the built-in Network Load Balancer (NLB for short) feature in Windows Server and that’s what we’re going to discuss in this post.&lt;br&gt;Before we go, I’d like to point to a &lt;a href=&quot;http://systemcentertech.com/2012/02/07/load-balance-scom-2012-operations-console-connections/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;great article&lt;/a&gt; written by &lt;a href=&quot;http://systemcentertech.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Justin Cook&lt;/a&gt; that is covering most bases but in a less for-dummies way. So, yeah… I suppose this is the for-dummies version then. ;)&lt;/p&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
       
       </description>
@@ -678,7 +682,18 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Tue, 15 May 2012 13:14:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of y
+        &lt;p&gt;Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.&lt;/p&gt;
+&lt;p&gt;What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.&lt;/p&gt;
+&lt;h1 id=&quot;Disclaimer&quot;&gt;&lt;a href=&quot;#Disclaimer&quot; class=&quot;headerlink&quot; title=&quot;Disclaimer!&quot;&gt;&lt;/a&gt;Disclaimer!&lt;/h1&gt;&lt;p&gt;This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.&lt;/p&gt;
+&lt;p&gt;What’s missing in the latest iteration is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A working Event-Handler to deal with asynchronous call-backs.&lt;/li&gt;
+&lt;li&gt;Support for AT+MSGW (write to modem memory)&lt;/li&gt;
+&lt;li&gt;Reusing messages in modem memory for multiple recipients.&lt;/li&gt;
+&lt;li&gt;Various error- and exeption-handlers.&lt;/li&gt;
+&lt;li&gt;Actually verifying that the modem is AT-capable.&lt;/li&gt;
+&lt;li&gt;Querying the system for available modems and their ports.&lt;/li&gt;
+&lt;/ul&gt;
       
       </description>
       
@@ -720,6 +735,8 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
         &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;Having visited a few conferences in the last years I have spotted a trend I didn’t think I would see in the IT-Pro sphere. You could probably call me naïve for that but logically we should not encourage this trend. This is my appeal to all exhibitors of future conferences to re-evaluate the concept of booth-babes.&lt;/p&gt;
 &lt;p&gt;I will not go into the genus-political part of this discussion as of now–others are more eloquent and fit to handle that–but rather some of the more pragmatic sides to ditch the BB (short for Booth-Babe) and how that would gain us visitors as well as the exhibitors. I will also keep a pretty frank, and perhaps impolite, tone in this rant of mine.&lt;/p&gt;
 &lt;p&gt;So, here’s my top reasons, in no particular order, to give up the BBs.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Reason-1-BBs-is-disrupting-the-purpose-of-the-exhibition&quot;&gt;&lt;a href=&quot;#Reason-1-BBs-is-disrupting-the-purpose-of-the-exhibition&quot; class=&quot;headerlink&quot; title=&quot;Reason #1 - BBs is disrupting the purpose of the exhibition&quot;&gt;&lt;/a&gt;Reason #1 - BBs is disrupting the purpose of the exhibition&lt;/h2&gt;
       
       </description>
       
@@ -748,7 +765,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Mon, 09 Apr 2012 20:04:48 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;…and-why-you-should-not-use-it&quot;&gt;&lt;a href=&quot;#…and-why-you-should-not-use-it&quot; class=&quot;headerlink&quot; title=&quot;…and why you should not use it&quot;&gt;
+        &lt;h1 id=&quot;…and-why-you-should-not-use-it&quot;&gt;&lt;a href=&quot;#…and-why-you-should-not-use-it&quot; class=&quot;headerlink&quot; title=&quot;…and why you should not use it&quot;&gt;&lt;/a&gt;…and why you should not use it&lt;/h1&gt;&lt;h2 id=&quot;A-Disclaimer&quot;&gt;&lt;a href=&quot;#A-Disclaimer&quot; class=&quot;headerlink&quot; title=&quot;A Disclaimer&quot;&gt;&lt;/a&gt;A Disclaimer&lt;/h2&gt;&lt;p&gt;I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.&lt;/p&gt;
+&lt;h2 id=&quot;The-Good-News&quot;&gt;&lt;a href=&quot;#The-Good-News&quot; class=&quot;headerlink&quot; title=&quot;The Good News&quot;&gt;&lt;/a&gt;The Good News&lt;/h2&gt;&lt;p&gt;Yes, you can use parameter replacement in you AlertName.&lt;/p&gt;
+&lt;p&gt;With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like &lt;em&gt;$Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$&lt;/em&gt; into your alert description.&lt;/p&gt;
+&lt;p&gt;In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.&lt;br&gt;Of course I could not refrain from copy-pasting a &lt;em&gt;$Data/Context…$&lt;/em&gt; into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.&lt;/p&gt;
       
       </description>
       
@@ -831,6 +851,9 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
         &lt;p&gt;Here’s a little something-something for the wicked.&lt;/p&gt;
 &lt;p&gt;Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.&lt;/p&gt;
 &lt;p&gt;Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Although you do configure your forwarders using Operations Manager, removing the management group you were running ACS in does not mean the agents will shut down and disable the AdtAgent service or stop trying to forward audit events to your collector. Now, selecting 10 agents at the time and running the “Disable Audit Collection” task–in case you did not know, there’s a limitation on how many agents you can run a task on in the Operations Console–is not my idea of a jolly good day and since Powershell is a bucket of joy in comparison; here’s a script for you all!&lt;/p&gt;
+
       
       </description>
       
@@ -884,7 +907,18 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Fri, 29 Apr 2011 09:35:47 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;For quite some time now I’ve had this 
+        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;For quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those &lt;em&gt;“do you think we could monitor our …-system too?”&lt;/em&gt; questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.&lt;/p&gt;
+&lt;h1 id=&quot;Purpose&quot;&gt;&lt;a href=&quot;#Purpose&quot; class=&quot;headerlink&quot; title=&quot;Purpose&quot;&gt;&lt;/a&gt;Purpose&lt;/h1&gt;&lt;p&gt;My idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.&lt;/p&gt;
+&lt;h1 id=&quot;The-TG-WinAutoSvc-Management-Pack&quot;&gt;&lt;a href=&quot;#The-TG-WinAutoSvc-Management-Pack&quot; class=&quot;headerlink&quot; title=&quot;The TG WinAutoSvc Management Pack&quot;&gt;&lt;/a&gt;The TG WinAutoSvc Management Pack&lt;/h1&gt;&lt;p&gt;To give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You will get an instance of the service classes for each and every service.&lt;/li&gt;
+&lt;li&gt;It uses different classes for Own Process services and Shared Process services (svchost for example).&lt;/li&gt;
+&lt;li&gt;Every service have a health state (you can use them in distributed applications).&lt;/li&gt;
+&lt;li&gt;The service state monitors are inherited from their base classes, no coding neccesary.&lt;/li&gt;
+&lt;li&gt;There is only one discovery script for all kinds of windows services.&lt;/li&gt;
+&lt;li&gt;Extending the discovery to include different kinds of windows services, like kernel processes, is a matter of filtering.&lt;/li&gt;
+&lt;li&gt;It is Open Source and licensed under the &lt;a href=&quot;http://tg-winautosvc.googlecode.com/svn/trunk/LICENSE.TXT&quot; title=&quot;Eclipse Public License v1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Eclipse Public License v1&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
       
       </description>
       
@@ -982,6 +1016,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Still fiddling with the themes thought.&lt;/p&gt;
 &lt;p&gt;Sorry for the inconvenience!&lt;/p&gt;
 &lt;p&gt;ps. Post from the old site is a jump ahead.&lt;/p&gt;
+
       
       </description>
       
@@ -1008,7 +1043,15 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Thu, 02 Sep 2010 20:28:07 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned ou
+        &lt;p&gt;I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.&lt;/p&gt;
+&lt;p&gt;To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/66140/Default.aspx&quot; title=&quot;SNMP Setup and Simple Custom SNMP Discovery&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SNMP Setup and Simple Custom SNMP Discovery&lt;/a&gt; - Pretty much the basics&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/58919/Default.aspx&quot; title=&quot;SNMP Management Pack Example: NetApp Management Pack for SCOM 2007 R2 part 4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SNMP Management Pack Example: NetApp Management Pack&lt;/a&gt; - Part 4 actually, but has the links to the other parts&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.systemcentercentral.com/Details/tabid/147/IndexID/58815/Default.aspx&quot; title=&quot;Creating SNMP Probe Based Monitors&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Creating SNMP Probe Based Monitors&lt;/a&gt; - No custom discovery, but a good and simple guide to SNMP Probes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.&lt;/p&gt;
+&lt;h1 id=&quot;Let’s-get-to-it&quot;&gt;&lt;a href=&quot;#Let’s-get-to-it&quot; class=&quot;headerlink&quot; title=&quot;Let’s get to it&quot;&gt;&lt;/a&gt;Let’s get to it&lt;/h1&gt;&lt;p&gt;When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.&lt;br&gt;I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.&lt;br&gt;The only error I got this time was the following:&lt;/p&gt;
       
       </description>
       
@@ -1043,7 +1086,11 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Tue, 31 Aug 2010 10:06:04 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out 
+        &lt;p&gt;Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.&lt;/p&gt;
+&lt;h1 id=&quot;Preparations&quot;&gt;&lt;a href=&quot;#Preparations&quot; class=&quot;headerlink&quot; title=&quot;Preparations&quot;&gt;&lt;/a&gt;Preparations&lt;/h1&gt;&lt;p&gt;Read the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)&lt;/p&gt;
+&lt;p&gt;I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# yum groupinstall &quot;Development Tools&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# yum install kernel-headers&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.&lt;/p&gt;
       
       </description>
       
@@ -1091,7 +1138,15 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Tue, 06 Apr 2010 10:09:57 GMT</pubDate>
       <description>
       
-        &lt;p&gt;After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally 
+        &lt;p&gt;After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.&lt;/p&gt;
+&lt;p&gt;Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.&lt;/p&gt;
+&lt;h3 id=&quot;Message-Queuing-4-0-Management-Pack-for-Operations-Manager-2007&quot;&gt;&lt;a href=&quot;#Message-Queuing-4-0-Management-Pack-for-Operations-Manager-2007&quot; class=&quot;headerlink&quot; title=&quot;Message Queuing 4.0 Management Pack for Operations Manager 2007&quot;&gt;&lt;/a&gt;Message Queuing 4.0 Management Pack for Operations Manager 2007&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; **Quick Details**
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Version: 6.0.6700.83&lt;/p&gt;
+&lt;p&gt;Date Published: 4/5/2010&lt;/p&gt;
+&lt;p&gt;Language: English  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Download here: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;amp;displaylang=en&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;amp;displaylang=en&lt;/a&gt;&lt;/p&gt;
       
       </description>
       
@@ -1123,7 +1178,11 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Wed, 31 Mar 2010 13:27:08 GMT</pubDate>
       <description>
       
-        &lt;p&gt;This script has pretty much already been covered in my previous post about &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a
+        &lt;p&gt;This script has pretty much already been covered in my previous post about &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Changing or Replacing an Operations Manager Gateway Server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This time I’ve basically put parameter support in it to make it easier to use.&lt;/p&gt;
+&lt;p&gt;Here’s the script anyway.&lt;/p&gt;
+&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Param&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;$NewGW&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;= Get-ManagementServer | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.Name &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt; = Get-ManagementServer | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.Name &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$NewGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; = Get-Agent | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.PrimaryManagementServerName &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; = &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;Moving &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt;.count + &lt;span class=&quot;string&quot;&gt;&quot; agents from &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;.Name + &lt;span class=&quot;string&quot;&gt;&quot; to &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt;.Name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Start-Sleep&lt;/span&gt; -m &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Set-ManagementServer -AgentManagedComputer: &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; -PrimaryManagementServer: &lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt; -FailoverServer: &lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
       
       </description>
       
@@ -1147,7 +1206,9 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <description>
       
         &lt;p&gt;Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?&lt;/p&gt;
-&lt;p&gt;&lt;a href
+&lt;p&gt;&lt;a href=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2010/03/image.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2010/03/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.&lt;/p&gt;
+&lt;p&gt;To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.&lt;/p&gt;
       
       </description>
       
@@ -1177,7 +1238,19 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <description>
       
         &lt;p&gt;Microsoft has released an update to the MSMQ (version 3) management pack.&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;System Center Pack for: Message Queuing 3.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Version:      6.0.6615.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Released on:  12/14/2009&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Message Queuing (also known as MSMQ) is a server application that enables applications to communicate across heterogeneous networks and systems that may be temporarily offline or otherwise inaccessible. Instead of an application communicating with a service on another computer, it sends its information to Message Queuing, which sends the information to a Message Queuing service on the target computer where it is made available to the other application. Message Queuing provides guaranteed delivery, efficient routing, security, and priority based messaging.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.&lt;/p&gt;
+&lt;p&gt;The Message Queuing Management Pack supports the following platforms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2003&lt;/li&gt;
+&lt;li&gt;Windows XP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The Message Queuing Management Pack also supports monitoring clustered MSMQ components&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Emphasis by me.&lt;/p&gt;
+
       
       </description>
       
@@ -1218,7 +1291,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Wed, 02 Dec 2009 11:37:08 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Error-Description&quot;&gt;&lt;a href=&quot;#Error-Description&quot; class=&quot;headerlink&quot; title=&quot;Error Description&quot;&gt;&lt;/a&gt;Error Description&lt;/h1&gt;&lt;p&gt;Here’s a l
+        &lt;h1 id=&quot;Error-Description&quot;&gt;&lt;a href=&quot;#Error-Description&quot; class=&quot;headerlink&quot; title=&quot;Error Description&quot;&gt;&lt;/a&gt;Error Description&lt;/h1&gt;&lt;p&gt;Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stdout&lt;/span&gt;&amp;gt;&lt;/span&gt;Generating certificate with hostname=&quot;COMPUTERNAME&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;stdout&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stderr&lt;/span&gt;&amp;gt;&lt;/span&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;stderr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;returnCode&lt;/span&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;returnCode&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;DataItem&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.SSH.SSHCommandData&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;time&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;2009-08-05T11:15:01.5800358-04:00&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;sourceHealthServiceId&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0EB1D6DA-202C-7FC5-3D46-BDBB9208547D&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;SSHCommandData&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stdout&lt;/span&gt;&amp;gt;&lt;/span&gt;Generating certificate with hostname=&quot;COMPUTERNAME&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;stdout&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stderr&lt;/span&gt;&amp;gt;&lt;/span&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;stderr&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;returnCode&lt;/span&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;returnCode&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;SSHCommandData&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;DataItem&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;But first, a little background on the actual “problem”. To generate the certificate, the &lt;em&gt;entropy&lt;/em&gt; needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the &lt;acronym title=&quot;Management Server&quot;&gt;MS&lt;/acronym&gt;. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What &lt;em&gt;we&lt;/em&gt; need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use &lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PuTTY&lt;/a&gt; to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.&lt;/p&gt;
+&lt;h1 id=&quot;Workaround&quot;&gt;&lt;a href=&quot;#Workaround&quot; class=&quot;headerlink&quot; title=&quot;Workaround&quot;&gt;&lt;/a&gt;Workaround&lt;/h1&gt;&lt;h2 id=&quot;1-Check-you-current-entropy&quot;&gt;&lt;a href=&quot;#1-Check-you-current-entropy&quot; class=&quot;headerlink&quot; title=&quot;1. Check you current entropy&quot;&gt;&lt;/a&gt;1. Check you current entropy&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /proc/sys/kernel/random/entropy_avail&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
       
       </description>
       
@@ -1255,7 +1331,22 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Thu, 19 Nov 2009 13:08:10 GMT</pubDate>
       <description>
       
-        &lt;p&gt;In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one s
+        &lt;p&gt;In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.&lt;/p&gt;
+&lt;p&gt;In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.&lt;br&gt;What to do!?&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Raul Carcia’s blog post&lt;/a&gt; it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.&lt;br&gt;Here’s what to do:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the &lt;em&gt;SQL Server Configuration Manager.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;In &lt;em&gt;SQL Server Services&lt;/em&gt;, open the properties for the SQL Server instance you need access to.&lt;/li&gt;
+&lt;li&gt;In the &lt;em&gt;Advanced&lt;/em&gt; tab, find &lt;em&gt;Startup Parameters&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Add “;-m” to the end of that line.&lt;/li&gt;
+&lt;li&gt;Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))&lt;/li&gt;
+&lt;li&gt;Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn&lt;br&gt;&lt;span style=&quot;font-size: xx-small;&quot;&gt;(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Execute &lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;/A&lt;/span&gt;&lt;a href=&quot;/E&quot;&gt;/S &lt;instance&gt;```  &lt;/instance&gt;&lt;/a&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;  (use . for local default instance and .INSTANCE for local named instance)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8. In the CLI, execute:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ```sql&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  EXEC sp_addsrvrolemember &amp;apos;DOMAIN\yourusername&amp;apos;, &amp;apos;sysadmin&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  GO&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Return to the &lt;em&gt;SQL Server Configuration Manager&lt;/em&gt; and restore the &lt;em&gt;Startup Parameters&lt;/em&gt; to it’s previous settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Restart the SQL Server instance to allow users to get access to it again.&lt;/li&gt;
+&lt;/ol&gt;
       
       </description>
       
@@ -1333,7 +1424,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <description>
       
         &lt;p&gt;What do you do when you cannot delete a file or folder on a windows server?&lt;/p&gt;
-&lt;p&gt;Check the file permissions! And if that doesn’t help?&lt;
+&lt;p&gt;Check the file permissions! And if that doesn’t help?&lt;/p&gt;
+&lt;p&gt;Check the share permissions! Yes, if it is a shared folder. And if that doesn’t help?&lt;/p&gt;
+&lt;p&gt;Check the file ownership! Great! But then what?&lt;/p&gt;
+&lt;p&gt;Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).&lt;br&gt;Another possible reason could actually be that the path to the file or folder is too long. You won’t actually get an error telling you that the filepath exceeds the 255 characters Windows can handle but a simple “Acces Denied”.&lt;/p&gt;
       
       </description>
       
@@ -1363,7 +1457,18 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Fri, 16 Oct 2009 05:59:10 GMT</pubDate>
       <description>
       
-        &lt;p&gt;This update hasn’t showed up in the &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; Catalog yet, but the &lt;a href=&quot;http://www.microsoft.com/
+        &lt;p&gt;This update hasn’t showed up in the &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; Catalog yet, but the &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=4a41a8be-0a37-4bd2-b5b1-026468b317fb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Besides SUSE 11 support, here’s the short overview.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.&lt;br&gt;&lt;strong&gt;Feature Summary:&lt;/strong&gt;&lt;br&gt;The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions)&lt;em&gt; Support of Solaris Zones&lt;/em&gt; Fix for defunct Process issue&lt;em&gt; The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks.&lt;/em&gt; The Cross Platform Agent may not restart after the AIX server reboots.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The latest versions of all the Operations Manager 2007 R2 Unix/Linux agents are included in this update.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Perfect timing, I must say, since I really need this today. :D&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Update:&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.&lt;/p&gt;
+
       
       </description>
       
@@ -1487,7 +1592,17 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Thu, 24 Sep 2009 10:32:35 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Description-of-problem&quot;&gt;&lt;a href=&quot;#Description-of-problem&quot; class=&quot;headerlink&quot; title=&quot;Description of problem&quot;&gt;&lt;/a&gt;Description of probl
+        &lt;h1 id=&quot;Description-of-problem&quot;&gt;&lt;a href=&quot;#Description-of-problem&quot; class=&quot;headerlink&quot; title=&quot;Description of problem&quot;&gt;&lt;/a&gt;Description of problem&lt;/h1&gt;&lt;p&gt;If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.&lt;br&gt;You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.&lt;/p&gt;
+&lt;p&gt;Here’s basically what happens:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.&lt;/li&gt;
+&lt;li&gt;The SDK Service (i guess) tells GW1 that “You’re no longer the Primary Management Server for AGENTX”&lt;/li&gt;
+&lt;li&gt;GW1 acknowledges this and stops talking to AGENTX.  And I mean &lt;em&gt;Completely&lt;/em&gt; stops talking to AGENTX.&lt;/li&gt;
+&lt;li&gt;OpsMgr then tells GW2 to start accepting communication from AGENTX.&lt;/li&gt;
+&lt;li&gt;OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Spotted the problem?&lt;br&gt;This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent &lt;em&gt;before&lt;/em&gt; the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.&lt;/p&gt;
+&lt;p&gt;How do I get around this little &lt;em&gt;feature&lt;/em&gt; then?&lt;/p&gt;
       
       </description>
       
@@ -1530,7 +1645,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Thu, 17 Sep 2009 17:43:47 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.&lt;br&gt;Managed t
+        &lt;p&gt;Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.&lt;br&gt;Managed to get the Citrix client running (way more easy on Ubuntu than Fedora, I’ll be back on that) and all without too much fuzz.&lt;/p&gt;
+&lt;p&gt;First reboot gave me a “let’s FSCK!”. So I FSCK-ed and booted up to the desktop.&lt;/p&gt;
+&lt;p&gt;Second reboot gave me a “let’s FSCK!”. And I did. Booted to the desktop.&lt;/p&gt;
+&lt;p&gt;Third boot went smoothly, but all of a sudden all the icons decided to go AWOL. Rebooted again.&lt;/p&gt;
       
       </description>
       
@@ -1575,7 +1693,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Fri, 21 Aug 2009 08:38:55 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;I get this question every now and then
+        &lt;h1 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h1&gt;&lt;p&gt;I get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.&lt;/p&gt;
+&lt;p&gt;Don’t get me wrong now.&lt;br&gt;SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.&lt;/p&gt;
+&lt;h2 id=&quot;My-Checklist&quot;&gt;&lt;a href=&quot;#My-Checklist&quot; class=&quot;headerlink&quot; title=&quot;My Checklist&quot;&gt;&lt;/a&gt;My Checklist&lt;/h2&gt;&lt;p&gt;Here’s my list of questions you have to ask to find if SQL Express is the correct choice.&lt;/p&gt;
+&lt;h3 id=&quot;1-Do-your-applications-support-SQL-Express&quot;&gt;&lt;a href=&quot;#1-Do-your-applications-support-SQL-Express&quot; class=&quot;headerlink&quot; title=&quot;1. Do your applications support SQL Express?&quot;&gt;&lt;/a&gt;1. Do your applications support SQL Express?&lt;/h3&gt;&lt;p&gt;If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.&lt;/p&gt;
       
       </description>
       
@@ -1628,7 +1749,15 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Wed, 29 Apr 2009 10:59:54 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Don’t know how I missed this when writing the last post, but Microsoft released the &lt;a href=&quot;http://www.microsoft.com/downloads/details.a
+        &lt;p&gt;Don’t know how I missed this when writing the last post, but Microsoft released the &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=dc17e093-bdd7-4cb3-9981-853776ed90be&amp;amp;displaylang=en&quot; title=&quot;Windows Server 2008 Network Load Balancing for System Center Operations Manager 2007&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MP for Windows Server 2008 NLB&lt;/a&gt; yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.&lt;/p&gt;
+&lt;h1 id=&quot;Quick-Details&quot;&gt;&lt;a href=&quot;#Quick-Details&quot; class=&quot;headerlink&quot; title=&quot;Quick Details&quot;&gt;&lt;/a&gt;Quick Details&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;File Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msi&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Version:        6.0.6573.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Date Published: 4/28/2009&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Language:       English&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Download Size:  519 KB&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;Feature-Summary&quot;&gt;&lt;a href=&quot;#Feature-Summary&quot; class=&quot;headerlink&quot; title=&quot;Feature Summary&quot;&gt;&lt;/a&gt;Feature Summary&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Monitor the NLB Node status.&lt;/li&gt;
+&lt;li&gt;Based on the status of individual cluster nodes, determine the overall state of the cluster.&lt;/li&gt;
+&lt;li&gt;Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.&lt;/li&gt;
+&lt;li&gt;Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.&lt;/li&gt;
+&lt;li&gt;Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.&lt;/li&gt;
+&lt;/ul&gt;
       
       </description>
       
@@ -1655,7 +1784,10 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Tue, 28 Apr 2009 13:30:18 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Last friday, 24/4 -09,  Microsoft released an &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-8
+        &lt;p&gt;Last friday, 24/4 -09,  Microsoft released an &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;amp;displaylang=en&amp;amp;displaylang=en&quot; title=&quot;Message Queuing Management Pack for Operations Manager 2007&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;updated Management Pack for MSMQ 3.0&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;Quick-Details&quot;&gt;&lt;a href=&quot;#Quick-Details&quot; class=&quot;headerlink&quot; title=&quot;Quick Details&quot;&gt;&lt;/a&gt;Quick Details&lt;/h1&gt;  &lt;table style=&quot;height: 60px&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;469&quot; border=&quot;0&quot;&gt;&lt;tbody&gt;     &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;File Name:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;Message Queuing System Center Operations Manager 2007 MP.MSI&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Version:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;6.0.6587.0&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Date Published:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;4/24/2009&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Language:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;English&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Download Size:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;502 KB&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt;&lt;/table&gt;  
+
+
       
       </description>
       
@@ -1678,10 +1810,11 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <pubDate>Sun, 26 Apr 2009 09:21:18 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/&quot; title=&quot;failed to create System.PropertyBagData&quot;&gt;failed to create System.PropertyBagData&lt;/a&gt; error i wrote about earlier.&lt;br&gt;This information in also available on &lt;a href=&quot;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&quot;&gt;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&lt;/a&gt;&lt;/p&gt;
+        &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/&quot; title=&quot;failed to create System.PropertyBagData&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;failed to create System.PropertyBagData&lt;/a&gt; error i wrote about earlier.&lt;br&gt;This information in also available on &lt;a href=&quot;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Symptoms&quot;&gt;&lt;a href=&quot;#Symptoms&quot; class=&quot;headerlink&quot; title=&quot;Symptoms&quot;&gt;&lt;/a&gt;Symptoms&lt;/h1&gt;&lt;p&gt;This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Command executed: &amp;quot;C:WINNTsystem32cscript.exe&amp;quot; /nologo &amp;quot;NetworkAdapterCheck.vbs&amp;quot; MASKEDCOMPUTERNAME 0 false true false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;One or more workflows were affected by this.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Instance name: 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Instance ID: &amp;#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Management group: MASKED&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.&lt;/p&gt;
+
       
       </description>
       
@@ -1757,7 +1890,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
       <description>
       
         &lt;p&gt;[updated, scroll down if you want to skip some nonsense]&lt;/p&gt;
-&lt;p&gt;So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kern
+&lt;p&gt;So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  &lt;em&gt;Release upgrade&lt;/em&gt; to &lt;strong&gt;Normal Releases&lt;/strong&gt; (you find it under the &lt;em&gt;Updates&lt;/em&gt; tab).&lt;br&gt;After that you get the option to do a &lt;em&gt;Distribution Upgrade&lt;/em&gt;, which I did (took some 45 minutes to finish).&lt;/p&gt;
+&lt;p&gt;I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.&lt;/p&gt;
+&lt;p&gt;What I have come down to right now is doing the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;sudo apt-get install module-assistant&lt;/strong&gt;&lt;br&gt;This will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
       
       </description>
       

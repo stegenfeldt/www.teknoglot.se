@@ -190,6 +190,9 @@ So now I can
             Here’s a little something-something for the wicked.
 Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.
 Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.
+
+Although you do configure your forwarders using Operations Manager, removing the management group you were running ACS in does not mean the agents will shut down and disable the AdtAgent service or stop trying to forward audit events to your collector. Now, selecting 10 agents at the time and running the “Disable Audit Collection” task–in case you did not know, there’s a limitation on how many agents you can run a task on in the Operations Console–is not my idea of a jolly good day and since Powershell is a bucket of joy in comparison; here’s a script for you all!
+
         </p>
     </div>
 </article>
@@ -248,7 +251,18 @@ It is nothing ground breaking at all and all the information is avai
     
 
         <p class="article-excerpt">
-            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many 
+            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those “do you think we could monitor our …-system too?” questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.
+PurposeMy idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.
+The TG WinAutoSvc Management PackTo give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:
+
+You will get an instance of the service classes for each and every service.
+It uses different classes for Own Process services and Shared Process services (svchost for example).
+Every service have a health state (you can use them in distributed applications).
+The service state monitors are inherited from their base classes, no coding neccesary.
+There is only one discovery script for all kinds of windows services.
+Extending the discovery to include different kinds of windows services, like kernel processes, is a matter of filtering.
+It is Open Source and licensed under the Eclipse Public License v1.
+
         </p>
     </div>
 </article>
@@ -289,7 +303,15 @@ It is nothing ground breaking at all and all the information is avai
     
 
         <p class="article-excerpt">
-            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl
+            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.
+To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:
+
+SNMP Setup and Simple Custom SNMP Discovery - Pretty much the basics
+SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has the links to the other parts
+Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
+
+It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
+Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
         </p>
     </div>
 </article>
@@ -317,7 +339,14 @@ It is nothing ground breaking at all and all the information is avai
 
         <p class="article-excerpt">
             After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.
-Both seem to be fully Cluster aware and pretty much h
+Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.
+Message Queuing 4.0 Management Pack for Operations Manager 2007&gt; **Quick Details**
+
+Version: 6.0.6700.83
+Date Published: 4/5/2010
+Language: English  
+
+Download here: http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;displaylang=en
         </p>
     </div>
 </article>
@@ -349,7 +378,10 @@ Both seem to be fully Cluster aware and pretty much h
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it e
+This time I’ve basically put parameter support in it to make it easier to use.
+Here’s the script anyway.
+Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
+
         </p>
     </div>
 </article>
@@ -378,7 +410,8 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>
@@ -420,7 +453,19 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
 
         <p class="article-excerpt">
             Microsoft has released an update to the MSMQ (version 3) management pack.
-System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ
+System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ) is a server application that enables applications to communicate across heterogeneous networks and systems that may be temporarily offline or otherwise inaccessible. Instead of an application communicating with a service on another computer, it sends its information to Message Queuing, which sends the information to a Message Queuing service on the target computer where it is made available to the other application. Message Queuing provides guaranteed delivery, efficient routing, security, and priority based messaging.
+Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
+
+The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+The Message Queuing Management Pack supports the following platforms:
+
+Windows Server 2003
+Windows XP
+
+The Message Queuing Management Pack also supports monitoring clustered MSMQ components
+
+Emphasis by me.
+
         </p>
     </div>
 </article>
@@ -447,7 +492,22 @@ System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on: 
     
 
         <p class="article-excerpt">
-            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin
+            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.
+In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.What to do!?
+Thanks to Raul Carcia’s blog post it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.Here’s what to do:
+
+Open the SQL Server Configuration Manager.
+In SQL Server Services, open the properties for the SQL Server instance you need access to.
+In the Advanced tab, find Startup Parameters.
+Add “;-m” to the end of that line.
+Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))
+Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)
+Execute /A/S ```    (use . for local default instance and .INSTANCE for local named instance)8. In the CLI, execute:  ```sql  EXEC sp_addsrvrolemember &apos;DOMAIN\yourusername&apos;, &apos;sysadmin&apos;;  GO
+
+Return to the SQL Server Configuration Manager and restore the Startup Parameters to it’s previous settings.
+
+Restart the SQL Server instance to allow users to get access to it again.
+
         </p>
     </div>
 </article>
