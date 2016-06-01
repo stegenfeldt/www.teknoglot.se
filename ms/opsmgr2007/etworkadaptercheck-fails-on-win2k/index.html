@@ -151,7 +151,58 @@
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Problem"><span class="toc-number">1.</span> <span class="toc-text">Problem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Symptoms"><span class="toc-number">2.</span> <span class="toc-text">Symptoms</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Probable-Cause"><span class="toc-number">3.</span> <span class="toc-text">Probable Cause</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Comments"><span class="toc-number">4.</span> <span class="toc-text">Comments</span></a></li></ol>
+            <ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Problem"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Problem</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Symptoms"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Symptoms</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Probable-Cause"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Probable Cause</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Comments"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Comments</span></a></li></ol>
             <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData" target="_blank" rel="external">failed to create System.PropertyBagData</a> error i wrote about earlier.<br>This information in also available on <a href="https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446" target="_blank" rel="external">https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446</a></p>
 <h1 id="Symptoms"><a href="#Symptoms" class="headerlink" title="Symptoms"></a>Symptoms</h1><p>This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0</span><br><span class="line"></span><br><span class="line">Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true false</span><br><span class="line">Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781</span><br><span class="line"></span><br><span class="line">One or more workflows were affected by this.</span><br><span class="line"></span><br><span class="line">Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealth</span><br><span class="line">Instance name: 0</span><br><span class="line">Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;</span><br><span class="line">Management group: MASKED</span><br></pre></td></tr></table></figure>
@@ -178,7 +229,7 @@
 
 
 
-    <a data-url="http://test.teknoglot.se/ms/opsmgr2007/etworkadaptercheck-fails-on-win2k/" data-id="cioxdokry001vjko2meyeqoig" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://test.teknoglot.se/ms/opsmgr2007/etworkadaptercheck-fails-on-win2k/" data-id="cioxdtsbo001vlco2w85njp96" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

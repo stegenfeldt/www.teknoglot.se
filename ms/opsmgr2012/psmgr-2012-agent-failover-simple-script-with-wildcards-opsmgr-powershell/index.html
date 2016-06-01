@@ -151,7 +151,415 @@
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inputs"><span class="toc-number">1.</span> <span class="toc-text">Inputs</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-SCOM-Management-Server-to-connect-to-in-this-session"><span class="toc-number"></span> <span class="toc-text">Input SCOM Management Server to connect to in this session</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-an-existing-agent-you-want-to-modify"><span class="toc-number"></span> <span class="toc-text">Input an existing agent you want to modify</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Connect-to-Your-Management-Group"><span class="toc-number">1.</span> <span class="toc-text">Connect to Your Management Group</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check-if-OperationsManager-module-is-loaded"><span class="toc-number"></span> <span class="toc-text">Check if OperationsManager module is loaded</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Try-to-load-the-module"><span class="toc-number"></span> <span class="toc-text">Try to load the module</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Did-not-work-exit-the-script"><span class="toc-number"></span> <span class="toc-text">Did not work, exit the script</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Module-is-loaded-connect-to-Management-Group-Server"><span class="toc-number"></span> <span class="toc-text">Module is loaded, connect to Management Group/Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rally-Your-Agents-and-Management-Servers"><span class="toc-number">1.</span> <span class="toc-text">Rally Your Agents (and Management Servers)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Select-matching-remotely-manageable-agents"><span class="toc-number"></span> <span class="toc-text">Select matching remotely manageable agents</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-all-management-servers"><span class="toc-number"></span> <span class="toc-text">Get all management servers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Do-Stuff"><span class="toc-number">1.</span> <span class="toc-text">Do Stuff</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-the-primary-management-server-for-the-agent"><span class="toc-number"></span> <span class="toc-text">Get the primary management server for the agent</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers"><span class="toc-number"></span> <span class="toc-text">Remove the primary MS from “all MS” array to use it for FailOver servers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-Primary-Management-Server"><span class="toc-number"></span> <span class="toc-text">Set Primary Management Server</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-Fail-over-Management-Server"><span class="toc-number"></span> <span class="toc-text">Set Fail-over Management Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Copy-Paste-Part"><span class="toc-number">1.</span> <span class="toc-text">The Copy/Paste Part</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-SCOM-Management-Server-to-connect-to-in-this-session-1"><span class="toc-number"></span> <span class="toc-text">Input SCOM Management Server to connect to in this session</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-an-existing-agent-you-want-to-modify-1"><span class="toc-number"></span> <span class="toc-text">Input an existing agent you want to modify</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Connect-to-SCOM-2012-Management-Group"><span class="toc-number">1.</span> <span class="toc-text">Connect to SCOM 2012 Management Group</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check-if-OperationsManager-module-is-loaded-1"><span class="toc-number"></span> <span class="toc-text">Check if OperationsManager module is loaded</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Try-to-load-the-module-1"><span class="toc-number"></span> <span class="toc-text">Try to load the module</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Did-not-work-exit-the-script-1"><span class="toc-number"></span> <span class="toc-text">Did not work, exit the script</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Module-is-loaded-connect-to-Management-Group-Server-1"><span class="toc-number"></span> <span class="toc-text">Module is loaded, connect to Management Group/Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#END"><span class="toc-number">1.</span> <span class="toc-text">END</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Select-matching-remotely-manageable-agents-1"><span class="toc-number"></span> <span class="toc-text">Select matching remotely manageable agents</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-all-management-servers-1"><span class="toc-number"></span> <span class="toc-text">Get all management servers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-the-primary-management-server-for-the-agent-1"><span class="toc-number"></span> <span class="toc-text">Get the primary management server for the agent</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers-1"><span class="toc-number"></span> <span class="toc-text">Remove the primary MS from “all MS” array to use it for FailOver servers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-Primary-Management-Server-1"><span class="toc-number"></span> <span class="toc-text">Set Primary Management Server</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-Fail-over-Management-Server-1"><span class="toc-number"></span> <span class="toc-text">Set Fail-over Management Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Done"><span class="toc-number">1.</span> <span class="toc-text">Done!</span></a></li></ol>
+            <ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Inputs"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Inputs</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Input-SCOM-Management-Server-to-connect-to-in-this-session"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Input SCOM Management Server to connect to in this session</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Input-an-existing-agent-you-want-to-modify"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Input an existing agent you want to modify</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Connect-to-Your-Management-Group"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Connect to Your Management Group</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Check-if-OperationsManager-module-is-loaded"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Check if OperationsManager module is loaded</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Try-to-load-the-module"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Try to load the module</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Did-not-work-exit-the-script"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Did not work, exit the script</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Module-is-loaded-connect-to-Management-Group-Server"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Module is loaded, connect to Management Group/Server</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Rally-Your-Agents-and-Management-Servers"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Rally Your Agents (and Management Servers)</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Select-matching-remotely-manageable-agents"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Select matching remotely manageable agents</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Get-all-management-servers"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Get all management servers</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Do-Stuff"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Do Stuff</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Get-the-primary-management-server-for-the-agent"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Get the primary management server for the agent</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Remove the primary MS from “all MS” array to use it for FailOver servers</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Set-Primary-Management-Server"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Set Primary Management Server</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Set-Fail-over-Management-Server"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Set Fail-over Management Server</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#The-Copy-Paste-Part"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">The Copy/Paste Part</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Input-SCOM-Management-Server-to-connect-to-in-this-session-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Input SCOM Management Server to connect to in this session</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Input-an-existing-agent-you-want-to-modify-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Input an existing agent you want to modify</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Connect-to-SCOM-2012-Management-Group"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Connect to SCOM 2012 Management Group</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Check-if-OperationsManager-module-is-loaded-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Check if OperationsManager module is loaded</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Try-to-load-the-module-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Try to load the module</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Did-not-work-exit-the-script-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Did not work, exit the script</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Module-is-loaded-connect-to-Management-Group-Server-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Module is loaded, connect to Management Group/Server</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#END"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">END</span></a></li></ol></li></ol></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Select-matching-remotely-manageable-agents-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Select matching remotely manageable agents</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Get-all-management-servers-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Get all management servers</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Get-the-primary-management-server-for-the-agent-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Get the primary management server for the agent</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Remove the primary MS from “all MS” array to use it for FailOver servers</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Set-Primary-Management-Server-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Set Primary Management Server</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Set-Fail-over-Management-Server-1"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Set Fail-over Management Server</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Done"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Done!</span></a></li></ol>
             <p>In the last post, <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/" title="OpsMgr 2012 Agent &amp; Gateway Failover – The Basics [#opsmgr, #powershell]" target="_blank" rel="external">OpsMgr 2012 Agent &amp; Gateway Failover – The Basics</a>, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.</p>
 <p>To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.</p>
 <a id="more"></a>
@@ -213,7 +621,7 @@
 
 
 
-    <a data-url="http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" data-id="cioxdokse002ajko2zfhjg0cm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" data-id="cioxdtsc9002alco2bi91y399" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
