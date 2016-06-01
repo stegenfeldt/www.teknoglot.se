@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell] | teknoglot:</title>
+    <title>Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,PoSH,Script,Fail-over" />
+        <meta name="keywords" content="PoSH,Script,DNS,Invoke-RestMethod,Mikrotik,RouterOS" />
     
-    <meta name="description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
+    <meta name="description" content="BackgroundI have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]">
-<meta property="og:url" content="http://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/index.html">
+<meta property="og:title" content="Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]">
+<meta property="og:url" content="http://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
-<meta property="og:updated_time" content="2016-05-24T21:30:23.119Z">
+<meta property="og:description" content="BackgroundI have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to m">
+<meta property="og:updated_time" content="2016-05-24T22:01:48.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]">
-<meta name="twitter:description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
+<meta name="twitter:title" content="Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]">
+<meta name="twitter:description" content="BackgroundI have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to m">
     
 
     
@@ -123,29 +123,29 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a>
+    <a class="page-title-link" href="/topics/mikrotik/">Mikrotik</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-cloudflare-dynamic-dns-mikrotik" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]
+        Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" class="article-date">
-    <time datetime="2012-06-28T12:28:36.000Z" itemprop="datePublished">2012-06-28</time>
+            <a href="/mikrotik/cloudflare-dynamic-dns-mikrotik/" class="article-date">
+    <time datetime="2014-08-25T11:37:36.000Z" itemprop="datePublished">2014-08-25</time>
 </a>
             
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/DNS/">DNS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Invoke-RestMethod/">Invoke-RestMethod</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Mikrotik/">Mikrotik</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RouterOS/">RouterOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
         </div>
         <div class="article-entry" itemprop="articleBody">
@@ -158,25 +158,13 @@
       }-item function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-3"><a class="function wrapper() {
+      }-level-1"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Why-Is-It-Faster"><span class="function wrapper() {
+      }-link" href="#Background"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Why Is It Faster?</span></a></li><li class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-item function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-3"><a class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#The-Challenge"><span class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">The Challenge</span></a></li></ol></li></ol></li><li class="function wrapper() {
+      }-text">Background</span></a></li><li class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-item function wrapper() {
@@ -185,10 +173,61 @@
       }-level-1"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Loop-through-the-array-and-add-your-failover-MSs-to-the-list"><span class="function wrapper() {
+      }-link" href="#Attribution"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Loop through the array and add your failover MSs to the list</span></a><ol class="function wrapper() {
+      }-text">Attribution</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-1"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#How-you-do-it"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">How you do it</span></a><ol class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-child"><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-2"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#What-you-need"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">What you need</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-2"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Getting-the-Record-Id"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Getting the Record Id</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-2"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Building-the-Script"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Building the Script</span></a><ol class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-child"><li class="function wrapper() {
@@ -200,37 +239,10 @@
       }-level-3"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Configuring-the-Agent"><span class="function wrapper() {
+      }-link" href="#Defining-our-variables"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Configuring the Agent</span></a></li><li class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-item function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-3"><a class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#The-Copy-Paste-Part"><span class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">The Copy/Paste Part</span></a></li></ol></li></ol></li><li class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-item function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-1"><a class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Input-an-existing-agent-you-want-to-modify"><span class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Input an existing agent you want to modify</span></a><ol class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-child"><li class="function wrapper() {
+      }-text">Defining our variables</span></a></li><li class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-item function wrapper() {
@@ -239,10 +251,10 @@
       }-level-3"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Connect-to-SCOM-2012-Management-Group"><span class="function wrapper() {
+      }-link" href="#Resolve-IP-addresses"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Connect to SCOM 2012 Management Group</span></a></li><li class="function wrapper() {
+      }-text">Resolve IP-addresses</span></a></li><li class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-item function wrapper() {
@@ -251,103 +263,107 @@
       }-level-3"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#END"><span class="function wrapper() {
+      }-link" href="#Build-CF-API-Request-and-log-debug-info"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">END</span></a></li></ol></li></ol></li><li class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-item function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-1"><a class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Get-all-of-the-management-servers"><span class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Get all of the management servers</span></a></li><li class="function wrapper() {
+      }-text">Build CF API Request and log debug info</span></a></li><li class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-item function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-1"><a class="function wrapper() {
+      }-level-3"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#It-is-ofcourse-possible-to-search-by-hostname-and-wildcards-using-selected"><span class="function wrapper() {
+      }-link" href="#Compare-and-Update"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">It is ofcourse possible to search by hostname and wildcards using selected</span></a></li><li class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-item function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-1"><a class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#parameters-to-the-cmdlet"><span class="function wrapper() {
-        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-        return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">parameters to the cmdlet.</span></a></li><li class="function wrapper() {
+      }-text">Compare and Update</span></a></li><li class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-item function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-level-1"><a class="function wrapper() {
+      }-level-3"><a class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-link" href="#Switch-to-the-following-line-to-only-get-Gateway-Servers"><span class="function wrapper() {
+      }-link" href="#Permissions-Policies"><span class="function wrapper() {
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
-      }-text">Switch to the following line to only get Gateway Servers</span></a>
-            <p>Now we’re gonna make things even faster! In the <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" title="OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]">previous post</a> on the subject of <a href="http://www.teknoglot.se/series/om2012-failover-mgmt/">Agent Fail-over in Operations Manager 2012</a> we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.</p>
-<p>As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.</p>
-<p>We will pretty quickly go “advanced” this time, so buckle up. ;)</p>
+      }-text">Permissions/Policies</span></a></li><li class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-item function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-level-3"><a class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-link" href="#Scheduling"><span class="function wrapper() {
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        return fn.apply(isBind ? thisArg : this, arguments);
+      }-text">Scheduling</span></a></li></ol></li></ol></li></ol>
+            <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>I have, for a time, been using <a href="http://www.cloudflare.com" title="CloudFlare Website" target="_blank" rel="external">CloudFlare</a> for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using <a href="http://www.dyn.com" title="Dyn DNS" target="_blank" rel="external">DynDNS</a> to provide name resolution to my home network/lab. Browsing around the <a href="https://www.cloudflare.com/docs/client-api.html" title="CloudFlare Client Api" target="_blank" rel="external">CloudFlare JSON API</a> I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by <a href="http://www.mikrotik.com/" title="Mikrotik Website" target="_blank" rel="external">Mikrotik’s</a> routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.</p>
+<h1 id="Attribution"><a href="#Attribution" class="headerlink" title="Attribution"></a>Attribution</h1><p>My current script is a modified version of a script developed by Konstantin Antselovich.</p>
+<p>Original script: <a href="http://konstant1n.livejournal.com/9759.html" title="Random Journal" target="_blank" rel="external">http://konstant1n.livejournal.com/9759.html</a></p>
+<p>Original Author website: <a href="http://konstantin.antselovich.com/" title="Konstantin Antselovich" target="_blank" rel="external">http://konstantin.antselovich.com/</a></p>
+<p>Thanks!</p>
+<h1 id="How-you-do-it"><a href="#How-you-do-it" class="headerlink" title="How you do it"></a>How you do it</h1><h2 id="What-you-need"><a href="#What-you-need" class="headerlink" title="What you need"></a>What you need</h2><ul>
+<li>RouterOS v6+ for HTTPS support</li>
+<li>Cloudflare API key, aka “Token”, found at the <a href="https://www.cloudflare.com/my-account" title="CloudFlare Account Page" target="_blank" rel="external">account page</a></li>
+<li>Cloudflare DNS Zone name</li>
+<li>Cloudflare Record Id (more on that later)</li>
+<li>Cloudflare subdomain name</li>
+<li>Name of the external router interface</li>
+</ul>
 <a id="more"></a>
-<p>Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.</p>
-<h3 id="Why-Is-It-Faster"><a href="#Why-Is-It-Faster" class="headerlink" title="Why Is It Faster?"></a>Why Is It Faster?</h3><p>We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the <em>Set-SCOMParentManagementServer</em> cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.</p>
-<p>I don’t like that. A brief look at the agent object class, <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.aspx" target="_blank" rel="external">Microsoft.EnterpriseManagement.Administration.AgentManagedComputer</a>, revealed a method called <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.setmanagementservers" title="AgentManagedComputer.SetManagementServers Method" target="_blank" rel="external">SetManagementServers</a>. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!</p>
-<p>Using this method saves us a bunch of over-head and a couple of round-trips to the SDK-service.</p>
-<h3 id="The-Challenge"><a href="#The-Challenge" class="headerlink" title="The Challenge"></a>The Challenge</h3><p>Unfortunately, you cannot simply toss an array of management servers at the SetManagementServers method. With a bit of knowledge or keen eyes you will spot the problem right away. I didn’t and was pulling my hair for a while until I realized what caused the errors. Looking closer at how the method is defined we see this:</p>
-<p>[csharp]public void SetManagementServers (<br> ManagementServer managementServer,<br> IList failoverManagementServers<br> )[/csharp]</p>
-<p>You see that <em>IList<managementserver></managementserver></em> part?<br>That’s the problem. When you run <em>Get-SCOMManagementServer</em> and save the result to a powershell variable, you will get a powershell “Enumerable”. In C#, that would be a class that implements the <em>IEnumerable</em> interface. Sad part is, it does not also implement <em>IList</em>. If you are thinking “IList… IEnumerable… Interface… Whaaaaa…???” right now, don’t worry. You don’t have to understand this to read the script later on, just think of it as different types of data.</p>
-<p>To get around this, we create a new object based on the dotNET List type and populate it with the management servers in our $scomFailOverMS array.</p>
-<p>[powershell]$scomMSList = New-Object ‘Collections.Generic.List[Microsoft.EnterpriseManagement.Administration.ManagementServer]’<br>foreach ($scomMS in $scomFailOverMS) {</p>
-<h1 id="Loop-through-the-array-and-add-your-failover-MSs-to-the-list"><a href="#Loop-through-the-array-and-add-your-failover-MSs-to-the-list" class="headerlink" title="Loop through the array and add your failover MSs to the list"></a>Loop through the array and add your failover MSs to the list</h1><p> $scomMSList.Add($scomMS)<br>}[/powershell]</p>
-<blockquote>
-<p>Note:We have to do that foreach loop since our $scomMSList object do not implement IEnumerable<br>Still with me?</p>
-</blockquote>
-<h3 id="Configuring-the-Agent"><a href="#Configuring-the-Agent" class="headerlink" title="Configuring the Agent"></a>Configuring the Agent</h3><p>As the method exist on that <em>AgentManagedComputer</em> class we will call it on our $scomAgent object, like this:</p>
-<p>[powershell]$scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)[/powershell]</p>
-<p>And we’re done!</p>
-<p>I had some doubt that this would be an improvement at first since we have to create our own objects and run an extra foreach-loop, but as we only work on objects in memory and only speak to the SDK service once per agent, we cut a lot of over-head and delays from our execution. On 20-ish agents in a lab, I’ve measured the execution time drop to barely a fifth.</p>
-<h3 id="The-Copy-Paste-Part"><a href="#The-Copy-Paste-Part" class="headerlink" title="The Copy/Paste Part"></a>The Copy/Paste Part</h3><p>And here’s the entire script with a few added comments for clarity. Read, adapt and try it. In a lab, preferably.</p>
-<p>[powershell]# Input SCOM Management Server to connect to in this session<br>[string]$inputScomMS = “scomms02.domain.local”</p>
-<h1 id="Input-an-existing-agent-you-want-to-modify"><a href="#Input-an-existing-agent-you-want-to-modify" class="headerlink" title="Input an existing agent you want to modify"></a>Input an existing agent you want to modify</h1><p>[string]$inputTargetAgent = “*.domain.local”</p>
-<h3 id="Connect-to-SCOM-2012-Management-Group"><a href="#Connect-to-SCOM-2012-Management-Group" class="headerlink" title="Connect to SCOM 2012 Management Group"></a>Connect to SCOM 2012 Management Group</h3><p>If (Get-Module -Name “OperationsManager”) {<br>    try {<br>        Import-Module -Name “OperationsManager”<br>    } catch {<br>        echo “Could not load Operations Manager module”<br>        exit<br>    }<br>}<br>New-SCOMManagementGroupConnection -ComputerName $inputScomMS</p>
-<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><p>$scomAgents = Get-SCOMAgent -DNSHostName $inputTargetAgent | Where {$_.ManuallyInstalled -ne $true}</p>
-<h1 id="Get-all-of-the-management-servers"><a href="#Get-all-of-the-management-servers" class="headerlink" title="Get all of the management servers"></a>Get all of the management servers</h1><h1 id="It-is-ofcourse-possible-to-search-by-hostname-and-wildcards-using-selected"><a href="#It-is-ofcourse-possible-to-search-by-hostname-and-wildcards-using-selected" class="headerlink" title="It is ofcourse possible to search by hostname and wildcards using selected"></a>It is ofcourse possible to search by hostname and wildcards using selected</h1><h1 id="parameters-to-the-cmdlet"><a href="#parameters-to-the-cmdlet" class="headerlink" title="parameters to the cmdlet."></a>parameters to the cmdlet.</h1><p>$scomManagementServers = Get-SCOMManagementServer</p>
-<h1 id="Switch-to-the-following-line-to-only-get-Gateway-Servers"><a href="#Switch-to-the-following-line-to-only-get-Gateway-Servers" class="headerlink" title="Switch to the following line to only get Gateway Servers"></a>Switch to the following line to only get Gateway Servers</h1><p>#$scomManagementServers = Get-SCOMGatewayManagementServer<br>foreach ($scomAgent in $scomAgents) {</p>
-<pre><code># Get the primary management server for the agent
-$scomPrimaryMS = $scomManagementServers | where {$_.Name -eq $scomAgent.PrimaryManagementServerName}
-# Remove the primary MS from &quot;all MS&quot; array to use it for FailOver servers
-$scomFailOverMS = $scomManagementServers | where {$_.Name -ne $scomPrimaryMS.Name}
-
-# Create a new IList derived object for the failover MSs
-# You have to do this because the SetManagementServers() method requires an
-# IList and the MS-array is an IEnumerable type. So we basically create
-# a new IList object och the ManagementServer type.
-$scomMSList = New-Object &apos;Collections.Generic.List[Microsoft.EnterpriseManagement.Administration.ManagementServer]&apos;
-foreach ($scomMS in $scomFailOverMS) {
-    # Loop through the array and add your failover MSs to the list
-    $scomMSList.Add($scomMS)
-}
-$scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
-</code></pre><p>}<br>[/powershell]</p>
-<p>GLHF!</p>
+<h2 id="Getting-the-Record-Id"><a href="#Getting-the-Record-Id" class="headerlink" title="Getting the Record Id"></a>Getting the Record Id</h2><p>To get the record id of the DNS record you want to update, I used the _<a href="https://www.cloudflare.com/docs/client-api.html#s3.3" title="rec_load_all - Get all DNS Records" target="_blank" rel="external">rec_load_all</a>_ function of the API. And since I’m a windows admin, I use powershell for that.</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$cfDomain</span> = <span class="string">"homelab"</span></span><br><span class="line"><span class="variable">$cfToken</span> = <span class="string">"&lt;your API Key/Token&gt;"</span></span><br><span class="line"><span class="variable">$cfZone</span> = <span class="string">"example.com"</span></span><br><span class="line"><span class="variable">$cfEmail</span> = <span class="string">"&lt;your CF email address&gt;"</span></span><br><span class="line"><span class="variable">$apiLoadAllRecordsURI</span> = <span class="string">"https://www.cloudflare.com/api_json.html?a=rec_load_all&amp;tkn=<span class="variable">$cfToken</span>&amp;email=<span class="variable">$cfEmail</span>&amp;z=<span class="variable">$cfZone</span>"</span></span><br><span class="line"><span class="variable">$restRequest</span> = <span class="built_in">Invoke-RestMethod</span> -Uri <span class="variable">$apiLoadAllRecordsURI</span></span><br><span class="line"><span class="variable">$restRequest</span>.response.recs.objs | ?&#123;<span class="variable">$_</span>.display_name <span class="nomarkup">-eq</span> <span class="variable">$cfDomain</span>&#125; | fl -Property rec_id,name,display_name,type,ttl,service_mode</span><br></pre></td></tr></table></figure>
+<p>That should, given that you’ve replaced all the example variables produce something like this:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rec_id : 16606003</span><br><span class="line">name : homelab.example.com</span><br><span class="line">display_name : homelab</span><br><span class="line">type : A</span><br><span class="line">ttl : 1</span><br><span class="line">service_mode : 0</span><br></pre></td></tr></table></figure>
+<p>And with that done, you should have everything necessary for the RouterOS script.</p>
+<h2 id="Building-the-Script"><a href="#Building-the-Script" class="headerlink" title="Building the Script"></a>Building the Script</h2><p>I’m not going to go into the <a href="http://wiki.mikrotik.com/wiki/Manual:Scripting" title="RouterOS Scripting Manual" target="_blank" rel="external">syntax of ros scripts</a>, but I’ll try to explain the different building block to some degree.</p>
+<h3 id="Defining-our-variables"><a href="#Defining-our-variables" class="headerlink" title="Defining our variables"></a>Defining our variables</h3><p>First, we’ll define out variables used for the script. The global <em>$hostname</em> variable is actually redundant as I could derive the FQDN from  <em>$CFDomain</em> and <em>$CFZone</em>, but it’s used in other scripts in my router so it’s included for that purpose alone.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Set and collect general variables #########</span><br><span class="line">:global hostname &quot;homelab.example.com&quot;</span><br><span class="line">:global resolvedIP &quot;&quot;</span><br><span class="line">:global externalIP &quot;&quot;</span><br><span class="line">:global WANInterface &quot;eth1-ext-internet&quot;</span><br><span class="line"></span><br><span class="line">######## Set CloudFlare variables #################</span><br><span class="line">:local CFemail &quot;&lt;same email as in the powershell script&quot;</span><br><span class="line">:local CFtkn &quot;&lt;your API key/token&gt;&quot;</span><br><span class="line">:local CFzone &quot;example.com&quot;</span><br><span class="line">:local CFid &quot;16606003&quot;</span><br><span class="line">:local CFtype &quot;A&quot;</span><br><span class="line">:local CFttl &quot;1&quot;</span><br><span class="line">:local CFservicemode &quot;0&quot;</span><br><span class="line">:local CFDomain &quot;homelab&quot;</span><br><span class="line">:local CFDebug &quot;true&quot;</span><br></pre></td></tr></table></figure>
+<p>Take care to verify and compare the CFxx variables with the ones used in and received from the previous powershell script, but also the <em>$hostname</em> variable.</p>
+<ul>
+<li>hostname: Used in the script to lookup the currently set IP-address.</li>
+<li>WANInterface: The list name of the external interface, used to find the external IP-address.</li>
+<li>CFemail: Your CloudFlare Login email.</li>
+<li>CFtkn: Your API Key/Token.</li>
+<li>CFzone: Your DNS Zone.</li>
+<li>CFid: The rec_id from the powershell script.</li>
+<li>CFtype: A for IPv4 host records, AAAA for IPv6.</li>
+<li>CFttl: Record time-to-live, use “1” for automatic.</li>
+<li>CFservicemode: Use “0” for direct traffic or “1” to go through their CDN, Optimizations and Security features. I recommend “0” for anything but websites.</li>
+<li>CFDomain: Subdomain or rather hostname for your router.</li>
+<li>CFDebug: Use “True” to print some informational stuff to the router logs.</li>
+</ul>
+<h3 id="Resolve-IP-addresses"><a href="#Resolve-IP-addresses" class="headerlink" title="Resolve IP-addresses"></a>Resolve IP-addresses</h3><p>Next, we resolve two IP-addresses. First one, <em>$externalIP</em>, is the routers current external address. And the second, <em>$resolvedIP</em>, is the address currently set for our <em>$hostname</em>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Resolve and set IP-variables ##########</span><br><span class="line">:local currentIP [/ip address get [/ip address find interface=$WANInterface ] address];</span><br><span class="line">:set externalIP [:pick $currentIP 0 [:find $currentIP &quot;/&quot;]];</span><br><span class="line">:set resolvedIP [:resolve $hostname];</span><br></pre></td></tr></table></figure>
+<h3 id="Build-CF-API-Request-and-log-debug-info"><a href="#Build-CF-API-Request-and-log-debug-info" class="headerlink" title="Build CF API Request and log debug info"></a>Build CF API Request and log debug info</h3><p>Now, build the URI for the API call from our variables.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Build CF API Url #########################</span><br><span class="line">:local CFurl &quot;https://www.cloudflare.com/api_json.html\3F&quot;</span><br><span class="line">:set CFurl ($CFurl . &quot;a=rec_edit&amp;tkn=$CFtkn&amp;id=$CFid&quot;);</span><br><span class="line">:set CFurl ($CFurl . &quot;&amp;email=$CFemail&amp;z=$CFzone&amp;type=$CFtype&quot;);</span><br><span class="line">:set CFurl ($CFurl . &quot;&amp;name=$CFDomain&amp;service_mode=$CFservicemode&amp;ttl=$CFttl&quot;);</span><br></pre></td></tr></table></figure>
+<p>And if the <em>$CFdebug</em> variable is set to “true”, write a little info to the router log.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Write debug info to log #################</span><br><span class="line">:if ($CFDebug = &quot;true&quot;) do=&#123;</span><br><span class="line">:log info (&quot;CF: hostname = $hostname&quot;)</span><br><span class="line">:log info (&quot;CF: resolvedIP = $resolvedIP&quot;)</span><br><span class="line">:log info (&quot;CF: currentIP = $currentIP&quot;)</span><br><span class="line">:log info (&quot;CF: externalIP = $externalIP&quot;)</span><br><span class="line">:log info (&quot;CF: CFurl = $CFurl&amp;content=$externalIP&quot;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Compare-and-Update"><a href="#Compare-and-Update" class="headerlink" title="Compare and Update"></a>Compare and Update</h3><p>Last step is to compare <em>$externalIP</em> with <em>$resolvedIP</em>. If they don’t match, our external IP-address has been changed and we need to update the DNS record. To execute the HTTP GET request we use a RouterOS tool called <a href="http://wiki.mikrotik.com/wiki/Fetch" title="Mikrotik Manual: Fetch" target="_blank" rel="external">fetch</a> to which we pass the <em>$CFurl</em> variable. The reason this will not work before RouterOS v6+ is that before that there was no support for HTTPS, and CloudFlare does not accept unencrypted traffic for their APIs.</p>
+<p>The script block is pretty straight-forward. Compare, update, flush local DNS-cache and write to the log.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Compare and update CF if necessary #####</span><br><span class="line">:if ($resolvedIP != $externalIP) do=&#123;</span><br><span class="line">:log info (&quot;CF: Updating CF, setting $CFDomain = $externalIP&quot;)</span><br><span class="line">/tool fetch mode=https url=&quot;$CFurl&amp;content=$externalIP&quot; keep-result=no</span><br><span class="line">/ip dns cache flush</span><br><span class="line">&#125; else=&#123;</span><br><span class="line">:log info &quot;CF: No Update Needed!&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Permissions-Policies"><a href="#Permissions-Policies" class="headerlink" title="Permissions/Policies"></a>Permissions/Policies</h3><p>This part, I’m not entirely sure on. The script needs to do name resolution, read settings and set variables and it works for me with these policies configured:</p>
+<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Test</li>
+<li>Sniff</li>
+<li>Sensitive</li>
+</ul>
+<p>It might be over-doing it a bit, but I have not had occasion to fiddle with them yet.</p>
+<h3 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h3><p>I have this script scheduled to run once every 20 minutes. As it will only try to update the DNS records if there is a difference between them and the current external IP-address I feel fairly sure that I won’t be tagged as a spammer or something by CloudFlare.</p>
+<p>The schedule is configured with:</p>
+<ul>
+<li>Start Time: startup</li>
+<li>Interval: 00:20:00</li>
+<li>On Event: <figure class="highlight plain"><figcaption><span>script run <name of="" your="" script="">```</name></span></figcaption><table><tr><td class="code"><pre><span class="line">* Policy: Read,Write, Test, Sniff, Sensitive</span><br><span class="line"></span><br><span class="line">This schedule is also a good place for a [hairpin](http://wiki.mikrotik.com/wiki/Hairpin_NAT &quot;Mikrotik Wiki: Hairpin NAT&quot;) update if it&apos;s needed.</span><br><span class="line"></span><br><span class="line"># The Copy-Paste part</span><br><span class="line"></span><br><span class="line">Now, obviously, at least make sure you proof-read the script before putting it into production. I am not a network dude, and I rarely dabble with ROS scripts. I am certain that anyone with a bit more experience could create a smarter, prettier version of this script, so **use at your own risk**. Anyway, here&apos;s the script in it&apos;s entirety.</span><br><span class="line"></span><br><span class="line">```text</span><br><span class="line">######## Set and collect general variables #########</span><br><span class="line">:global hostname &quot;homelab.example.com&quot;</span><br><span class="line">:global resolvedIP &quot;&quot;</span><br><span class="line">:global externalIP &quot;&quot;</span><br><span class="line">:global WANInterface &quot;eth1-ext-internet&quot;</span><br><span class="line"></span><br><span class="line">######## Set CloudFlare variables #################</span><br><span class="line">:local CFemail &quot;&lt;same email as in the powershell script&quot;</span><br><span class="line">:local CFtkn &quot;&lt;your API key/token&gt;&quot;</span><br><span class="line">:local CFzone &quot;example.com&quot;</span><br><span class="line">:local CFid &quot;16606003&quot;</span><br><span class="line">:local CFtype &quot;A&quot;</span><br><span class="line">:local CFttl &quot;1&quot;</span><br><span class="line">:local CFservicemode &quot;0&quot;</span><br><span class="line">:local CFDomain &quot;homelab&quot;</span><br><span class="line">:local CFDebug &quot;true&quot;</span><br><span class="line"></span><br><span class="line">######## Resolve and set IP-variables ##########</span><br><span class="line">:local currentIP [/ip address get [/ip address find interface=$WANInterface ] address];</span><br><span class="line">:set externalIP [:pick $currentIP 0 [:find $currentIP &quot;/&quot;]];</span><br><span class="line">:set resolvedIP [:resolve $hostname];</span><br><span class="line"></span><br><span class="line">######## Build CF API Url #########################</span><br><span class="line">:local CFurl &quot;https://www.cloudflare.com/api_json.html\3F&quot;</span><br><span class="line">:set CFurl ($CFurl . &quot;a=rec_edit&amp;tkn=$CFtkn&amp;id=$CFid&quot;);</span><br><span class="line">:set CFurl ($CFurl . &quot;&amp;email=$CFemail&amp;z=$CFzone&amp;type=$CFtype&quot;);</span><br><span class="line">:set CFurl ($CFurl . &quot;&amp;name=$CFDomain&amp;service_mode=$CFservicemode&amp;ttl=$CFttl&quot;);</span><br><span class="line"></span><br><span class="line">######## Write debug info to log #################</span><br><span class="line">:if ($CFDebug = &quot;true&quot;) do=&#123;</span><br><span class="line">:log info (&quot;CF: hostname = $hostname&quot;)</span><br><span class="line">:log info (&quot;CF: resolvedIP = $resolvedIP&quot;)</span><br><span class="line">:log info (&quot;CF: currentIP = $currentIP&quot;)</span><br><span class="line">:log info (&quot;CF: externalIP = $externalIP&quot;)</span><br><span class="line">:log info (&quot;CF: CFurl = $CFurl&amp;content=$externalIP&quot;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">######## Compare and update CF if necessary #####</span><br><span class="line">:if ($resolvedIP != $externalIP) do=&#123;</span><br><span class="line">:log info (&quot;CF: Updating CF, setting $CFDomain = $externalIP&quot;)</span><br><span class="line">/tool fetch mode=https url=&quot;$CFurl&amp;content=$externalIP&quot; keep-result=no</span><br><span class="line">/ip dns cache flush</span><br><span class="line">&#125; else=&#123;</span><br><span class="line">:log info &quot;CF: No Update Needed!&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -355,7 +371,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 
 
 
-    <a data-url="http://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" data-id="cioxghvxp00246oo2hf3fpzd3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/" data-id="cioxghvvi000c6oo2dj1a5mi4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -483,20 +499,20 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
         
 <nav id="article-nav">
     
-        <a href="/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            Quick Demo - Add Windows Performance Collection Rule [#opsmgr, #mpauthoring]
+            OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]</p>
+        <p class="article-nav-title">Quick Demo - Add Windows Performance Collection Rule [#opsmgr, #mpauthoring]</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -624,7 +640,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
     var disqus_shortname = 'teknoglotse';
     
     
-    var disqus_url = 'http://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/';
+    var disqus_url = 'http://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/';
     
     (function() {
     var dsq = document.createElement('script');
