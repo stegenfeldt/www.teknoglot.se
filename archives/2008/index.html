@@ -160,7 +160,13 @@
 
         <p class="article-excerpt">
             [updated, scroll down if you want to skip some nonsense]
-So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski
+So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
+I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.
+What I have come down to right now is doing the following:
+
+sudo apt-get install module-assistantThis will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
+
+
         </p>
     </div>
 </article>
@@ -188,7 +194,11 @@ So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and 
 
         <p class="article-excerpt">
             Yes, I am officially slow. But never mind.
-Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recover
+Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recovery Manager for SharePoint – but also database and application servers like SAP and Oracle E-business.
+I have lately been working with some of their MOSS-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.
+Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. eXc does it’s thing in the Microsoft SCOM/MOM arena while VizionCore dances with virtualization techniques. At least, that’s where I’ve come across them both.
+How will this affect me, then?Not very much it would seem. Here’s what VizionCore says about their part:
+
         </p>
     </div>
 </article>

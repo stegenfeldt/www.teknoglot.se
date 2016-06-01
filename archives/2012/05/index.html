@@ -161,6 +161,9 @@
         <p class="article-excerpt">
             I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2.
 Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.
+
+The cmdletFirst of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOMnoun and to list them all in the console you can execute the following command:
+[powershell]get-command SCOM[/powershell]
         </p>
     </div>
 </article>
@@ -222,7 +225,18 @@ Enjoy!
     
 
         <p class="article-excerpt">
-            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is
+            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.
+What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.
+Disclaimer!This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.
+What’s missing in the latest iteration is:
+
+A working Event-Handler to deal with asynchronous call-backs.
+Support for AT+MSGW (write to modem memory)
+Reusing messages in modem memory for multiple recipients.
+Various error- and exeption-handlers.
+Actually verifying that the modem is AT-capable.
+Querying the system for available modems and their ports.
+
         </p>
     </div>
 </article>
@@ -252,6 +266,8 @@ Enjoy!
             BackgroundHaving visited a few conferences in the last years I have spotted a trend I didn’t think I would see in the IT-Pro sphere. You could probably call me naïve for that but logically we should not encourage this trend. This is my appeal to all exhibitors of future conferences to re-evaluate the concept of booth-babes.
 I will not go into the genus-political part of this discussion as of now–others are more eloquent and fit to handle that–but rather some of the more pragmatic sides to ditch the BB (short for Booth-Babe) and how that would gain us visitors as well as the exhibitors. I will also keep a pretty frank, and perhaps impolite, tone in this rant of mine.
 So, here’s my top reasons, in no particular order, to give up the BBs.
+
+Reason #1 - BBs is disrupting the purpose of the exhibition
         </p>
     </div>
 </article>

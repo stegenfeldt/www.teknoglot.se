@@ -161,6 +161,9 @@
         <p class="article-excerpt">
             I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2.
 Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.
+
+The cmdletFirst of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOMnoun and to list them all in the console you can execute the following command:
+[powershell]get-command SCOM[/powershell]
         </p>
     </div>
 </article>
@@ -222,7 +225,18 @@ Enjoy!
     
 
         <p class="article-excerpt">
-            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is
+            Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.
+What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.
+Disclaimer!This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.
+What’s missing in the latest iteration is:
+
+A working Event-Handler to deal with asynchronous call-backs.
+Support for AT+MSGW (write to modem memory)
+Reusing messages in modem memory for multiple recipients.
+Various error- and exeption-handlers.
+Actually verifying that the modem is AT-capable.
+Querying the system for available modems and their ports.
+
         </p>
     </div>
 </article>
@@ -252,6 +266,8 @@ Enjoy!
             BackgroundHaving visited a few conferences in the last years I have spotted a trend I didn’t think I would see in the IT-Pro sphere. You could probably call me naïve for that but logically we should not encourage this trend. This is my appeal to all exhibitors of future conferences to re-evaluate the concept of booth-babes.
 I will not go into the genus-political part of this discussion as of now–others are more eloquent and fit to handle that–but rather some of the more pragmatic sides to ditch the BB (short for Booth-Babe) and how that would gain us visitors as well as the exhibitors. I will also keep a pretty frank, and perhaps impolite, tone in this rant of mine.
 So, here’s my top reasons, in no particular order, to give up the BBs.
+
+Reason #1 - BBs is disrupting the purpose of the exhibition
         </p>
     </div>
 </article>
@@ -282,7 +298,10 @@ So, here’s my top reasons, in no particular order, to give up the BBs.
     
 
         <p class="article-excerpt">
-            …and why you should not use itA DisclaimerI have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered 
+            …and why you should not use itA DisclaimerI have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
+The Good NewsYes, you can use parameter replacement in you AlertName.
+With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like $Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$ into your alert description.
+In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.Of course I could not refrain from copy-pasting a $Data/Context…$ into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
         </p>
     </div>
 </article>
@@ -383,6 +402,9 @@ So now I can
             Here’s a little something-something for the wicked.
 Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.
 Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.
+
+Although you do configure your forwarders using Operations Manager, removing the management group you were running ACS in does not mean the agents will shut down and disable the AdtAgent service or stop trying to forward audit events to your collector. Now, selecting 10 agents at the time and running the “Disable Audit Collection” task–in case you did not know, there’s a limitation on how many agents you can run a task on in the Operations Console–is not my idea of a jolly good day and since Powershell is a bucket of joy in comparison; here’s a script for you all!
+
         </p>
     </div>
 </article>
@@ -441,7 +463,18 @@ It is nothing ground breaking at all and all the information is avai
     
 
         <p class="article-excerpt">
-            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many 
+            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those “do you think we could monitor our …-system too?” questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.
+PurposeMy idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.
+The TG WinAutoSvc Management PackTo give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:
+
+You will get an instance of the service classes for each and every service.
+It uses different classes for Own Process services and Shared Process services (svchost for example).
+Every service have a health state (you can use them in distributed applications).
+The service state monitors are inherited from their base classes, no coding neccesary.
+There is only one discovery script for all kinds of windows services.
+Extending the discovery to include different kinds of windows services, like kernel processes, is a matter of filtering.
+It is Open Source and licensed under the Eclipse Public License v1.
+
         </p>
     </div>
 </article>

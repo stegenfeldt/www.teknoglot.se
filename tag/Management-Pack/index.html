@@ -199,7 +199,18 @@ It is a fairly simple task to complete b
     
 
         <p class="article-excerpt">
-            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many 
+            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those “do you think we could monitor our …-system too?” questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.
+PurposeMy idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.
+The TG WinAutoSvc Management PackTo give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:
+
+You will get an instance of the service classes for each and every service.
+It uses different classes for Own Process services and Shared Process services (svchost for example).
+Every service have a health state (you can use them in distributed applications).
+The service state monitors are inherited from their base classes, no coding neccesary.
+There is only one discovery script for all kinds of windows services.
+Extending the discovery to include different kinds of windows services, like kernel processes, is a matter of filtering.
+It is Open Source and licensed under the Eclipse Public License v1.
+
         </p>
     </div>
 </article>
@@ -238,7 +249,15 @@ It is a fairly simple task to complete b
     
 
         <p class="article-excerpt">
-            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl
+            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.
+To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:
+
+SNMP Setup and Simple Custom SNMP Discovery - Pretty much the basics
+SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has the links to the other parts
+Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
+
+It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
+Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
         </p>
     </div>
 </article>
@@ -266,7 +285,14 @@ It is a fairly simple task to complete b
 
         <p class="article-excerpt">
             After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.
-Both seem to be fully Cluster aware and pretty much h
+Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.
+Message Queuing 4.0 Management Pack for Operations Manager 2007&gt; **Quick Details**
+
+Version: 6.0.6700.83
+Date Published: 4/5/2010
+Language: English  
+
+Download here: http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;displaylang=en
         </p>
     </div>
 </article>
@@ -308,7 +334,19 @@ Both seem to be fully Cluster aware and pretty much h
 
         <p class="article-excerpt">
             Microsoft has released an update to the MSMQ (version 3) management pack.
-System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ
+System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ) is a server application that enables applications to communicate across heterogeneous networks and systems that may be temporarily offline or otherwise inaccessible. Instead of an application communicating with a service on another computer, it sends its information to Message Queuing, which sends the information to a Message Queuing service on the target computer where it is made available to the other application. Message Queuing provides guaranteed delivery, efficient routing, security, and priority based messaging.
+Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
+
+The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+The Message Queuing Management Pack supports the following platforms:
+
+Windows Server 2003
+Windows XP
+
+The Message Queuing Management Pack also supports monitoring clustered MSMQ components
+
+Emphasis by me.
+
         </p>
     </div>
 </article>
@@ -372,6 +410,14 @@ The Conf
             This update hasn’t showed up in the MP Catalog yet, but the System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here.
 Besides SUSE 11 support, here’s the short overview.
 
+The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.Feature Summary:The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:
+
+Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions) Support of Solaris Zones Fix for defunct Process issue The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks. The Cross Platform Agent may not restart after the AIX server reboots.
+
+The latest versions of all the Operations Manager 2007 R2 Unix/Linux agents are included in this update.
+
+Perfect timing, I must say, since I really need this today. :D
+Update:This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.
 
         </p>
     </div>

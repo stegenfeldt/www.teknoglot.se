@@ -162,6 +162,9 @@
             Here’s a little something-something for the wicked.
 Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.
 Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.
+
+Although you do configure your forwarders using Operations Manager, removing the management group you were running ACS in does not mean the agents will shut down and disable the AdtAgent service or stop trying to forward audit events to your collector. Now, selecting 10 agents at the time and running the “Disable Audit Collection” task–in case you did not know, there’s a limitation on how many agents you can run a task on in the Operations Console–is not my idea of a jolly good day and since Powershell is a bucket of joy in comparison; here’s a script for you all!
+
         </p>
     </div>
 </article>

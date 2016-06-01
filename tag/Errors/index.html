@@ -159,7 +159,15 @@
     
 
         <p class="article-excerpt">
-            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl
+            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.
+To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:
+
+SNMP Setup and Simple Custom SNMP Discovery - Pretty much the basics
+SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has the links to the other parts
+Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
+
+It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
+Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
         </p>
     </div>
 </article>
@@ -188,7 +196,8 @@
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>
@@ -231,7 +240,9 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
         <p class="article-excerpt">
             What do you do when you cannot delete a file or folder on a windows server?
 Check the file permissions! And if that doesn’t help?
-Check the share permissions! Yes, if it is a shared folder. And if tha
+Check the share permissions! Yes, if it is a shared folder. And if that doesn’t help?
+Check the file ownership! Great! But then what?
+Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).Another possible reason could actually be that the path to the file or folder is too long. You won’t actually get an error telling you that the filepath exceeds the 255 characters Windows can handle but a simple “Acces Denied”.
         </p>
     </div>
 </article>
@@ -353,6 +364,7 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
 SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
+
         </p>
     </div>
 </article>

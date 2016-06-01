@@ -252,6 +252,7 @@ Anyway, I have tried to make sure that all the links, images and urls are still 
 Still fiddling with the themes thought.
 Sorry for the inconvenience!
 ps. Post from the old site is a jump ahead.
+
         </p>
     </div>
 </article>
@@ -292,7 +293,15 @@ ps. Post from the old site is a jump ahead.
     
 
         <p class="article-excerpt">
-            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl
+            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.
+To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:
+
+SNMP Setup and Simple Custom SNMP Discovery - Pretty much the basics
+SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has the links to the other parts
+Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
+
+It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
+Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
         </p>
     </div>
 </article>
@@ -319,7 +328,11 @@ ps. Post from the old site is a jump ahead.
     
 
         <p class="article-excerpt">
-            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s
+            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
+PreparationsRead the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)
+I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
+# yum groupinstall "Development Tools"# yum install kernel-headers
+I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
         </p>
     </div>
 </article>
@@ -351,7 +364,14 @@ ps. Post from the old site is a jump ahead.
 
         <p class="article-excerpt">
             After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.
-Both seem to be fully Cluster aware and pretty much h
+Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.
+Message Queuing 4.0 Management Pack for Operations Manager 2007&gt; **Quick Details**
+
+Version: 6.0.6700.83
+Date Published: 4/5/2010
+Language: English  
+
+Download here: http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;displaylang=en
         </p>
     </div>
 </article>
@@ -379,7 +399,10 @@ Both seem to be fully Cluster aware and pretty much h
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it e
+This time I’ve basically put parameter support in it to make it easier to use.
+Here’s the script anyway.
+Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
+
         </p>
     </div>
 </article>
@@ -412,7 +435,8 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of th
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
         </p>
     </div>
 </article>
@@ -452,7 +476,19 @@ This seems to be  most common on Windows 2008 and i guess it’s because of th
 
         <p class="article-excerpt">
             Microsoft has released an update to the MSMQ (version 3) management pack.
-System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ
+System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ) is a server application that enables applications to communicate across heterogeneous networks and systems that may be temporarily offline or otherwise inaccessible. Instead of an application communicating with a service on another computer, it sends its information to Message Queuing, which sends the information to a Message Queuing service on the target computer where it is made available to the other application. Message Queuing provides guaranteed delivery, efficient routing, security, and priority based messaging.
+Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
+
+The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+The Message Queuing Management Pack supports the following platforms:
+
+Windows Server 2003
+Windows XP
+
+The Message Queuing Management Pack also supports monitoring clustered MSMQ components
+
+Emphasis by me.
+
         </p>
     </div>
 </article>
