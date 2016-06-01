@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell] | stegenfeldt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="OpsMgr,PoSH,Fail-over" />
+    
+    <meta name="description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]">
+<meta property="og:url" content="http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/index.html">
+<meta property="og:site_name" content="stegenfeldt">
+<meta property="og:description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
+<meta property="og:updated_time" content="2016-05-24T21:30:13.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]">
+<meta name="twitter:description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Static. Nothing but static.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/">Code</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/PoSH/">PoSH</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Code/vbs/">VBS</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/rhes/">RedHat ES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/sles/">SLES</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/">Microsoft</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/sql/">SQL Server</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/windows/">Windows</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/ms/winvista/">Windows Vista</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/Mikrotik/">Mikrotik</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/topics/tb/">Technobabble</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/About/">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" class="article-date">
+    <time datetime="2012-06-21T08:58:13.000Z" itemprop="datePublished">2012-06-21</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>In the last post, <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/" title="OpsMgr 2012 Agent &amp; Gateway Failover – The Basics [#opsmgr, #powershell]" target="_blank" rel="external">OpsMgr 2012 Agent &amp; Gateway Failover – The Basics</a>, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.</p>
+<p>To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.</p>
+<a id="more"></a>
+<h3 id="Inputs"><a href="#Inputs" class="headerlink" title="Inputs"></a>Inputs</h3><p>To use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.</p>
+<p>[powershell]</p>
+<h1 id="Input-SCOM-Management-Server-to-connect-to-in-this-session"><a href="#Input-SCOM-Management-Server-to-connect-to-in-this-session" class="headerlink" title="Input SCOM Management Server to connect to in this session"></a>Input SCOM Management Server to connect to in this session</h1><p>[string]$inputScomMS = “scomms01.domain.local”</p>
+<h1 id="Input-an-existing-agent-you-want-to-modify"><a href="#Input-an-existing-agent-you-want-to-modify" class="headerlink" title="Input an existing agent you want to modify"></a>Input an existing agent you want to modify</h1><p>[string]$inputTargetAgent = “*.domain.local”</p>
+<p>[/powershell]</p>
+<blockquote>
+<p>Note: If you are using load-balanced SDK-services, or “Data Access Services”, pointing <em>$inputScomMS</em> to that virtual host-name will work perfectly fine.<br>This example uses a wild-card for the agent selection and I guess it’s the most likely scenario for this script, but a single host-name obviously works fine as well. Supported wildcard selections are <a href="http://technet.microsoft.com/en-us/library/ee692793.aspx" target="_blank" rel="external">documented at TechNet</a>. An array of computer-names or a comma-separated list, however, will not work. You could easily add that functionality but it’s out of scope for this example.</p>
+</blockquote>
+<h3 id="Connect-to-Your-Management-Group"><a href="#Connect-to-Your-Management-Group" class="headerlink" title="Connect to Your Management Group"></a>Connect to Your Management Group</h3><p>To run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the <em>$inputScomMS</em> setting. If loading the module fails–maybe it is not installed–we will exit the script.</p>
+<p>[powershell]</p>
+<h1 id="Check-if-OperationsManager-module-is-loaded"><a href="#Check-if-OperationsManager-module-is-loaded" class="headerlink" title="Check if OperationsManager module is loaded"></a>Check if OperationsManager module is loaded</h1><p>If (Get-Module -Name “OperationsManager”) {<br> try {</p>
+<h1 id="Try-to-load-the-module"><a href="#Try-to-load-the-module" class="headerlink" title="Try to load the module"></a>Try to load the module</h1><p> Import-Module -Name “OperationsManager”<br> } catch {</p>
+<h1 id="Did-not-work-exit-the-script"><a href="#Did-not-work-exit-the-script" class="headerlink" title="Did not work, exit the script"></a>Did not work, exit the script</h1><p> echo “Could not load Operations Manager module”<br> exit<br> }<br>}</p>
+<h1 id="Module-is-loaded-connect-to-Management-Group-Server"><a href="#Module-is-loaded-connect-to-Management-Group-Server" class="headerlink" title="Module is loaded, connect to Management Group/Server"></a>Module is loaded, connect to Management Group/Server</h1><p>New-SCOMManagementGroupConnection -ComputerName $inputScomMS</p>
+<p>[/powershell]</p>
+<p>A good idea would, of course, be to first check if we already have an existing management group connection before creating a new one. But that’s up to you.</p>
+<h3 id="Rally-Your-Agents-and-Management-Servers"><a href="#Rally-Your-Agents-and-Management-Servers" class="headerlink" title="Rally Your Agents (and Management Servers)"></a>Rally Your Agents (and Management Servers)</h3><p>Since we cannot manage manually installed agents–that would be AD-integrated or installed locally using Configuration Manager or maybe the wizard–through powershell we don’t even want to try. So we’ll exclude them.</p>
+<p>We also need all the available management servers. <del>This will not handle Gateway servers as they have their own cmdlet, <em>Get-SCOMGatewayManagementServer</em>, in Operations Manager 2012.</del> Strike that! There is a specific cmdlet for Gateway Servers in OpsMgr 2012, but the regular <em>Get-SCOMManagementServer</em> actually don’t care whether it’s a normal Management Server or a Gateway Server. The <em>Get-SCOMGatewayManagementServer</em>, however, only return real Gateway Servers. That means that this script will not care if it is a Management Server or a Gateway Server, so be sure to add some kind of filtering before running it in a Management Group containing management servers.</p>
+<p>[powershell]</p>
+<h1 id="Select-matching-remotely-manageable-agents"><a href="#Select-matching-remotely-manageable-agents" class="headerlink" title="Select matching remotely manageable agents"></a>Select matching remotely manageable agents</h1><p>$scomAgents = Get-SCOMAgent -DNSHostName $inputTargetAgent | Where {$_.ManuallyInstalled -ne $true}</p>
+<h1 id="Get-all-management-servers"><a href="#Get-all-management-servers" class="headerlink" title="Get all management servers"></a>Get all management servers</h1><p>$scomManagementServers = Get-SCOMManagementServer</p>
+<p>[/powershell]</p>
+<p>The reason I like to store all matching agents in a variable is that we will save ourselves a lot of trips to the Data Access Service later on, and we also get a nice collection to run our foreach-loop on. This method is much faster than running <em>Get-SCOMAgent</em> inline as we did in “The Basics”.</p>
+<blockquote>
+<p>Note: It would probably be a good idea to check that <em>$scomAgents</em> actually contains anything; checking for <em>$null</em> with a simple _if() _would be enough.</p>
+</blockquote>
+<h3 id="Do-Stuff"><a href="#Do-Stuff" class="headerlink" title="Do Stuff"></a>Do Stuff</h3><p>We have our connection to the management group, we have collected our agents, and we have our management servers. It’s time to loop through the agents and set their Primary and Fail-over management servers.</p>
+<p>[powershell]</p>
+<p>foreach ($scomAgent in $scomAgents) {</p>
+<h1 id="Get-the-primary-management-server-for-the-agent"><a href="#Get-the-primary-management-server-for-the-agent" class="headerlink" title="Get the primary management server for the agent"></a>Get the primary management server for the agent</h1><p> $scomPrimaryMS = $scomManagementServers | where {$_.Name -eq $scomAgent.PrimaryManagementServerName}</p>
+<h1 id="Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers"><a href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers" class="headerlink" title="Remove the primary MS from “all MS” array to use it for FailOver servers"></a>Remove the primary MS from “all MS” array to use it for FailOver servers</h1><p> $scomFailOverMS = $scomManagementServers | Where-Object {$_.Name -ne $scomPrimaryMS.Name}</p>
+<h1 id="Set-Primary-Management-Server"><a href="#Set-Primary-Management-Server" class="headerlink" title="Set Primary Management Server"></a>Set Primary Management Server</h1><p> Set-SCOMParentManagementServer -Agent $scomAgent -PrimaryServer $scomPrimaryMS</p>
+<h1 id="Set-Fail-over-Management-Server"><a href="#Set-Fail-over-Management-Server" class="headerlink" title="Set Fail-over Management Server"></a>Set Fail-over Management Server</h1><p> Set-SCOMParentManagementServer -Agent $scomAgent -FailoverServer $scomFailOverMS<br>}</p>
+<p>[/powershell]</p>
+<p>The nice thing about loading the agents and the management servers into variables is that all the information you need for this script is pre-cached in memory. You don’t have to connect to the management group to find out which management server happens is the primary for each agent. And you don’t have to run <em>Get-SCOMManagementServer</em> for each agent to select which ones that will be fail-over management servers. All that information is in memory, and memory is fast.</p>
+<h3 id="The-Copy-Paste-Part"><a href="#The-Copy-Paste-Part" class="headerlink" title="The Copy/Paste Part"></a>The Copy/Paste Part</h3><p>As usual, here’s the entire script for you to copy. Read it, try it, adapt it…</p>
+<p>[powershell]</p>
+<h1 id="Input-SCOM-Management-Server-to-connect-to-in-this-session-1"><a href="#Input-SCOM-Management-Server-to-connect-to-in-this-session-1" class="headerlink" title="Input SCOM Management Server to connect to in this session"></a>Input SCOM Management Server to connect to in this session</h1><p>[string]$inputScomMS = “scomms02.domain.local”</p>
+<h1 id="Input-an-existing-agent-you-want-to-modify-1"><a href="#Input-an-existing-agent-you-want-to-modify-1" class="headerlink" title="Input an existing agent you want to modify"></a>Input an existing agent you want to modify</h1><p>[string]$inputTargetAgent = “*.domain.local”</p>
+<h3 id="Connect-to-SCOM-2012-Management-Group"><a href="#Connect-to-SCOM-2012-Management-Group" class="headerlink" title="Connect to SCOM 2012 Management Group"></a>Connect to SCOM 2012 Management Group</h3><h1 id="Check-if-OperationsManager-module-is-loaded-1"><a href="#Check-if-OperationsManager-module-is-loaded-1" class="headerlink" title="Check if OperationsManager module is loaded"></a>Check if OperationsManager module is loaded</h1><p>If (Get-Module -Name “OperationsManager”) {<br> try {</p>
+<h1 id="Try-to-load-the-module-1"><a href="#Try-to-load-the-module-1" class="headerlink" title="Try to load the module"></a>Try to load the module</h1><p> Import-Module -Name “OperationsManager”<br> } catch {</p>
+<h1 id="Did-not-work-exit-the-script-1"><a href="#Did-not-work-exit-the-script-1" class="headerlink" title="Did not work, exit the script"></a>Did not work, exit the script</h1><p> echo “Could not load Operations Manager module”<br> exit<br> }<br>}</p>
+<h1 id="Module-is-loaded-connect-to-Management-Group-Server-1"><a href="#Module-is-loaded-connect-to-Management-Group-Server-1" class="headerlink" title="Module is loaded, connect to Management Group/Server"></a>Module is loaded, connect to Management Group/Server</h1><p>New-SCOMManagementGroupConnection -ComputerName $inputScomMS</p>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><h1 id="Select-matching-remotely-manageable-agents-1"><a href="#Select-matching-remotely-manageable-agents-1" class="headerlink" title="Select matching remotely manageable agents"></a>Select matching remotely manageable agents</h1><p>$scomAgents = Get-SCOMAgent -DNSHostName $inputTargetAgent | Where {$_.ManuallyInstalled -ne $true}</p>
+<h1 id="Get-all-management-servers-1"><a href="#Get-all-management-servers-1" class="headerlink" title="Get all management servers"></a>Get all management servers</h1><p>$scomManagementServers = Get-SCOMManagementServer<br>foreach ($scomAgent in $scomAgents) {</p>
+<h1 id="Get-the-primary-management-server-for-the-agent-1"><a href="#Get-the-primary-management-server-for-the-agent-1" class="headerlink" title="Get the primary management server for the agent"></a>Get the primary management server for the agent</h1><p> $scomPrimaryMS = $scomManagementServers | where {$_.Name -eq $scomAgent.PrimaryManagementServerName}</p>
+<h1 id="Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers-1"><a href="#Remove-the-primary-MS-from-“all-MS”-array-to-use-it-for-FailOver-servers-1" class="headerlink" title="Remove the primary MS from “all MS” array to use it for FailOver servers"></a>Remove the primary MS from “all MS” array to use it for FailOver servers</h1><p> $scomFailOverMS = $scomManagementServers | Where-Object {$_.Name -ne $scomPrimaryMS.Name}</p>
+<h1 id="Set-Primary-Management-Server-1"><a href="#Set-Primary-Management-Server-1" class="headerlink" title="Set Primary Management Server"></a>Set Primary Management Server</h1><p> Set-SCOMParentManagementServer -Agent $scomAgent -PrimaryServer $scomPrimaryMS</p>
+<h1 id="Set-Fail-over-Management-Server-1"><a href="#Set-Fail-over-Management-Server-1" class="headerlink" title="Set Fail-over Management Server"></a>Set Fail-over Management Server</h1><p> Set-SCOMParentManagementServer -Agent $scomAgent -FailoverServer $scomFailOverMS<br>}</p>
+<h3 id="Done"><a href="#Done" class="headerlink" title="Done!"></a>Done!</h3><p>[/powershell]</p>
+<p>GLHF!</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" data-id="cioxbbebm0026mgo2xp76nyk6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/teknoglot" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/+teknoglot" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="bitbucket" href="https://bitbucket.org/stegenfeldt" target="_blank">
+                        <i class="icon fa fa-bitbucket"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/stegenfeldt" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/ms/opsmgr2012/psmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/tb/enu-problems/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Menu Problems!</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/tb/">Technobabble</a></p>
+                            <p class="item-title"><a href="/tb/016-06-01-in-transit-yet-again/" class="title">In transit, yet again</a></p>
+                            <p class="item-date"><time datetime="2016-06-01T19:03:35.000Z" itemprop="datePublished">2016-06-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/vent-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="title">Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]</a></p>
+                            <p class="item-date"><time datetime="2016-02-15T11:22:28.000Z" itemprop="datePublished">2016-02-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/psmgr-2012-r2-ur4-field-notes/" class="title">OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-10-30T10:41:47.000Z" itemprop="datePublished">2014-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/quaredup-installation/" class="title">SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]</a></p>
+                            <p class="item-date"><time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
+                            <p class="item-title"><a href="/ms/opsmgr2012/psmgr2012r2ur3-field-notes/" class="title">OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]</a></p>
+                            <p class="item-date"><time datetime="2014-09-02T09:30:18.000Z" itemprop="datePublished">2014-09-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/Code/">Code</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Code/PoSH/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Code/vbs/">VBS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">37</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Teknoglot/" style="font-size: 11.25px;">Teknoglot</a> <a href="/tag/Teknoglot-Hexo-Wordpress/" style="font-size: 10px;">Teknoglot Hexo Wordpress</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 11.25px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.teknoglot.se/">teknoglot</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.atea.se/">Atea</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'teknoglotse';
+    
+    
+    var disqus_url = 'http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
