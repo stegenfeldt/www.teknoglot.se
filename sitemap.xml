@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://www.teknoglot.se/post-sitemap.xml</loc>
+        <loc>https://www.teknoglot.se/post-sitemap.xml</loc>
         <lastmod>2016-06-01T23:16:48.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.teknoglot.se/page-sitemap.xml</loc>
+        <loc>https://www.teknoglot.se/page-sitemap.xml</loc>
         <lastmod>2016-05-17T22:26:44.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.teknoglot.se/category-sitemap.xml</loc>
+        <loc>https://www.teknoglot.se/category-sitemap.xml</loc>
         <lastmod>2016-05-19T10:42:06.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://www.teknoglot.se/tag-sitemap.xml</loc>
+        <loc>https://www.teknoglot.se/tag-sitemap.xml</loc>
         <lastmod>2016-05-19T09:11:09.000Z</lastmod>
     </sitemap>
 
