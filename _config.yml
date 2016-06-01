@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: stegenfeldt
+title: "teknoglot:"
 subtitle: 
 description: "Techspeak for the socially diminished."
 author: Samuel Tegenfeldt
@@ -12,7 +12,7 @@ timezone: Europe/Stockholm
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://test.teknoglot.se
+url: http://www.teknoglot.se
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -48,8 +48,9 @@ default_category: Technobabble
 category_map:
   Technobabble: tb
   Microsoft: ms
+  Code: code
   Powershell: posh
-  PoHS: posh
+  PoSH: posh
   VBS: vbs
   OpsMgr 2007: opsmgr2007
   OpsMgr 2012: opsmgr2012
