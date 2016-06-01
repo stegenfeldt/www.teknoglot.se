@@ -8,13 +8,49 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Currently, this is nothing more than a playground for a dynamically generated static website.</description>
-    <pubDate>Tue, 24 May 2016 21:59:37 GMT</pubDate>
+    <pubDate>Wed, 01 Jun 2016 20:33:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title>In transit, yet again</title>
+      <link>http://test.teknoglot.se/tb/016-06-01-in-transit-yet-again/</link>
+      <guid>http://test.teknoglot.se/tb/016-06-01-in-transit-yet-again/</guid>
+      <pubDate>Wed, 01 Jun 2016 19:03:35 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s b
+      
+      </description>
+      
+      <content:encoded>&lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
+&lt;h2 id=&quot;The-reason-s&quot;&gt;&lt;a href=&quot;#The-reason-s&quot; class=&quot;headerlink&quot; title=&quot;The reason(s)&quot;&gt;&lt;/a&gt;The reason(s)&lt;/h2&gt;&lt;p&gt;Ok, so I’ve using &lt;a href=&quot;https://www.wordpress.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wordpress&lt;/a&gt; for quite a long time now and it’s been good. Mostly.&lt;br&gt;It’s a fairly solid platform and has a whole slew of feautures that work nicely.&lt;/p&gt;
+&lt;p&gt;Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with &lt;a href=&quot;https://en.wikipedia.org/wiki/Textile_(markup_language)&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;textile&lt;/a&gt; and&lt;br&gt;similar markup/writing/notation languages. For those unaware, textile is not unlike &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown&lt;/a&gt;.&lt;br&gt;Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.&lt;br&gt;Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.&lt;/p&gt;
+&lt;p&gt;Before that I used Movable Type, and prior to that either Dreamweaver or… well, notepad or vim.&lt;/p&gt;
+&lt;p&gt;Problem with all of those platforms, however, is that they require dynamically generated webpages and technologies like PHP, Perl, .NET, Java and whatnot.&lt;br&gt;That, in itself, has been a very minor issue until lately. Sure, it requires servers with logics, engines, add-ons, execution rights to the local filesystem etc, but&lt;br&gt;still a minor nuisance. Mostly a financial nuisance really as active servers tend to cost money while finding static hosting for free is still pretty easy.&lt;br&gt;Hell! I could put a webserver on a RaspberryPi and get good performance for a small-ish blog like mine if all I am using is static content.&lt;/p&gt;
+&lt;p&gt;But, again. Not a major problem in itself. The main instigating factors to move away from Wordpress are the increasing size of the package, the lack of personal control,&lt;br&gt;the lack of ease to extend my platform due to ever-expanding APIs and the fact that it is so popular that every “hacker” and it’s mother knows how to find exploits on it.&lt;br&gt;My webhost, &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NFSN&lt;/a&gt; has been very good at detecting probing and brute-force attempts and automatically block public access to stuff like the login-pages and XML-RPC interfaces when that happens.&lt;br&gt;I am just so sick and tired of having to constantly be on top of it with software updates, plugin updates, theme updates, security updates, spam-filtering, re-enabling the login page…&lt;/p&gt;
+&lt;h2 id=&quot;Back-to-the-basics&quot;&gt;&lt;a href=&quot;#Back-to-the-basics&quot; class=&quot;headerlink&quot; title=&quot;Back to the basics&quot;&gt;&lt;/a&gt;Back to the basics&lt;/h2&gt;&lt;p&gt;Teknoglot.se will be served statically from now on, and it will be hosted for free on &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Pages&lt;/a&gt;.&lt;br&gt;Using &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo.io&lt;/a&gt; I can write my posts using markdown, then with a simple &lt;code&gt;hexo generate --deploy&lt;/code&gt; generate and update the static files and publish them.&lt;br&gt;No login pages to hack, no dynamic pages to exploit, no server security to worry about.&lt;/p&gt;
+&lt;p&gt;Hexo is built using node.js, which I have installed for other reasons anyway, and since the actual website is build from a git repository I obviously have proper versioning on everything I do per default.&lt;/p&gt;
+&lt;p&gt;There’s obviously not as many plugins, helpers, themes and features available as in Wordpress. And blogging will require some command-line stuff.&lt;br&gt;But I am totally fine with that. I means I can write offline, generate offline to preview. And when finished, push to the public repo.&lt;/p&gt;
+&lt;h2 id=&quot;But-comments&quot;&gt;&lt;a href=&quot;#But-comments&quot; class=&quot;headerlink&quot; title=&quot;But, comments?&quot;&gt;&lt;/a&gt;But, comments?&lt;/h2&gt;&lt;p&gt;Using Disqus. All client-side.&lt;br&gt;You need javascript, obviously, but I don’t see me losing many readers for that to be frank. ;)&lt;/p&gt;
+&lt;h2 id=&quot;The-kinks&quot;&gt;&lt;a href=&quot;#The-kinks&quot; class=&quot;headerlink&quot; title=&quot;The kinks&quot;&gt;&lt;/a&gt;The kinks&lt;/h2&gt;&lt;p&gt;No, not &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Kinks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;the band&lt;/a&gt;. The stuff I have missed while migrating the posts from Wordpress to Hexo.&lt;br&gt;Here’s what to expect.&lt;/p&gt;
+&lt;h3 id=&quot;Permalinks-may-not-work&quot;&gt;&lt;a href=&quot;#Permalinks-may-not-work&quot; class=&quot;headerlink&quot; title=&quot;Permalinks may not work&quot;&gt;&lt;/a&gt;Permalinks may not work&lt;/h3&gt;&lt;p&gt;I have done my best to ensure that my old permalink structure from the old site is intact.&lt;br&gt;Hexo have some limitations to categories though, meaning that I cannot yet have two main categories on the same post.&lt;br&gt;This do affect those articles that were available through both /code/posh/my-post, /ms/scom2012/my-post.&lt;br&gt;For those, I have had to pick one to be main and rely on tags to group stuff more freely. &lt;/p&gt;
+&lt;h3 id=&quot;Code-highlight-artefacts&quot;&gt;&lt;a href=&quot;#Code-highlight-artefacts&quot; class=&quot;headerlink&quot; title=&quot;Code-highlight artefacts&quot;&gt;&lt;/a&gt;Code-highlight artefacts&lt;/h3&gt;&lt;p&gt;Wordpress highlight plugins and markdown have different syntax, and the migration plugin did not handle that.&lt;br&gt;This means that you might find a few &lt;code&gt;[powershell]&lt;/code&gt;, &lt;code&gt;[sql]&lt;/code&gt; or &lt;code&gt;[plain]&lt;/code&gt; tags littered throughout the post for a while.&lt;br&gt;If you spot one, do comment to let me know. But I will try to convert them all as I find them.&lt;/p&gt;
+&lt;h3 id=&quot;Images-and-galleries&quot;&gt;&lt;a href=&quot;#Images-and-galleries&quot; class=&quot;headerlink&quot; title=&quot;Images and galleries&quot;&gt;&lt;/a&gt;Images and galleries&lt;/h3&gt;&lt;p&gt;Not sure I ever used a gallery, but some images may be missing as I have to migrate them manually and I am absolutely certain that I have missed at least one. Maybe two. ^That’s ^a ^joke.&lt;/p&gt;
+&lt;p&gt;Once again, if you find a missing one you are welcome to post a comment to let me know.&lt;/p&gt;
+&lt;h3 id=&quot;Series&quot;&gt;&lt;a href=&quot;#Series&quot; class=&quot;headerlink&quot; title=&quot;Series&quot;&gt;&lt;/a&gt;Series&lt;/h3&gt;&lt;p&gt;Nope, no such thing in Hexo at the moment.&lt;br&gt;May be able to use some other structure, but for now it will be normal posts with links. Probably missing a few there as well.&lt;/p&gt;
+&lt;h3 id=&quot;Post-tabs&quot;&gt;&lt;a href=&quot;#Post-tabs&quot; class=&quot;headerlink&quot; title=&quot;Post tabs&quot;&gt;&lt;/a&gt;Post tabs&lt;/h3&gt;&lt;p&gt;Also not available in Hexo.&lt;br&gt;I have converted those posts to regular posts. I am working on a proper TOC to make them easier to browse.&lt;/p&gt;
+&lt;h3 id=&quot;Links&quot;&gt;&lt;a href=&quot;#Links&quot; class=&quot;headerlink&quot; title=&quot;Links&quot;&gt;&lt;/a&gt;Links&lt;/h3&gt;&lt;p&gt;As with the images, links I have created manually may point to old wordpress folders and have to be redirected.&lt;br&gt;I know for a fact that I have missed a few.&lt;/p&gt;
+&lt;h3 id=&quot;Graphics&quot;&gt;&lt;a href=&quot;#Graphics&quot; class=&quot;headerlink&quot; title=&quot;Graphics&quot;&gt;&lt;/a&gt;Graphics&lt;/h3&gt;&lt;p&gt;Using a new theme will take a few adaptations to logos and other graphics.&lt;br&gt;This will change over time, so don’t laugh too hard. &lt;/p&gt;
+&lt;h1 id=&quot;The-Last-Word&quot;&gt;&lt;a href=&quot;#The-Last-Word&quot; class=&quot;headerlink&quot; title=&quot;The Last Word&quot;&gt;&lt;/a&gt;The Last Word&lt;/h1&gt;&lt;p&gt;Things be wonky. Have patience. Thanks!&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://test.teknoglot.se/tb/016-06-01-in-transit-yet-again/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/vent-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/vent-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</guid>
       <pubDate>Mon, 15 Feb 2016 11:22:28 GMT</pubDate>
       <description>
       
@@ -30,13 +66,13 @@
 &lt;h1 id=&quot;A-wild-work-around-appears&quot;&gt;&lt;a href=&quot;#A-wild-work-around-appears&quot; class=&quot;headerlink&quot; title=&quot;A wild work-around appears!&quot;&gt;&lt;/a&gt;A wild work-around appears!&lt;/h1&gt;&lt;p&gt;The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.&lt;br&gt;Now you just have to manage this on all your SQL-servers! (yaaaay)&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/vent-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-r2-ur4-field-notes/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-r2-ur4-field-notes/</guid>
       <pubDate>Thu, 30 Oct 2014 10:41:47 GMT</pubDate>
       <description>
       
@@ -82,13 +118,13 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
 &lt;p&gt;GLHF!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-r2-ur4-field-notes/#disqus_thread</comments>
     </item>
     
     <item>
       <title>SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/squaredup-installation/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/squaredup-installation/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/quaredup-installation/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/quaredup-installation/</guid>
       <pubDate>Tue, 09 Sep 2014 14:38:36 GMT</pubDate>
       <description>
       
@@ -119,13 +155,13 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
 &lt;p&gt;Next up will be fiddling about with custom dashboards, maps, and generally figuring out what else we can do.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/squaredup-installation/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/quaredup-installation/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/psmgr2012r2ur3-field-notes/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/psmgr2012r2ur3-field-notes/</guid>
       <pubDate>Tue, 02 Sep 2014 09:30:18 GMT</pubDate>
       <description>
       
@@ -185,13 +221,13 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
 &lt;p&gt;GLHF!&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;em&gt; &lt;/em&gt; *&lt;br&gt;&lt;br&gt;1.  You’re going to need at least one updated console to import the MP-updates. &lt;a href=&quot;#fnref-818-2&quot;&gt;↩&lt;/a&gt;&lt;br&gt;&lt;br&gt;2.  These can all be executed in parallel, agents behind Gateways will obviously need to be updated &lt;em&gt;after&lt;/em&gt; the gateway. &lt;a href=&quot;#fnref-818-1&quot;&gt;↩&lt;/a&gt; &lt;a href=&quot;#fnref2:818-1&quot;&gt;↩&lt;/a&gt; &lt;a href=&quot;#fnref3:818-1&quot;&gt;↩&lt;/a&gt; &lt;a href=&quot;#fnref4:818-1&quot;&gt;↩&lt;/a&gt;&lt;br&gt;&lt;/div&gt;</content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/psmgr2012r2ur3-field-notes/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Cloudflare as Dynamic DNS [#cloudflare #mikrotik #script]</title>
-      <link>http://test.teknoglot.se/Mikrotik/cloudflare-dynamic-dns-mikrotik/</link>
-      <guid>http://test.teknoglot.se/Mikrotik/cloudflare-dynamic-dns-mikrotik/</guid>
+      <link>http://test.teknoglot.se/Mikrotik/loudflare-dynamic-dns-mikrotik/</link>
+      <guid>http://test.teknoglot.se/Mikrotik/loudflare-dynamic-dns-mikrotik/</guid>
       <pubDate>Mon, 25 Aug 2014 11:37:36 GMT</pubDate>
       <description>
       
@@ -274,13 +310,13 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
 &lt;/ul&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Mikrotik/cloudflare-dynamic-dns-mikrotik/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Mikrotik/loudflare-dynamic-dns-mikrotik/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Quick Demo - Add Windows Performance Collection Rule [#opsmgr, #mpauthoring]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/uick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/uick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</guid>
       <pubDate>Thu, 21 Feb 2013 08:25:39 GMT</pubDate>
       <description>
       
@@ -294,13 +330,13 @@ decryptionKey=&amp;quot;AutoGenerate,IsolateApps&amp;quot; validation=&amp;quot;
 &lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=4G4aXslrjvQ&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/4G4aXslrjvQ/0.jpg&quot; alt=&quot;IMAGE ALT TEXT HERE&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/uick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/</guid>
       <pubDate>Thu, 28 Jun 2012 12:28:36 GMT</pubDate>
       <description>
       
@@ -357,13 +393,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;GLHF!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</guid>
       <pubDate>Thu, 21 Jun 2012 08:58:13 GMT</pubDate>
       <description>
       
@@ -428,13 +464,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;GLHF!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Menu Problems!</title>
-      <link>http://test.teknoglot.se/tb/menu-problems/</link>
-      <guid>http://test.teknoglot.se/tb/menu-problems/</guid>
+      <link>http://test.teknoglot.se/tb/enu-problems/</link>
+      <guid>http://test.teknoglot.se/tb/enu-problems/</guid>
       <pubDate>Thu, 21 Jun 2012 06:01:50 GMT</pubDate>
       <description>
       
@@ -449,13 +485,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;h1 id=&quot;Update&quot;&gt;&lt;a href=&quot;#Update&quot; class=&quot;headerlink&quot; title=&quot;Update&quot;&gt;&lt;/a&gt;Update&lt;/h1&gt;&lt;p&gt;I switched the theme to at least get the navigation working while I try to figure out what the problem with the regular theme is.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/menu-problems/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/enu-problems/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2012 Agent &amp; Gateway Failover - The Basics [#opsmgr, #powershell]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-gateway-failover-the-basics/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-gateway-failover-the-basics/</guid>
       <pubDate>Wed, 30 May 2012 12:12:37 GMT</pubDate>
       <description>
       
@@ -509,13 +545,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Enjoy!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/psmgr-2012-agent-gateway-failover-the-basics/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Load-balanced SCOM2012 SDK Services for Network Illiterates [#opsmgr, #nlb]</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/oad-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/oad-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</guid>
       <pubDate>Fri, 18 May 2012 11:16:51 GMT</pubDate>
       <description>
       
@@ -632,13 +668,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;&lt;em&gt;Sheesh! This post got out of hand!&lt;/em&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/oad-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Quick-Hack: Send SMS through Powershell [#powershell]</title>
-      <link>http://test.teknoglot.se/Code/PoSH/quick-hack-send-sms-through-powershell-powershell/</link>
-      <guid>http://test.teknoglot.se/Code/PoSH/quick-hack-send-sms-through-powershell-powershell/</guid>
+      <link>http://test.teknoglot.se/Code/PoSH/uick-hack-send-sms-through-powershell-powershell/</link>
+      <guid>http://test.teknoglot.se/Code/PoSH/uick-hack-send-sms-through-powershell-powershell/</guid>
       <pubDate>Tue, 15 May 2012 13:14:00 GMT</pubDate>
       <description>
       
@@ -671,13 +707,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Enjoy!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Code/PoSH/quick-hack-send-sms-through-powershell-powershell/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Code/PoSH/uick-hack-send-sms-through-powershell-powershell/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Rant - The Concept of Booth-Babes</title>
-      <link>http://test.teknoglot.se/tb/rant-the-concept-of-booth-babes/</link>
-      <guid>http://test.teknoglot.se/tb/rant-the-concept-of-booth-babes/</guid>
+      <link>http://test.teknoglot.se/tb/ant-the-concept-of-booth-babes/</link>
+      <guid>http://test.teknoglot.se/tb/ant-the-concept-of-booth-babes/</guid>
       <pubDate>Tue, 08 May 2012 16:18:05 GMT</pubDate>
       <description>
       
@@ -702,13 +738,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Ah, well. Thanks for your time.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/rant-the-concept-of-booth-babes/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/ant-the-concept-of-booth-babes/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Parameter Replacement in AlertName</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/arameter-replacement-in-alertname/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/arameter-replacement-in-alertname/</guid>
       <pubDate>Mon, 09 Apr 2012 20:04:48 GMT</pubDate>
       <description>
       
@@ -744,13 +780,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;/blockquote&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/arameter-replacement-in-alertname/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Virtual OpenVPN Server at Home</title>
-      <link>http://test.teknoglot.se/Linux/virtual-openvpn-server-at-home/</link>
-      <guid>http://test.teknoglot.se/Linux/virtual-openvpn-server-at-home/</guid>
+      <link>http://test.teknoglot.se/Linux/irtual-openvpn-server-at-home/</link>
+      <guid>http://test.teknoglot.se/Linux/irtual-openvpn-server-at-home/</guid>
       <pubDate>Wed, 28 Sep 2011 06:37:39 GMT</pubDate>
       <description>
       
@@ -763,13 +799,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Have fun.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Linux/virtual-openvpn-server-at-home/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Linux/irtual-openvpn-server-at-home/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2007 R2 Documentation</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-r2-documentation/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-r2-documentation/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-r2-documentation/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-r2-documentation/</guid>
       <pubDate>Mon, 08 Aug 2011 20:52:27 GMT</pubDate>
       <description>
       
@@ -782,13 +818,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Happy now, eh?&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-r2-documentation/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-r2-documentation/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Bulk disable ACS Forwarders (with wildcards)</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/ulk-disable-acs-forwarders-with-wildcards/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/ulk-disable-acs-forwarders-with-wildcards/</guid>
       <pubDate>Thu, 07 Jul 2011 08:59:24 GMT</pubDate>
       <description>
       
@@ -818,13 +854,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Enjoy!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/ulk-disable-acs-forwarders-with-wildcards/#disqus_thread</comments>
     </item>
     
     <item>
       <title>OpsMgr 2007 Connectivity Map</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-connectivity-map/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-connectivity-map/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-connectivity-map/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-connectivity-map/</guid>
       <pubDate>Tue, 17 May 2011 09:47:18 GMT</pubDate>
       <description>
       
@@ -838,13 +874,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Have fun!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/opsmgr-2007-connectivity-map/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/psmgr-2007-connectivity-map/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Introduction to TG WinAutoSvc v1</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2012/ntroduction-to-tg-winautosvc-v1/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2012/ntroduction-to-tg-winautosvc-v1/</guid>
       <pubDate>Fri, 29 Apr 2011 09:35:47 GMT</pubDate>
       <description>
       
@@ -871,13 +907,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Best of luck, and enjoy!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2012/ntroduction-to-tg-winautosvc-v1/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Server problems fixed! (hopefully)</title>
-      <link>http://test.teknoglot.se/tb/server-problems-fixed-hopefully/</link>
-      <guid>http://test.teknoglot.se/tb/server-problems-fixed-hopefully/</guid>
+      <link>http://test.teknoglot.se/tb/erver-problems-fixed-hopefully/</link>
+      <guid>http://test.teknoglot.se/tb/erver-problems-fixed-hopefully/</guid>
       <pubDate>Wed, 27 Apr 2011 19:50:12 GMT</pubDate>
       <description>
       
@@ -891,13 +927,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Site performance should be a bit better now.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/server-problems-fixed-hopefully/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/erver-problems-fixed-hopefully/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Sluggish performance on teknoglot</title>
-      <link>http://test.teknoglot.se/tb/sluggish-performance-on-teknoglot/</link>
-      <guid>http://test.teknoglot.se/tb/sluggish-performance-on-teknoglot/</guid>
+      <link>http://test.teknoglot.se/tb/luggish-performance-on-teknoglot/</link>
+      <guid>http://test.teknoglot.se/tb/luggish-performance-on-teknoglot/</guid>
       <pubDate>Tue, 19 Apr 2011 20:14:02 GMT</pubDate>
       <description>
       
@@ -911,13 +947,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Sorry for any inconvenience in the meantime.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/sluggish-performance-on-teknoglot/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/luggish-performance-on-teknoglot/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Move complete, welcome to teknoglot.se!</title>
-      <link>http://test.teknoglot.se/tb/move-complete-welcome-to-teknoglot-se/</link>
-      <guid>http://test.teknoglot.se/tb/move-complete-welcome-to-teknoglot-se/</guid>
+      <link>http://test.teknoglot.se/tb/ove-complete-welcome-to-teknoglot-se/</link>
+      <guid>http://test.teknoglot.se/tb/ove-complete-welcome-to-teknoglot-se/</guid>
       <pubDate>Fri, 04 Feb 2011 13:07:41 GMT</pubDate>
       <description>
       
@@ -931,13 +967,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;So, welcome!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/move-complete-welcome-to-teknoglot-se/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/ove-complete-welcome-to-teknoglot-se/#disqus_thread</comments>
     </item>
     
     <item>
       <title>I&#39;m moving (finally)</title>
-      <link>http://test.teknoglot.se/tb/im-moving-finally/</link>
-      <guid>http://test.teknoglot.se/tb/im-moving-finally/</guid>
+      <link>http://test.teknoglot.se/tb/m-moving-finally/</link>
+      <guid>http://test.teknoglot.se/tb/m-moving-finally/</guid>
       <pubDate>Tue, 01 Feb 2011 11:10:52 GMT</pubDate>
       <description>
       
@@ -962,13 +998,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Hopefully, the transition will go mostly unnoticed apart from the automatic redirect (301 - Permanently moved) to the new domain.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/im-moving-finally/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/m-moving-finally/#disqus_thread</comments>
     </item>
     
     <item>
       <title>SNMP GET Errors in OpsMgr EventLog</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/nmp-get-errors-in-eventlog/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/nmp-get-errors-in-eventlog/</guid>
       <pubDate>Thu, 02 Sep 2010 20:28:07 GMT</pubDate>
       <description>
       
@@ -997,13 +1033,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Best of luck!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/nmp-get-errors-in-eventlog/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Installing Linux Integration Services v2.1 on Red Hat ES 5</title>
-      <link>http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/</link>
-      <guid>http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/</guid>
+      <link>http://test.teknoglot.se/Linux/rhes/nstall-linuxis21-rhes5/</link>
+      <guid>http://test.teknoglot.se/Linux/rhes/nstall-linuxis21-rhes5/</guid>
       <pubDate>Tue, 31 Aug 2010 10:06:04 GMT</pubDate>
       <description>
       
@@ -1045,13 +1081,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Good luck!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Linux/rhes/nstall-linuxis21-rhes5/#disqus_thread</comments>
     </item>
     
     <item>
       <title>MSMQ 4 and MSMQ 5 MP for OpsMgr Released! (finally)</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/smq-4-and-msmq-5-mp-for-opsmgr-released-finally/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/smq-4-and-msmq-5-mp-for-opsmgr-released-finally/</guid>
       <pubDate>Tue, 06 Apr 2010 10:09:57 GMT</pubDate>
       <description>
       
@@ -1077,13 +1113,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Download here: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=28349b78-8329-44aa-8a1f-81f4e3f84d0c&amp;amp;displaylang=en&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=28349b78-8329-44aa-8a1f-81f4e3f84d0c&amp;amp;displaylang=en&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/smq-4-and-msmq-5-mp-for-opsmgr-released-finally/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Change Gateway Powershell Script</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/hange-gateway-powershell-script/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/hange-gateway-powershell-script/</guid>
       <pubDate>Wed, 31 Mar 2010 13:27:08 GMT</pubDate>
       <description>
       
@@ -1100,13 +1136,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/hange-gateway-powershell-script/#disqus_thread</comments>
     </item>
     
     <item>
       <title>ESENT Error When Modifying OpsMgr Agent</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/sent-error-when-modifying-opsmgr-agent/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/sent-error-when-modifying-opsmgr-agent/</guid>
       <pubDate>Fri, 19 Mar 2010 09:34:17 GMT</pubDate>
       <description>
       
@@ -1130,13 +1166,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;That’s pretty much it. Good luck.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/sent-error-when-modifying-opsmgr-agent/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Updated MSMQ Management Pack v6.0.6615.0!</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/pdated-msmq-management-pack/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/pdated-msmq-management-pack/</guid>
       <pubDate>Wed, 23 Dec 2009 08:57:38 GMT</pubDate>
       <description>
       
@@ -1172,13 +1208,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Cheers! Oh, and happy holidays!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/pdated-msmq-management-pack/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Linux Discovery – Not Enough Entropy</title>
-      <link>http://test.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/</link>
-      <guid>http://test.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/</guid>
+      <link>http://test.teknoglot.se/Linux/sles/inux-discovery-not-enough-entropy/</link>
+      <guid>http://test.teknoglot.se/Linux/sles/inux-discovery-not-enough-entropy/</guid>
       <pubDate>Wed, 02 Dec 2009 11:37:08 GMT</pubDate>
       <description>
       
@@ -1209,13 +1245,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;/blockquote&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Linux/sles/inux-discovery-not-enough-entropy/#disqus_thread</comments>
     </item>
     
     <item>
       <title>(re)Gain sysadmin access to SQL2005 or SQL2008</title>
-      <link>http://test.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/</link>
-      <guid>http://test.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/</guid>
+      <link>http://test.teknoglot.se/ms/sql/egain-sysadmin-access-to-sql2005-or-sql2008/</link>
+      <guid>http://test.teknoglot.se/ms/sql/egain-sysadmin-access-to-sql2005-or-sql2008/</guid>
       <pubDate>Thu, 19 Nov 2009 13:08:10 GMT</pubDate>
       <description>
       
@@ -1244,13 +1280,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;All in all, a Great article by &lt;a href=&quot;http://blogs.msdn.com/raulga/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Raul&lt;/a&gt; and all credit should go his way.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/sql/egain-sysadmin-access-to-sql2005-or-sql2008/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Updated: MP for System Center Configurations Manager 2007 SP2 on x64</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/updated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/updated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/pdated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/pdated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</guid>
       <pubDate>Tue, 03 Nov 2009 11:13:00 GMT</pubDate>
       <description>
       
@@ -1267,13 +1303,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Read more and download here:&lt;br&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&quot; title=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/updated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/pdated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Installing SQL Reporting Services 2005 on Windows 2008 x64</title>
-      <link>http://test.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/</link>
-      <guid>http://test.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/</guid>
+      <link>http://test.teknoglot.se/ms/sql/nstalling-sql-reporting-services-2005-on-windows-2008-x64/</link>
+      <guid>http://test.teknoglot.se/ms/sql/nstalling-sql-reporting-services-2005-on-windows-2008-x64/</guid>
       <pubDate>Mon, 02 Nov 2009 13:33:27 GMT</pubDate>
       <description>
       
@@ -1286,13 +1322,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Maybe I am doing it wrong but this seems to be working all right for me.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/sql/nstalling-sql-reporting-services-2005-on-windows-2008-x64/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Cannot Delete Files with Long Paths?</title>
-      <link>http://test.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</link>
-      <guid>http://test.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</guid>
+      <link>http://test.teknoglot.se/ms/windows/annot-delete-files-with-long-paths/</link>
+      <guid>http://test.teknoglot.se/ms/windows/annot-delete-files-with-long-paths/</guid>
       <pubDate>Wed, 21 Oct 2009 07:39:17 GMT</pubDate>
       <description>
       
@@ -1317,13 +1353,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;/blockquote&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/windows/annot-delete-files-with-long-paths/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Microsoft Adds support for SUSE 11 in OpsMgr R2</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/icrosoft-adds-support-for-suse-11-in-opsmgr-r2/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/icrosoft-adds-support-for-suse-11-in-opsmgr-r2/</guid>
       <pubDate>Fri, 16 Oct 2009 05:59:10 GMT</pubDate>
       <description>
       
@@ -1382,13 +1418,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;/ul&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/icrosoft-adds-support-for-suse-11-in-opsmgr-r2/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Health Rollup not working in Exchange Management Pack</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/ealth-rollup-not-working-in-exchange-management-pack/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/ealth-rollup-not-working-in-exchange-management-pack/</guid>
       <pubDate>Wed, 14 Oct 2009 10:17:08 GMT</pubDate>
       <description>
       
@@ -1400,13 +1436,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;In case you wonder why on earth I post when there’s allready a “solution” out there; Pagerank, baby!&lt;br&gt;Not for me, but for the forum post making it show up earlier on google.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/ealth-rollup-not-working-in-exchange-management-pack/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Updated: Operations Manager 2007 R2 Management Pack</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/pdated-operations-manager-2007-r2-management-pack/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/pdated-operations-manager-2007-r2-management-pack/</guid>
       <pubDate>Wed, 14 Oct 2009 09:29:00 GMT</pubDate>
       <description>
       
@@ -1423,13 +1459,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Download at: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&quot; title=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/pdated-operations-manager-2007-r2-management-pack/#disqus_thread</comments>
     </item>
     
     <item>
       <title>SQL ManagementPack Survey – Make your voice heard</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/sql-managementpack-survey-make-your-voice-heard/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/sql-managementpack-survey-make-your-voice-heard/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/ql-managementpack-survey-make-your-voice-heard/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/ql-managementpack-survey-make-your-voice-heard/</guid>
       <pubDate>Wed, 07 Oct 2009 12:24:37 GMT</pubDate>
       <description>
       
@@ -1441,13 +1477,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;&lt;a href=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; title=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&lt;/a&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/sql-managementpack-survey-make-your-voice-heard/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/ql-managementpack-survey-make-your-voice-heard/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Replace/Change a Gateway Server</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/eplacechange-a-gateway-server/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/eplacechange-a-gateway-server/</guid>
       <pubDate>Thu, 24 Sep 2009 10:32:35 GMT</pubDate>
       <description>
       
@@ -1484,13 +1520,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;If you don’t know powershell, this script basically configures all agents using the old Gateway to use the new one as primare, but keep the old one as a fail-over server. The Gateways will still get to know the changes before the agents, but since the old on is still listening to the agents (though, as the fail-over host) it will be able to tell them to go to the new one, GW2.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/eplacechange-a-gateway-server/#disqus_thread</comments>
     </item>
     
     <item>
       <title>My impression of EXT4 -- WTH!?</title>
-      <link>http://test.teknoglot.se/Linux/my-impression-of-ext4-wth/</link>
-      <guid>http://test.teknoglot.se/Linux/my-impression-of-ext4-wth/</guid>
+      <link>http://test.teknoglot.se/Linux/y-impression-of-ext4-wth/</link>
+      <guid>http://test.teknoglot.se/Linux/y-impression-of-ext4-wth/</guid>
       <pubDate>Thu, 17 Sep 2009 17:43:47 GMT</pubDate>
       <description>
       
@@ -1507,13 +1543,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Tonight I am reinstalling Ubuntu 9.04 x64 with EXT3.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Linux/my-impression-of-ext4-wth/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Linux/y-impression-of-ext4-wth/#disqus_thread</comments>
     </item>
     
     <item>
       <title>The TCP Port Check: Use with caution!</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/tcp-port-check-use-with-caution/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/tcp-port-check-use-with-caution/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/cp-port-check-use-with-caution/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/cp-port-check-use-with-caution/</guid>
       <pubDate>Thu, 27 Aug 2009 12:39:43 GMT</pubDate>
       <description>
       
@@ -1529,13 +1565,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Anyway. Just a good thing to keep in mind when running TCP Port Checks from Operations Manager 2007. Keep an eye on the logs when implementing the port checks.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/tcp-port-check-use-with-caution/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/cp-port-check-use-with-caution/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Why not use SQL Express? It’s for free!</title>
-      <link>http://test.teknoglot.se/ms/sql/whynotusesqlexpress-itsforfree/</link>
-      <guid>http://test.teknoglot.se/ms/sql/whynotusesqlexpress-itsforfree/</guid>
+      <link>http://test.teknoglot.se/ms/sql/hynotusesqlexpress-itsforfree/</link>
+      <guid>http://test.teknoglot.se/ms/sql/hynotusesqlexpress-itsforfree/</guid>
       <pubDate>Fri, 21 Aug 2009 08:38:55 GMT</pubDate>
       <description>
       
@@ -1562,13 +1598,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Personally, I find that If you need a database server for production data, don’t go for SQL Express. Many customers have gone that way because “it’s free!” just to find themselves in the midst of a SQL Server upgrade and database migration a year later.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/sql/whynotusesqlexpress-itsforfree/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/sql/hynotusesqlexpress-itsforfree/#disqus_thread</comments>
     </item>
     
     <item>
       <title>MSMQ Management Pack: Subscript Out of Range</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/smq-mp-subscriptoutofrange/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/smq-mp-subscriptoutofrange/</guid>
       <pubDate>Wed, 24 Jun 2009 07:51:01 GMT</pubDate>
       <description>
       
@@ -1582,13 +1618,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;This seems to be related to the discovery of public queues on &lt;em&gt;some&lt;/em&gt; servers that has none. One quick fix, or rather work-around, is to override the discovery on these servers to set &lt;code&gt;DiscoverPublic&lt;/code&gt; to &lt;code&gt;False&lt;/code&gt;.&lt;br&gt;&lt;img src=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2009/06/screenshot1245833173.png&quot; alt=&quot;Screenshot of Override&quot; title=&quot;screenshot1245833173&quot;&gt;&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/smq-mp-subscriptoutofrange/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Windows Server 2008 NLB MP for OpsMgr released</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/indows-server-2008-nlb-m-for-opsmgr-released/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/indows-server-2008-nlb-m-for-opsmgr-released/</guid>
       <pubDate>Wed, 29 Apr 2009 10:59:54 GMT</pubDate>
       <description>
       
@@ -1609,13 +1645,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;No support for Mixed-mode (2008 and 2003) clusters though.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/indows-server-2008-nlb-m-for-opsmgr-released/#disqus_thread</comments>
     </item>
     
     <item>
       <title>MSMQ 3 MP for OpsMgr v.6.0.6587.0 Released</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/smq-3-mp-for-opsmgr-v6065870-released/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/smq-3-mp-for-opsmgr-v6065870-released/</guid>
       <pubDate>Tue, 28 Apr 2009 13:30:18 GMT</pubDate>
       <description>
       
@@ -1632,13 +1668,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;The MP Guide does not really say much about what’s updated and I don’t know how much more than the reporting they have fixed. I can just state the fact that support for clustered MSMQ 3 instances is still missing.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/smq-3-mp-for-opsmgr-v6065870-released/#disqus_thread</comments>
     </item>
     
     <item>
       <title>NetworkAdapterCheck.vbs fails on Windows 2000</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/etworkadaptercheck-fails-on-win2k/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/etworkadaptercheck-fails-on-win2k/</guid>
       <pubDate>Sun, 26 Apr 2009 09:21:18 GMT</pubDate>
       <description>
       
@@ -1670,13 +1706,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;h1 id=&quot;Comments&quot;&gt;&lt;a href=&quot;#Comments&quot; class=&quot;headerlink&quot; title=&quot;Comments&quot;&gt;&lt;/a&gt;Comments&lt;/h1&gt;&lt;p&gt;There’s quite the lot of similar errors posted on various forums on the internet but most of them ends up pointing towards the Antivirus Software as the perp and we have tried various exceptions on the server like excluding HealthExplorer.exe, MonitoringHost.exe and also the entire Health Service State folder with no improvement. But since I was able to run the scripts from other locations (not excluded) on the same server I find it hard to believe that the AV would be blocking it.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/etworkadaptercheck-fails-on-win2k/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Clearing Disabled Discovery in OpsMgr 2007</title>
-      <link>http://test.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</link>
-      <guid>http://test.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</guid>
+      <link>http://test.teknoglot.se/ms/opsmgr2007/learing-disabled-discovery/</link>
+      <guid>http://test.teknoglot.se/ms/opsmgr2007/learing-disabled-discovery/</guid>
       <pubDate>Mon, 20 Apr 2009 08:15:15 GMT</pubDate>
       <description>
       
@@ -1688,13 +1724,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Read more about it at &lt;a href=&quot;http://blogs.technet.com/jonathanalmquist/archive/2008/09/14/remove-disabledmonitoringobject.aspx&quot; title=&quot;Remove-DisabledMonitoringObject&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jonathan Almquist on Operations Manager : Remove-DisabledMonitoringObject&lt;/a&gt;.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/ms/opsmgr2007/learing-disabled-discovery/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Let&#39;s split!</title>
-      <link>http://test.teknoglot.se/tb/lets-split/</link>
-      <guid>http://test.teknoglot.se/tb/lets-split/</guid>
+      <link>http://test.teknoglot.se/tb/ets-split/</link>
+      <guid>http://test.teknoglot.se/tb/ets-split/</guid>
       <pubDate>Thu, 16 Apr 2009 01:27:06 GMT</pubDate>
       <description>
       
@@ -1710,13 +1746,13 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Have a nice day!&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/tb/lets-split/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/tb/ets-split/#disqus_thread</comments>
     </item>
     
     <item>
       <title>NVidia problems in Ubuntu 8.10</title>
-      <link>http://test.teknoglot.se/Linux/ubuntu/nvidia-problems-in-ubuntu-810/</link>
-      <guid>http://test.teknoglot.se/Linux/ubuntu/nvidia-problems-in-ubuntu-810/</guid>
+      <link>http://test.teknoglot.se/Linux/ubuntu/vidia-problems-in-ubuntu-810/</link>
+      <guid>http://test.teknoglot.se/Linux/ubuntu/vidia-problems-in-ubuntu-810/</guid>
       <pubDate>Mon, 10 Nov 2008 08:20:14 GMT</pubDate>
       <description>
       
@@ -1746,38 +1782,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 &lt;p&gt;Feel free to leave a comment if you got any more info or if you got any help from this.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://test.teknoglot.se/Linux/ubuntu/nvidia-problems-in-ubuntu-810/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Quest Software acquires eXc and VizionCore</title>
-      <link>http://test.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</link>
-      <guid>http://test.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</guid>
-      <pubDate>Wed, 30 Jan 2008 11:09:18 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Yes, I am officially slow. But never mind.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.quest.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quest Software&lt;/a&gt; is a 
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;Yes, I am officially slow. But never mind.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.quest.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quest Software&lt;/a&gt; is a rather nice software developer with some interesting products for a wide range of &lt;a href=&quot;http://www.microsoft.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Microsoft&lt;/a&gt; systems – like &lt;a href=&quot;http://www.quest.com/site-administrator-for-sharepoint/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Site Administrator&lt;/a&gt; and &lt;a href=&quot;http://www.quest.com/recovery-manager-for-sharepoint/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Recovery Manager&lt;/a&gt; for SharePoint – but also database and application servers like &lt;a href=&quot;http://www.sap.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SAP&lt;/a&gt; and Oracle E-business.&lt;/p&gt;
-&lt;p&gt;I have lately been working with some of their &lt;a href=&quot;http://www.microsoft.com/sharepoint/default.mspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MOSS&lt;/a&gt;-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.&lt;/p&gt;
-&lt;p&gt;Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. &lt;a href=&quot;http://www.excsoftware.com/version3/version3/Default.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eXc&lt;/a&gt; does it’s thing in the &lt;span class=&quot;removed_link&quot; title=&quot;http://www.microsoft.com/mom&quot;&gt;Microsoft SCOM/MOM&lt;/span&gt; arena while &lt;a href=&quot;http://www.vizioncore.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VizionCore&lt;/a&gt; dances with virtualization techniques. At least, that’s where I’ve come across them both.&lt;/p&gt;
-&lt;p&gt;How will this affect me, then?&lt;br&gt;Not very much it would seem. Here’s what VizionCore says about their part:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“The completion of this acquisition signals another major step in Vizioncore’s evolution and growth in the virtualization market,” said David Bieneman, CEO of VizionCore. “While maintaining the autonomy that has made us successful, we will also be able to leverage technologies developed by and acquired by Quest, such as Invirtus and Provision Networks, to enhance and expand the feature sets of VizionCore products. This is very positive news for virtualization customers who will enjoy a richer and robust product set that will help them achieve greater levels of ROI from their investments in virtualization platforms.”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In my head, this means that VizionCore will still be VizionCore but with, perhaps, tighter integration with Invirtus. Invirtus was, by the way, a “Strategic Partner” to VizionCore even before the acquisition.&lt;/p&gt;
-&lt;p&gt;eXc then? Well. It is not clearly stated in the press-release as far as I can tell. We can only hope that they will make the decision to rebuild their not-even-web1.0 excuse for a website. And what the hell is up with that logo? Fortunately for us, their design skills – or lack thereof – does not reflect their programming skills. But still… no sane man or woman uses Comic Sans in a logo. Not even jokingly. Actually, using Comic Sans at all should be considered an act of felony.&lt;/p&gt;
-&lt;h2 id=&quot;references&quot;&gt;&lt;a href=&quot;#references&quot; class=&quot;headerlink&quot; title=&quot;references:&quot;&gt;&lt;/a&gt;references:&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.quest.com/newsroom/news-releases-show.aspx?contentid=6540&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quest Software Continues Its Value Add to Microsoft System Center&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.quest.com/newsroom/news-releases-show.aspx?contentid=6752&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quest Software Completes Acquisition of VizionCore…&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-      
-      <comments>http://test.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/#disqus_thread</comments>
+      <comments>http://test.teknoglot.se/Linux/ubuntu/vidia-problems-in-ubuntu-810/#disqus_thread</comments>
     </item>
     
   </channel>
