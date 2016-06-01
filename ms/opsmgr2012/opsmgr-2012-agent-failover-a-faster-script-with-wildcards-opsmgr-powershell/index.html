@@ -303,7 +303,7 @@
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return fn.apply(isBind ? thisArg : this, arguments);
       }-text">Switch to the following line to only get Gateway Servers</span></a>
-            <p>Now we’re gonna make things even faster! In the <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" title="OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]" target="_blank" rel="external">previous post</a> on the subject of <a href="http://www.teknoglot.se/series/om2012-failover-mgmt/" target="_blank" rel="external">Agent Fail-over in Operations Manager 2012</a> we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.</p>
+            <p>Now we’re gonna make things even faster! In the <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" title="OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]">previous post</a> on the subject of <a href="http://www.teknoglot.se/series/om2012-failover-mgmt/">Agent Fail-over in Operations Manager 2012</a> we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.</p>
 <p>As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.</p>
 <p>We will pretty quickly go “advanced” this time, so buckle up. ;)</p>
 <a id="more"></a>
@@ -355,7 +355,7 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 
 
 
-    <a data-url="http://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" data-id="cioxetgyf0024qgo2uyeufer9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" data-id="cioxfpbkq0024aso2jli4pz5e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
