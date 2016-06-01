@@ -12,7 +12,7 @@ timezone: Europe/Stockholm
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.teknoglot.se
+url: https://www.teknoglot.se
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -69,7 +69,7 @@ category_map:
   Windows 2016: win2016
   Windows Nano: winnano
   Docker: docker
-  Hyper-V: hyperv
+  "Hyper-V": hyperv
   VMware: vmware
   Mikrotik: mikrotik
   RedHat: redhat

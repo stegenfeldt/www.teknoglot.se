@@ -1,5 +1,5 @@
 ---
-title: 'In transit, yet again'
+title: 'In transit, again'
 date: 2016-06-01 21:03:35
 tags:
     - Teknoglot
