@@ -4,8 +4,8 @@
 
 # Site
 title: stegenfeldt
-subtitle: Static. Nothing but static.
-description: Currently, this is nothing more than a playground for a dynamically generated static website.
+subtitle: 
+description: "Techspeak for the socially diminished."
 author: Samuel Tegenfeldt
 language: en
 timezone: Europe/Stockholm
@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :date_:title.md # File name of new posts
+new_post_name: :year:month:day_title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
