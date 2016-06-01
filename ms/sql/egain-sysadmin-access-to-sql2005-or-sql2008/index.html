@@ -151,6 +151,7 @@
 
         </div>
         <div class="article-entry" itemprop="articleBody">
+            
             <p>In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.</p>
 <p>In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.<br>What to do!?</p>
 <p>Thanks to <a href="http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx" target="_blank" rel="external">Raul Carcia’s blog post</a> it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.<br>Here’s what to do:</p>

@@ -8,7 +8,7 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Currently, this is nothing more than a playground for a dynamically generated static website.</description>
-    <pubDate>Wed, 01 Jun 2016 21:06:59 GMT</pubDate>
+    <pubDate>Wed, 01 Jun 2016 21:11:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,16 +18,15 @@
       <pubDate>Wed, 01 Jun 2016 19:03:35 GMT</pubDate>
       <description>
       
-        &lt;p&gt;&amp;lt;%- toc(page.content) %&amp;gt;&lt;/p&gt;
-&lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
+        &lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
 &lt;h2 id=&quot;The-reason-s&quot;&gt;&lt;a href=&quot;#The-reason-s&quot; class=&quot;headerlink&quot; title=&quot;The reason(s)&quot;&gt;&lt;/a&gt;The reason(s)&lt;/h2&gt;&lt;p&gt;Ok, so I’ve using &lt;a href=&quot;https://www.wordpress.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wordpress&lt;/a&gt; for quite a long time now and it’s been good. Mostly.&lt;br&gt;It’s a fairly solid platform and has a whole slew of feautures that work nicely.&lt;/p&gt;
 &lt;p&gt;Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with &lt;a href=&quot;https://en.wikipedia.org/wiki/Textile_(markup_language)&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;textile&lt;/a&gt; and&lt;br&gt;similar markup/writing/notation languages. For those unaware, textile is not unlike &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown&lt;/a&gt;.&lt;br&gt;Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.&lt;br&gt;Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.&lt;/p&gt;
+&lt;p&gt;Before that I used Movable Type, and prior to that either Dreamweaver or… well, notepad or vim.&lt;/p&gt;
 
       
       </description>
       
-      <content:encoded>&lt;p&gt;&amp;lt;%- toc(page.content) %&amp;gt;&lt;/p&gt;
-&lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
+      <content:encoded>&lt;h1 id=&quot;We’re-moving&quot;&gt;&lt;a href=&quot;#We’re-moving&quot; class=&quot;headerlink&quot; title=&quot;We’re moving!&quot;&gt;&lt;/a&gt;We’re moving!&lt;/h1&gt;&lt;p&gt;Yep. Again. Although, it’s been a year or two since the last time.&lt;/p&gt;
 &lt;h2 id=&quot;The-reason-s&quot;&gt;&lt;a href=&quot;#The-reason-s&quot; class=&quot;headerlink&quot; title=&quot;The reason(s)&quot;&gt;&lt;/a&gt;The reason(s)&lt;/h2&gt;&lt;p&gt;Ok, so I’ve using &lt;a href=&quot;https://www.wordpress.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wordpress&lt;/a&gt; for quite a long time now and it’s been good. Mostly.&lt;br&gt;It’s a fairly solid platform and has a whole slew of feautures that work nicely.&lt;/p&gt;
 &lt;p&gt;Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with &lt;a href=&quot;https://en.wikipedia.org/wiki/Textile_(markup_language)&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;textile&lt;/a&gt; and&lt;br&gt;similar markup/writing/notation languages. For those unaware, textile is not unlike &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown&lt;/a&gt;.&lt;br&gt;Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.&lt;br&gt;Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.&lt;/p&gt;
 &lt;p&gt;Before that I used Movable Type, and prior to that either Dreamweaver or… well, notepad or vim.&lt;/p&gt;

@@ -151,6 +151,7 @@
 
         </div>
         <div class="article-entry" itemprop="articleBody">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Description-of-problem"><span class="toc-number">1.</span> <span class="toc-text">Description of problem</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#First-step-Install-the-new-Gateway"><span class="toc-number">1.1.</span> <span class="toc-text">First step:  Install the new Gateway</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Second-step-Configure-Agent-Failover"><span class="toc-number">1.2.</span> <span class="toc-text">Second step: Configure Agent Failover</span></a></li></ol></li></ol>
             <h1 id="Description-of-problem"><a href="#Description-of-problem" class="headerlink" title="Description of problem"></a>Description of problem</h1><p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
 <p>Here’s basically what happens:</p>
 <ol>
