@@ -21,13 +21,13 @@ Thanks to [Raul Carcia’s blog post](http://blogs.msdn.com/raulga/archive/2007/
 Here’s what to do:
 
 1. Open the _SQL Server Configuration Manager._
-2. In _SQL Server Services_, open the properties for the SQL Server instance you need access to.
-3. In the _Advanced_ tab, find _Startup Parameters_.
-4. Add “;-m” to the end of that line.
-5. Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))
-6. Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn
-<span style="font-size: xx-small;">(C:\Program Files\Microsoft SQL Server\_90_\Tools\Binn for SQL2005</span>)
-7. Execute ```sqlcmd /A /E /S <INSTANCE>```  
+3. In _SQL Server Services_, open the properties for the SQL Server instance you need access to.
+4. In the _Advanced_ tab, find _Startup Parameters_.
+5. Add “;-m” to the end of that line.
+6. Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))
+7. Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn
+(C:\Program Files\Microsoft SQL Server\_90_\Tools\Binn for SQL2005)
+7. Execute `sqlcmd /A /E /S <INSTANCE>`  
   (use . for local default instance and .INSTANCE for local named instance)
 8. In the CLI, execute:
 
