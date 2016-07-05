@@ -1,12 +1,12 @@
 ---
-title: PoSH Grid Dashboard for RDSH
+title: PoSH Grid Dashboard for RDSH [#opsmgr]
 tags:
   - Powershell
   - OpsMgr 2012 R2
   - HowTo
 categories:
   - Microsoft
-  - OpsMgr2012
+  - OpsMgr 2012
 date: 2016-06-14 00:01:27
 ---
 
