@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/</loc>
+        <lastmod>2016-07-05T14:42:49.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/OpsMgr2012/PoSH-Grid-Dashboard-for-RDSH/</loc>
+        <lastmod>2016-06-13T22:07:50.381Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/tb/in-transit-again/</loc>
         <lastmod>2016-06-01T23:16:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -281,14 +297,6 @@
     <url>
         <loc>https://www.teknoglot.se/tb/rant-the-concept-of-booth-babes/</loc>
         <lastmod>2016-05-24T21:16:15.167Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/</loc>
-        <lastmod>2016-05-24T21:10:58.190Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

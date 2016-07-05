@@ -56,13 +56,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/ms/sql/</loc>
-        <lastmod>2016-05-24T21:52:06.529Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/topics/Linux/</loc>
         <lastmod>2016-05-24T21:54:50.115Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -98,13 +91,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/ms/</loc>
-        <lastmod>2016-05-24T22:05:40.686Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/topics/ms/opsmgr2007/</loc>
         <lastmod>2016-05-24T22:05:40.686Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,6 +100,27 @@
     <url>
         <loc>https://www.teknoglot.se/topics/tb/</loc>
         <lastmod>2016-06-01T23:16:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/OpsMgr2012/</loc>
+        <lastmod>2016-06-13T22:07:50.381Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/</loc>
+        <lastmod>2016-07-05T14:42:49.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/sql/</loc>
+        <lastmod>2016-07-05T14:42:49.336Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
