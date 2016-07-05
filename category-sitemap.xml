@@ -14,20 +14,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/code/vbs/</loc>
-        <lastmod>2016-05-24T20:02:59.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/code/</loc>
-        <lastmod>2016-05-24T21:20:26.798Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/topics/code/posh/</loc>
         <lastmod>2016-05-24T21:20:26.798Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,6 +100,20 @@
     <url>
         <loc>https://www.teknoglot.se/topics/ms/opsmgr2012/</loc>
         <lastmod>2016-07-05T19:58:17.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/code/</loc>
+        <lastmod>2016-07-05T20:51:08.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/code/vbs/</loc>
+        <lastmod>2016-07-05T20:51:08.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

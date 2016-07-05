@@ -8,8 +8,42 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Techspeak for the socially diminished.</description>
-    <pubDate>Tue, 05 Jul 2016 19:58:17 GMT</pubDate>
+    <pubDate>Tue, 05 Jul 2016 20:51:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Resize all images in a Word document with #vbs #macro</title>
+      <link>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</link>
+      <guid>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</guid>
+      <pubDate>Tue, 05 Jul 2016 20:08:26 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;TLDR&quot;&gt;&lt;a href=&quot;#TLDR&quot; class=&quot;headerlink&quot; title=&quot;TLDR&quot;&gt;&lt;/a&gt;TLDR&lt;/h1&gt;&lt;p&gt;Quick and dirty macro to resize all images in a word document to 145 mm. I am lazy like that.&lt;/p&gt;
+&lt;p&gt;Get the gist of it &lt;a href=&quot;https://gist.github.com/stegenfeldt/5d81ab5c57a3d20397a6b04a75b882e0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;The-“Why”&quot;&gt;&lt;a href=&quot;#The-“Why”&quot; class=&quot;headerlink&quot; title=&quot;The “Why”&quot;&gt;&lt;/a&gt;The “Why”&lt;/h1&gt;&lt;p&gt;Ok, so. I am a consultant, as you may know. And as a consultant, people pay me to do stuff and expect me to be efficient and deliver with high quality.&lt;br&gt;Part of that entails writing documentation containing how I do stuff, where I do it and often why I do it.&lt;br&gt;This documentation is expected to be detailed enough to make sure my customers will be able to follow the steps and produce a copy of my work. Most of the time&lt;br&gt;these document are a big part of the disaster recovery processes and might have to be executed by the on-call staff with no previous knowledge of the product.&lt;/p&gt;
+&lt;p&gt;This means screenshots. Lots of screenshots.&lt;br&gt;And while templates are nice and help me out a lot, the screenshots have to be from the actual installation and not some copy-pasta from a previous assignment.&lt;br&gt;To help me out, I use the excellent free program &lt;a href=&quot;http://getgreenshot.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Greenshot&lt;/a&gt; to quickly generate screenshots into a WIP-folder (or directly into Word if that is appropriate) and that makes it possible to&lt;br&gt;grab snapshots of the process without having to pause all the time to &lt;code&gt;PrtScn-Alt+Tab-Ctrl+V-Crop-Ctrl+C-Alt+Tab-Ctrl+C&lt;/code&gt;. I simply press &lt;code&gt;PrtScn&lt;/code&gt; and go on with the installation.&lt;/p&gt;
+
+      
+      </description>
+      
+      <content:encoded>&lt;h1 id=&quot;TLDR&quot;&gt;&lt;a href=&quot;#TLDR&quot; class=&quot;headerlink&quot; title=&quot;TLDR&quot;&gt;&lt;/a&gt;TLDR&lt;/h1&gt;&lt;p&gt;Quick and dirty macro to resize all images in a word document to 145 mm. I am lazy like that.&lt;/p&gt;
+&lt;p&gt;Get the gist of it &lt;a href=&quot;https://gist.github.com/stegenfeldt/5d81ab5c57a3d20397a6b04a75b882e0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;The-“Why”&quot;&gt;&lt;a href=&quot;#The-“Why”&quot; class=&quot;headerlink&quot; title=&quot;The “Why”&quot;&gt;&lt;/a&gt;The “Why”&lt;/h1&gt;&lt;p&gt;Ok, so. I am a consultant, as you may know. And as a consultant, people pay me to do stuff and expect me to be efficient and deliver with high quality.&lt;br&gt;Part of that entails writing documentation containing how I do stuff, where I do it and often why I do it.&lt;br&gt;This documentation is expected to be detailed enough to make sure my customers will be able to follow the steps and produce a copy of my work. Most of the time&lt;br&gt;these document are a big part of the disaster recovery processes and might have to be executed by the on-call staff with no previous knowledge of the product.&lt;/p&gt;
+&lt;p&gt;This means screenshots. Lots of screenshots.&lt;br&gt;And while templates are nice and help me out a lot, the screenshots have to be from the actual installation and not some copy-pasta from a previous assignment.&lt;br&gt;To help me out, I use the excellent free program &lt;a href=&quot;http://getgreenshot.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Greenshot&lt;/a&gt; to quickly generate screenshots into a WIP-folder (or directly into Word if that is appropriate) and that makes it possible to&lt;br&gt;grab snapshots of the process without having to pause all the time to &lt;code&gt;PrtScn-Alt+Tab-Ctrl+V-Crop-Ctrl+C-Alt+Tab-Ctrl+C&lt;/code&gt;. I simply press &lt;code&gt;PrtScn&lt;/code&gt; and go on with the installation.&lt;/p&gt;
+&lt;p&gt;Being a bit pedantic, doesn’t help me out here though as I find myself selecting and resizing all the images in the Word document I have produced. This is a &lt;em&gt;very&lt;/em&gt; time-consuming process and not the most exact one either.&lt;br&gt;I want all images to be of scaled, if necessary, to an equal maximum width that fits comfortably withing the margins of the document template my company has prepared for me. &lt;/p&gt;
+&lt;p&gt;So I created a fairly simple macro to do it for me.&lt;/p&gt;
+&lt;h1 id=&quot;The-“How”&quot;&gt;&lt;a href=&quot;#The-“How”&quot; class=&quot;headerlink&quot; title=&quot;The “How”&quot;&gt;&lt;/a&gt;The “How”&lt;/h1&gt;&lt;p&gt;If you are un-familiar with macros in Word, you will find them under the “View” tab.&lt;br&gt;Clicking on “Macros” will give you the option to execute the ones you have, or you can create your own using VBA (Visual Basic for Applications).&lt;br&gt;To create one, select where you want it saved (normal.dotx in my case, as I want it readily available) and enter a name for it.&lt;br&gt;This will bring up the Visual Basic for Applications IDE, where you can write your own fun stuff.&lt;/p&gt;
+&lt;p&gt;This little macro of mine is saved as a .bas file, which means I can import it into VBA by right-clicking the navigation and selecting “Import file…”.&lt;br&gt;By doing that, and saving my changes, it is now available to me in any other word document, given that I saved it into the global template.&lt;/p&gt;
+&lt;h1 id=&quot;The-Macro&quot;&gt;&lt;a href=&quot;#The-Macro&quot; class=&quot;headerlink&quot; title=&quot;The Macro&quot;&gt;&lt;/a&gt;The Macro&lt;/h1&gt;&lt;p&gt;I’ve put it up on a &lt;a href=&quot;https://gist.github.com/stegenfeldt/5d81ab5c57a3d20397a6b04a75b882e0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;public gist&lt;/a&gt; for anyone interested.&lt;br&gt;It is, currently, very specific for my templates but it’s very easy to modify it to set images to a different size than 145 mm wide.&lt;br&gt;Give it a little love, and we could add options for width as well, but I dont need that right now.&lt;/p&gt;
+&lt;p&gt;And for those who don’t want to travel all the way to Github, here’s the script in it’s current form.&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/stegenfeldt/5d81ab5c57a3d20397a6b04a75b882e0.js&quot;&gt;&lt;/script&gt;
+
+
+
+</content:encoded>
+      
+      <comments>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>PoSH Grid Dashboard for RDSH [#opsmgr]</title>
@@ -1905,28 +1939,6 @@ $scomAgent.SetManagementServers($scomPrimaryMS,$scomMSList)
 </content:encoded>
       
       <comments>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Let&#39;s split!</title>
-      <link>https://www.teknoglot.se/tb/lets-split/</link>
-      <guid>https://www.teknoglot.se/tb/lets-split/</guid>
-      <pubDate>Thu, 16 Apr 2009 01:27:06 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Now would you look at that.&lt;/p&gt;
-&lt;p&gt;Since my old site, Tranquillity.se, got messy and unfocused I have now started a new one. That’s right
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;Now would you look at that.&lt;/p&gt;
-&lt;p&gt;Since my old site, Tranquillity.se, got messy and unfocused I have now started a new one. That’s right, you’re looking at it.&lt;/p&gt;
-&lt;p&gt;Instead of blogging about mostly anything like I did before I have decided to split it into Three sites. This one for the Technical stuff, some other site I haven’t set up yet, and a personal blogg for the… personal blogging… stuff.&lt;/p&gt;
-&lt;p&gt;When time gives, I will import the old tech-related posts from Tranquillity.se into this site but for now. Nothing yet so far.&lt;/p&gt;
-&lt;p&gt;Have a nice day!&lt;/p&gt;
-</content:encoded>
-      
-      <comments>https://www.teknoglot.se/tb/lets-split/#disqus_thread</comments>
     </item>
     
   </channel>
