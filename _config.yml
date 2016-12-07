@@ -19,7 +19,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs
 tag_dir: tag
 archive_dir: archives
 category_dir: topics
@@ -99,12 +99,12 @@ theme: tg-hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git 
-  repo: https://github.com/stegenfeldt/stegenfeldt.github.io.git
-  branch: master
-  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
-  user: stegenfeldt
+#deploy:
+#  type: git 
+#  repo: https://github.com/stegenfeldt/stegenfeldt.github.io.git
+#  branch: master
+#  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+#  user: stegenfeldt
   
 # Minification
 ## Docs: https://github.com/unhealthy/hexo-all-minifier
