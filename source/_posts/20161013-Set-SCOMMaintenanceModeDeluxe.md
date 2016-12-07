@@ -24,6 +24,3 @@ I've uploaded it as a public gist on github, so feel free to add adapt it to you
 
 {% gist  b3f044aa77894ed80d82f8849a48035b Set-SCOMMaintenanceModeDeluxe.ps1 %}
 
-# Just a test
-
-<script src="https://gist.github.com/stegenfeldt/b3f044aa77894ed80d82f8849a48035b.js"></script>
