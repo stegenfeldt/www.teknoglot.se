@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig">
-<meta property="og:updated_time" content="2016-05-24T21:07:20.061Z">
+<meta property="og:updated_time" content="2016-12-07T17:45:43.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Replace/Change a Gateway Server">
 <meta name="twitter:description" content="Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig">
@@ -227,7 +227,7 @@ ga('send', 'pageview');
 </ol>
 <p>The wait is for the gateway server to get all needed configuration from RMS and to download all neccesary management packs, run all the discovery scripts and so on. When the Operations Manager event log has calmed down a bit, move to step two.</p>
 <h2 id="Second-step-Configure-Agent-Failover"><a href="#Second-step-Configure-Agent-Failover" class="headerlink" title="Second step: Configure Agent Failover"></a>Second step: Configure Agent Failover</h2><p>Connect to an Operations Manager Command Shell. Any will do, as long as it’s connected to the correct Management Group.<br>Then run the following script:</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primaryGW</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW2.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$failoverGw</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.primarymanagementservername <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$primaryGW</span> -FailoverServer: <span class="variable">$failoverGw</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><div class="line"><span class="variable">$primaryGW</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW2.domain.local'</span>&#125;</div><div class="line"><span class="variable">$failoverGw</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</div><div class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.primarymanagementservername <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</div><div class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$primaryGW</span> -FailoverServer: <span class="variable">$failoverGw</span></div></pre></td></tr></table></figure>
 <p>Remember to change “GW1.domain.local” to you OLD Gateway servername and “GW2.domain.local” to your NEW Gateway servername.</p>
 <p>If you don’t know powershell, this script basically configures all agents using the old Gateway to use the new one as primare, but keep the old one as a fail-over server. The Gateways will still get to know the changes before the agents, but since the old on is still listening to the agents (though, as the fail-over host) it will be able to tell them to go to the new one, GW2.</p>
 
@@ -494,7 +494,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>&copy; 2017 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

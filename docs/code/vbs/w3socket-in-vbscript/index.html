@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c">
-<meta property="og:updated_time" content="2016-05-24T20:02:59.883Z">
+<meta property="og:updated_time" content="2016-12-07T17:45:43.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="w3Socket in VBScript">
 <meta name="twitter:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c">
@@ -164,7 +164,7 @@ ga('send', 'pageview');
             <p>I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.<br>Since we’re not in VB6 och .Net i cannot simply user Winsock as normally due to the lack of licensing features in <acronym title="VisualBasic Script">VBS</acronym>/<acronym title="Windows Scripting Host">WSH.</acronym></p>
 <p>Thankfully for me, <a href="http://www.dimac.com/" title="Dimac" target="_blank" rel="external">Dimac</a> has release a <a href="http://www.dimac.com/default3.asp?M=FreeDownloads/Menu.asp&amp;P=FreeDownloads/FreeDownloadsstart.asp" title="Dimac - Free Downloads" target="_blank" rel="external">nifty little component</a> for free that makes talking telnet in VBS very simple.</p>
 <p>I thought that, hey! I must share this!<br>So here’s an example in Classic VBS:</p>
-<figure class="highlight vbs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> oTelnet</span><br><span class="line">oTelnet = <span class="built_in">CreateObject</span>(Socket.Tcp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> oTelnet</span><br><span class="line">.DoTelnetEmulation = <span class="literal">True</span></span><br><span class="line">.TelnetEmulation = TTY</span><br><span class="line">.Host = <span class="number">192.168</span><span class="number">.242</span><span class="number">.1</span>:<span class="number">23</span></span><br><span class="line">.Open</span><br><span class="line">.WaitFor SLUSSEN login:</span><br><span class="line">.SendLine ANiftyUsename</span><br><span class="line">.WaitFor Password:</span><br><span class="line">.SendLine TEHP@ssw0rd</span><br><span class="line">.WaitFor ~ #</span><br><span class="line">.SendLine ifconfig</span><br><span class="line"><span class="built_in">MsgBox</span> .Buffer</span><br><span class="line">.Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> oTelnet = <span class="literal">Nothing</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vbs"><table><tr><td class="code"><pre><div class="line"><span class="keyword">Dim</span> oTelnet</div><div class="line">oTelnet = <span class="built_in">CreateObject</span>(Socket.Tcp)</div><div class="line"></div><div class="line"><span class="keyword">With</span> oTelnet</div><div class="line">.DoTelnetEmulation = <span class="literal">True</span></div><div class="line">.TelnetEmulation = TTY</div><div class="line">.Host = <span class="number">192.168</span><span class="number">.242</span><span class="number">.1</span>:<span class="number">23</span></div><div class="line">.Open</div><div class="line">.WaitFor SLUSSEN login:</div><div class="line">.SendLine ANiftyUsename</div><div class="line">.WaitFor Password:</div><div class="line">.SendLine TEHP@ssw0rd</div><div class="line">.WaitFor ~ #</div><div class="line">.SendLine ifconfig</div><div class="line"><span class="built_in">MsgBox</span> .Buffer</div><div class="line">.Close</div><div class="line"><span class="keyword">End</span> <span class="keyword">With</span></div><div class="line"></div><div class="line"><span class="keyword">Set</span> oTelnet = <span class="literal">Nothing</span></div></pre></td></tr></table></figure>
 <p>Not very hard at all. This one is connecting to my router (with fake user/pwd… DUH!) and there’s no support for setting the prompt type there, thus the “~ #”.<br>The result of running this script with correct login info gives me a popup with the routers <acronym title="Network Interface Card">NIC</acronym>-configuration.</p>
 
         </div>
@@ -430,7 +430,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>&copy; 2017 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="PreludeNow that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fu">
 <meta property="og:image" content="http://teknoglotse.nfshost.com/wp-content/uploads/2012/05/051812_1216_Loadbalance1.png">
-<meta property="og:updated_time" content="2016-05-24T21:45:26.461Z">
+<meta property="og:updated_time" content="2016-12-07T17:45:42.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Load-balanced SCOM2012 SDK Services for Network Illiterates [#opsmgr, #nlb]">
 <meta name="twitter:description" content="PreludeNow that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fu">
@@ -260,7 +260,7 @@ ga('send', 'pageview');
 <p>Enjoy!</p>
 <a id="more"></a>
 <h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h1><p>We need to have the Network Load Balancing feature installed on all our targeted Management servers. The quick way to do this is using command-line (Windows Server 2008 R2 or later?).</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dism /online /enable-feature /featurename:NetworkLoadBalancingFullServer</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dism /online /enable-feature /featurename:NetworkLoadBalancingFullServer</div></pre></td></tr></table></figure>
 <p>You also need a plan and some information about your new cluster. Make sure you have identified the following parameters before starting the configuration:</p>
 <p><div></div></p>
 <p><table style="border-collapse: collapse;" border="0"><colgroup> <col style="width: 307px;"> <col style="width: 307px;"></colgroup></table></p>
@@ -620,7 +620,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>&copy; 2017 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

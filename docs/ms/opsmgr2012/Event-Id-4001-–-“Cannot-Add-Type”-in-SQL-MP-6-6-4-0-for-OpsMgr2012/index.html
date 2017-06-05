@@ -18,7 +18,7 @@ Management G">
 <meta property="og:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
 The event is the generic “Health Service Script” with id 4001.
 Management G">
-<meta property="og:updated_time" content="2016-05-24T21:59:37.927Z">
+<meta property="og:updated_time" content="2016-12-07T17:45:42.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]">
 <meta name="twitter:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
@@ -182,7 +182,7 @@ ga('send', 'pageview');
       }-text">A wild work-around appears!</span></a></li></ol>
             <p>Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.</p>
 <p>The event is the generic “Health Service Script” with id 4001.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :</span><br><span class="line">Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;</span><br><span class="line">Error occured during CPU Usage for SQL Instances data source executing.</span><br><span class="line">Computer: REDACTED</span><br><span class="line">Reason: Cannot add type. Compilation errors occurred.</span><br><span class="line">Position:256</span><br><span class="line">Offset:21</span><br><span class="line">Detailed error output: Cannot add type. Compilation errors occurred.</span><br><span class="line">--------</span><br><span class="line">(0) : No source files specified</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line">(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :</div><div class="line">Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;</div><div class="line">Error occured during CPU Usage for SQL Instances data source executing.</div><div class="line">Computer: REDACTED</div><div class="line">Reason: Cannot add type. Compilation errors occurred.</div><div class="line">Position:256</div><div class="line">Offset:21</div><div class="line">Detailed error output: Cannot add type. Compilation errors occurred.</div><div class="line">--------</div><div class="line">(0) : No source files specified</div><div class="line"></div><div class="line">(1) : using System;</div><div class="line"></div><div class="line">--------</div><div class="line">(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found</div><div class="line"></div><div class="line">(1) : using System;</div></pre></td></tr></table></figure>
 <p>There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention <em>“Cannot add type. Compilation errors occured.”</em><br>In a <a href="https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa" target="_blank" rel="external">thread on the Technet Forums</a> it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the <code>C:\Windows\TEMP</code> folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.<br>We took a quick look using <em>procmon</em>, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.</p>
 <h1 id="A-wild-work-around-appears"><a href="#A-wild-work-around-appears" class="headerlink" title="A wild work-around appears!"></a>A wild work-around appears!</h1><p>The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.<br>Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
 
@@ -449,7 +449,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>&copy; 2017 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>

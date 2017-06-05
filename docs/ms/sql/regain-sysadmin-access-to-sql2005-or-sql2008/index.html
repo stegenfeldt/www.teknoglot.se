@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin">
-<meta property="og:updated_time" content="2016-07-05T14:42:49.336Z">
+<meta property="og:updated_time" content="2016-12-07T17:45:43.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(re)Gain sysadmin access to SQL2005 or SQL2008">
 <meta name="twitter:description" content="In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin">
@@ -173,7 +173,7 @@ ga('send', 'pageview');
 <li>Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn<br>(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)</li>
 <li>Execute <code>sqlcmd /A /E /S &lt;INSTANCE&gt;</code><br>(use . for local default instance and .INSTANCE for local named instance)</li>
 <li><p>In the CLI, execute:</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">EXEC sp_addsrvrolemember 'DOMAIN\yourusername', 'sysadmin';</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">EXEC sp_addsrvrolemember 'DOMAIN\yourusername', 'sysadmin';</div><div class="line">GO</div></pre></td></tr></table></figure>
 </li>
 <li><p>Return to the <em>SQL Server Configuration Manager</em> and restore the <em>Startup Parameters</em> to it’s previous settings.</p>
 </li>
@@ -446,7 +446,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2016 Samuel Tegenfeldt</p>
+                <p>&copy; 2017 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
