@@ -8,8 +8,44 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Techspeak for the socially diminished.</description>
-    <pubDate>Wed, 07 Dec 2016 17:45:42 GMT</pubDate>
+    <pubDate>Thu, 28 Sep 2017 16:56:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>#MSIgnite 2017: KEY01 - Vision Keynote</title>
+      <link>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</link>
+      <guid>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</guid>
+      <pubDate>Mon, 25 Sep 2017 08:05:33 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;KEY01-Vision-Keynote&quot;&gt;&lt;a href=&quot;#KEY01-Vision-Keynote&quot; class=&quot;headerlink&quot; title=&quot;KEY01 - Vision Keynote&quot;&gt;&lt;/a&gt;KEY01 - Vision Keynote&lt;/h1&gt;&lt;p&gt;Sep 25, 9:00 am – 10:00 am&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UNSTRUCTURED NOTES! Also, mixed Swedish and English, sorry for that.&lt;br&gt;Will update at a later time&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;O365, all in one place…&lt;br&gt;Live sändning med AI översättning.&lt;br&gt;What’s the actual purpose of technology, why do we do this? How can we use it to do better. how to ensure privacy while at it.&lt;br&gt;how do we give the power of technology to everyone?&lt;br&gt;Assume everything will be multi device.&lt;br&gt;serverless computing, edge distribution, management.&lt;br&gt;Empower, Engage, Optimize, Transform.&lt;/p&gt;
+&lt;p&gt;Microsoft 365 (not Office).&lt;br&gt;Mixed reality. Holo lens, Oasis Headsets.&lt;br&gt;Holo lens cameras for presentation, on github.&lt;br&gt;Notes saved with spatial information for review.&lt;br&gt;Microsoft mixed reality headsets.&lt;br&gt;Conversations can be replayed and reviewed in teams.&lt;/p&gt;
+&lt;p&gt;Microsoft graph is extensible, for example with LinkedIn.&lt;br&gt;Outlook connected LimkedIn, better searches for… everything?&lt;br&gt;Bing for business, can search graph as well.&lt;br&gt;Nice integration with any applications extending graph. Pairs well with machine learning and AI/Fuzzy Search to parse both data and meta data on context. Admin portal gives insight and analytics into what’s searched for further optimization. Also connects with Cortana.&lt;/p&gt;
+&lt;p&gt;Business applications&lt;br&gt;Dynamics 365. Also extends graph.&lt;br&gt;AI First. Virtual Agent demo.&lt;/p&gt;
+&lt;p&gt;App&amp;amp;Infra / AI&lt;br&gt;Azure. Intelligent Cloud, intelligent creativity.&lt;br&gt;Machine reading and comprehension.&lt;/p&gt;
+&lt;p&gt;Quantum computing… ?&lt;br&gt;MS seems to be trying hard to build one.&lt;br&gt;VS gets tools for developing and debugging and testing qbits.&lt;/p&gt;
+
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="KEY01-Vision-Keynote"><a href="#KEY01-Vision-Keynote" class="headerlink" title="KEY01 - Vision Keynote"></a>KEY01 - Vision Keynote</h1><p>Sep 25, 9:00 am – 10:00 am</p>
+<blockquote>
+<p>UNSTRUCTURED NOTES! Also, mixed Swedish and English, sorry for that.<br>Will update at a later time</p>
+</blockquote>
+<p>O365, all in one place…<br>Live sändning med AI översättning.<br>What’s the actual purpose of technology, why do we do this? How can we use it to do better. how to ensure privacy while at it.<br>how do we give the power of technology to everyone?<br>Assume everything will be multi device.<br>serverless computing, edge distribution, management.<br>Empower, Engage, Optimize, Transform.</p>
+<p>Microsoft 365 (not Office).<br>Mixed reality. Holo lens, Oasis Headsets.<br>Holo lens cameras for presentation, on github.<br>Notes saved with spatial information for review.<br>Microsoft mixed reality headsets.<br>Conversations can be replayed and reviewed in teams.</p>
+<p>Microsoft graph is extensible, for example with LinkedIn.<br>Outlook connected LimkedIn, better searches for… everything?<br>Bing for business, can search graph as well.<br>Nice integration with any applications extending graph. Pairs well with machine learning and AI/Fuzzy Search to parse both data and meta data on context. Admin portal gives insight and analytics into what’s searched for further optimization. Also connects with Cortana.</p>
+<p>Business applications<br>Dynamics 365. Also extends graph.<br>AI First. Virtual Agent demo.</p>
+<p>App&amp;Infra / AI<br>Azure. Intelligent Cloud, intelligent creativity.<br>Machine reading and comprehension.</p>
+<p>Quantum computing… ?<br>MS seems to be trying hard to build one.<br>VS gets tools for developing and debugging and testing qbits.</p>
+]]></content:encoded>
+      
+      <comments>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Set-SCOMMaintenanceMode Deluxe ed. [#opsmgr #powershell]</title>
@@ -2094,47 +2130,6 @@ decryptionKey=&quot;AutoGenerate,IsolateApps&quot; validation=&quot;3DES&quot; d
 ]]></content:encoded>
       
       <comments>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>NetworkAdapterCheck.vbs fails on Windows 2000</title>
-      <link>https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/</link>
-      <guid>https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/</guid>
-      <pubDate>Sun, 26 Apr 2009 09:21:18 GMT</pubDate>
-      <description>
-      
-        &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/&quot; title=&quot;failed to create System.PropertyBagData&quot;&gt;failed to create System.PropertyBagData&lt;/a&gt; error i wrote about earlier.&lt;br&gt;This information in also available on &lt;a href=&quot;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;amp;SiteID=446&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Symptoms&quot;&gt;&lt;a href=&quot;#Symptoms&quot; class=&quot;headerlink&quot; title=&quot;Symptoms&quot;&gt;&lt;/a&gt;Symptoms&lt;/h1&gt;&lt;p&gt;This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Command executed: &amp;quot;C:WINNTsystem32cscript.exe&amp;quot; /nologo &amp;quot;NetworkAdapterCheck.vbs&amp;quot; MASKEDCOMPUTERNAME 0 false true false&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;One or more workflows were affected by this.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealth&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Instance name: 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Instance ID: &amp;#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Management group: MASKED&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;Probable-Cause&quot;&gt;&lt;a href=&quot;#Probable-Cause&quot; class=&quot;headerlink&quot; title=&quot;Probable Cause&quot;&gt;&lt;/a&gt;Probable Cause&lt;/h1&gt;&lt;p&gt;I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.&lt;br&gt;Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added&lt;/p&gt;
-&lt;figure class=&quot;highlight vbs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;wscript.echo &lt;span class=&quot;string&quot;&gt;&quot;Line XX:&quot;&lt;/span&gt; &amp;amp; &lt;span class=&quot;built_in&quot;&gt;Err&lt;/span&gt;.Number&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData">failed to create System.PropertyBagData</a> error i wrote about earlier.<br>This information in also available on <a href="https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446" target="_blank" rel="external">https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446</a></p>
-<h1 id="Symptoms"><a href="#Symptoms" class="headerlink" title="Symptoms"></a>Symptoms</h1><p>This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0</div><div class="line"></div><div class="line">Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true false</div><div class="line">Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781</div><div class="line"></div><div class="line">One or more workflows were affected by this.</div><div class="line"></div><div class="line">Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealth</div><div class="line">Instance name: 0</div><div class="line">Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;</div><div class="line">Management group: MASKED</div></pre></td></tr></table></figure>
-<p>This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.</p>
-<a id="more"></a>
-<h1 id="Probable-Cause"><a href="#Probable-Cause" class="headerlink" title="Probable Cause"></a>Probable Cause</h1><p>I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.<br>Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added</p>
-<figure class="highlight vbs"><table><tr><td class="code"><pre><div class="line">wscript.echo <span class="string">"Line XX:"</span> &amp; <span class="built_in">Err</span>.Number</div></pre></td></tr></table></figure>
-<p>after each object/function call in the Main Sub.<br>The problem seems to be at line 118:</p>
-<figure class="highlight vbs"><table><tr><td class="code"><pre><div class="line"><span class="keyword">Set</span> WMISet = WMIGetInstance(<span class="string">"winmgmts:"</span> + TargetComputer + <span class="string">"rootcimv2"</span>, query)</div></pre></td></tr></table></figure>
-<p>At line 119 I had a debug line that never executes and it would seem like the script is unable to process the query and exits without any error codes.</p>
-<p>The query variable contains the following:</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">Win32_NetworkAdapter Where DeviceID='0' And ( NetConnectionStatus = '0' )</div></pre></td></tr></table></figure>
-<p>When I was debugging this I started the script like this:</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><div class="line">cscript.exe /nologo "NetworkAdapterCheck.vbs" MASKED <span class="number">0</span> false true false</div></pre></td></tr></table></figure>
-<p>I did find that if I change the parameters to this:</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><div class="line">cscript.exe /nologo "NetworkAdapterCheck.vbs" MASKED <span class="number">0</span> false false false</div></pre></td></tr></table></figure>
-<p>Then the script runs smoothly and produces an XML-output like this:</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Collection</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">DataItem</span> <span class="attr">type</span>=<span class="string">"System.PropertyBagData"</span> <span class="attr">time</span>=<span class="string">"2009-04-22T15:03:44.6495202+02:00"</span> <span class="attr">sourceHealthServiceId</span>=<span class="string">"C9F5A9F7-00A3-8A86-57B5-34FB634471A8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">Property</span> <span class="attr">Name</span>=<span class="string">"State"</span> <span class="attr">VariantType</span>=<span class="string">"8"</span>&gt;</span>GOOD<span class="tag">&lt;/<span class="name">Property</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">DataItem</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Collection</span>&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>There’s quite the lot of similar errors posted on various forums on the internet but most of them ends up pointing towards the Antivirus Software as the perp and we have tried various exceptions on the server like excluding HealthExplorer.exe, MonitoringHost.exe and also the entire Health Service State folder with no improvement. But since I was able to run the scripts from other locations (not excluded) on the same server I find it hard to believe that the AV would be blocking it.</p>
-]]></content:encoded>
-      
-      <comments>https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/#disqus_thread</comments>
     </item>
     
   </channel>

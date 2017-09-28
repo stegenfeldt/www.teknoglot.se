@@ -3,518 +3,532 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/VBScript/</loc>
-        <lastmod>2016-12-07T17:45:42.780Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Macro/</loc>
-        <lastmod>2016-12-07T17:45:42.780Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Word/</loc>
-        <lastmod>2016-12-07T17:45:42.780Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Office/</loc>
-        <lastmod>2016-12-07T17:45:42.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Powershell/</loc>
-        <lastmod>2016-12-07T17:45:42.796Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/OpsMgr-2012-R2/</loc>
-        <lastmod>2016-12-07T17:45:42.796Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Gist/</loc>
-        <lastmod>2016-12-07T17:45:42.796Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Powershell/</loc>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/OpsMgr-2012-R2/</loc>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/HowTo/</loc>
-        <lastmod>2016-12-07T17:45:42.796Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-2008/</loc>
-        <lastmod>2016-12-07T17:45:42.821Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-Vista/</loc>
-        <lastmod>2016-12-07T17:45:42.821Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-XP/</loc>
-        <lastmod>2016-12-07T17:45:42.821Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Windows-Installer/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/WMI/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/DNS/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Invoke-RestMethod/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Mikrotik/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/RouterOS/</loc>
-        <lastmod>2016-12-07T17:45:42.826Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Windows-Installer/</loc>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/WMI/</loc>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Exchange/</loc>
-        <lastmod>2016-12-07T17:45:42.844Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/TechNet/</loc>
-        <lastmod>2016-12-07T17:45:42.844Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Hexo/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Wordpress/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Hyper-V/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/RedHat/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/RHES5/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/IIS7/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Reporting-Services/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/OpsMgr-2007/</loc>
-        <lastmod>2016-12-07T17:45:42.848Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Highly-Available/</loc>
-        <lastmod>2016-12-07T17:45:42.880Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/NLB/</loc>
-        <lastmod>2016-12-07T17:45:42.880Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Tutorial/</loc>
-        <lastmod>2016-12-07T17:45:42.880Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/X-Plat/</loc>
-        <lastmod>2016-12-07T17:45:42.895Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SUSE-11/</loc>
-        <lastmod>2016-12-07T17:45:42.895Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Fixed/</loc>
-        <lastmod>2016-12-07T17:45:42.911Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Quick-fix/</loc>
-        <lastmod>2016-12-07T17:45:42.911Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/NVidia/</loc>
-        <lastmod>2016-12-07T17:45:42.927Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Quick-Reference/</loc>
-        <lastmod>2016-12-07T17:45:42.944Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Sillyness/</loc>
-        <lastmod>2016-12-07T17:45:42.947Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Teach-a-Man-to-Fish/</loc>
-        <lastmod>2016-12-07T17:45:42.947Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Update-Rollup/</loc>
-        <lastmod>2016-12-07T17:45:42.980Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/MP-Development/</loc>
-        <lastmod>2016-12-07T17:45:42.996Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Video/</loc>
-        <lastmod>2016-12-07T17:45:42.996Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Rant/</loc>
-        <lastmod>2016-12-07T17:45:43.011Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/GSM/</loc>
-        <lastmod>2016-12-07T17:45:43.011Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Quick-hack/</loc>
-        <lastmod>2016-12-07T17:45:43.011Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SMS/</loc>
-        <lastmod>2016-12-07T17:45:43.011Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Video/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Conference/</loc>
-        <lastmod>2016-12-07T17:45:43.011Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-Server-2005/</loc>
-        <lastmod>2016-12-07T17:45:43.027Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-Server-2008/</loc>
-        <lastmod>2016-12-07T17:45:43.027Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/KB/</loc>
-        <lastmod>2016-12-07T17:45:43.049Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
-        <lastmod>2016-12-07T17:45:43.049Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Drivers/</loc>
-        <lastmod>2016-12-07T17:45:43.049Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/TroubleShooting/</loc>
-        <lastmod>2016-12-07T17:45:43.049Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Errors/</loc>
-        <lastmod>2016-12-07T17:45:43.065Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/KB/</loc>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Drivers/</loc>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/TroubleShooting/</loc>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Field-Notes/</loc>
-        <lastmod>2016-12-07T17:45:43.065Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-Server/</loc>
-        <lastmod>2016-12-07T17:45:43.065Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SquaredUp/</loc>
-        <lastmod>2016-12-07T17:45:43.065Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Unix/</loc>
-        <lastmod>2016-12-07T17:45:43.065Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/x64/</loc>
-        <lastmod>2016-12-07T17:45:43.080Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/MSMQ/</loc>
-        <lastmod>2016-12-07T17:45:43.080Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Linux/</loc>
-        <lastmod>2016-12-07T17:45:43.096Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.808Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/x64/</loc>
+        <lastmod>2017-06-05T12:55:35.808Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/MSMQ/</loc>
+        <lastmod>2017-06-05T12:55:35.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/OpenVPN/</loc>
-        <lastmod>2016-12-07T17:45:43.096Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Virtual-Appliance/</loc>
-        <lastmod>2016-12-07T17:45:43.096Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Management-Pack/</loc>
-        <lastmod>2016-12-07T17:45:43.112Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.824Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Checklist/</loc>
-        <lastmod>2016-12-07T17:45:43.112Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.824Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-Express-2005/</loc>
-        <lastmod>2016-12-07T17:45:43.112Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.824Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-Express-2008/</loc>
-        <lastmod>2016-12-07T17:45:43.112Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.824Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/ACS/</loc>
-        <lastmod>2017-06-05T07:51:08.742Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.389Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Script/</loc>
-        <lastmod>2017-06-05T07:58:19.098Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.391Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/OpsMgr/</loc>
-        <lastmod>2017-06-05T08:08:10.429Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/PoSH/</loc>
-        <lastmod>2017-06-05T08:08:10.429Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/How-To/</loc>
-        <lastmod>2017-06-05T08:08:10.429Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Fail-over/</loc>
-        <lastmod>2017-06-05T08:08:10.429Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Scripts/</loc>
-        <lastmod>2017-06-05T08:08:10.429Z</lastmod>
+        <lastmod>2017-09-28T15:57:00.395Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
+        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
+        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
