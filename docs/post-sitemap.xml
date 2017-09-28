@@ -8,15 +8,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</loc>
-        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
-        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
+        <lastmod>2017-09-28T17:25:58.934Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +16,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</loc>
-        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <lastmod>2017-09-28T17:25:58.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
+        <lastmod>2017-09-28T17:25:58.929Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
