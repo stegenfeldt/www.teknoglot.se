@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Gist/</loc>
-        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/VBScript/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,6 +24,13 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/Office/</loc>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Gist/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -534,20 +534,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
-        <lastmod>2017-09-28T17:25:58.934Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
-        <lastmod>2017-09-28T17:25:58.934Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/Office-365/</loc>
         <lastmod>2017-09-28T17:25:58.934Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -606,6 +592,34 @@
     <url>
         <loc>https://www.teknoglot.se/tag/Windows/</loc>
         <lastmod>2017-09-28T17:25:58.934Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
+        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
+        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Hyper-Converged/</loc>
+        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/WSSD/</loc>
+        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

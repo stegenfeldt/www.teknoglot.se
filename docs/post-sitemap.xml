@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-BRK1039-Windows-Server-Software-Defined/</loc>
+        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</loc>
         <lastmod>2017-09-28T17:25:58.934Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -127,7 +135,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
+        <loc>https://www.teknoglot.se/tb/sluggish-performance-on-teknoglot/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -135,7 +143,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/sluggish-performance-on-teknoglot/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -215,7 +223,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
         <lastmod>2017-06-05T12:55:35.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -231,7 +239,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/</loc>
         <lastmod>2017-06-05T12:55:35.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -271,6 +279,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</loc>
+        <lastmod>2017-06-05T12:55:35.699Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</loc>
         <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -280,14 +296,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/</loc>
-        <lastmod>2017-06-05T12:55:35.699Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</loc>
         <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -327,7 +335,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</loc>
+        <loc>https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/</loc>
         <lastmod>2017-06-05T12:55:35.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -335,7 +343,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</loc>
         <lastmod>2017-06-05T12:55:35.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -359,14 +367,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/</loc>
-        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/ms/winvista/intel-drivers-causes-old-school-freezes-on-windows-vista/</loc>
         <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -375,7 +375,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
+        <loc>https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/</loc>
         <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -384,6 +384,14 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</loc>
+        <lastmod>2017-06-05T12:55:35.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
         <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,14 +423,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
-        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/</loc>
         <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -432,6 +432,14 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
         <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -471,7 +479,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/Set-SCOMMaintenanceModeDeluxe/</loc>
+        <loc>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -479,7 +487,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/Set-SCOMMaintenanceModeDeluxe/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
