@@ -2,6 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
+        <loc>https://www.teknoglot.se/tag/Gist/</loc>
+        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/tag/VBScript/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/Office/</loc>
-        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Gist/</loc>
         <lastmod>2017-06-05T12:55:35.574Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -101,13 +101,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/RouterOS/</loc>
-        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Windows/</loc>
         <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -303,27 +296,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Conference/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/SQL-Server-2005/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/SQL-Server-2008/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/GSM/</loc>
         <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -345,6 +317,27 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/tag/Conference/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SQL-Server-2005/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SQL-Server-2008/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/tag/Errors/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -352,14 +345,14 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
+        <loc>https://www.teknoglot.se/tag/KB/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/KB/</loc>
+        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -520,20 +513,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
-        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
-        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/SQL-2017/</loc>
         <lastmod>2017-09-28T17:09:59.128Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -550,6 +529,83 @@
     <url>
         <loc>https://www.teknoglot.se/tag/SQL-on-Linux/</loc>
         <lastmod>2017-09-28T17:09:59.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Office-365/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Microsoft-265/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Yammer/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Technical-Keynote/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Microsoft-Teams/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SharePoint/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Advanced-Threat-Protection/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/OneDrive/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Windows/</loc>
+        <lastmod>2017-09-28T17:23:08.601Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

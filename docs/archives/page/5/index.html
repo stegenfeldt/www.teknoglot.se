@@ -156,6 +156,47 @@ ga('send', 'pageview');
         
         <div class="article-meta">
             <p class="category">
+            <a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/windows/">Windows</a>
+            </p>
+            <p class="date"><time datetime="2009-10-21T07:39:17.000Z" itemprop="datePublished">2009-10-21</time></p>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/ms/windows/cannot-delete-files-with-long-paths/">Cannot Delete Files with Long Paths?</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            What do you do when you cannot delete a file or folder on a windows server?
+Check the file permissions! And if that doesn’t help?
+Check the share permissions! Yes, if it is a shared folder. And if that doesn’t help?
+Check the file ownership! Great! But then what?
+Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).Another possible reason could actually be that the path to the file or folder is too long. You won’t actually get an error telling you that the filepath exceeds the 255 characters Windows can handle but a simple “Acces Denied”.
+There are some, more or less tedious, work-arounds for the problem. Like renaming, starting from the root, all the directories to shorter ones or using the old DOS (8.3, like “dokume~1.doc”) names that windows can auto-generate for you. Personally, I have two favourite ways of handling this.
+
+Map the parent-directory of the file/folder you are trying to access/delete as a network drive and access your files that way.This is particularly useful if the folder you are trying to access a DFS-share or perhaps a share on the central fileserver filepaths like “\servername01Central ProjectsCentral ServicesIT DepartmentDevelop Methods for Automatically Deploying New Central Servers2.2.1 Auto-Deploying SQL-Server 2005 ClusterDocumentsPreparationsWhitepapersSQL Server 2005 Failover Clustering White Paper.doc”
+Create a new share to a folder further down the hierarchy. This works locally too if you are logged on to, say, SRV01, you create a new share on “D:FilesharesCentral ProjectsCentral ServicesIT DepartmentDevelop Methods for Automatically Deploying New Central Servers” called “Autodeploymethods” and access it from “\SRV01Autodeploymethods”. That way the filepath doesn’t exceed 255 characters.Now. When designing fileservers, you really should think about how deep the filepaths may get. This is especially true on DFS-shares since you might have to deal with the full FQDN too, and not only the actual folder structure. Many big corporations I know uses “codes” for departments and assign a project ID (quite simply a number or maybe an abbreviation) to each project and uses theese for the fileshares too. Another scenario that could lead to similar problems are intranet sites where users can create and manage their own subsites and where filenames and folders are not stored in a database.
+
+I have only seen this phenomena on Windows systems so far, and I’ve actually used a linux Live-CD on occasion when admin access is denied.
+
+Read More:http://support.microsoft.com/kb/320081
+
+
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <p class="category">
             <a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a>
             </p>
             <p class="date"><time datetime="2009-10-16T05:59:10.000Z" itemprop="datePublished">2009-10-16</time></p>
@@ -211,10 +252,14 @@ Files added:
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -240,14 +285,10 @@ In case you wonder why on earth I post when there’s allready a “solution” 
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -278,10 +319,14 @@ Download at: http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -307,14 +352,10 @@ http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-l
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -359,10 +400,14 @@ Wait
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -393,14 +438,10 @@ Tonight I am reinstalling Ubuntu 9.04 x64 with EXT3.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -429,10 +470,14 @@ Anyway. Just a good thing to keep in mind when running TCP Port Checks from Oper
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -463,14 +508,10 @@ My ChecklistHere’s my list of questions you have to ask to find if SQL Express
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -493,44 +534,6 @@ My ChecklistHere’s my list of questions you have to ask to find if SQL Express
 The MSMQ Management Pack seems to have a few problems with it’s discovery script that can lead to the following error showing up in the logs:
 The process started at 13:34:40 failed to create System.Discovery.Data. Errors found in output:C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 499788DiscoverQueues.vbs(107, 4) Microsoft VBScript runtime error: Subscript out of range: &apos;[number: 0]&apos;Command executed: &quot;C:WINDOWSsystem32cscript.exe&quot; /nologo &quot;DiscoverQueues.vbs&quot; &#123;615D37C9-477D-62E2-0833-6ECBF0E89A87&#125; &#123;A176AC83-CC31-01C3-5DE9-E2DFF64E7CC7&#125; &quot;MASKED.server.fqdn&quot; &quot;MSMQ&quot; &quot;true&quot; &quot;true&quot; &quot;False&quot; &quot;false&quot;Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 499788One or more workflows were affected by this.Workflow name: Microsoft.MSMQ.2003.DiscoverQueuesInstance name: MASKED.server.fqdnInstance ID: &#123;A176AC83-CC31-01C3-5DE9-E2DFF64E7CC7&#125;Management group: MASKED
 This seems to be related to the discovery of public queues on some servers that has none. One quick fix, or rather work-around, is to override the discovery on these servers to set DiscoverPublic to False.
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a>
-            </p>
-            <p class="date"><time datetime="2009-04-29T10:59:54.000Z" itemprop="datePublished">2009-04-29</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/">Windows Server 2008 NLB MP for OpsMgr released</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Don’t know how I missed this when writing the last post, but Microsoft released the MP for Windows Server 2008 NLB yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.
-Quick DetailsFile Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msiVersion:        6.0.6573.0Date Published: 4/28/2009Language:       EnglishDownload Size:  519 KB
-Feature Summary
-Monitor the NLB Node status.
-Based on the status of individual cluster nodes, determine the overall state of the cluster.
-Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.
-Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.
-Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.
-
-Requires OpsMgr 2007 SP1 or later, the Base Operating System MP for 2008, the QFEs for Windows Server 2008 and that you are not running the converted 2003 NLB MP. If you are running the old converted NLB MP, upgrade first. As an additional recommendation, Microsoft recommends in the MP Guide that you install the QFE for wmiprvse.exe problems on Windows Server 2008.
-No support for Mixed-mode (2008 and 2003) clusters though.
 
         </p>
     </div>
@@ -622,6 +625,15 @@ No support for Mixed-mode (2008 and 2003) clusters though.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/topics/Events/">Events</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a></p>
+                            <p class="item-title"><a href="/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/" class="title">#MSIgnite 2017: TK01 - Create a Modern Workplace with Microsoft 365</a></p>
+                            <p class="item-date"><time datetime="2017-09-25T10:17:15.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/Events/">Events</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a></p>
                             <p class="item-title"><a href="/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/" class="title">#MSIgnite 2017: KEY01 - Vision Keynote</a></p>
                             <p class="item-date"><time datetime="2017-09-25T08:05:33.000Z" itemprop="datePublished">2017-09-25</time></p>
                         </div>
@@ -645,15 +657,6 @@ No support for Mixed-mode (2008 and 2003) clusters though.
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
-                            <p class="item-title"><a href="/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/" class="title">PoSH Grid Dashboard for RDSH [#opsmgr]</a></p>
-                            <p class="item-date"><time datetime="2016-06-13T22:01:27.000Z" itemprop="datePublished">2016-06-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -663,7 +666,7 @@ No support for Mixed-mode (2008 and 2003) clusters though.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/code/">Code</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/code/posh/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/code/vbs/">VBS</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Events/">Events</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">39</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/code/">Code</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/code/posh/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/code/vbs/">VBS</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Events/">Events</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">39</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -673,7 +676,7 @@ No support for Mixed-mode (2008 and 2003) clusters though.
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Gist/" style="font-size: 10px;">Gist</a> <a href="/tag/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/HowTo/" style="font-size: 10px;">HowTo</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSIgnite/" style="font-size: 11.25px;">MSIgnite</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tag/Macro/" style="font-size: 10px;">Macro</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/Office/" style="font-size: 10px;">Office</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/OpsMgr-2012-R2/" style="font-size: 11.25px;">OpsMgr 2012 R2</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Powershell/" style="font-size: 11.25px;">Powershell</a> <a href="/tag/Presentation-Notes/" style="font-size: 11.25px;">Presentation Notes</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-2017/" style="font-size: 10px;">SQL 2017</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SQL-on-Linux/" style="font-size: 10px;">SQL on Linux</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Teknoglot/" style="font-size: 12.5px;">Teknoglot</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/VBScript/" style="font-size: 10px;">VBScript</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 11.25px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/Word/" style="font-size: 10px;">Word</a> <a href="/tag/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
+            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Advanced-Threat-Protection/" style="font-size: 10px;">Advanced Threat Protection</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Gist/" style="font-size: 10px;">Gist</a> <a href="/tag/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/HowTo/" style="font-size: 10px;">HowTo</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSIgnite/" style="font-size: 12.5px;">MSIgnite</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tag/Macro/" style="font-size: 10px;">Macro</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Microsoft-265/" style="font-size: 10px;">Microsoft 265</a> <a href="/tag/Microsoft-Teams/" style="font-size: 10px;">Microsoft Teams</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/Office/" style="font-size: 10px;">Office</a> <a href="/tag/Office-365/" style="font-size: 10px;">Office 365</a> <a href="/tag/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/OpsMgr-2012-R2/" style="font-size: 11.25px;">OpsMgr 2012 R2</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Powershell/" style="font-size: 11.25px;">Powershell</a> <a href="/tag/Presentation-Notes/" style="font-size: 12.5px;">Presentation Notes</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-2017/" style="font-size: 10px;">SQL 2017</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SQL-on-Linux/" style="font-size: 10px;">SQL on Linux</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/SharePoint/" style="font-size: 10px;">SharePoint</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Technical-Keynote/" style="font-size: 10px;">Technical Keynote</a> <a href="/tag/Teknoglot/" style="font-size: 12.5px;">Teknoglot</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/VBScript/" style="font-size: 10px;">VBScript</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 12.5px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/Word/" style="font-size: 10px;">Word</a> <a href="/tag/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/Yammer/" style="font-size: 10px;">Yammer</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
         </div>
     </div>
 

@@ -143,6 +143,50 @@ ga('send', 'pageview');
         
         <section class="archives-wrap">
             <div class="archive-year-wrap">
+                <a href="/archives/2012" class="archive-year"><i class="icon fa fa-calendar-o"></i>2012</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <p class="category">
+            <a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a>
+            </p>
+            <p class="date"><time datetime="2012-04-09T20:04:48.000Z" itemprop="datePublished">2012-04-09</time></p>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/ms/opsmgr2007/parameter-replacement-in-alertname/">Parameter Replacement in AlertName</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            …and why you should not use itA DisclaimerI have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
+The Good NewsYes, you can use parameter replacement in you AlertName.
+With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like $Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$ into your alert description.
+In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.Of course I could not refrain from copy-pasting a $Data/Context…$ into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
+Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.
+How To Do ItIn simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+        
+            </div></section>
+        
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
                 <a href="/archives/2011" class="archive-year"><i class="icon fa fa-calendar-o"></i>2011</a>
             </div>
             <div class="archives">
@@ -459,57 +503,6 @@ Also, it is a good time to do some spring-cleaning and actually start using that
 </article>
     
 
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2010" class="archive-year"><i class="icon fa fa-calendar-o"></i>2010</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a>
-            </p>
-            <p class="date"><time datetime="2010-09-02T20:28:07.000Z" itemprop="datePublished">2010-09-02</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/ms/opsmgr2007/snmp-get-errors-in-eventlog/">SNMP GET Errors in OpsMgr EventLog</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.
-To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:
-
-SNMP Setup and Simple Custom SNMP Discovery - Pretty much the basics
-SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has the links to the other parts
-Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
-
-It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
-Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
-Log Name:      Operations ManagerSource:        Health Service ModulesDate:          2010-09-02 11:19:12Event ID:      11001Task Category: NoneLevel:         ErrorKeywords:      ClassicUser:          N/AComputer:      CENSOREDDescription:Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.One or more workflows were affected by this.Workflow name: CENSORED.MP.CLASS.DISCOVERYInstance name: CENSORED_DEVICENAMEInstance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;Management group: CENSORED
-I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the PowerMIB into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.
-After a bit of intense staring i noticed what you see in the screenshot.
-
-        </p>
-    </div>
-</article>
-    
-
 
     </div></section>
 
@@ -593,6 +586,15 @@ After a bit of intense staring i noticed what you see in the screenshot.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/topics/Events/">Events</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a></p>
+                            <p class="item-title"><a href="/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/" class="title">#MSIgnite 2017: TK01 - Create a Modern Workplace with Microsoft 365</a></p>
+                            <p class="item-date"><time datetime="2017-09-25T10:17:15.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/topics/Events/">Events</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a></p>
                             <p class="item-title"><a href="/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/" class="title">#MSIgnite 2017: KEY01 - Vision Keynote</a></p>
                             <p class="item-date"><time datetime="2017-09-25T08:05:33.000Z" itemprop="datePublished">2017-09-25</time></p>
                         </div>
@@ -616,15 +618,6 @@ After a bit of intense staring i noticed what you see in the screenshot.
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/topics/ms/">Microsoft</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a></p>
-                            <p class="item-title"><a href="/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/" class="title">PoSH Grid Dashboard for RDSH [#opsmgr]</a></p>
-                            <p class="item-date"><time datetime="2016-06-13T22:01:27.000Z" itemprop="datePublished">2016-06-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -634,7 +627,7 @@ After a bit of intense staring i noticed what you see in the screenshot.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/code/">Code</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/code/posh/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/code/vbs/">VBS</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Events/">Events</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">39</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/topics/code/">Code</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/code/posh/">PoSH</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/code/vbs/">VBS</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Events/">Events</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Events/MSIgnite-2017/">MSIgnite 2017</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/">Linux</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/rhes/">RedHat ES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/sles/">SLES</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/Linux/ubuntu/">Ubuntu</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/">Microsoft</a><span class="category-list-count">39</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2007/">OpsMgr 2007</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/opsmgr2012/">OpsMgr 2012</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/sql/">SQL Server</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/">Windows</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/topics/ms/windows/winxp/">Windows XP</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/ms/winvista/">Windows Vista</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/topics/mikrotik/">Mikrotik</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/topics/tb/">Technobabble</a><span class="category-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -644,7 +637,7 @@ After a bit of intense staring i noticed what you see in the screenshot.
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Gist/" style="font-size: 10px;">Gist</a> <a href="/tag/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/HowTo/" style="font-size: 10px;">HowTo</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSIgnite/" style="font-size: 11.25px;">MSIgnite</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tag/Macro/" style="font-size: 10px;">Macro</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/Office/" style="font-size: 10px;">Office</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/OpsMgr-2012-R2/" style="font-size: 11.25px;">OpsMgr 2012 R2</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Powershell/" style="font-size: 11.25px;">Powershell</a> <a href="/tag/Presentation-Notes/" style="font-size: 11.25px;">Presentation Notes</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-2017/" style="font-size: 10px;">SQL 2017</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SQL-on-Linux/" style="font-size: 10px;">SQL on Linux</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Teknoglot/" style="font-size: 12.5px;">Teknoglot</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/VBScript/" style="font-size: 10px;">VBScript</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 11.25px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/Word/" style="font-size: 10px;">Word</a> <a href="/tag/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
+            <a href="/tag/ACS/" style="font-size: 10px;">ACS</a> <a href="/tag/Advanced-Threat-Protection/" style="font-size: 10px;">Advanced Threat Protection</a> <a href="/tag/Checklist/" style="font-size: 10px;">Checklist</a> <a href="/tag/Conference/" style="font-size: 10px;">Conference</a> <a href="/tag/DNS/" style="font-size: 10px;">DNS</a> <a href="/tag/Drivers/" style="font-size: 12.5px;">Drivers</a> <a href="/tag/Errors/" style="font-size: 15px;">Errors</a> <a href="/tag/Exchange/" style="font-size: 10px;">Exchange</a> <a href="/tag/Fail-over/" style="font-size: 12.5px;">Fail-over</a> <a href="/tag/Field-Notes/" style="font-size: 12.5px;">Field Notes</a> <a href="/tag/Fixed/" style="font-size: 10px;">Fixed</a> <a href="/tag/GSM/" style="font-size: 10px;">GSM</a> <a href="/tag/Gist/" style="font-size: 10px;">Gist</a> <a href="/tag/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tag/Highly-Available/" style="font-size: 10px;">Highly-Available</a> <a href="/tag/How-To/" style="font-size: 17.5px;">How-To</a> <a href="/tag/HowTo/" style="font-size: 10px;">HowTo</a> <a href="/tag/Hyper-V/" style="font-size: 10px;">Hyper-V</a> <a href="/tag/IIS7/" style="font-size: 10px;">IIS7</a> <a href="/tag/Invoke-RestMethod/" style="font-size: 10px;">Invoke-RestMethod</a> <a href="/tag/KB/" style="font-size: 11.25px;">KB</a> <a href="/tag/Linux/" style="font-size: 13.75px;">Linux</a> <a href="/tag/MP-Development/" style="font-size: 12.5px;">MP Development</a> <a href="/tag/MSIgnite/" style="font-size: 12.5px;">MSIgnite</a> <a href="/tag/MSMQ/" style="font-size: 13.75px;">MSMQ</a> <a href="/tag/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tag/Macro/" style="font-size: 10px;">Macro</a> <a href="/tag/Management-Pack/" style="font-size: 18.75px;">Management Pack</a> <a href="/tag/Microsoft-265/" style="font-size: 10px;">Microsoft 265</a> <a href="/tag/Microsoft-Teams/" style="font-size: 10px;">Microsoft Teams</a> <a href="/tag/Mikrotik/" style="font-size: 10px;">Mikrotik</a> <a href="/tag/NLB/" style="font-size: 10px;">NLB</a> <a href="/tag/NVidia/" style="font-size: 10px;">NVidia</a> <a href="/tag/Office/" style="font-size: 10px;">Office</a> <a href="/tag/Office-365/" style="font-size: 10px;">Office 365</a> <a href="/tag/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tag/OpenVPN/" style="font-size: 10px;">OpenVPN</a> <a href="/tag/OpsMgr/" style="font-size: 20px;">OpsMgr</a> <a href="/tag/OpsMgr-2007/" style="font-size: 10px;">OpsMgr 2007</a> <a href="/tag/OpsMgr-2012-R2/" style="font-size: 11.25px;">OpsMgr 2012 R2</a> <a href="/tag/PoSH/" style="font-size: 16.25px;">PoSH</a> <a href="/tag/Powershell/" style="font-size: 11.25px;">Powershell</a> <a href="/tag/Presentation-Notes/" style="font-size: 12.5px;">Presentation Notes</a> <a href="/tag/Quick-Reference/" style="font-size: 10px;">Quick Reference</a> <a href="/tag/Quick-fix/" style="font-size: 10px;">Quick-fix</a> <a href="/tag/Quick-hack/" style="font-size: 10px;">Quick-hack</a> <a href="/tag/RHES5/" style="font-size: 10px;">RHES5</a> <a href="/tag/Rant/" style="font-size: 12.5px;">Rant</a> <a href="/tag/RedHat/" style="font-size: 10px;">RedHat</a> <a href="/tag/Reporting-Services/" style="font-size: 10px;">Reporting Services</a> <a href="/tag/RouterOS/" style="font-size: 10px;">RouterOS</a> <a href="/tag/SMS/" style="font-size: 10px;">SMS</a> <a href="/tag/SQL-2017/" style="font-size: 10px;">SQL 2017</a> <a href="/tag/SQL-Express-2005/" style="font-size: 10px;">SQL Express 2005</a> <a href="/tag/SQL-Express-2008/" style="font-size: 10px;">SQL Express 2008</a> <a href="/tag/SQL-Server/" style="font-size: 11.25px;">SQL Server</a> <a href="/tag/SQL-Server-2005/" style="font-size: 10px;">SQL Server 2005</a> <a href="/tag/SQL-Server-2008/" style="font-size: 10px;">SQL Server 2008</a> <a href="/tag/SQL-on-Linux/" style="font-size: 10px;">SQL on Linux</a> <a href="/tag/SUSE-11/" style="font-size: 10px;">SUSE 11</a> <a href="/tag/Script/" style="font-size: 16.25px;">Script</a> <a href="/tag/Scripts/" style="font-size: 10px;">Scripts</a> <a href="/tag/SharePoint/" style="font-size: 10px;">SharePoint</a> <a href="/tag/Sillyness/" style="font-size: 10px;">Sillyness</a> <a href="/tag/SquaredUp/" style="font-size: 10px;">SquaredUp</a> <a href="/tag/Teach-a-Man-to-Fish/" style="font-size: 10px;">Teach a Man to Fish</a> <a href="/tag/TechNet/" style="font-size: 10px;">TechNet</a> <a href="/tag/Technical-Keynote/" style="font-size: 10px;">Technical Keynote</a> <a href="/tag/Teknoglot/" style="font-size: 12.5px;">Teknoglot</a> <a href="/tag/TroubleShooting/" style="font-size: 11.25px;">TroubleShooting</a> <a href="/tag/Tutorial/" style="font-size: 10px;">Tutorial</a> <a href="/tag/Unix/" style="font-size: 10px;">Unix</a> <a href="/tag/Update-Rollup/" style="font-size: 11.25px;">Update Rollup</a> <a href="/tag/VBScript/" style="font-size: 10px;">VBScript</a> <a href="/tag/Video/" style="font-size: 10px;">Video</a> <a href="/tag/Virtual-Appliance/" style="font-size: 10px;">Virtual Appliance</a> <a href="/tag/WMI/" style="font-size: 10px;">WMI</a> <a href="/tag/Windows/" style="font-size: 12.5px;">Windows</a> <a href="/tag/Windows-2008/" style="font-size: 10px;">Windows 2008</a> <a href="/tag/Windows-Installer/" style="font-size: 10px;">Windows Installer</a> <a href="/tag/Windows-Vista/" style="font-size: 10px;">Windows Vista</a> <a href="/tag/Windows-XP/" style="font-size: 10px;">Windows XP</a> <a href="/tag/Word/" style="font-size: 10px;">Word</a> <a href="/tag/Wordpress/" style="font-size: 10px;">Wordpress</a> <a href="/tag/X-Plat/" style="font-size: 11.25px;">X-Plat</a> <a href="/tag/Yammer/" style="font-size: 10px;">Yammer</a> <a href="/tag/x64/" style="font-size: 11.25px;">x64</a>
         </div>
     </div>
 

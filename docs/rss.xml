@@ -126,6 +126,87 @@
     </item>
     
     <item>
+      <title>#MSIgnite 2017: TK01 - Create a Modern Workplace with Microsoft 365</title>
+      <link>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</link>
+      <guid>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</guid>
+      <pubDate>Mon, 25 Sep 2017 10:17:15 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;TK01-Create-a-modern-workplace-with-Microsoft-365&quot;&gt;&lt;a href=&quot;#TK01-Create-a-modern-workplace-with-Microsoft-365&quot; class=&quot;headerlink&quot; title=&quot;TK01 - Create a modern workplace with Microsoft 365&quot;&gt;&lt;/a&gt;TK01 - Create a modern workplace with Microsoft 365&lt;/h1&gt;&lt;p&gt;Sep 25, 10:45 am – 12:15 pm&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UNSTRUCTURED NOTES AWARENESS NOTICE!&lt;br&gt;Also written on phone, will come back and refine&lt;/p&gt;
+&lt;p&gt;Arrived late due to escalators being bottlenecks.&lt;br&gt;Something about 3d objects in office, PowerPoint.&lt;br&gt;Showing a photo with mixed reality, rotating 3d-space. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Office&quot;&gt;&lt;a href=&quot;#Office&quot; class=&quot;headerlink&quot; title=&quot;Office&quot;&gt;&lt;/a&gt;Office&lt;/h2&gt;&lt;h3 id=&quot;Windows-Ink&quot;&gt;&lt;a href=&quot;#Windows-Ink&quot; class=&quot;headerlink&quot; title=&quot;Windows Ink&quot;&gt;&lt;/a&gt;Windows Ink&lt;/h3&gt;&lt;p&gt;deleting stuff with pen, highlights etc&lt;br&gt;Seems fairly intuitive. Would like to test soon.&lt;/p&gt;
+&lt;h3 id=&quot;Word&quot;&gt;&lt;a href=&quot;#Word&quot; class=&quot;headerlink&quot; title=&quot;Word&quot;&gt;&lt;/a&gt;Word&lt;/h3&gt;&lt;p&gt;accessibility, colour blindness, proofing with patterns.&lt;br&gt;language improvements. suggestions about better wordings. &lt;/p&gt;
+&lt;h2 id=&quot;Excel&quot;&gt;&lt;a href=&quot;#Excel&quot; class=&quot;headerlink&quot; title=&quot;Excel&quot;&gt;&lt;/a&gt;Excel&lt;/h2&gt;&lt;p&gt;Connects to external data sources, trying to figure out context and provide help.&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="TK01-Create-a-modern-workplace-with-Microsoft-365"><a href="#TK01-Create-a-modern-workplace-with-Microsoft-365" class="headerlink" title="TK01 - Create a modern workplace with Microsoft 365"></a>TK01 - Create a modern workplace with Microsoft 365</h1><p>Sep 25, 10:45 am – 12:15 pm</p>
+<blockquote>
+<p>UNSTRUCTURED NOTES AWARENESS NOTICE!<br>Also written on phone, will come back and refine</p>
+<p>Arrived late due to escalators being bottlenecks.<br>Something about 3d objects in office, PowerPoint.<br>Showing a photo with mixed reality, rotating 3d-space. </p>
+</blockquote>
+<h2 id="Office"><a href="#Office" class="headerlink" title="Office"></a>Office</h2><h3 id="Windows-Ink"><a href="#Windows-Ink" class="headerlink" title="Windows Ink"></a>Windows Ink</h3><p>deleting stuff with pen, highlights etc<br>Seems fairly intuitive. Would like to test soon.</p>
+<h3 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h3><p>accessibility, colour blindness, proofing with patterns.<br>language improvements. suggestions about better wordings. </p>
+<h2 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h2><p>Connects to external data sources, trying to figure out context and provide help.</p>
+<h2 id="Teamwork"><a href="#Teamwork" class="headerlink" title="Teamwork"></a>Teamwork</h2><h3 id="Teams-and-Groups"><a href="#Teams-and-Groups" class="headerlink" title="Teams and Groups"></a>Teams and Groups</h3><ul>
+<li>Seen as the starting point for teams</li>
+<li>New back end for Skype<ul>
+<li>Teams become the core client, eventually replacing Skype for business client.</li>
+</ul>
+</li>
+</ul>
+<h3 id="SharePoint-and-OneDrive"><a href="#SharePoint-and-OneDrive" class="headerlink" title="SharePoint and OneDrive"></a>SharePoint and OneDrive</h3><ul>
+<li>Mobile-ready, responsive, webpages from SharePoint</li>
+<li>Integrates with PowerApps and Flow</li>
+<li>Files on demand, access files without the need for local space.</li>
+</ul>
+<h2 id="Mobile-outlook"><a href="#Mobile-outlook" class="headerlink" title="Mobile outlook"></a>Mobile outlook</h2><ul>
+<li>some sort of “help” to flag messages that might be fraudulent</li>
+<li>Cortana intelligence to find stuff, like good times for meetings</li>
+<li>@mentions in office comments</li>
+</ul>
+<h2 id="Surface-hub"><a href="#Surface-hub" class="headerlink" title="Surface hub"></a>Surface hub</h2><ul>
+<li>whiteboard with intelligent canvas</li>
+<li>recognizes shapes, convert rectangles to tables, edit columns and rows, multiple editors realtime</li>
+</ul>
+<h1 id="Teams"><a href="#Teams" class="headerlink" title="Teams"></a>Teams</h1><ul>
+<li>Now with guest access!</li>
+<li>Access control and MFA</li>
+<li>Team meetings, recorded and replayable</li>
+</ul>
+<h2 id="OneDrive"><a href="#OneDrive" class="headerlink" title="OneDrive"></a>OneDrive</h2><ul>
+<li>OneDrive integrated into Windows kernel</li>
+<li>Status icons provide information about online status of files</li>
+</ul>
+<h2 id="Yammer"><a href="#Yammer" class="headerlink" title="Yammer"></a>Yammer</h2><ul>
+<li>With stream, realtime translations etc</li>
+<li>Yammer comments within stream with analytics</li>
+</ul>
+<h2 id="Windows-Auto-Pilot"><a href="#Windows-Auto-Pilot" class="headerlink" title="Windows Auto Pilot"></a>Windows Auto Pilot</h2><ul>
+<li>configures security profiles, networks, settings, profiles etc</li>
+<li>Better Windows analytics, AI backed. improves categorization and troubleshooting</li>
+<li>Cloud based, no need for corporate network connection</li>
+<li>Upgrade analysis, Windows, apps, and office plugins.</li>
+</ul>
+<h2 id="Other-notes"><a href="#Other-notes" class="headerlink" title="Other notes"></a>Other notes</h2><ul>
+<li>simpler migration of programs to Azure apps</li>
+<li>Windows desktop bridge for backwards compatibility</li>
+<li>MS Security graph</li>
+<li>GDPR Compliance Manager<ul>
+<li>analyses and gives a compliance score based on policies.</li>
+</ul>
+</li>
+<li>Also, New features Azure Advanced Threat Protection</li>
+</ul>
+]]></content:encoded>
+      
+      <comments>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>#MSIgnite 2017: KEY01 - Vision Keynote</title>
       <link>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</link>
       <guid>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</guid>
@@ -2176,44 +2257,6 @@ decryptionKey=&quot;AutoGenerate,IsolateApps&quot; validation=&quot;3DES&quot; d
 ]]></content:encoded>
       
       <comments>https://www.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Windows Server 2008 NLB MP for OpsMgr released</title>
-      <link>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</link>
-      <guid>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</guid>
-      <pubDate>Wed, 29 Apr 2009 10:59:54 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Don’t know how I missed this when writing the last post, but Microsoft released the &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=dc17e093-bdd7-4cb3-9981-853776ed90be&amp;amp;displaylang=en&quot; title=&quot;Windows Server 2008 Network Load Balancing for System Center Operations Manager 2007&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MP for Windows Server 2008 NLB&lt;/a&gt; yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.&lt;/p&gt;
-&lt;h1 id=&quot;Quick-Details&quot;&gt;&lt;a href=&quot;#Quick-Details&quot; class=&quot;headerlink&quot; title=&quot;Quick Details&quot;&gt;&lt;/a&gt;Quick Details&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;File Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Version:        6.0.6573.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Date Published: 4/28/2009&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Language:       English&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Download Size:  519 KB&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;Feature-Summary&quot;&gt;&lt;a href=&quot;#Feature-Summary&quot; class=&quot;headerlink&quot; title=&quot;Feature Summary&quot;&gt;&lt;/a&gt;Feature Summary&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Monitor the NLB Node status.&lt;/li&gt;
-&lt;li&gt;Based on the status of individual cluster nodes, determine the overall state of the cluster.&lt;/li&gt;
-&lt;li&gt;Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.&lt;/li&gt;
-&lt;li&gt;Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.&lt;/li&gt;
-&lt;li&gt;Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Requires OpsMgr 2007 SP1 or later, the Base Operating System MP for 2008, the &lt;a href=&quot;http://support.microsoft.com/kb/953141&quot; title=&quot;Support for running System Center Operations Manager 2007 Service Pack 1 and System Center Essentials 2007 Service Pack 1 on a Windows Server 2008-based computer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;QFEs for Windows Server 2008&lt;/a&gt; and that you are not running the converted 2003 NLB MP. If you are running the old converted NLB MP, upgrade first. As an additional recommendation, Microsoft recommends in the MP Guide that you install the &lt;a href=&quot;http://support.microsoft.com/kb/959493&quot; title=&quot;The WMI Provider Host program (Wmiprvse.exe) may crash on a Windows Server 2008-based computer that has the NLB feature installed2008&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;QFE for wmiprvse.exe problems on Windows Server 2008&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No support for Mixed-mode (2008 and 2003) clusters though.&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Don’t know how I missed this when writing the last post, but Microsoft released the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=dc17e093-bdd7-4cb3-9981-853776ed90be&amp;displaylang=en" title="Windows Server 2008 Network Load Balancing for System Center Operations Manager 2007" target="_blank" rel="external">MP for Windows Server 2008 NLB</a> yesterday (28/4 -09). This is the initial release for Win2k8 NLB so I guess we just have to try it out then.</p>
-<h1 id="Quick-Details"><a href="#Quick-Details" class="headerlink" title="Quick Details"></a>Quick Details</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">File Name:      Microsoft Server 2008 Network Load Balancing System Center Operations Manager 2007 MP.msi</div><div class="line">Version:        6.0.6573.0</div><div class="line">Date Published: 4/28/2009</div><div class="line">Language:       English</div><div class="line">Download Size:  519 KB</div></pre></td></tr></table></figure>
-<h1 id="Feature-Summary"><a href="#Feature-Summary" class="headerlink" title="Feature Summary"></a>Feature Summary</h1><ul>
-<li>Monitor the NLB Node status.</li>
-<li>Based on the status of individual cluster nodes, determine the overall state of the cluster.</li>
-<li>Where an integration management pack exists, determine the health state of a cluster node by looking at the health state of the load balanced application, such as IIS.</li>
-<li>Alert on errors and warnings that are reported by the NLB driver, such as an incorrectly configured NLB cluster.</li>
-<li>Take the node out of the NLB cluster if the underlying load-balanced application becomes unhealthy, and add the node back to the cluster when the application becomes healthy again.</li>
-</ul>
-<p>Requires OpsMgr 2007 SP1 or later, the Base Operating System MP for 2008, the <a href="http://support.microsoft.com/kb/953141" title="Support for running System Center Operations Manager 2007 Service Pack 1 and System Center Essentials 2007 Service Pack 1 on a Windows Server 2008-based computer" target="_blank" rel="external">QFEs for Windows Server 2008</a> and that you are not running the converted 2003 NLB MP. If you are running the old converted NLB MP, upgrade first. As an additional recommendation, Microsoft recommends in the MP Guide that you install the <a href="http://support.microsoft.com/kb/959493" title="The WMI Provider Host program (Wmiprvse.exe) may crash on a Windows Server 2008-based computer that has the NLB feature installed2008" target="_blank" rel="external">QFE for wmiprvse.exe problems on Windows Server 2008</a>.</p>
-<p>No support for Mixed-mode (2008 and 2003) clusters though.</p>
-]]></content:encoded>
-      
-      <comments>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/#disqus_thread</comments>
     </item>
     
   </channel>
