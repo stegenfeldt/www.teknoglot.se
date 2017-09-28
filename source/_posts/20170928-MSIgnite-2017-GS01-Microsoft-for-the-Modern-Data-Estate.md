@@ -3,6 +3,9 @@ title: '#MSIgnite 2017: GS01 - Microsoft for the Modern Data Estate'
 tags:
   - MSIgnite
   - Presentation Notes
+  - SQL 2017
+  - Machine Learning
+  - SQL on Linux
 categories:
   - Events
   - MSIgnite 2017

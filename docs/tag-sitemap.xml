@@ -521,14 +521,35 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
-        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
+        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
-        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
+        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SQL-2017/</loc>
+        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Machine-Learning/</loc>
+        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SQL-on-Linux/</loc>
+        <lastmod>2017-09-28T17:09:59.128Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
