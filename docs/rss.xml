@@ -8,8 +8,122 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Techspeak for the socially diminished.</description>
-    <pubDate>Thu, 28 Sep 2017 16:56:30 GMT</pubDate>
+    <pubDate>Thu, 28 Sep 2017 17:06:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>#MSIgnite 2017: GS01 - Microsoft for the Modern Data Estate</title>
+      <link>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</link>
+      <guid>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</guid>
+      <pubDate>Mon, 25 Sep 2017 13:34:36 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;GS01-Microsoft-for-the-modern-data-estate&quot;&gt;&lt;a href=&quot;#GS01-Microsoft-for-the-modern-data-estate&quot; class=&quot;headerlink&quot; title=&quot;GS01 - Microsoft for the modern data estate&quot;&gt;&lt;/a&gt;GS01 - Microsoft for the modern data estate&lt;/h1&gt;&lt;p&gt;Sep 25, 2:15 pm – 3:30 pm&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Notes&quot;&gt;&lt;a href=&quot;#Quick-Notes&quot; class=&quot;headerlink&quot; title=&quot;Quick Notes&quot;&gt;&lt;/a&gt;Quick Notes&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Massive and growing amounts of data.&lt;/li&gt;
+&lt;li&gt;Companies that out-develop themselves.&lt;/li&gt;
+&lt;li&gt;Some companies have learned to leverage and gain from the data, like Honeywell, DocuSign and Jet. &lt;/li&gt;
+&lt;li&gt;Hybrid is the way to go. Quick hands-up: &lt;ul&gt;
+&lt;li&gt;Almost no companies believe all-public is even possible&lt;/li&gt;
+&lt;li&gt;Almost all see a hybrid solution is the thing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;SQL-2017-GA-2017-10-02&quot;&gt;&lt;a href=&quot;#SQL-2017-GA-2017-10-02&quot; class=&quot;headerlink&quot; title=&quot;SQL 2017 GA 2017-10-02:&quot;&gt;&lt;/a&gt;SQL 2017 GA 2017-10-02:&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Available on:&lt;ul&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;Kubernetes…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;*applause*&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gives superb compatibility over many platforms and distributions.&lt;/li&gt;
+&lt;li&gt;2+ million docker pulls.&lt;/li&gt;
+&lt;li&gt;Lots of focus on performance and security. has the smallest amount of vulnerabilities. &lt;/li&gt;
+&lt;li&gt;Only commercial dB with AI built in. &lt;/li&gt;
+&lt;li&gt;R and Python support OOB. &lt;/li&gt;
+&lt;li&gt;BI included in license; web, desktop and mobile.&lt;/li&gt;
+&lt;li&gt;Support for graph data and queries.&lt;/li&gt;
+&lt;li&gt;Advanced machine learning with R + Python.&lt;/li&gt;
+&lt;li&gt;Native TSQL scoring.&lt;/li&gt;
+&lt;li&gt;Adaptive query processing and Automatic plan correction.&lt;/li&gt;
+&lt;li&gt;Special pricing (30%) for SQL on Red hat&lt;/li&gt;
+&lt;li&gt;Azure SQL Managed Instance&lt;ul&gt;
+&lt;li&gt;Like a SQL instance on premise, in the cloud. without the server.&lt;/li&gt;
+&lt;li&gt;Easy to migrate as it’s the same thing.&lt;/li&gt;
+&lt;li&gt;Management using the same tools as always.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SQL SA customers get discounts on Azure SQL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Other-stuff&quot;&gt;&lt;a href=&quot;#Other-stuff&quot; class=&quot;headerlink&quot; title=&quot;Other stuff&quot;&gt;&lt;/a&gt;Other stuff&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Vulnerability assessment for GDPR.&lt;/li&gt;
+&lt;li&gt;Intelligent insights into performance.&lt;/li&gt;
+&lt;/ul&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="GS01-Microsoft-for-the-modern-data-estate"><a href="#GS01-Microsoft-for-the-modern-data-estate" class="headerlink" title="GS01 - Microsoft for the modern data estate"></a>GS01 - Microsoft for the modern data estate</h1><p>Sep 25, 2:15 pm – 3:30 pm</p>
+<h2 id="Quick-Notes"><a href="#Quick-Notes" class="headerlink" title="Quick Notes"></a>Quick Notes</h2><ul>
+<li>Massive and growing amounts of data.</li>
+<li>Companies that out-develop themselves.</li>
+<li>Some companies have learned to leverage and gain from the data, like Honeywell, DocuSign and Jet. </li>
+<li>Hybrid is the way to go. Quick hands-up: <ul>
+<li>Almost no companies believe all-public is even possible</li>
+<li>Almost all see a hybrid solution is the thing.</li>
+</ul>
+</li>
+</ul>
+<h3 id="SQL-2017-GA-2017-10-02"><a href="#SQL-2017-GA-2017-10-02" class="headerlink" title="SQL 2017 GA 2017-10-02:"></a>SQL 2017 GA 2017-10-02:</h3><ul>
+<li>Available on:<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>Docker</li>
+<li>Kubernetes…</li>
+</ul>
+</li>
+</ul>
+<p><code>*applause*</code></p>
+<ul>
+<li>Gives superb compatibility over many platforms and distributions.</li>
+<li>2+ million docker pulls.</li>
+<li>Lots of focus on performance and security. has the smallest amount of vulnerabilities. </li>
+<li>Only commercial dB with AI built in. </li>
+<li>R and Python support OOB. </li>
+<li>BI included in license; web, desktop and mobile.</li>
+<li>Support for graph data and queries.</li>
+<li>Advanced machine learning with R + Python.</li>
+<li>Native TSQL scoring.</li>
+<li>Adaptive query processing and Automatic plan correction.</li>
+<li>Special pricing (30%) for SQL on Red hat</li>
+<li>Azure SQL Managed Instance<ul>
+<li>Like a SQL instance on premise, in the cloud. without the server.</li>
+<li>Easy to migrate as it’s the same thing.</li>
+<li>Management using the same tools as always.</li>
+</ul>
+</li>
+<li>SQL SA customers get discounts on Azure SQL.</li>
+</ul>
+<h3 id="Other-stuff"><a href="#Other-stuff" class="headerlink" title="Other stuff"></a>Other stuff</h3><ul>
+<li>Vulnerability assessment for GDPR.</li>
+<li>Intelligent insights into performance.</li>
+</ul>
+<blockquote>
+<p>DEMO: Patient intake, millisecond calculation of estimated stay based on history of patient and similar cases.</p>
+</blockquote>
+<ul>
+<li>Azure DB for MySQL and PostgreSQL.<ul>
+<li>Supports HA etc.</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+      
+      <comments>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>#MSIgnite 2017: KEY01 - Vision Keynote</title>
@@ -2100,36 +2214,6 @@ decryptionKey=&quot;AutoGenerate,IsolateApps&quot; validation=&quot;3DES&quot; d
 ]]></content:encoded>
       
       <comments>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>MSMQ 3 MP for OpsMgr v.6.0.6587.0 Released</title>
-      <link>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</link>
-      <guid>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</guid>
-      <pubDate>Tue, 28 Apr 2009 13:30:18 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Last friday, 24/4 -09,  Microsoft released an &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;amp;displaylang=en&amp;amp;displaylang=en&quot; title=&quot;Message Queuing Management Pack for Operations Manager 2007&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;updated Management Pack for MSMQ 3.0&lt;/a&gt;.&lt;/p&gt;
-&lt;h1 id=&quot;Quick-Details&quot;&gt;&lt;a href=&quot;#Quick-Details&quot; class=&quot;headerlink&quot; title=&quot;Quick Details&quot;&gt;&lt;/a&gt;Quick Details&lt;/h1&gt;  &lt;table style=&quot;height: 60px&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;469&quot; border=&quot;0&quot;&gt;&lt;tbody&gt;     &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;File Name:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;Message Queuing System Center Operations Manager 2007 MP.MSI&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Version:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;6.0.6587.0&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Date Published:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;4/24/2009&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Language:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;English&lt;/td&gt;     &lt;/tr&gt;      &lt;tr&gt;       &lt;td class=&quot;quickInfoName&quot;&gt;Download Size:&lt;/td&gt;        &lt;td class=&quot;quickInfoValue&quot;&gt;502 KB&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt;&lt;/table&gt;  
-
-&lt;h1 id=&quot;Release-History&quot;&gt;&lt;a href=&quot;#Release-History&quot; class=&quot;headerlink&quot; title=&quot;Release History&quot;&gt;&lt;/a&gt;Release History&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;6/3/2008 - Initial Release, version 6.0.6278.23. Refer to the MP guide for further details.*   4/24/2009 - Undated release, version 6.0.6587.0. Refer to the MP guide for further details.  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The MP Guide does not really say much about what’s updated and I don’t know how much more than the reporting they have fixed. I can just state the fact that support for clustered MSMQ 3 instances is still missing.&lt;/p&gt;
-
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Last friday, 24/4 -09,  Microsoft released an <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en" title="Message Queuing Management Pack for Operations Manager 2007" target="_blank" rel="external">updated Management Pack for MSMQ 3.0</a>.</p>
-<h1 id="Quick-Details"><a href="#Quick-Details" class="headerlink" title="Quick Details"></a>Quick Details</h1>  <table style="height: 60px" cellspacing="0" cellpadding="0" width="469" border="0"><tbody>     <tr>       <td class="quickInfoName">File Name:</td>        <td class="quickInfoValue">Message Queuing System Center Operations Manager 2007 MP.MSI</td>     </tr>      <tr>       <td class="quickInfoName">Version:</td>        <td class="quickInfoValue">6.0.6587.0</td>     </tr>      <tr>       <td class="quickInfoName">Date Published:</td>        <td class="quickInfoValue">4/24/2009</td>     </tr>      <tr>       <td class="quickInfoName">Language:</td>        <td class="quickInfoValue">English</td>     </tr>      <tr>       <td class="quickInfoName">Download Size:</td>        <td class="quickInfoValue">502 KB</td>     </tr>   </tbody></table>  
-
-<h1 id="Release-History"><a href="#Release-History" class="headerlink" title="Release History"></a>Release History</h1><ul>
-<li>6/3/2008 - Initial Release, version 6.0.6278.23. Refer to the MP guide for further details.*   4/24/2009 - Undated release, version 6.0.6587.0. Refer to the MP guide for further details.  </li>
-</ul>
-<p>The MP Guide does not really say much about what’s updated and I don’t know how much more than the reporting they have fixed. I can just state the fact that support for clustered MSMQ 3 instances is still missing.</p>
-]]></content:encoded>
-      
-      <comments>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/#disqus_thread</comments>
     </item>
     
   </channel>

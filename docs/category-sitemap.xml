@@ -49,14 +49,14 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/ms/windows/</loc>
+        <loc>https://www.teknoglot.se/topics/tb/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/tb/</loc>
+        <loc>https://www.teknoglot.se/topics/ms/windows/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -120,14 +120,14 @@
 
     <url>
         <loc>https://www.teknoglot.se/topics/Events/</loc>
-        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/topics/Events/MSIgnite-2017/</loc>
-        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

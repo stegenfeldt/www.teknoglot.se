@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
+        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</loc>
         <lastmod>2017-09-28T16:56:30.048Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -159,14 +167,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</loc>
         <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,6 +191,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/</loc>
         <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -207,7 +215,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
+        <loc>https://www.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</loc>
         <lastmod>2017-06-05T12:55:35.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -215,7 +223,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
         <lastmod>2017-06-05T12:55:35.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -255,7 +263,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</loc>
         <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -263,7 +271,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</loc>
         <lastmod>2017-06-05T12:55:35.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -359,7 +367,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</loc>
+        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
         <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -367,7 +375,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</loc>
         <lastmod>2017-06-05T12:55:35.652Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -423,6 +431,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
+        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/</loc>
         <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -432,14 +448,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</loc>
-        <lastmod>2017-06-05T12:55:35.605Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
         <lastmod>2017-06-05T12:55:35.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

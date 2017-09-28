@@ -79,13 +79,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Windows/</loc>
-        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/DNS/</loc>
         <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,6 +101,13 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/RouterOS/</loc>
+        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Windows/</loc>
         <lastmod>2017-06-05T12:55:35.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -296,27 +296,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/GSM/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Quick-hack/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/SMS/</loc>
-        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/Video/</loc>
         <lastmod>2017-06-05T12:55:35.761Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -345,6 +324,27 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/tag/GSM/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Quick-hack/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/SMS/</loc>
+        <lastmod>2017-06-05T12:55:35.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/tag/Errors/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -352,14 +352,14 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/KB/</loc>
+        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Teknoglot/</loc>
+        <loc>https://www.teknoglot.se/tag/KB/</loc>
         <lastmod>2017-06-05T12:55:35.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -521,14 +521,14 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/MSIgnite/</loc>
-        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Presentation-Notes/</loc>
-        <lastmod>2017-09-28T16:56:30.048Z</lastmod>
+        <lastmod>2017-09-28T17:06:21.597Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
