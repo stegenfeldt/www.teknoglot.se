@@ -28,10 +28,11 @@ I'm not going to go through the OS installation process here, but make sure to s
 
 I'm not actually sure that you need to run the kernel-headers install manually or if it's included in the "Development Tools" package.
 
-The first gotcha i ran into was the fact that the link to the Linux Integration Services--previously known as Linux Integration Components or LinuxIC--on RedHat's information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404\. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on [http://download.microsoft.com](http://download.microsoft.com) for "Linux Integration Components" do return the new page, and that's where I learned about the new name.
-_Thank you for making it easy for us Microsoft!
-_Here's a direct link to the search on the current name: [http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&displaylang=en&stype=s_basic](http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&displaylang=en&stype=s_basic)
-And here's a direct link to the actual download page: [http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551)
+The first gotcha i ran into was the fact that the link to the Linux Integration Services--previously known as Linux Integration Components or LinuxIC--on RedHat's information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404\. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on [http://download.microsoft.com](http://download.microsoft.com) for "Linux Integration Components" do return the new page, and that's where I learned about the new name.  
+Thank you for making it easy for us Microsoft!
+
+- Here's a [direct link to the search on the current name.](http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&displaylang=en&stype=s_basic)
+- And here's a [direct link to the actual download page.](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551)
 
 This download contains an ISO file that you can mount using the Hyper-V- or VMM-console, or you can do as I did and download the ISO to the virtual machine, mount it locally, copy the files and unmount it. Like this.
 
@@ -58,12 +59,13 @@ As root, do the following:
 # reboot
 ```
 
-Why the export PATH command? Apparently, on RHES5, /sbin is not in the PATH by default and this is something that the make scripts are completely unaware of. The "make install" will try to run "depmod" which will fail since it's not in the default path. You could also add "PATH=$PATH/sbin" to the root users ~/.bashrc which will put it back in the PATH but only for the root user, but I don't know if that's recommended.
+Why the export PATH command? Apparently, on RHES5, /sbin is not in the PATH by default and this is something that the make scripts are completely unaware of. The `make install` will try to run `depmod` which will fail since it's not in the default path.  
+You could also add `PATH=$PATH/sbin` to the root users ~/.bashrc which will put it back in the PATH but only for the root user, but I don't know if that's recommended.
 And, yes. You DO have to reboot after the install.
 
-If you are running RHES5 64bit you also have to install the "adjtimex" package. It is in the RHN repository but also on the RHES5 Installation CD in case you have no internet connection. Install it with yum like this:
+If you are running RHES5 64bit you also have to install the `adjtimex` package. It is in the RHN repository but also on the RHES5 Installation CD in case you have no internet connection. Install it with yum like this:
 
-```ash
+```bash
 # yum install adjtimex
 ```
 
@@ -79,7 +81,7 @@ And that's basically it for the installation.
 
 How do you know that the driver are installed?
 
-Aftr the reboot, try running "modinfo vmbus" which should return something like this:
+Aftr the reboot, try running `modinfo vmbus` which should return something like this:
 
 ```bash
 # modinfo vmbus
@@ -94,7 +96,7 @@ par:           vmbus_loglevel:int
 ```
 
 Try that with netvsc, storvsc and blkvsc too (replace the _vmbus_ part) and you should get something similar. If you don't, the installation did not succeed.
-The documentation also tells us to check that the components are running with "/sbin/lsmod | grep vsc" which should return:
+The documentation also tells us to check that the components are running with `/sbin/lsmod | grep vsc` which should return:
 
 ```bash
 # /bin/lsmod | grep vsc
@@ -111,8 +113,8 @@ The numbers will probably differ from installation to installation depending on 
 
 Configuration is pretty straight-forward so I'll keep this short.
 
-When you install the drivers you will get a new network card called **seth0**, which I presume stands for Synthetic ETHernet. There's nothing magic about it regarding configuration and "system-configuration-network" will work just fine.
-The drivers will also give you a couple of SCSI-devices (if you have one attached) with the regular **/dev/sd*** naming. Simply configure these using fdisk or whatever GUI you might prefer.
+When you install the drivers you will get a new network card called `seth0`, which I presume stands for **S**ynthetic **ETH**ernet. There's nothing magic about it regarding configuration and `system-configuration-network` will work just fine.
+The drivers will also give you a couple of SCSI-devices (if you have one attached) with the regular `/dev/sd*` naming. Simply configure these using fdisk or whatever GUI you might prefer.
 
 There is also a note in the documentation about changing the grub configuration in the "Additional Information..." section. Do read that section.
 
@@ -126,8 +128,8 @@ One thing I tend to do now that disk space is dirt cheap is to copy all ISO-file
 
 And there you have it. Just remember to unmount it when you're done.
 
-I also almost never use the Hyper-V remote connection interface thingy since it will give you a GUI and the mouse just won't work. If you haven't configured a network card yet though, you could connect through Hyper-V and hit _Ctrl+Alt+F1_ to get a command prompt. Unfortunatly cut/paste don't work here, but you could run _system-configuration-network_, assign an IP-address and then connect with an SSH client. I prefer PuTTY to a degree that I usually install the ported version on my Linux desktops aswell.
+I also almost never use the Hyper-V remote connection interface thingy since it will give you a GUI and the mouse just won't work. If you haven't configured a network card yet though, you could connect through Hyper-V and hit _Ctrl+Alt+F1_ to get a command prompt. Unfortunatly cut/paste don't work here, but you could run `system-configuration-network`, assign an IP-address and then connect with an SSH client. I prefer PuTTY to a degree that I usually install the ported version on my Linux desktops as well.
 
-And I never logon using root. People should know this, but it should be stressed anyway. Always logon as regular user and _su_ or _sudo_ when needed. I can't understand why RHES has root-login enabled by default in the SSH-server config.
+And I never logon using root. People should know this, but it should be stressed anyway. Always logon as regular user and `su` or `sudo` when needed. I can't understand why RHES has root-login enabled by default in the SSH-server config.
 
 Good luck!

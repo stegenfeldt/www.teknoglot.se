@@ -294,10 +294,13 @@ PreparationsRead the documentation provided in the Linux Integration Services do
 I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
 # yum groupinstall "Development Tools"# yum install kernel-headers
 I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
-The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name._Thank you for making it easy for us Microsoft!_Here’s a direct link to the search on the current name: http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&amp;displaylang=en&amp;stype=s_basicAnd here’s a direct link to the actual download page: http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=eee39325-898b-4522-9b4c-f4b5b9b64551
+The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.Thank you for making it easy for us Microsoft!
+
+Here’s a direct link to the search on the current name.
+And here’s a direct link to the actual download page.
+
 This download contains an ISO file that you can mount using the Hyper-V- or VMM-console, or you can do as I did and download the ISO to the virtual machine, mount it locally, copy the files and unmount it. Like this.
 # mkdir /mnt/ISO# mount -o loop /root/LinuxIC v21.iso /mnt/ISO# mkdir /opt/linux_ic_v21_rtm# cp /mnt/ISO/* -R /opt/linux_ic_v21_rtm/# umount /mnt/ISO
-You probably have to be root to do this by the way.With that done, let’s get to the installation.
         </p>
     </div>
 </article>
@@ -409,7 +412,7 @@ C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local
     
 
         <p class="article-excerpt">
-            Getting “ESENT Kerys are required to install this application” when you are trying to modify/change an agent installation?
+            Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
 This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
 To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.

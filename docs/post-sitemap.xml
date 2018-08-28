@@ -7,8 +7,40 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</loc>
+        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/</loc>
+        <lastmod>2018-08-28T13:02:24.355Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/</loc>
+        <lastmod>2018-08-28T12:36:56.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
+        <lastmod>2018-08-28T12:35:24.351Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2016/om1801-upgrade-gotchas/</loc>
-        <lastmod>2018-08-28T11:21:46.549Z</lastmod>
+        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -79,7 +111,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/Set-SCOMMaintenanceModeDeluxe/</loc>
+        <loc>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +119,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/Set-SCOMMaintenanceModeDeluxe/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -111,14 +143,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,22 +152,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -168,14 +176,6 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/in-transit-again/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -407,7 +407,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/sluggish-performance-on-teknoglot/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,7 +415,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
+        <loc>https://www.teknoglot.se/tb/sluggish-performance-on-teknoglot/</loc>
         <lastmod>2017-06-05T12:55:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

@@ -28,10 +28,16 @@ Another possible reason could actually be that the path to the file or folder is
 There are some, more or less tedious, work-arounds for the problem. Like renaming, starting from the root, all the directories to shorter ones or using the old DOS (8.3, like “dokume~1.doc”) names that windows can auto-generate for you. Personally, I have two favourite ways of handling this.
 
 1. Map the parent-directory of the file/folder you are trying to access/delete as a network drive and access your files that way.
-This is particularly useful if the folder you are trying to access a <acronym title="Distributed File System">DFS</acronym>-share or perhaps a share on the central fileserver filepaths like “\servername01Central ProjectsCentral ServicesIT DepartmentDevelop Methods for Automatically Deploying New Central Servers2.2.1 Auto-Deploying SQL-Server 2005 ClusterDocumentsPreparationsWhitepapersSQL Server 2005 Failover Clustering White Paper.doc”
-2. Create a new share to a folder further down the hierarchy. This works locally too if you are logged on to, say, SRV01, you create a new share on “D:FilesharesCentral ProjectsCentral ServicesIT DepartmentDevelop Methods for Automatically Deploying New Central Servers” called “Autodeploymethods” and access it from “\SRV01Autodeploymethods”. That way the filepath doesn’t exceed 255 characters.
-Now. When designing fileservers, you really should think about how deep the filepaths may get. This is especially true on DFS-shares since you might have to deal with the full <acronym title="Fully Qualified Domain Name">FQDN</acronym> too, and not only the actual folder structure. Many big corporations I know uses “codes” for departments and assign a project ID (quite simply a number or maybe an abbreviation) to each project and uses theese for the fileshares too. Another scenario that could lead to similar problems are intranet sites where users can create and manage their own subsites and where filenames and folders are not stored in a database.
+  This is particularly useful if the folder you are trying to access a DFS-share or perhaps a share on the central fileserver filepaths like `\\servername01\Central Projects\Central Services\IT Department\Develop Methods for Automatically Deploying New Central Servers\2.2.1 Auto-Deploying SQL-Server 2005 Cluster\Documents\Preparations\Whitepapers\SQL Server 2005 Failover Clustering White Paper.doc`
+2. Create a new share to a folder further down the hierarchy.  
+  This works locally too if you are logged on to, say, SRV01, you create a new share on `D:\\Central Projects\Central Services\IT Department\Develop Methods for Automatically Deploying New Central Servers\` called `Autodeploymethods` and access it from `\\SRV01\Autodeploymethods`. That way the filepath doesn’t exceed 255 characters.
+
+Now. When designing fileservers, you really should think about how deep the filepaths may get. This is especially true on DFS-shares since you might have to deal with the full FQDN too, and not only the actual folder structure. Many big corporations I know uses “codes” for departments and assign a project ID (quite simply a number or maybe an abbreviation) to each project and uses theese for the fileshares too. Another scenario that could lead to similar problems are intranet sites where users can create and manage their own subsites and where filenames and folders are not stored in a database.
 
 I have only seen this phenomena on Windows systems so far, and I’ve actually used a linux Live-CD on occasion when admin access is denied.
 > Read More:
 > [http://support.microsoft.com/kb/320081](http://support.microsoft.com/kb/320081)
+
+
+*[DFS]: Distributed File System
+*[FQDN]: Fully Qualified Domain Name

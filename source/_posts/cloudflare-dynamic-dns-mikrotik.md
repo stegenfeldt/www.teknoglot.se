@@ -181,7 +181,7 @@ The schedule is configured with:
 
 * Start Time: startup
 * Interval: 00:20:00
-* On Event: ```/system script run <Name of your script>```
+* On Event: `/system script run <Name of your script>`
 * Policy: Read,Write, Test, Sniff, Sensitive
 
 This schedule is also a good place for a [hairpin](http://wiki.mikrotik.com/wiki/Hairpin_NAT "Mikrotik Wiki: Hairpin NAT") update if it's needed.

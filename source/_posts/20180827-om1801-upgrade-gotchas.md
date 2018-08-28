@@ -107,7 +107,6 @@ This one is not as critical as the others as you can simply install OMRS again, 
 Install the SCOM 2016 console on the OMRS before attempting your upgrade.  
 Yeah, I know, this is stupid. 
 
-
 ## Final thoughts
 
 What the sh**!  
