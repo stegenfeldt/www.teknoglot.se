@@ -3,22 +3,22 @@
 
     <sitemap>
         <loc>https://www.teknoglot.se/post-sitemap.xml</loc>
-        <lastmod>2017-09-28T22:15:06.319Z</lastmod>
+        <lastmod>2018-08-28T11:02:18.562Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.teknoglot.se/page-sitemap.xml</loc>
-        <lastmod>2017-06-05T12:55:35.558Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.teknoglot.se/category-sitemap.xml</loc>
-        <lastmod>2017-06-05T12:55:35.621Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.teknoglot.se/tag-sitemap.xml</loc>
-        <lastmod>2017-06-05T12:55:35.574Z</lastmod>
+        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>

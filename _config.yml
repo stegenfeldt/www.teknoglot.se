@@ -54,12 +54,15 @@ category_map:
   VBS: vbs
   OpsMgr 2007: opsmgr2007
   OpsMgr 2012: opsmgr2012
+  OpsMgr 2016: opsmgr2016
+  OpsMgr 1801: opsmgr1801
   Linix: linux
   SQL 2005: sql2005
   SQL 2008: sql2008
   SQL 2012: sql2012
   SQL 2014: sql2014
   SQL 2016: sql2016
+  SQL 2017: sql2017
   SQL Server: sql
   Windows: windows
   Windows 2008: win2008
