@@ -84,9 +84,10 @@ Publicly accessible ClassProperty (OmsBladeLink) has been removed in the newer v
 Parameter name: managementPack
 [11:27:10]:	Always:	:FirstManagementServer: Failed to load MP C:\install\OM1801\Setup\AMD64\..\..\ManagementPacks\Microsoft.SystemCenter.Advisor.mpb.  We will retry.
 ```
+
 ### Workaround
 
-As with the cross-platform management packs, you basically have three options:
+As with the cross-platform management packs, you basically have two options:
 
 - Downgrade to the setup-provided version of the management pack
 - [Remove the OMS/Advisor management packs](https://blogs.technet.microsoft.com/kevinholman/2016/03/26/how-to-remove-oms-and-advisor-management-packs/) alltogether.
