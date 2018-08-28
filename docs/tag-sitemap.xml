@@ -478,41 +478,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/OpsMgr-1801/</loc>
-        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/OpsMgr-2016/</loc>
-        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Upgrade/</loc>
-        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Issues/</loc>
-        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/Rant/</loc>
-        <lastmod>2018-08-28T11:27:17.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/OpsMgr/</loc>
         <lastmod>2018-08-28T12:35:24.351Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -612,42 +577,77 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Errors/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/KB/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-2008/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-Vista/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/tag/Windows-XP/</loc>
-        <lastmod>2018-08-28T13:05:12.963Z</lastmod>
+        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/OpsMgr-1801/</loc>
+        <lastmod>2018-08-28T13:28:13.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/OpsMgr-2016/</loc>
+        <lastmod>2018-08-28T13:28:13.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Upgrade/</loc>
+        <lastmod>2018-08-28T13:28:13.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Issues/</loc>
+        <lastmod>2018-08-28T13:28:13.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Rant/</loc>
+        <lastmod>2018-08-28T13:28:13.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

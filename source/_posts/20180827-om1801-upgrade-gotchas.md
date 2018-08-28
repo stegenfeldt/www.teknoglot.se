@@ -105,14 +105,14 @@ This one is not as critical as the others as you can simply install OMRS again, 
 ### Workaround
 
 Install the SCOM 2016 console on the OMRS before attempting your upgrade.  
-Yeah, I know, this is stupid. 
+Yeah, I know, this is stupid.
 
 ## Final thoughts
 
-What the sh**!  
+What the :shit::exclamation::question:  
 What the hell is going on at Microsoft right now?
 
 I've been a strong supporter of System Center Operations Manager as one of, if not *the*, best and solid Infrastructure and application monitoring solution currently available. Especially on Windows and Microsoft-heavy platforms. The upgrades and installations have been getting more and more solid and easy to perform. It's often been a case of "verify backups, hit play, wait".  
-Up until 1801, that is. And it's not like in the old days, where an upgrade failure resulted in a slight headache and a bit of troubleshooting to find that little bit of config the documentation failed to mention. No, this one actively corrupts and removes your existing SCOM components, leaving you with the only option to restore from backups or start from scratch. 
+Up until 1801, that is. And it's not like in the old days, where an upgrade failure resulted in a slight headache and a bit of troubleshooting to find that little bit of config the documentation failed to mention. No, this one actively corrupts and removes your existing SCOM components, leaving you with the only option to restore from backups or start from scratch.
 
 Ugh!

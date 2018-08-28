@@ -38,6 +38,5 @@ I have only seen this phenomena on Windows systems so far, and I’ve actually u
 > Read More:
 > [http://support.microsoft.com/kb/320081](http://support.microsoft.com/kb/320081)
 
-
 *[DFS]: Distributed File System
 *[FQDN]: Fully Qualified Domain Name
