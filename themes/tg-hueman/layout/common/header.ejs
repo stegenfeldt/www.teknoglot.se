@@ -8,9 +8,11 @@
                     </h1>
                     <% if (theme.subtitle) { %>
                         <h2 class="subtitle-wrap">
-                            <p class="subtitle"><%= theme.subtitle %></p>
+                            <p class="subtitle">
+                                <%= theme.subtitle %>
+                            </p>
                         </h2>
-                    <% } %>
+                        <% } %>
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
@@ -18,17 +20,19 @@
                         <ul id="main-nav">
                             <% for (var i in theme.menu) {
                                     if (i == 'Categories') { %>
-                                        <%- list_categories({
+                                <%- list_categories({
                                             depth: 2,
                                             style: 'list',
                                             class: 'main-nav',
                                             show_count: false,
                                         }) %>
                                     <% } else { %>
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="<%- url_for(theme.menu[i]) %>"><%= __('index.' + i.toLowerCase()) %></a>
-                                </li>
-                            <% }} %>
+                                        <li class="main-nav-list-item">
+                                            <a class="main-nav-list-link" href="<%- url_for(theme.menu[i]) %>">
+                                                <%= __('index.' + i.toLowerCase()) %>
+                                            </a>
+                                        </li>
+                                        <% }} %>
                         </ul>
                         <nav id="sub-nav">
                             <%- partial('search/index') %>
@@ -38,4 +42,11 @@
             </div>
         </div>
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8265950273936175",
+            enable_page_level_ads: true
+        });
+    </script>
 </header>
