@@ -53,13 +53,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -150,7 +143,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -162,23 +156,23 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="article-date">
     <time datetime="2016-02-15T11:22:28.000Z" itemprop="datePublished">2016-02-15</time>
 </a>
-            
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.</p>
+                        
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.</p>
 <p>The event is the generic “Health Service Script” with id 4001.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :</span><br><span class="line">Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;</span><br><span class="line">Error occured during CPU Usage for SQL Instances data source executing.</span><br><span class="line">Computer: REDACTED</span><br><span class="line">Reason: Cannot add type. Compilation errors occurred.</span><br><span class="line">Position:256</span><br><span class="line">Offset:21</span><br><span class="line">Detailed error output: Cannot add type. Compilation errors occurred.</span><br><span class="line">--------</span><br><span class="line">(0) : No source files specified</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line">(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br></pre></td></tr></table></figure>
 <p>There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention <em>“Cannot add type. Compilation errors occured.”</em><br>In a <a href="https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa" target="_blank" rel="noopener">thread on the Technet Forums</a> it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the <code>C:\Windows\TEMP</code> folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.<br>We took a quick look using <em>procmon</em>, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.</p>
 <h1 id="A-wild-work-around-appears"><a href="#A-wild-work-around-appears" class="headerlink" title="A wild work-around appears!"></a>A wild work-around appears!</h1><p>The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.<br>Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -242,7 +236,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

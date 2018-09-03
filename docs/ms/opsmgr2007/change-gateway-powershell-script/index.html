@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-change-gateway-powershell-script" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-change-gateway-powershell-script" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/change-gateway-powershell-script/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/change-gateway-powershell-script/" class="article-date">
     <time datetime="2010-03-31T13:27:08.000Z" itemprop="datePublished">2010-03-31</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>This script has pretty much already been covered in my previous post about <a href="http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/">Changing or Replacing an Operations Manager Gateway Server</a>.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>This script has pretty much already been covered in my previous post about <a href="http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/">Changing or Replacing an Operations Manager Gateway Server</a>.</p>
 <p>This time I’ve basically put parameter support in it to make it easier to use.</p>
 <p>Here’s the script anyway.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Param</span>(<span class="variable">$OldGW</span>,<span class="variable">$NewGW</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable">$OldMS</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$OldGW</span>&#125;</span><br><span class="line"><span class="variable">$NewMS</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$NewGW</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.PrimaryManagementServerName <span class="nomarkup">-eq</span> <span class="variable">$OldGW</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = <span class="variable">$agents</span></span><br><span class="line"><span class="string">"Moving "</span> + <span class="variable">$agents</span>.count + <span class="string">" agents from "</span> + <span class="variable">$OldMS</span>.Name + <span class="string">" to "</span> + <span class="variable">$NewMS</span>.Name</span><br><span class="line"><span class="built_in">Start-Sleep</span> -m <span class="number">200</span></span><br><span class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$NewMS</span> -FailoverServer: <span class="variable">$OldMS</span></span><br></pre></td></tr></table></figure>
@@ -181,9 +175,9 @@ ga('send', 'pageview');
 <p>To use it, open the Operations Manager Command Shell and type:<br><code>C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;</code></p>
 <p>For example:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local</span><br></pre></td></tr></table></figure>
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -247,7 +241,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

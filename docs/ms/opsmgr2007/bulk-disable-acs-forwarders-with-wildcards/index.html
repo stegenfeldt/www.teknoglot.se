@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-bulk-disable-acs-forwarders-with-wildcards" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-bulk-disable-acs-forwarders-with-wildcards" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/" class="article-date">
     <time datetime="2011-07-07T08:59:24.000Z" itemprop="datePublished">2011-07-07</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/ACS/">ACS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>Here’s a little something-something for the wicked.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>Here’s a little something-something for the wicked.</p>
 <p>Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Management Group, migrated all the agents, added a couple of hundreds more, deployed a bunch of gateways and now we are shutting down the old one.</p>
 <p>Now, uninstalling the old Management Group from all the agents is a breeze using SCCM and handling the few 20-ish servers that are left is not a biggie either. Shutting down ACS, however, is a different matter.</p>
 <a id="more"></a>
@@ -194,9 +188,9 @@ ga('send', 'pageview');
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Using parameters for RMS and wildcard search</span></span><br><span class="line"><span class="keyword">param</span>(</span><br><span class="line">    [string]<span class="variable">$rootManagementServer</span> = $(<span class="built_in">Read-Host</span> -Prompt <span class="string">"Root Management Server"</span> ),</span><br><span class="line">    [string]<span class="variable">$filterAgents</span> = $(<span class="built_in">Read-Host</span> -Prompt <span class="string">"ACS Forwarder name (wildcard)"</span> ),</span><br><span class="line">    [switch]<span class="variable">$UseCredentials</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Make sure the $rootManagementServer variable is defined</span></span><br><span class="line"><span class="keyword">while</span> (<span class="nomarkup">-not</span> <span class="variable">$rootManagementServer</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`nRoot Management Server MUST be defined!"</span> -ForegroundColor Red</span><br><span class="line">    [string]<span class="variable">$rootManagementServer</span> = $(<span class="built_in">Read-Host</span> -Prompt <span class="string">"Root Management Server"</span> )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$UseCredentials</span> <span class="nomarkup">-eq</span> <span class="literal">$true</span>) &#123;</span><br><span class="line">    <span class="variable">$taskCredentials</span> = <span class="built_in">Get-Credential</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$startLocation</span> = <span class="built_in">Get-Location</span></span><br><span class="line"><span class="variable">$checkPSSnapin</span> = <span class="built_in">Get-PSSnapin</span> | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">"Microsoft.EnterpriseManagement.OperationsManager.Client"</span> &#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$checkPSSnapin</span> <span class="nomarkup">-eq</span> <span class="literal">$null</span>) &#123;</span><br><span class="line">    <span class="built_in">Add-PSSnapin</span> <span class="string">"Microsoft.EnterpriseManagement.OperationsManager.Client"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$result</span> = <span class="built_in">Set-Location</span> <span class="string">"OperationsManagerMonitoring::"</span></span><br><span class="line"><span class="variable">$result</span> = New-ManagementGroupConnection -ConnectionString:<span class="variable">$rootManagementServer</span></span><br><span class="line"><span class="variable">$result</span> = <span class="built_in">Set-Location</span> <span class="variable">$rootManagementServer</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$acsForwarderClass</span> = Get-MonitoringClass -Name <span class="string">"Microsoft.SystemCenter.ACS.Forwarder"</span></span><br><span class="line"><span class="variable">$agentNames</span> = Get-MonitoringObject -monitoringclass:<span class="variable">$acsForwarderClass</span> | where &#123;<span class="variable">$_</span>.Path <span class="nomarkup">-like</span> <span class="variable">$filterAgents</span>&#125; | Select Path</span><br><span class="line"><span class="variable">$successfulTasks</span> = @()</span><br><span class="line"><span class="variable">$skippedTasks</span> = @()</span><br><span class="line"><span class="variable">$failedTasks</span> = @()</span><br><span class="line"></span><br><span class="line"><span class="variable">$monitoringClass</span> = Get-MonitoringClass -Name <span class="string">"Microsoft.SystemCenter.Agent"</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$agentNames</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`nFound"</span> <span class="variable">$agentNames</span>.Count<span class="string">"ACS forwarders with wildcard <span class="variable">$filterAgents</span>"</span></span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`n`nWaiting for 5 seconds to give you a chance to abort!`n"</span></span><br><span class="line">    <span class="built_in">Start-Sleep</span> -Seconds <span class="number">5</span></span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"Time's UP!`n`n"</span></span><br><span class="line">    <span class="variable">$agentNames</span> | <span class="built_in">ForEach-Object</span> &#123;</span><br><span class="line">        <span class="variable">$agentName</span> = <span class="variable">$_</span>.Path</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">"Disabling Audit Collection on"</span> <span class="variable">$agentName</span></span><br><span class="line">        <span class="variable">$monitoringObject</span> = Get-MonitoringObject -monitoringclass:<span class="variable">$monitoringClass</span> | where &#123;<span class="variable">$_</span>.DisplayName <span class="nomarkup">-like</span> <span class="variable">$agentName</span>&#125;</span><br><span class="line">        <span class="variable">$agentTask</span> = <span class="variable">$monitoringObject</span> | Get-Task | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">"Microsoft.SystemCenter.DisableAuditCollectionService"</span> &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$monitoringObject</span>.IsAvailable <span class="nomarkup">-eq</span> <span class="literal">$true</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$credentials</span> <span class="nomarkup">-eq</span> <span class="literal">$null</span>) &#123;</span><br><span class="line">                <span class="variable">$result</span> = Start-Task -Task <span class="variable">$agentTask</span> -TargetMonitoringObject <span class="variable">$monitoringObject</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$result</span> = Start-Task -Task <span class="variable">$agentTask</span> -TargetMonitoringObject <span class="variable">$monitoringObject</span> -Credential <span class="variable">$taskCredentials</span></span><br><span class="line">            &#125;</span><br><span class="line">  </span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$result</span>.Status <span class="nomarkup">-eq</span> <span class="string">"Succeeded"</span> ) &#123;</span><br><span class="line">                <span class="built_in">Write-Host</span> <span class="string">"Operation Successful!"</span> -ForegroundColor Green</span><br><span class="line">                <span class="built_in">Write-Host</span> `n</span><br><span class="line">                <span class="variable">$successfulTasks</span> += <span class="variable">$agentName</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">Write-Host</span> <span class="string">"Operation failed."</span> -ForegroundColor Red</span><br><span class="line">                <span class="built_in">Write-Host</span> <span class="variable">$result</span>.ErrorMessage</span><br><span class="line">                <span class="built_in">Write-Host</span> `n</span><br><span class="line">                <span class="variable">$failedTasks</span> += <span class="variable">$agentName</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">Write-Host</span> <span class="string">"The agent is unavailable, Skipping!"</span></span><br><span class="line">            <span class="built_in">Write-Host</span> `n</span><br><span class="line">            <span class="variable">$skippedTasks</span> += <span class="variable">$agentName</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"Summary"</span></span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`tSuccessful:`t"</span> <span class="variable">$successfulTasks</span>.count</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`tFailed:`t`t"</span> <span class="variable">$failedTasks</span>.count</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`tSkipped:`t"</span> <span class="variable">$skippedTasks</span>.count</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">"`nNo ACS Forwarders found using wildcard <span class="variable">$filterAgents</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Set-Location</span> <span class="variable">$startLocation</span></span><br></pre></td></tr></table></figure>
 <p>Enjoy!</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -260,7 +254,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-PoSH-Grid-Dashboard-for-RDSH" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-PoSH-Grid-Dashboard-for-RDSH" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/" class="article-date">
     <time datetime="2016-06-13T22:01:27.000Z" itemprop="datePublished">2016-06-14</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/HowTo/">HowTo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr-2012-R2/">OpsMgr 2012 R2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Powershell/">Powershell</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h1><p>Customer wanted to see all RDS Host servers in a view with their current total session count.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h1><p>Customer wanted to see all RDS Host servers in a view with their current total session count.</p>
 <p>Decided to use a powershell grid dashboard, and share the script.</p>
 <p>Here’s the gist of it: <a href="https://gist.github.com/stegenfeldt/112c6d3dd513f9659298d1321c98ebd1" target="_blank" rel="noopener">SCOM_RDSH_TotalSession_PoSHWidget.ps1</a></p>
 <h1 id="How-To"><a href="#How-To" class="headerlink" title="How To"></a>How To</h1><p>Keeping it fairly short this time.</p>
@@ -197,9 +191,9 @@ ga('send', 'pageview');
 </ol>
 <h2 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Based on https://gallery.technet.microsoft.com/Retrieve-Performance-Data-c4595e2a#content</span></span><br><span class="line"><span class="keyword">function</span> Add-Criteria()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">param</span>(<span class="variable">$criteria</span>,<span class="variable">$clause</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$criteria</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>)</span><br><span class="line">        &#123;<span class="variable">$criteria</span> += <span class="string">" AND <span class="variable">$clause</span>"</span>&#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        &#123;<span class="variable">$criteria</span> = <span class="variable">$clause</span>&#125;</span><br><span class="line">    <span class="keyword">return</span>(<span class="variable">$criteria</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$rdsClass</span> = Get-SCOMClass -Name <span class="string">"Microsoft.Windows.Server.2012.R2.RemoteDesktopServicesRole.Service.RDSessionHost"</span></span><br><span class="line"><span class="variable">$rdsHosts</span> = Get-SCOMMonitoringObject -Class <span class="variable">$rdsClass</span> | <span class="built_in">Sort-Object</span> -Property <span class="string">'[Microsoft.Windows.Computer].PrincipalName'</span></span><br><span class="line"><span class="variable">$rdsTotalSessionRule</span> = Get-SCOMRule -Name <span class="string">"Microsoft.Windows.Server.2012.R2.RemoteDesktopServicesRole.Service.RDSessionHost.PerformanceCollection.TotalSessions"</span></span><br><span class="line"><span class="variable">$objectName</span> = <span class="string">"Terminal Services"</span></span><br><span class="line"><span class="variable">$counterName</span> = <span class="string">"Total Sessions"</span></span><br><span class="line"><span class="variable">$InstanceName</span> = <span class="string">""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$i</span>=<span class="number">0</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$rdsHost</span> <span class="keyword">in</span> <span class="variable">$rdsHosts</span>) &#123;</span><br><span class="line">    <span class="comment"># Build performance criteria</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$rdsClass</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>) &#123; <span class="variable">$criteria</span> = Add-Criteria -criteria <span class="variable">$criteria</span> -clause <span class="string">"MonitoringClassId = '&#123;$(<span class="variable">$rdsClass</span>.Id)&#125;'"</span> &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$rdsHost</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>) &#123; <span class="variable">$criteria</span> = Add-Criteria -criteria <span class="variable">$criteria</span> -clause <span class="string">"MonitoringObjectFullName = '$(<span class="variable">$rdsHost</span>.FullName)'"</span> &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$objectName</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>) &#123; <span class="variable">$criteria</span> = Add-Criteria -criteria <span class="variable">$criteria</span> -clause <span class="string">"ObjectName = '<span class="variable">$objectName</span>'"</span> &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$counterName</span> <span class="nomarkup">-ne</span> <span class="literal">$null</span>) &#123; <span class="variable">$criteria</span> = Add-Criteria -criteria <span class="variable">$criteria</span> -clause <span class="string">"CounterName = '<span class="variable">$counterName</span>'"</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#$criteria</span></span><br><span class="line">    <span class="comment"># Get Performance reader object.</span></span><br><span class="line">    <span class="variable">$perfReader</span> = (Get-SCOMManagementGroup).GetMonitoringPerformanceDataReader(<span class="variable">$criteria</span>)</span><br><span class="line">    <span class="keyword">while</span> (<span class="variable">$perfReader</span>.Read()) &#123;</span><br><span class="line">        <span class="variable">$perfData</span> = <span class="variable">$perfReader</span>.GetMonitoringPerformanceData()</span><br><span class="line">        <span class="variable">$perfValueReader</span> = <span class="variable">$perfData</span>.GetValueReader(((<span class="built_in">Get-Date</span>).AddMinutes(-<span class="number">180</span>)),(<span class="built_in">Get-Date</span>))</span><br><span class="line"></span><br><span class="line">        <span class="variable">$perfValues</span> = @()</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$perfValueReader</span>.Read()) &#123;</span><br><span class="line">            <span class="variable">$perfValues</span> += <span class="variable">$perfValueReader</span>.GetMonitoringPerformanceDataValue()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable">$perfValue</span> = <span class="variable">$perfValues</span> | <span class="built_in">Sort-Object</span> -Property TimeSampled | select -Last <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$dataObject</span> = <span class="variable">$ScriptContext</span>.CreateInstance(<span class="string">"xsd://stegenfeldt/nullschema"</span>)</span><br><span class="line">        <span class="variable">$dataObject</span> = <span class="variable">$ScriptContext</span>.CreateFromObject(<span class="variable">$rdsHost</span>, <span class="string">"Id=Id,Health=HealthState,Host=Path"</span>, <span class="literal">$null</span>)</span><br><span class="line">        <span class="variable">$dataObject</span>[<span class="string">"Time Sampled"</span>] = <span class="variable">$perfValue</span>.TimeSampled</span><br><span class="line">        <span class="variable">$dataObject</span>[<span class="string">"Total Sessions"</span>] = <span class="variable">$perfValue</span>.SampleValue</span><br><span class="line">        <span class="variable">$ScriptContext</span>.ReturnCollection.Add(<span class="variable">$dataObject</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$criteria</span> = <span class="literal">$null</span></span><br><span class="line">    ++<span class="variable">$i</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -263,7 +257,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

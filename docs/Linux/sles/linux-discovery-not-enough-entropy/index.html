@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-linux-discovery-not-enough-entropy" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-linux-discovery-not-enough-entropy" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/Linux/sles/linux-discovery-not-enough-entropy/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/Linux/sles/linux-discovery-not-enough-entropy/" class="article-date">
     <time datetime="2009-12-02T11:37:08.000Z" itemprop="datePublished">2009-12-02</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/TroubleShooting/">TroubleShooting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/X-Plat/">X-Plat</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Error-Description"><a href="#Error-Description" class="headerlink" title="Error Description"></a>Error Description</h1><p>Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Error-Description"><a href="#Error-Description" class="headerlink" title="Error Description"></a>Error Description</h1><p>Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">stdout</span>&gt;</span>Generating certificate with hostname="COMPUTERNAME"</span><br><span class="line"></span><br><span class="line">[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]</span><br><span class="line"></span><br><span class="line">Failed to allocate resource of type random data: Failed to get random data - not enough entropy</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stdout</span>&gt;</span><span class="tag">&lt;<span class="name">stderr</span>&gt;</span>error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stderr</span>&gt;</span><span class="tag">&lt;<span class="name">returnCode</span>&gt;</span>1<span class="tag">&lt;/<span class="name">returnCode</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">DataItem</span> <span class="attr">type</span>=<span class="string">"Microsoft.SSH.SSHCommandData"</span> <span class="attr">time</span>=<span class="string">"2009-08-05T11:15:01.5800358-04:00"</span> <span class="attr">sourceHealthServiceId</span>=<span class="string">"0EB1D6DA-202C-7FC5-3D46-BDBB9208547D"</span>&gt;</span><span class="tag">&lt;<span class="name">SSHCommandData</span>&gt;</span><span class="tag">&lt;<span class="name">stdout</span>&gt;</span>Generating certificate with hostname="COMPUTERNAME"</span><br><span class="line"></span><br><span class="line">[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]</span><br><span class="line"></span><br><span class="line">Failed to allocate resource of type random data: Failed to get random data - not enough entropy</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stdout</span>&gt;</span><span class="tag">&lt;<span class="name">stderr</span>&gt;</span>error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stderr</span>&gt;</span><span class="tag">&lt;<span class="name">returnCode</span>&gt;</span>1<span class="tag">&lt;/<span class="name">returnCode</span>&gt;</span><span class="tag">&lt;/<span class="name">SSHCommandData</span>&gt;</span><span class="tag">&lt;/<span class="name">DataItem</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>But first, a little background on the actual “problem”. To generate the certificate, the <em>entropy</em> needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the <acronym title="Management Server">MS</acronym>. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What <em>we</em> need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="noopener">PuTTY</a> to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.</p>
 <h1 id="Workaround"><a href="#Workaround" class="headerlink" title="Workaround"></a>Workaround</h1><h2 id="1-Check-you-current-entropy"><a href="#1-Check-you-current-entropy" class="headerlink" title="1. Check you current entropy"></a>1. Check you current entropy</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat /proc/sys/kernel/random/entropy_avail</span><br></pre></td></tr></table></figure>
@@ -195,9 +189,9 @@ ga('send', 'pageview');
 </a></p>
 </blockquote>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -261,7 +255,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

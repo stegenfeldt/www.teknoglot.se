@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-networkadaptercheck-fails-on-win2k" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-networkadaptercheck-fails-on-win2k" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/" class="article-date">
     <time datetime="2009-04-26T09:21:18.000Z" itemprop="datePublished">2009-04-26</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Management-Pack/">Management Pack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData">failed to create System.PropertyBagData</a> error i wrote about earlier.<br>This information in also available on <a href="https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446" target="_blank" rel="noopener">https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446</a></p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData">failed to create System.PropertyBagData</a> error i wrote about earlier.<br>This information in also available on <a href="https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446" target="_blank" rel="noopener">https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446</a></p>
 <h1 id="Symptoms"><a href="#Symptoms" class="headerlink" title="Symptoms"></a>Symptoms</h1><p>This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0</span><br><span class="line"></span><br><span class="line">Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true false</span><br><span class="line">Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781</span><br><span class="line"></span><br><span class="line">One or more workflows were affected by this.</span><br><span class="line"></span><br><span class="line">Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealth</span><br><span class="line">Instance name: 0</span><br><span class="line">Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;</span><br><span class="line">Management group: MASKED</span><br></pre></td></tr></table></figure>
 <p>This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.</p>
@@ -193,9 +187,9 @@ ga('send', 'pageview');
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Collection</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">DataItem</span> <span class="attr">type</span>=<span class="string">"System.PropertyBagData"</span> <span class="attr">time</span>=<span class="string">"2009-04-22T15:03:44.6495202+02:00"</span> <span class="attr">sourceHealthServiceId</span>=<span class="string">"C9F5A9F7-00A3-8A86-57B5-34FB634471A8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Property</span> <span class="attr">Name</span>=<span class="string">"State"</span> <span class="attr">VariantType</span>=<span class="string">"8"</span>&gt;</span>GOOD<span class="tag">&lt;/<span class="name">Property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">DataItem</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Collection</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>There’s quite the lot of similar errors posted on various forums on the internet but most of them ends up pointing towards the Antivirus Software as the perp and we have tried various exceptions on the server like excluding HealthExplorer.exe, MonitoringHost.exe and also the entire Health Service State folder with no improvement. But since I was able to run the scripts from other locations (not excluded) on the same server I find it hard to believe that the AV would be blocking it.</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -259,7 +253,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

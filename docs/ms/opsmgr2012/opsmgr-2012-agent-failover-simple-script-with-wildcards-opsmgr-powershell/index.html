@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" class="article-date">
     <time datetime="2012-06-21T08:58:13.000Z" itemprop="datePublished">2012-06-21</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>In the last post, <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/" title="OpsMgr 2012 Agent &amp; Gateway Failover – The Basics [#opsmgr, #powershell]">OpsMgr 2012 Agent &amp; Gateway Failover – The Basics</a>, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>In the last post, <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-gateway-failover-the-basics/" title="OpsMgr 2012 Agent &amp; Gateway Failover – The Basics [#opsmgr, #powershell]">OpsMgr 2012 Agent &amp; Gateway Failover – The Basics</a>, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.</p>
 <p>To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.</p>
 <a id="more"></a>
 <h3 id="Inputs"><a href="#Inputs" class="headerlink" title="Inputs"></a>Inputs</h3><p>To use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.</p>
@@ -198,9 +192,9 @@ ga('send', 'pageview');
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Input SCOM Management Server to connect to in this session</span></span><br><span class="line">[string]<span class="variable">$inputScomMS</span> = <span class="string">"scomms02.domain.local"</span></span><br><span class="line"><span class="comment"># Input an existing agent you want to modify</span></span><br><span class="line">[string]<span class="variable">$inputTargetAgent</span> = <span class="string">"*.domain.local"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### Connect to SCOM 2012 Management Group ###</span></span><br><span class="line"><span class="comment"># Check if OperationsManager module is loaded</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment"># Try to load the module</span></span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="comment"># Did not work, exit the script</span></span><br><span class="line">        <span class="built_in">Write-Output</span> <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Module is loaded, connect to Management Group/Server</span></span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br><span class="line"><span class="comment">### END ###</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Select matching remotely manageable agents</span></span><br><span class="line"><span class="variable">$scomAgents</span> = Get-SCOMAgent -DNSHostName <span class="variable">$inputTargetAgent</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.ManuallyInstalled <span class="nomarkup">-ne</span> <span class="literal">$true</span>&#125;</span><br><span class="line"><span class="comment"># Get all management servers</span></span><br><span class="line"><span class="variable">$scomManagementServers</span> = Get-SCOMManagementServer</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$scomAgent</span> <span class="keyword">in</span> <span class="variable">$scomAgents</span>) &#123;</span><br><span class="line">    <span class="comment"># Get the primary management server for the agent</span></span><br><span class="line">    <span class="variable">$scomPrimaryMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$scomAgent</span>.PrimaryManagementServerName&#125;</span><br><span class="line">    <span class="comment"># Remove the primary MS from "all MS" array to use it for FailOver servers</span></span><br><span class="line">    <span class="variable">$scomFailOverMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-ne</span> <span class="variable">$scomPrimaryMS</span>.Name&#125;</span><br><span class="line">    <span class="comment"># Set Primary Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -PrimaryServer <span class="variable">$scomPrimaryMS</span></span><br><span class="line">    <span class="comment"># Set Fail-over Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -FailoverServer <span class="variable">$scomFailOverMS</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">### Done!</span></span><br></pre></td></tr></table></figure>
 <p>GLHF!</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -264,7 +258,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

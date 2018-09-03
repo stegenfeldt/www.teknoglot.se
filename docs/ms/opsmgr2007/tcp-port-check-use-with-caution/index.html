@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-tcp-port-check-use-with-caution" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-tcp-port-check-use-with-caution" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,25 +157,25 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/tcp-port-check-use-with-caution/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/tcp-port-check-use-with-caution/" class="article-date">
     <time datetime="2009-08-27T12:39:43.000Z" itemprop="datePublished">2009-08-27</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Unix/">Unix</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>Just wanted to raise a word of caution about the TCP Port Check in Operations Manager 2007.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>Just wanted to raise a word of caution about the TCP Port Check in Operations Manager 2007.</p>
 <p>Some customers have notices the the system-logs on some Unix machines are completely swamped with “connection error”, “TCP Connect failed”, “TCP Session Lost” and similar and after a bit och research the problematic servers were narrowed down to those monitored by Operations Manager. Specifically, those who are targeted by a TCP Port Check.</p>
 <p>It would seem like the TCP-connection never fully initializes on the target server. Kind of like knocking on your neighbours door and then hiding. Then when the door opens, no one is there causing your friendly neighbour to hang around waiting for something to happen.</p>
 <p>Maybe there’s a setting somewhere to modify how “deep” a Port Check should go before closing. Perhaps fully initializing and then sending a proper “Close” instead of just cutting the connection. In a few extreme cases we have noticed that the target server even goes so far as to start a session, but never ending it since there’s no closure and finally having no sessions to spare for the real users. But on most servers it’s just an annoyance since the “real” errors is very hard to be found in all the connection related logs.</p>
 <p>Anyway. Just a good thing to keep in mind when running TCP Port Checks from Operations Manager 2007. Keep an eye on the logs when implementing the port checks.</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -245,7 +239,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-replacechange-a-gateway-server" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-replacechange-a-gateway-server" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/replacechange-a-gateway-server/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/replacechange-a-gateway-server/" class="article-date">
     <time datetime="2009-09-24T10:32:35.000Z" itemprop="datePublished">2009-09-24</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Description-of-problem"><a href="#Description-of-problem" class="headerlink" title="Description of problem"></a>Description of problem</h1><p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Description-of-problem"><a href="#Description-of-problem" class="headerlink" title="Description of problem"></a>Description of problem</h1><p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
 <p>Here’s basically what happens:</p>
 <ol>
 <li>You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.</li>
@@ -201,9 +195,9 @@ ga('send', 'pageview');
 <p>Remember to change “GW1.domain.local” to you OLD Gateway servername and “GW2.domain.local” to your NEW Gateway servername.</p>
 <p>If you don’t know powershell, this script basically configures all agents using the old Gateway to use the new one as primare, but keep the old one as a fail-over server. The Gateways will still get to know the changes before the agents, but since the old on is still listening to the agents (though, as the fail-over host) it will be able to tell them to go to the new one, GW2.</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -267,7 +261,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

@@ -56,13 +56,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -153,7 +146,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-parameter-replacement-in-alertname" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-parameter-replacement-in-alertname" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -165,17 +159,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2007/parameter-replacement-in-alertname/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2007/parameter-replacement-in-alertname/" class="article-date">
     <time datetime="2012-04-09T20:04:48.000Z" itemprop="datePublished">2012-04-09</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/MP-Development/">MP Development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="…and-why-you-should-not-use-it"><a href="#…and-why-you-should-not-use-it" class="headerlink" title="…and why you should not use it"></a>…and why you should not use it</h1><h2 id="A-Disclaimer"><a href="#A-Disclaimer" class="headerlink" title="A Disclaimer"></a>A Disclaimer</h2><p>I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="…and-why-you-should-not-use-it"><a href="#…and-why-you-should-not-use-it" class="headerlink" title="…and why you should not use it"></a>…and why you should not use it</h1><h2 id="A-Disclaimer"><a href="#A-Disclaimer" class="headerlink" title="A Disclaimer"></a>A Disclaimer</h2><p>I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.</p>
 <h2 id="The-Good-News"><a href="#The-Good-News" class="headerlink" title="The Good News"></a>The Good News</h2><p>Yes, you can use parameter replacement in you AlertName.</p>
 <p>With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like <em>$Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$</em> into your alert description.</p>
 <p>In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.<br>Of course I could not refrain from copy-pasting a <em>$Data/Context…$</em> into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.</p>
@@ -202,9 +196,9 @@ ga('send', 'pageview');
 <p>– be resposible</p>
 </blockquote>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -268,7 +262,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

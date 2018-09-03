@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-regain-sysadmin-access-to-sql2005-or-sql2008" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-regain-sysadmin-access-to-sql2005-or-sql2008" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/" class="article-date">
     <time datetime="2009-11-19T13:08:10.000Z" itemprop="datePublished">2009-11-19</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server/">SQL Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2005/">SQL Server 2005</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2008/">SQL Server 2008</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.</p>
 <p>In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.<br>What to do!?</p>
 <p>Thanks to <a href="http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx" target="_blank" rel="noopener">Raul Carcia’s blog post</a> it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.<br>Here’s what to do:</p>
 <ol>
@@ -195,9 +189,9 @@ ga('send', 'pageview');
 <p>As Raul Carcia point out in his original post, this is really a disaster recovery procedure and there’s definitely nothing sneaky about it since it leaves a lot of trails in the event logs.</p>
 <p>All in all, a Great article by <a href="http://blogs.msdn.com/raulga/" target="_blank" rel="noopener">Raul</a> and all credit should go his way.</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -261,7 +255,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

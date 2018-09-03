@@ -56,13 +56,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -153,7 +146,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -165,17 +159,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/" class="article-date">
     <time datetime="2012-05-18T11:16:51.000Z" itemprop="datePublished">2012-05-18</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Highly-Available/">Highly-Available</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/NLB/">NLB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Tutorial/">Tutorial</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h1><p>Now that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fully Highly Available SCOM-environment both complex and frustrating to support and with little gain at that. With that gone and the SDK Service, or Data Access Service, thriving on all the Management Servers HA suddenly became pretty simple. All you have to do in SCOM2012 to make sure your management groups keep on kicking is to have at-least two Management Servers and your databases clustered.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Prelude"><a href="#Prelude" class="headerlink" title="Prelude"></a>Prelude</h1><p>Now that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fully Highly Available SCOM-environment both complex and frustrating to support and with little gain at that. With that gone and the SDK Service, or Data Access Service, thriving on all the Management Servers HA suddenly became pretty simple. All you have to do in SCOM2012 to make sure your management groups keep on kicking is to have at-least two Management Servers and your databases clustered.</p>
 <p>This new distributed architecture does not only give easy HA, it also makes it possible to connect to the SDK-service—be it using the Operations Console or powershell to name two options—on <em>any</em> Management Server. This, in turn, provides for a completely new level of scalability. Choked on sessions? Deploy a new Management Server!</p>
 <p>Anyway… given all this scalability and HA, would it not be nice if you could load-balance all these SDK-sessions you will be running from System Center Virtual Machine Manager, System Center Service Manager, System Center Orchestrator, regular scheduled powershell scripts and what-not?</p>
 <p>Of course it would! And you can! The simple solution is to use the built-in Network Load Balancer (NLB for short) feature in Windows Server and that’s what we’re going to discuss in this post.<br>Before we go, I’d like to point to a <a href="http://systemcentertech.com/2012/02/07/load-balance-scom-2012-operations-console-connections/" target="_blank" rel="noopener">great article</a> written by <a href="http://systemcentertech.com/" target="_blank" rel="noopener">Justin Cook</a> that is covering most bases but in a less for-dummies way. So, yeah… I suppose this is the for-dummies version then. ;)</p>
@@ -279,9 +273,9 @@ ga('send', 'pageview');
 <p>And remember; with great powers come great responsibility.</p>
 <p><em>Sheesh! This post got out of hand!</em></p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -345,7 +339,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

@@ -54,13 +54,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -151,7 +144,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -163,17 +157,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" class="article-date">
     <time datetime="2012-06-28T12:28:36.000Z" itemprop="datePublished">2012-06-28</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>Now we’re gonna make things even faster! In the <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" title="OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]">previous post</a> on the subject of <a href="http://www.teknoglot.se/series/om2012-failover-mgmt/">Agent Fail-over in Operations Manager 2012</a> we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>Now we’re gonna make things even faster! In the <a href="http://www.teknoglot.se/code/powershell/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" title="OpsMgr 2012 Agent Failover – Simple Script with Wildcards [#opsmgr, #powershell]">previous post</a> on the subject of <a href="http://www.teknoglot.se/series/om2012-failover-mgmt/">Agent Fail-over in Operations Manager 2012</a> we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.</p>
 <p>As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.</p>
 <p>We will pretty quickly go “advanced” this time, so buckle up. ;)</p>
 <a id="more"></a>
@@ -197,9 +191,9 @@ ga('send', 'pageview');
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Input SCOM Management Server to connect to in this session</span></span><br><span class="line">[string]<span class="variable">$inputScomMS</span> = <span class="string">"scomms02.domain.local"</span></span><br><span class="line"><span class="comment"># Input an existing agent you want to modify</span></span><br><span class="line">[string]<span class="variable">$inputTargetAgent</span> = <span class="string">"*.domain.local"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### Connect to SCOM 2012 Management Group ###</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        echo <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br><span class="line"><span class="comment">### END ###</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$scomAgents</span> = Get-SCOMAgent -DNSHostName <span class="variable">$inputTargetAgent</span> | Where &#123;<span class="variable">$_</span>.ManuallyInstalled <span class="nomarkup">-ne</span> <span class="literal">$true</span>&#125;</span><br><span class="line"><span class="comment"># Get all of the management servers</span></span><br><span class="line"><span class="comment"># It is ofcourse possible to search by hostname and wildcards using selected</span></span><br><span class="line"><span class="comment"># parameters to the cmdlet.</span></span><br><span class="line"><span class="variable">$scomManagementServers</span> = Get-SCOMManagementServer</span><br><span class="line"><span class="comment"># Switch to the following line to only get Gateway Servers</span></span><br><span class="line"><span class="comment">#$scomManagementServers = Get-SCOMGatewayManagementServer</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$scomAgent</span> <span class="keyword">in</span> <span class="variable">$scomAgents</span>) &#123;</span><br><span class="line">    <span class="comment"># Get the primary management server for the agent</span></span><br><span class="line">    <span class="variable">$scomPrimaryMS</span> = <span class="variable">$scomManagementServers</span> | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$scomAgent</span>.PrimaryManagementServerName&#125;</span><br><span class="line">    <span class="comment"># Remove the primary MS from "all MS" array to use it for FailOver servers</span></span><br><span class="line">    <span class="variable">$scomFailOverMS</span> = <span class="variable">$scomManagementServers</span> | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-ne</span> <span class="variable">$scomPrimaryMS</span>.Name&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a new IList derived object for the failover MSs</span></span><br><span class="line">    <span class="comment"># You have to do this because the SetManagementServers() method requires an</span></span><br><span class="line">    <span class="comment"># IList and the MS-array is an IEnumerable type. So we basically create</span></span><br><span class="line">    <span class="comment"># a new IList object och the ManagementServer type.</span></span><br><span class="line">    <span class="variable">$scomMSList</span> = <span class="built_in">New-Object</span> <span class="string">'Collections.Generic.List[Microsoft.EnterpriseManagement.Administration.ManagementServer]'</span></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$scomMS</span> <span class="keyword">in</span> <span class="variable">$scomFailOverMS</span>) &#123;</span><br><span class="line">        <span class="comment"># Loop through the array and add your failover MSs to the list</span></span><br><span class="line">        <span class="variable">$scomMSList</span>.Add(<span class="variable">$scomMS</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$scomAgent</span>.SetManagementServers(<span class="variable">$scomPrimaryMS</span>, <span class="variable">$scomMSList</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>GLHF!</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -263,7 +257,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 

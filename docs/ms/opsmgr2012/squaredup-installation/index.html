@@ -56,13 +56,6 @@ ga('send', 'pageview');
     
     
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8265950273936175",
-            enable_page_level_ads: true
-        });
-    </script>
 </head>
 
 <body>
@@ -153,7 +146,8 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-squaredup-installation" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-squaredup-installation" class="article article-single article-type-post" itemscope
+    itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -165,17 +159,17 @@ ga('send', 'pageview');
     
 
             </header>
-        
-        <div class="article-subtitle">
-            <a href="/ms/opsmgr2012/squaredup-installation/" class="article-date">
+            
+                <div class="article-subtitle">
+                    <a href="/ms/opsmgr2012/squaredup-installation/" class="article-date">
     <time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time>
 </a>
-            
+                        
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SquaredUp/">SquaredUp</a></li></ul>
 
-        </div>
-        <div class="article-entry" itemprop="articleBody">
-            <h1 id="Story-time"><a href="#Story-time" class="headerlink" title="Story-time"></a>Story-time</h1><p>I saw <a href="http://www.squaredup.com/" title="SquaredUp" target="_blank" rel="noopener">SquaredUp</a> some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some <abbr title="Database">DB</abbr>-queries. I kind of liked the look of their product though and have kept an eye on them now and then.<br>Fast-forward to may 21st this year and the <a href="http://www.squaredup.com/blog/proudly-announcing-squared-v18" title="Proudly Announcing v1.8" target="_blank" rel="noopener">release of version 1.8</a> and a whole slew of <a href="http://www.squaredup.com/blog/squared-v18-new-features" title="New Features in v1.8" target="_blank" rel="noopener">nifty little features</a>. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… <em>other products</em> for. That, coupled with some new videos on their <a href="https://www.youtube.com/user/SquaredUpLtd" title="SquaredUp YouTube Channel" target="_blank" rel="noopener">Youtube-channel</a>, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.</p>
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Story-time"><a href="#Story-time" class="headerlink" title="Story-time"></a>Story-time</h1><p>I saw <a href="http://www.squaredup.com/" title="SquaredUp" target="_blank" rel="noopener">SquaredUp</a> some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some <abbr title="Database">DB</abbr>-queries. I kind of liked the look of their product though and have kept an eye on them now and then.<br>Fast-forward to may 21st this year and the <a href="http://www.squaredup.com/blog/proudly-announcing-squared-v18" title="Proudly Announcing v1.8" target="_blank" rel="noopener">release of version 1.8</a> and a whole slew of <a href="http://www.squaredup.com/blog/squared-v18-new-features" title="New Features in v1.8" target="_blank" rel="noopener">nifty little features</a>. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… <em>other products</em> for. That, coupled with some new videos on their <a href="https://www.youtube.com/user/SquaredUpLtd" title="SquaredUp YouTube Channel" target="_blank" rel="noopener">Youtube-channel</a>, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.</p>
 <p>One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – <abbr title="Powershell Deployment Toolkit">PDT</abbr> is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.<br><a id="more"></a></p>
 <h1 id="The-Installation"><a href="#The-Installation" class="headerlink" title="The Installation"></a>The Installation</h1><p>First, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.<br><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png" alt="SquaredUp - Installation Package" title="SquaredUp - Installation Package"></p>
 <p>Doubleclicked the installation packaged and it now tells me it will install a few pre-requisites and configure the website for me. Next!</p>
@@ -196,9 +190,9 @@ ga('send', 'pageview');
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>I wish more products and “add-ons” to <abbr title="System Center 2012 - Operations Manager">SCOM</abbr> were this easy to install. No extra databases, no extra permissions, no extra infrastructure. I would like to try it out in a larger environment and see what the load on the website, the databases and the data access service will be. It would also be necessary to verify that it works properly when the management servers are behind a load balancer and maybe even putting the SquaredUp portal behind one itself. Since there is not a lot of configuration to be done and no database, it <em>should</em> work. We’ll see.</p>
 <p>Next up will be fiddling about with custom dashboards, maps, and generally figuring out what else we can do.</p>
 
-        </div>
-        <footer class="article-footer">
-            
+                </div>
+                <footer class="article-footer">
+                    
 
 
 
@@ -262,7 +256,14 @@ ga('send', 'pageview');
     })(jQuery);
 </script>
 
-        </footer>
+                </footer>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Teknoglot - After Article -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8265950273936175" data-ad-slot="2559523773" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
     </div>
 </article>
 
