@@ -170,10 +170,7 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             I’ve had this little visio drawing lying around on my desktop for a while now and I thought that it might be a nice thing to share.
-It is nothing ground breaking at all and all the information is available at the Operations Manager 2007 R2 Supported Configurations page on Technet, but I find the visual map easier to read and I use it personally to quickly look up all port openings for the most common components in Operations Manager.
-It is missing a few components like ACS, AEM and XPlat, but I usually just look them up when needed.
-Have fun!
-
+It is nothing ground breaking at all and all the information is avai
         </p>
     </div>
 </article>
@@ -295,13 +292,7 @@ After a bit of intense staring i noticed what you see in the screenshot.
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it easier to use.
-Here’s the script anyway.
-Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
-To use it, create a textfile called ChangeGW.ps1 and paste the code into it. Save the file somewhere neat (maybe C:Scripts) for easy access. If you don’t feel like copy/pasting, you can download the script here.
-To use it, open the Operations Manager Command Shell and type:C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;
-For example:
-C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local
+This time I’ve basically put parameter support in it to make it e
         </p>
     </div>
 </article>
@@ -334,18 +325,7 @@ C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
-To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
-Besides running through the registry to find the GUID, one of the easier ways is this:
-
-Open an administrative command prompt.
-run wmic product
-Locate your product by its name, the GUID (looks a bit like this {25097770-2B1F-49F6-AB9D-1C708B96262A}) directly after that is the one you want. Copy it.
-run msiexec /i &lt;PASTEYOURGUIDHERE&gt;
-Modify the agent as pleased
-
-That’s pretty much it. Good luck.
-
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>
@@ -473,11 +453,7 @@ Is it less than, or close to, 256? It probably is. If you don’t feel like conn
             Microsoft has released an updated MP for SCCM SP2 (v6.0.6000.2, released on 10/28/2009) for OpsMgr R2.
 The update basically contains support for x64 that was missing in the previous release.
 
-The Configuration Manager 2007 SP2 Management Pack adds support for monitoring Configuration Manager 2007 SP2 in a 64-bit environment with Operations Manager 2007 R2 or Operations Manager 2007 SP1 with hotfix (KB971541) installed. This enables the Configuration Manager 2007 SP2 Management Pack to work with either the 32-bit or the 64-bit Operations Manager 2007 agent. Except for the 64-bit support, the other features and guidance for Configuration Manager 2007 Management Packs remain intact.
-
-Emphasis is mine.
-Read more and download here:http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b
-
+The Conf
         </p>
     </div>
 </article>
@@ -576,11 +552,7 @@ Files added:
             Microsoft released an updated MP (v6.1.7533.0, released on 10/8/2009) for monitoring the health the Operations Manager components.
 Most significant updates, according to me, would seem to be:
 
-Fixed an issue that was previously preventing all rules related to agentless exception monitoring from generating alerts.Added the rule “Collects Opsmgr SDK ServiceClient Connections” to collect the number of connected clients for a given management group. This data is shown in the view “Console and SDK Connection Count” under the folder “Operations ManagerManagement Server Performance”.Updated a number of monitors and rules to ensure that data is reported to the correct management group for multihomed agents.Fixed the configuration of the rule “IIS Discovery Probe Module Execution Failure” to so that the parameter replacement will now work correctly for alert suppression and generating the details of the alert’s description.
-
-The rest is mostly polishing, fine-tuning and complementary updates. Nothing really ground-breaking here, but still a welcome update.
-Download at: http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148
-
+Fixed a
         </p>
     </div>
 </article>

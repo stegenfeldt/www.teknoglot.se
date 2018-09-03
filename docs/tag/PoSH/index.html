@@ -442,13 +442,7 @@ C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglo
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it easier to use.
-Here’s the script anyway.
-Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
-To use it, create a textfile called ChangeGW.ps1 and paste the code into it. Save the file somewhere neat (maybe C:Scripts) for easy access. If you don’t feel like copy/pasting, you can download the script here.
-To use it, open the Operations Manager Command Shell and type:C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;
-For example:
-C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local
+This time I’ve basically put parameter support in it to make it e
         </p>
     </div>
 </article>

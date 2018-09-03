@@ -8,7 +8,7 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>Techspeak for the socially diminished.</description>
-    <pubDate>Tue, 28 Aug 2018 13:28:13 GMT</pubDate>
+    <pubDate>Mon, 03 Sep 2018 08:37:51 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -169,17 +169,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Mon, 25 Sep 2017 08:05:33 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;KEY01-Vision-Keynote&quot;&gt;&lt;a href=&quot;#KEY01-Vision-Keynote&quot; class=&quot;headerlink&quot; title=&quot;KEY01 - Vision Keynote&quot;&gt;&lt;/a&gt;KEY01 - Vision Keynote&lt;/h1&gt;&lt;p&gt;Sep 25, 9:00 am – 10:00 am&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;UNSTRUCTURED NOTES! Also, mixed Swedish and English, sorry for that.&lt;br&gt;Will update at a later time&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;O365, all in one place…&lt;br&gt;Live sändning med AI översättning.&lt;br&gt;What’s the actual purpose of technology, why do we do this? How can we use it to do better. how to ensure privacy while at it.&lt;br&gt;how do we give the power of technology to everyone?&lt;br&gt;Assume everything will be multi device.&lt;br&gt;serverless computing, edge distribution, management.&lt;br&gt;Empower, Engage, Optimize, Transform.&lt;/p&gt;
-&lt;p&gt;Microsoft 365 (not Office).&lt;br&gt;Mixed reality. Holo lens, Oasis Headsets.&lt;br&gt;Holo lens cameras for presentation, on github.&lt;br&gt;Notes saved with spatial information for review.&lt;br&gt;Microsoft mixed reality headsets.&lt;br&gt;Conversations can be replayed and reviewed in teams.&lt;/p&gt;
-&lt;p&gt;Microsoft graph is extensible, for example with LinkedIn.&lt;br&gt;Outlook connected LimkedIn, better searches for… everything?&lt;br&gt;Bing for business, can search graph as well.&lt;br&gt;Nice integration with any applications extending graph. Pairs well with machine learning and AI/Fuzzy Search to parse both data and meta data on context. Admin portal gives insight and analytics into what’s searched for further optimization. Also connects with Cortana.&lt;/p&gt;
-&lt;p&gt;Business applications&lt;br&gt;Dynamics 365. Also extends graph.&lt;br&gt;AI First. Virtual Agent demo.&lt;/p&gt;
-&lt;p&gt;App&amp;amp;Infra / AI&lt;br&gt;Azure. Intelligent Cloud, intelligent creativity.&lt;br&gt;Machine reading and comprehension.&lt;/p&gt;
-&lt;p&gt;Quantum computing… ?&lt;br&gt;MS seems to be trying hard to build one.&lt;br&gt;VS gets tools for developing and debugging and testing qbits.&lt;/p&gt;
-
+        
+        
+          &lt;h1 id=&quot;KEY01-Vision-Keynote&quot;&gt;&lt;a href=&quot;#KEY01-Vision-Keynote&quot; class=&quot;headerlink&quot; title=&quot;KEY01 - Vision Keynote&quot;&gt;&lt;/a&gt;KEY01 - Vision Keynote&lt;/
+        
       
       </description>
       
@@ -195,11 +188,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Wed, 12 Oct 2016 22:21:03 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Untimely-perhaps&quot;&gt;&lt;a href=&quot;#Untimely-perhaps&quot; class=&quot;headerlink&quot; title=&quot;Untimely, perhaps&quot;&gt;&lt;/a&gt;Untimely, perhaps&lt;/h1&gt;&lt;p&gt;While most of us are waiting for SCOM 2016 RTM to be generally available i’ve completely forgot to blog about my little &lt;code&gt;Set-SCOMMaintenanceModeDeluxe.ps1&lt;/code&gt; script I wrote a while ago.&lt;/p&gt;
-&lt;p&gt;It is pretty much a small extension to the regular &lt;code&gt;Set-SCOMMaintenanceMode&lt;/code&gt; cmdlet that allows you to set Computers, Groups or specific Windows Services into maintenance mode.&lt;br&gt;I have yet to make it a proper module (although I have promised myself to do so) so you’d still have to manually download the script and execute it the old-fashioned way.&lt;/p&gt;
-&lt;p&gt;I’ve uploaded it as a public gist on github, so feel free to add adapt it to your needs.&lt;/p&gt;
-&lt;h1 id=&quot;Here’s-the-gist&quot;&gt;&lt;a href=&quot;#Here’s-the-gist&quot; class=&quot;headerlink&quot; title=&quot;Here’s the gist&quot;&gt;&lt;/a&gt;Here’s the gist&lt;/h1&gt;&lt;script src=&quot;//gist.github.com/b3f044aa77894ed80d82f8849a48035b.js?file=Set-SCOMMaintenanceModeDeluxe.ps1&quot;&gt;&lt;/script&gt;
-
+        
+        
+          &lt;h1 id=&quot;Untimely-perhaps&quot;&gt;&lt;a href=&quot;#Untimely-perhaps&quot; class=&quot;headerlink&quot; title=&quot;Untimely, perhaps&quot;&gt;&lt;/a&gt;Untimely, perhaps&lt;/h1&gt;&lt;p&gt;While most o
+        
       
       </description>
       
@@ -289,12 +281,11 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Mon, 15 Feb 2016 11:22:28 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.&lt;/p&gt;
-&lt;p&gt;The event is the generic “Health Service Script” with id 4001.&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Computer Name = &amp;quot;REDACTED.redacted.com&amp;quot; WMI = &amp;quot;ComputerManagement11&amp;quot; Service Name = &amp;quot;MSSQLSERVER&amp;quot; SQL Instance Name = &amp;quot;MSSQLSERVER&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Error occured during CPU Usage for SQL Instances data source executing.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Computer: REDACTED&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Reason: Cannot add type. Compilation errors occurred.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Position:256&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Offset:21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Detailed error output: Cannot add type. Compilation errors occurred.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(0) : No source files specified&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(1) : using System;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;--------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(0) : Source file &amp;quot;C:\Windows\TEMP\njdqtgfb.0.cs&amp;quot; could not be found&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(1) : using System;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention &lt;em&gt;“Cannot add type. Compilation errors occured.”&lt;/em&gt;&lt;br&gt;In a &lt;a href=&quot;https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;thread on the Technet Forums&lt;/a&gt; it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the &lt;code&gt;C:\Windows\TEMP&lt;/code&gt; folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.&lt;br&gt;We took a quick look using &lt;em&gt;procmon&lt;/em&gt;, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.&lt;/p&gt;
-&lt;h1 id=&quot;A-wild-work-around-appears&quot;&gt;&lt;a href=&quot;#A-wild-work-around-appears&quot; class=&quot;headerlink&quot; title=&quot;A wild work-around appears!&quot;&gt;&lt;/a&gt;A wild work-around appears!&lt;/h1&gt;&lt;p&gt;The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.&lt;br&gt;Now you just have to manage this on all your SQL-servers! (yaaaay)&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.&lt;/p&gt;
+&lt;p&gt;The e
+        
       
       </description>
       
@@ -419,11 +410,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Thu, 21 Feb 2013 08:25:39 GMT</pubDate>
       <description>
       
-        &lt;p&gt;By request, I uploaded a short clip demonstrating how you would add a windows performance counter to a performance collection rule using the Authoring Console.&lt;/p&gt;
-&lt;p&gt;It is a fairly simple task to complete but does require the &lt;a href=&quot;http://www.microsoft.com/en-us/download/details.aspx?id=18222&quot; title=&quot;System Center Operations Manager 2007 R2 Authoring Resource Kit&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Authoring Console&lt;/a&gt;, obviously, and a better target class than what I use in the demo. The demo also assumes that this counter exist on all the targeted servers in your environment. It would be wise, when making your management pack, to check that it’s there on all targeted operating systems, and that’s what I use Performance Monitor for. (just search for &lt;em&gt;perfmon&lt;/em&gt; in your start menu or run perfmon.exe)&lt;/p&gt;
-&lt;p&gt;Enjoy.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=4G4aXslrjvQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/4G4aXslrjvQ/0.jpg&quot; alt=&quot;IMAGE ALT TEXT HERE&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;By request, I uploaded a short clip demonstrating how you would add a windows performance counter to a performance collection rule using 
+        
       
       </description>
       
@@ -488,11 +478,11 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Thu, 21 Jun 2012 06:01:50 GMT</pubDate>
       <description>
       
-        &lt;p&gt;The menus are looking a bit off as you may have noticed.&lt;/p&gt;
-&lt;p&gt;I guess it’s an issue with WordPress 3.4 and &lt;a href=&quot;http://users.tpg.com.au/j_birch/plugins/superfish/&quot; title=&quot;Superfish&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Superfish&lt;/a&gt; and are trying to figure out where it goes haywire.&lt;/p&gt;
-&lt;p&gt;Sorry for the inconvenience.&lt;/p&gt;
-&lt;h1 id=&quot;Update&quot;&gt;&lt;a href=&quot;#Update&quot; class=&quot;headerlink&quot; title=&quot;Update&quot;&gt;&lt;/a&gt;Update&lt;/h1&gt;&lt;p&gt;I switched the theme to at least get the navigation working while I try to figure out what the problem with the regular theme is.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;The menus are looking a bit off as you may have noticed.&lt;/p&gt;
+&lt;p&gt;I guess it’s an issue with WordPress 3.4 and &lt;a href=&quot;http://users.tpg.co
+        
       
       </description>
       
@@ -636,10 +626,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Wed, 28 Sep 2011 06:37:39 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I was going to write a post on how to install and configure your own virtual SSL-VPN server as I had in mind to make one myself as a means to surf safely while on hotspots and to access my System Center lab at home.&lt;/p&gt;
-&lt;p&gt;I’m not gonna do that. Instead I just want to point to this free, already pre-configured, &lt;a href=&quot;http://www.vmware.com/appliances/directory/va/320963&quot; title=&quot;Free OpenVPN Appliance&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenVPN Virtual Appliance&lt;/a&gt;. Just follow its instructions and it will work quite nicely.&lt;/p&gt;
-&lt;p&gt;Have fun.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;I was going to write a post on how to install and configure your own virtual SSL-VPN server as I had in mind to make one myself as a mean
+        
       
       </description>
       
@@ -655,10 +645,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Mon, 08 Aug 2011 20:52:27 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Here a link to the &lt;a href=&quot;http://www.microsoft.com/download/en/details.aspx?id=4561&quot; title=&quot;System Center Operations Manager 2007 R2 Documentation&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;System Center Operations Manager 2007 R2 Documentation&lt;/a&gt; for those of you out there who keeps asking of its whereabouts and then tell me to not tell you to &lt;a href=&quot;http://www.google.se/search?q=opsmgr+2007+r2+documentation&quot; title=&quot;opsmgr 2007 r2 documentation&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;google for it&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;So now I can direct you to my site, tell you to click on “OpsMgr 2007” to the left and browse through my posts instead of wasting precious time on googling and pretend being more helpful.&lt;br&gt;To the rest of the world, sorry for wasting your time!&lt;/p&gt;
-&lt;p&gt;Happy now, eh?&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Here a link to the &lt;a href=&quot;http://www.microsoft.com/download/en/details.aspx?id=4561&quot; title=&quot;System Center Operations Manager 2007 R2 Do
+        
       
       </description>
       
@@ -699,11 +689,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Tue, 17 May 2011 09:47:18 GMT</pubDate>
       <description>
       
-        &lt;p&gt;&lt;a href=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2011/05/SCOM_Connectivity_Map.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2011/05/SCOM_Connectivity_Map-300x279.png&quot; alt=&quot;SCOM Connectivity Map&quot; title=&quot;SCOM Connectivity Map&quot;&gt;&lt;/a&gt;I’ve had this little visio drawing lying around on my desktop for a while now and I thought that it might be a nice thing to share.&lt;/p&gt;
-&lt;p&gt;It is nothing ground breaking at all and all the information is available at the &lt;a href=&quot;http://technet.microsoft.com/en-us/library/bb309428.aspx&quot; title=&quot;Operations Manager 2007 R2 Supported Configurations&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Operations Manager 2007 R2 Supported Configurations&lt;/a&gt; page on Technet, but I find the visual map easier to read and I use it personally to quickly look up all port openings for the most common components in Operations Manager.&lt;/p&gt;
-&lt;p&gt;It is missing a few components like ACS, AEM and XPlat, but I usually just look them up when needed.&lt;/p&gt;
-&lt;p&gt;Have fun!&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;&lt;a href=&quot;http://teknoglotse.nfshost.com/wp-content/uploads/2011/05/SCOM_Connectivity_Map.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;ht
+        
       
       </description>
       
@@ -749,10 +738,11 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Wed, 27 Apr 2011 19:50:12 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I think I got the server running ok now.&lt;/p&gt;
-&lt;p&gt;I’ve been fiddling about quite alot and unfortunately don’t know which one action that fixed the problem. If I do figure it out, I will post it here.&lt;/p&gt;
-&lt;p&gt;Site performance should be a bit better now.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;I think I got the server running ok now.&lt;/p&gt;
+&lt;p&gt;I’ve been fiddling about quite alot and unfortunately don’t know which one action that fi
+        
       
       </description>
       
@@ -768,11 +758,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Tue, 19 Apr 2011 20:14:02 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I, as well as others, have noticed some slow performance from my blog lately and I just wanted to let you know that the root cause have been identified as a bug in on of the crypto libs on the server.&lt;/p&gt;
-&lt;p&gt;I haven’t found a working solution yet but are trying to keep an eye on the site regularly to be able to bounce the problematic services when they start to act up.&lt;/p&gt;
-&lt;p&gt;Hopefully there will be a fix available soon.&lt;/p&gt;
-&lt;p&gt;Sorry for any inconvenience in the meantime.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;I, as well as others, have noticed some slow performance from my blog lately and I just wanted to let you know that the root cause have b
+        
       
       </description>
       
@@ -788,11 +777,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Fri, 04 Feb 2011 13:07:41 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Oh my God, I actually moved my blog for real. I think I’ve been putting this upp for nearly half a year now and even though I actually went and bought a “real” domain-name for it.&lt;/p&gt;
-&lt;p&gt;But now it’d done. The server is now self-hosted and self-maintained. Now, that obviously gives me a bit more to do, but on the other hand. I can fix any problems myself and not have to create tickets and hope someone responding to them knows what they’re talking about.&lt;/p&gt;
-&lt;p&gt;The design is mostly borrowed, for now, but it works and I hope I did all the HTACCESS rules on the old server correct so that they forward all the old links to the same post on the new one.&lt;/p&gt;
-&lt;p&gt;So, welcome!&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Oh my God, I actually moved my blog for real. I think I’ve been putting this upp for nearly half a year now and even though I actually we
+        
       
       </description>
       
@@ -888,23 +876,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Tue, 06 Apr 2010 10:09:57 GMT</pubDate>
       <description>
       
-        &lt;p&gt;After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.&lt;/p&gt;
-&lt;p&gt;Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.&lt;/p&gt;
-&lt;h3 id=&quot;Message-Queuing-4-0-Management-Pack-for-Operations-Manager-2007&quot;&gt;&lt;a href=&quot;#Message-Queuing-4-0-Management-Pack-for-Operations-Manager-2007&quot; class=&quot;headerlink&quot; title=&quot;Message Queuing 4.0 Management Pack for Operations Manager 2007&quot;&gt;&lt;/a&gt;Message Queuing 4.0 Management Pack for Operations Manager 2007&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; **Quick Details**
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;Version: 6.0.6700.83&lt;/p&gt;
-&lt;p&gt;Date Published: 4/5/2010&lt;/p&gt;
-&lt;p&gt;Language: English  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Download here: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;amp;displaylang=en&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;amp;displaylang=en&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Message-Queuing-5-0-Management-Pack-for-Operations-Manager-2007&quot;&gt;&lt;a href=&quot;#Message-Queuing-5-0-Management-Pack-for-Operations-Manager-2007&quot; class=&quot;headerlink&quot; title=&quot;Message Queuing 5.0 Management Pack for Operations Manager 2007&quot;&gt;&lt;/a&gt;Message Queuing 5.0 Management Pack for Operations Manager 2007&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Quick Details&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Version: 6.0.6700.88&lt;/p&gt;
-&lt;p&gt;Date Published: 4/5/2010&lt;/p&gt;
-&lt;p&gt;Language: English  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Download here: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=28349b78-8329-44aa-8a1f-81f4e3f84d0c&amp;amp;displaylang=en&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=28349b78-8329-44aa-8a1f-81f4e3f84d0c&amp;amp;displaylang=en&lt;/a&gt;&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally 
+        
       
       </description>
       
@@ -920,14 +895,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Wed, 31 Mar 2010 13:27:08 GMT</pubDate>
       <description>
       
-        &lt;p&gt;This script has pretty much already been covered in my previous post about &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/&quot;&gt;Changing or Replacing an Operations Manager Gateway Server&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This time I’ve basically put parameter support in it to make it easier to use.&lt;/p&gt;
-&lt;p&gt;Here’s the script anyway.&lt;/p&gt;
-&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Param&lt;/span&gt;(&lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;$NewGW&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;= Get-ManagementServer | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.Name &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt; = Get-ManagementServer | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.Name &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$NewGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; = Get-Agent | where &amp;#123;&lt;span class=&quot;variable&quot;&gt;$_&lt;/span&gt;.PrimaryManagementServerName &lt;span class=&quot;nomarkup&quot;&gt;-eq&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$OldGW&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; = &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;Moving &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt;.count + &lt;span class=&quot;string&quot;&gt;&quot; agents from &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;.Name + &lt;span class=&quot;string&quot;&gt;&quot; to &quot;&lt;/span&gt; + &lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt;.Name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Start-Sleep&lt;/span&gt; -m &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Set-ManagementServer -AgentManagedComputer: &lt;span class=&quot;variable&quot;&gt;$agents&lt;/span&gt; -PrimaryManagementServer: &lt;span class=&quot;variable&quot;&gt;$NewMS&lt;/span&gt; -FailoverServer: &lt;span class=&quot;variable&quot;&gt;$OldMS&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;To use it, create a textfile called ChangeGW.ps1 and paste the code into it. Save the file somewhere neat (maybe C:Scripts) for easy access. If you don’t feel like copy/pasting, you can &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/attachment/changegw/&quot;&gt;download the script here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To use it, open the Operations Manager Command Shell and type:&lt;br&gt;&lt;code&gt;C:\ScriptsChangeGW.ps1 &amp;lt;old.gatewayserver.dns.name&amp;gt; &amp;lt;new.gatewayserver.dns.name&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+        
+        
+          &lt;p&gt;This script has pretty much already been covered in my previous post about &lt;a href=&quot;http://www.teknoglot.se/ms/opsmgr2007/replacechange-a
+        
       
       </description>
       
@@ -943,20 +914,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Fri, 19 Mar 2010 09:34:17 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Getting &lt;code&gt;ESENT Kerys are required to install this application&lt;/code&gt; when you are trying to modify/change an agent installation?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2010/03/image_thumb.png&quot; alt=&quot;ESENT Error Dialog&quot; title=&quot;ESENT Error Dialog&quot;&gt;&lt;/p&gt;
-&lt;p&gt;This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.&lt;/p&gt;
-&lt;p&gt;To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.&lt;/p&gt;
-&lt;p&gt;Besides running through the registry to find the GUID, one of the easier ways is this:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Open an administrative command prompt.&lt;/li&gt;
-&lt;li&gt;run &lt;code&gt;wmic product&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Locate your product by its name, the GUID (looks a bit like this &lt;code&gt;{25097770-2B1F-49F6-AB9D-1C708B96262A}&lt;/code&gt;) directly after that is the one you want. Copy it.&lt;/li&gt;
-&lt;li&gt;run &lt;code&gt;msiexec /i &amp;lt;PASTEYOURGUIDHERE&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Modify the agent as pleased&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;That’s pretty much it. Good luck.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Getting &lt;code&gt;ESENT Kerys are required to install this application&lt;/code&gt; when you are trying to modify/change an agent installation?&lt;/p&gt;
+        
       
       </description>
       
@@ -1032,28 +993,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Thu, 19 Nov 2009 13:08:10 GMT</pubDate>
       <description>
       
-        &lt;p&gt;In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.&lt;/p&gt;
-&lt;p&gt;In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.&lt;br&gt;What to do!?&lt;/p&gt;
-&lt;p&gt;Thanks to &lt;a href=&quot;http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Raul Carcia’s blog post&lt;/a&gt; it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.&lt;br&gt;Here’s what to do:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Open the &lt;em&gt;SQL Server Configuration Manager.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;In &lt;em&gt;SQL Server Services&lt;/em&gt;, open the properties for the SQL Server instance you need access to.&lt;/li&gt;
-&lt;li&gt;In the &lt;em&gt;Advanced&lt;/em&gt; tab, find &lt;em&gt;Startup Parameters&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Add “;-m” to the end of that line.&lt;/li&gt;
-&lt;li&gt;Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first ;))&lt;/li&gt;
-&lt;li&gt;Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn&lt;br&gt;(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)&lt;/li&gt;
-&lt;li&gt;Execute &lt;code&gt;sqlcmd /A /E /S &amp;lt;INSTANCE&amp;gt;&lt;/code&gt;&lt;br&gt;(use . for local default instance and .INSTANCE for local named instance)&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the CLI, execute:&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;EXEC sp_addsrvrolemember &#39;DOMAIN\yourusername&#39;, &#39;sysadmin&#39;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GO&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Return to the &lt;em&gt;SQL Server Configuration Manager&lt;/em&gt; and restore the &lt;em&gt;Startup Parameters&lt;/em&gt; to it’s previous settings.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;Restart the SQL Server instance to allow users to get access to it again.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Now, you should be able to login to the SQL server with sysadmin rights using your current user. This would also be a good time to actually set up a SQL Server Admins group (local or domain) to add to the sysadmin role to avoid having others to the above steps when you, yourself, are on vacation. ;)&lt;/p&gt;
-&lt;p&gt;As Raul Carcia point out in his original post, this is really a disaster recovery procedure and there’s definitely nothing sneaky about it since it leaves a lot of trails in the event logs.&lt;/p&gt;
-&lt;p&gt;All in all, a Great article by &lt;a href=&quot;http://blogs.msdn.com/raulga/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Raul&lt;/a&gt; and all credit should go his way.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one s
+        
       
       </description>
       
@@ -1069,14 +1012,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Tue, 03 Nov 2009 11:13:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Microsoft has released an updated &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; for &lt;acronym title=&quot;System Center Configurations Manager&quot;&gt;SCCM &lt;/acronym&gt;SP2 (v6.0.6000.2, released on 10/28/2009) for OpsMgr R2.&lt;/p&gt;
-&lt;p&gt;The update basically contains support for x64 that was missing in the previous release.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Configuration Manager 2007 SP2 Management Pack adds support for monitoring Configuration Manager 2007 SP2 in a 64-bit environment with Operations Manager 2007 R2 or Operations Manager 2007 SP1 with hotfix (KB971541) installed. This enables the Configuration Manager 2007 SP2 Management Pack to work with either the 32-bit or the 64-bit Operations Manager 2007 agent. &lt;strong&gt;Except for the 64-bit support, the other features and guidance for Configuration Manager 2007 Management Packs remain intact&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Emphasis is mine.&lt;/p&gt;
-&lt;p&gt;Read more and download here:&lt;br&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&quot; title=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=a8443173-46c2-4581-b3b8-ce67160f627b&lt;/a&gt;&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Microsoft has released an updated &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; for &lt;acronym title=&quot;System Center Configurations Manager&quot;
+        
       
       </description>
       
@@ -1092,10 +1031,10 @@ Unfortunatly, the “rollback” will remove any existing SCOM Roles in the serv
       <pubDate>Mon, 02 Nov 2009 13:33:27 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Let’s say you have followed this guide: &lt;a href=&quot;http://support.microsoft.com/kb/938245/&quot; title=&quot;http://support.microsoft.com/kb/938245/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://support.microsoft.com/kb/938245/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website application pool to “Classic .NET AppPool”. It is actually noted in &lt;a href=&quot;http://support.microsoft.com/kb/938245/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;KB938245&lt;/a&gt; but only after the installation, during the configuration. For some reason I have not been able to install Reporting Services 2005 on Windows 2008 without changing this prior to the installation.&lt;/p&gt;
-&lt;p&gt;Maybe I am doing it wrong but this seems to be working all right for me.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Let’s say you have followed this guide: &lt;a href=&quot;http://support.microsoft.com/kb/938245/&quot; title=&quot;http://support.microsoft.com/kb/938245/&quot;
+        
       
       </description>
       
@@ -1199,9 +1138,10 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
       <pubDate>Wed, 14 Oct 2009 10:17:08 GMT</pubDate>
       <description>
       
-        &lt;p&gt;I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I am not alone on this one. Others, like me, has read and re-read the MP-guide i search for a monitor/rule/discovery for overrides forgotten, and I don’t know how many times I’ve made a small change and tried resetting the health once again. Anyhow.&lt;br&gt;&lt;a href=&quot;http://social.technet.microsoft.com/Profile/en-US/?user=Marius%20Sutara&amp;amp;referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2foperationsmanagergeneral%2fthread%2f6ad11b81-3304-40db-ae47-0f36add6e1e1&amp;amp;rh=EQRzBI2S0js0uB72HghHQFW%2bBWkNhiVEQ9pGFs3h9c0%3d&amp;amp;sp=forums&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Marius Sutara&lt;/a&gt; posted an &lt;a href=&quot;http://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/6ad11b81-3304-40db-ae47-0f36add6e1e1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;answer on TechNet forums&lt;/a&gt; last week with a “fix” (-ish), or rather the acknowledgement that the problem is not a &lt;acronym title=&quot;AKA. Human Error, 40cm from the screen&quot;&gt;40c&lt;/acronym&gt;. The problem might be related to other MP as well, but I’ve only seen it on the new Exchange MP so far. In that same post, Pete Zerger provided some links to two nifty little tools that will help you reset the health of the monitor.&lt;/p&gt;
-&lt;p&gt;In case you wonder why on earth I post when there’s allready a “solution” out there; Pagerank, baby!&lt;br&gt;Not for me, but for the forum post making it show up earlier on google.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the
+        
       
       </description>
       
@@ -1217,14 +1157,10 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
       <pubDate>Wed, 14 Oct 2009 09:29:00 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Microsoft released an updated &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; (v6.1.7533.0, released on 10/8/2009) for monitoring the health the Operations Manager components.&lt;/p&gt;
-&lt;p&gt;Most significant updates, according to me, would seem to be:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Fixed an issue that was previously preventing all rules related to agentless exception monitoring from generating alerts.&lt;br&gt;Added the rule “Collects Opsmgr &lt;acronym title=&quot;Software Development Kit&quot;&gt;SDK&lt;/acronym&gt; ServiceClient Connections” to collect the number of connected clients for a given management group. This data is shown in the view “Console and SDK Connection Count” under the folder “Operations ManagerManagement Server Performance”.&lt;br&gt;Updated a number of monitors and rules to ensure that data is reported to the correct management group for multihomed agents.&lt;br&gt;Fixed the configuration of the rule “IIS Discovery Probe Module Execution Failure” to so that the parameter replacement will now work correctly for alert suppression and generating the details of the alert’s description.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The rest is mostly polishing, fine-tuning and complementary updates. Nothing really ground-breaking here, but still a welcome update.&lt;/p&gt;
-&lt;p&gt;Download at: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&quot; title=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148&lt;/a&gt;&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Microsoft released an updated &lt;acronym title=&quot;Management Pack&quot;&gt;MP&lt;/acronym&gt; (v6.1.7533.0, released on 10/8/2009) for monitoring the healt
+        
       
       </description>
       
@@ -1240,9 +1176,10 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
       <pubDate>Wed, 07 Oct 2009 12:24:37 GMT</pubDate>
       <description>
       
-        &lt;p&gt;According to the &lt;a href=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpsMgr Team blog&lt;/a&gt;, Microsoft wants to know what you think about their SQL Server MP. It’s really hard to come by a better opportunity to express your feelings and desires about monitoring SQL Server, so don’t miss this one out.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; title=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&lt;/a&gt;&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;According to the &lt;a href=&quot;http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx&quot; target=&quot;_b
+        
       
       </description>
       
@@ -1295,14 +1232,10 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
       <pubDate>Thu, 17 Sep 2009 17:43:47 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.&lt;br&gt;Managed to get the Citrix client running (way more easy on Ubuntu than Fedora, I’ll be back on that) and all without too much fuzz.&lt;/p&gt;
-&lt;p&gt;First reboot gave me a “let’s FSCK!”. So I FSCK-ed and booted up to the desktop.&lt;/p&gt;
-&lt;p&gt;Second reboot gave me a “let’s FSCK!”. And I did. Booted to the desktop.&lt;/p&gt;
-&lt;p&gt;Third boot went smoothly, but all of a sudden all the icons decided to go AWOL. Rebooted again.&lt;/p&gt;
-&lt;p&gt;Fourth boot gave me a “let’s FSCK!”. I replied with “Well FSCK You!”&lt;/p&gt;
-&lt;p&gt;Fifth boot gave me a “let’s FSCK!”. I rebooted back to Windows 7.&lt;/p&gt;
-&lt;p&gt;Tonight I am reinstalling Ubuntu 9.04 x64 with EXT3.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.&lt;br&gt;Managed t
+        
       
       </description>
       
@@ -1318,12 +1251,11 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
       <pubDate>Thu, 27 Aug 2009 12:39:43 GMT</pubDate>
       <description>
       
-        &lt;p&gt;Just wanted to raise a word of caution about the TCP Port Check in Operations Manager 2007.&lt;/p&gt;
-&lt;p&gt;Some customers have notices the the system-logs on some Unix machines are completely swamped with “connection error”, “TCP Connect failed”, “TCP Session Lost” and similar and after a bit och research the problematic servers were narrowed down to those monitored by Operations Manager. Specifically, those who are targeted by a TCP Port Check.&lt;/p&gt;
-&lt;p&gt;It would seem like the TCP-connection never fully initializes on the target server. Kind of like knocking on your neighbours door and then hiding. Then when the door opens, no one is there causing your friendly neighbour to hang around waiting for something to happen.&lt;/p&gt;
-&lt;p&gt;Maybe there’s a setting somewhere to modify how “deep” a Port Check should go before closing. Perhaps fully initializing and then sending a proper “Close” instead of just cutting the connection. In a few extreme cases we have noticed that the target server even goes so far as to start a session, but never ending it since there’s no closure and finally having no sessions to spare for the real users. But on most servers it’s just an annoyance since the “real” errors is very hard to be found in all the connection related logs.&lt;/p&gt;
-&lt;p&gt;Anyway. Just a good thing to keep in mind when running TCP Port Checks from Operations Manager 2007. Keep an eye on the logs when implementing the port checks.&lt;/p&gt;
-
+        
+        
+          &lt;p&gt;Just wanted to raise a word of caution about the TCP Port Check in Operations Manager 2007.&lt;/p&gt;
+&lt;p&gt;Some customers have notices the the sy
+        
       
       </description>
       

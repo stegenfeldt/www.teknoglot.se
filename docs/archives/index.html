@@ -384,13 +384,7 @@ ExcelConnects to external data sources, trying to figure out context and provide
 
 UNSTRUCTURED NOTES! Also, mixed Swedish and English, sorry for that.Will update at a later time
 
-O365, all in one place…Live sändning med AI översättning.What’s the actual purpose of technology, why do we do this? How can we use it to do better. how to ensure privacy while at it.how do we give the power of technology to everyone?Assume everything will be multi device.serverless computing, edge distribution, management.Empower, Engage, Optimize, Transform.
-Microsoft 365 (not Office).Mixed reality. Holo lens, Oasis Headsets.Holo lens cameras for presentation, on github.Notes saved with spatial information for review.Microsoft mixed reality headsets.Conversations can be replayed and reviewed in teams.
-Microsoft graph is extensible, for example with LinkedIn.Outlook connected LimkedIn, better searches for… everything?Bing for business, can search graph as well.Nice integration with any applications extending graph. Pairs well with machine learning and AI/Fuzzy Search to parse both data and meta data on context. Admin portal gives insight and analytics into what’s searched for further optimization. Also connects with Cortana.
-Business applicationsDynamics 365. Also extends graph.AI First. Virtual Agent demo.
-App&amp;Infra / AIAzure. Intelligent Cloud, intelligent creativity.Machine reading and comprehension.
-Quantum computing… ?MS seems to be trying hard to build one.VS gets tools for developing and debugging and testing qbits.
-
+O365, all in one place…Live sändning med AI översättn
         </p>
     </div>
 </article>
@@ -432,10 +426,7 @@ Quantum computing… ?MS seems to be trying hard to build one.VS gets tools for 
 
         <p class="article-excerpt">
             Untimely, perhapsWhile most of us are waiting for SCOM 2016 RTM to be generally available i’ve completely forgot to blog about my little Set-SCOMMaintenanceModeDeluxe.ps1 script I wrote a while ago.
-It is pretty much a small extension to the regular Set-SCOMMaintenanceMode cmdlet that allows you to set Computers, Groups or specific Windows Services into maintenance mode.I have yet to make it a proper module (although I have promised myself to do so) so you’d still have to manually download the script and execute it the old-fashioned way.
-I’ve uploaded it as a public gist on github, so feel free to add adapt it to your needs.
-Here’s the gist
-
+I
         </p>
     </div>
 </article>
@@ -579,10 +570,7 @@ Back to the basicsTeknoglot.se will be served statically from now on, and it wil
         <p class="article-excerpt">
             Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
 The event is the generic “Health Service Script” with id 4001.
-Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;Error occured during CPU Usage for SQL Instances data source executing.Computer: REDACTEDReason: Cannot add type. Compilation errors occurred.Position:256Offset:21Detailed error output: Cannot add type. Compilation errors occurred.--------(0) : No source files specified(1) : using System;--------(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found(1) : using System;
-There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention “Cannot add type. Compilation errors occured.”In a thread on the Technet Forums it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the C:\Windows\TEMP folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.We took a quick look using procmon, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.
-A wild work-around appears!The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.Now you just have to manage this on all your SQL-servers! (yaaaay)
-
+Management G
         </p>
     </div>
 </article>

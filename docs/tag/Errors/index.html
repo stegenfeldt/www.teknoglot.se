@@ -210,18 +210,7 @@ After a bit of intense staring i noticed what you see in the screenshot.
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
-To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
-Besides running through the registry to find the GUID, one of the easier ways is this:
-
-Open an administrative command prompt.
-run wmic product
-Locate your product by its name, the GUID (looks a bit like this {25097770-2B1F-49F6-AB9D-1C708B96262A}) directly after that is the one you want. Copy it.
-run msiexec /i &lt;PASTEYOURGUIDHERE&gt;
-Modify the agent as pleased
-
-That’s pretty much it. Good luck.
-
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>
@@ -307,9 +296,7 @@ http://support.microsoft.com/kb/320081
     
 
         <p class="article-excerpt">
-            I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I am not alone on this one. Others, like me, has read and re-read the MP-guide i search for a monitor/rule/discovery for overrides forgotten, and I don’t know how many times I’ve made a small change and tried resetting the health once again. Anyhow.Marius Sutara posted an answer on TechNet forums last week with a “fix” (-ish), or rather the acknowledgement that the problem is not a 40c. The problem might be related to other MP as well, but I’ve only seen it on the new Exchange MP so far. In that same post, Pete Zerger provided some links to two nifty little tools that will help you reset the health of the monitor.
-In case you wonder why on earth I post when there’s allready a “solution” out there; Pagerank, baby!Not for me, but for the forum post making it show up earlier on google.
-
+            I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I 
         </p>
     </div>
 </article>
@@ -341,11 +328,7 @@ In case you wonder why on earth I post when there’s allready a “solution” 
 
         <p class="article-excerpt">
             Just wanted to raise a word of caution about the TCP Port Check in Operations Manager 2007.
-Some customers have notices the the system-logs on some Unix machines are completely swamped with “connection error”, “TCP Connect failed”, “TCP Session Lost” and similar and after a bit och research the problematic servers were narrowed down to those monitored by Operations Manager. Specifically, those who are targeted by a TCP Port Check.
-It would seem like the TCP-connection never fully initializes on the target server. Kind of like knocking on your neighbours door and then hiding. Then when the door opens, no one is there causing your friendly neighbour to hang around waiting for something to happen.
-Maybe there’s a setting somewhere to modify how “deep” a Port Check should go before closing. Perhaps fully initializing and then sending a proper “Close” instead of just cutting the connection. In a few extreme cases we have noticed that the target server even goes so far as to start a session, but never ending it since there’s no closure and finally having no sessions to spare for the real users. But on most servers it’s just an annoyance since the “real” errors is very hard to be found in all the connection related logs.
-Anyway. Just a good thing to keep in mind when running TCP Port Checks from Operations Manager 2007. Keep an eye on the logs when implementing the port checks.
-
+Some customers have notices the the system-logs on some Unix machines are completely swamped with “connectio
         </p>
     </div>
 </article>
@@ -373,10 +356,7 @@ Anyway. Just a good thing to keep in mind when running TCP Port Checks from Oper
 
         <p class="article-excerpt">
             UPDATE: This problem seems to be fixed in the latest update!
-The MSMQ Management Pack seems to have a few problems with it’s discovery script that can lead to the following error showing up in the logs:
-The process started at 13:34:40 failed to create System.Discovery.Data. Errors found in output:C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 499788DiscoverQueues.vbs(107, 4) Microsoft VBScript runtime error: Subscript out of range: &apos;[number: 0]&apos;Command executed: &quot;C:WINDOWSsystem32cscript.exe&quot; /nologo &quot;DiscoverQueues.vbs&quot; &#123;615D37C9-477D-62E2-0833-6ECBF0E89A87&#125; &#123;A176AC83-CC31-01C3-5DE9-E2DFF64E7CC7&#125; &quot;MASKED.server.fqdn&quot; &quot;MSMQ&quot; &quot;true&quot; &quot;true&quot; &quot;False&quot; &quot;false&quot;Working Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 499788One or more workflows were affected by this.Workflow name: Microsoft.MSMQ.2003.DiscoverQueuesInstance name: MASKED.server.fqdnInstance ID: &#123;A176AC83-CC31-01C3-5DE9-E2DFF64E7CC7&#125;Management group: MASKED
-This seems to be related to the discovery of public queues on some servers that has none. One quick fix, or rather work-around, is to override the discovery on these servers to set DiscoverPublic to False.
-
+The MSMQ Management Pack seems to have a few problems with it’s discovery script that can lead to the following error showing up in the log
         </p>
     </div>
 </article>
