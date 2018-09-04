@@ -10,3 +10,14 @@ categories:
 ---
 
 # {{ title }}
+
+## Abstract
+
+
+
+## Key Points
+
+
+
+## Afterthoughts
+
