@@ -8,18 +8,18 @@
     
         <meta name="keywords" content="OpsMgr,PoSH,Script,How-To" />
     
-    <meta name="description" content="Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig">
+    <meta name="description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
 <meta name="keywords" content="OpsMgr,PoSH,Script,How-To">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Replace&#x2F;Change a Gateway Server">
 <meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig">
+<meta property="og:description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Replace&#x2F;Change a Gateway Server">
-<meta name="twitter:description" content="Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just rig">
+<meta name="twitter:description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
     
 
     
@@ -167,7 +167,9 @@ ga('send', 'pageview');
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <h1 id="Description-of-problem"><a href="#Description-of-problem" class="headerlink" title="Description of problem"></a>Description of problem</h1><p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
+                    <h1 id="description-of-problem"><a class="markdownIt-Anchor" href="#description-of-problem"></a> Description of problem</h1>
+<p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>
+You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
 <p>Here’s basically what happens:</p>
 <ol>
 <li>You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.</li>
@@ -176,10 +178,12 @@ ga('send', 'pageview');
 <li>OpsMgr then tells GW2 to start accepting communication from AGENTX.</li>
 <li>OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.</li>
 </ol>
-<p>Spotted the problem?<br>This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent <em>before</em> the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.</p>
+<p>Spotted the problem?<br>
+This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent <em>before</em> the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.</p>
 <p>How do I get around this little <em>feature</em> then?</p>
 <p>No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are <a href="http://www.systemcentercentral.com/Forums/tabid/60/IndexID/19305/Default.aspx#vwcComments19305" title="System Center Central" target="_blank" rel="noopener">out there</a> allready, but in different contexts, hence this post.</p>
-<h2 id="First-step-Install-the-new-Gateway"><a href="#First-step-Install-the-new-Gateway" class="headerlink" title="First step:  Install the new Gateway"></a>First step:  Install the new Gateway</h2><p><a href="http://technet.microsoft.com/en-us/library/bb432149.aspx" title="Deploying Gateway Server in the Multiple Server, Single Management Group Scenario" target="_blank" rel="noopener">Documentation on this</a> from Microsoft is good enough, but here’s the short version.</p>
+<h2 id="first-step-install-the-new-gateway"><a class="markdownIt-Anchor" href="#first-step-install-the-new-gateway"></a> First step:  Install the new Gateway</h2>
+<p><a href="http://technet.microsoft.com/en-us/library/bb432149.aspx" title="Deploying Gateway Server in the Multiple Server, Single Management Group Scenario" target="_blank" rel="noopener">Documentation on this</a> from Microsoft is good enough, but here’s the short version.</p>
 <ol>
 <li>Verify name resolution to and from Gateway server and Management Server</li>
 <li><a href="http://technet.microsoft.com/en-us/library/bb735408.aspx" title="Authentication and Data Encryption for Windows Computers in Operations Manager 2007" target="_blank" rel="noopener">Create certificate</a> for the Gateway server</li>
@@ -190,7 +194,9 @@ ga('send', 'pageview');
 <li>Wait</li>
 </ol>
 <p>The wait is for the gateway server to get all needed configuration from RMS and to download all neccesary management packs, run all the discovery scripts and so on. When the Operations Manager event log has calmed down a bit, move to step two.</p>
-<h2 id="Second-step-Configure-Agent-Failover"><a href="#Second-step-Configure-Agent-Failover" class="headerlink" title="Second step: Configure Agent Failover"></a>Second step: Configure Agent Failover</h2><p>Connect to an Operations Manager Command Shell. Any will do, as long as it’s connected to the correct Management Group.<br>Then run the following script:</p>
+<h2 id="second-step-configure-agent-failover"><a class="markdownIt-Anchor" href="#second-step-configure-agent-failover"></a> Second step: Configure Agent Failover</h2>
+<p>Connect to an Operations Manager Command Shell. Any will do, as long as it’s connected to the correct Management Group.<br>
+Then run the following script:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primaryGW</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW2.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$failoverGw</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.primarymanagementservername <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$primaryGW</span> -FailoverServer: <span class="variable">$failoverGw</span></span><br></pre></td></tr></table></figure>
 <p>Remember to change “GW1.domain.local” to you OLD Gateway servername and “GW2.domain.local” to your NEW Gateway servername.</p>
 <p>If you don’t know powershell, this script basically configures all agents using the old Gateway to use the new one as primare, but keep the old one as a fail-over server. The Gateways will still get to know the changes before the agents, but since the old on is still listening to the agents (though, as the fail-over host) it will be able to tell them to go to the new one, GW2.</p>
@@ -201,7 +207,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/" data-id="cjldoxyez003tp8gi0mjj740u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/" data-id="cjlnme5rz003sm0gionixq1s8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

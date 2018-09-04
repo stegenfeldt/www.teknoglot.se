@@ -173,11 +173,16 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            BackgroundI get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.
-Don’t get me wrong now.SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.
-My ChecklistHere’s my list of questions you have to ask to find if SQL Express is the correct choice.
-1. Do your applications support SQL Express?If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.
-2. Do your applications fit the hardware limitations?SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems a bit tight to me for any production data. Also, on SQL Express 2005, according to Microsoft, you cannot run parallel queries.
+             Background
+I get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.
+Don’t get me wrong now.
+SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.
+ My Checklist
+Here’s my list of questions you have to ask to find if SQL Express is the correct choice.
+ 1. Do your applications support SQL Express?
+If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.
+ 2. Do your applications fit the hardware limitations?
+SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems a bit tight to me for any production data. Also, on SQL Express 2005, according to Microsoft, you cannot run parallel queries.
 
 ”SQL Server Express can install and run on multiprocessor machines, but only a single CPU is used at any time. Internally, the engine limits the number of user scheduler threads to 1 so that only 1 CPU is used at a time. Features such as parallel query execution are not supported because of the single CPU limit.”
 
@@ -266,8 +271,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
+ Quick Details
+              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI         
         </p>
     </div>
 </article>
@@ -298,12 +304,17 @@ Quick Details              File Name:        Message Queuing System Center Opera
     
 
         <p class="article-excerpt">
-            ProblemHere’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
-SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
+             Problem
+Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.
+This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
+ Symptoms
+This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
 
-Probable CauseI am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
+ Probable Cause
+I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.
+Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
 wscript.echo "Line XX:" &amp; Err.Number
         </p>
     </div>
@@ -405,21 +416,28 @@ Instead of blogging about mostly anything like
 
         <p class="article-excerpt">
             [updated, scroll down if you want to skip some nonsense]
-So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
+So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).
+After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
 I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.
 What I have come down to right now is doing the following:
 
-sudo apt-get install module-assistantThis will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
+sudo apt-get install module-assistant
+This will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
 
-Going back to the “Software Sources” under i check the “Unsopported updates”.Then i execute
+Going back to the “Software Sources” under i check the “Unsopported updates”.
+Then i execute
 
-sudo apt-get autoremovesudo apt-get install nvidia-177-kernel-sourcem-a auto-install nvidiaUPDATE!
+sudo apt-get autoremove
+sudo apt-get install nvidia-177-kernel-source
+m-a auto-install nvidia
+UPDATE!
 
 After fiddling around with this Laptop (Lenovo Thinkpad T61) I really just needed these three steps to fix the problem. All of them from X using the regular nv-drivers.
 
 In a terminal, run sudo apt-get install module assistant
 In a terminal, run sudo m-a auto-install nvidia
-Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.Hopefully, this might help someone. It did work for me and I am now able to work with wobbly windows and all that crap. (Besides some serious 3d stuff ;) )
+Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.
+Hopefully, this might help someone. It did work for me and I am now able to work with wobbly windows and all that crap. (Besides some serious 3d stuff 😉 )
 
 Anyway. Since I did not save the urls, I cannot give credit to those who have pointed to stuff that did help me on the way, but I’ve actually not find information anywhere yet that solve the problem totally and, well… that’s why I did decide to post in here.
         </p>
@@ -452,13 +470,15 @@ Anyway. Since I did not save the urls, I cannot give credit to those who have po
 Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recovery Manager for SharePoint – but also database and application servers like SAP and Oracle E-business.
 I have lately been working with some of their MOSS-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.
 Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. eXc does it’s thing in the Microsoft SCOM/MOM arena while VizionCore dances with virtualization techniques. At least, that’s where I’ve come across them both.
-How will this affect me, then?Not very much it would seem. Here’s what VizionCore says about their part:
+How will this affect me, then?
+Not very much it would seem. Here’s what VizionCore says about their part:
 
 “The completion of this acquisition signals another major step in Vizioncore’s evolution and growth in the virtualization market,” said David Bieneman, CEO of VizionCore. “While maintaining the autonomy that has made us successful, we will also be able to leverage technologies developed by and acquired by Quest, such as Invirtus and Provision Networks, to enhance and expand the feature sets of VizionCore products. This is very positive news for virtualization customers who will enjoy a richer and robust product set that will help them achieve greater levels of ROI from their investments in virtualization platforms.”
 
 In my head, this means that VizionCore will still be VizionCore but with, perhaps, tighter integration with Invirtus. Invirtus was, by the way, a “Strategic Partner” to VizionCore even before the acquisition.
 eXc then? Well. It is not clearly stated in the press-release as far as I can tell. We can only hope that they will make the decision to rebuild their not-even-web1.0 excuse for a website. And what the hell is up with that logo? Fortunately for us, their design skills – or lack thereof – does not reflect their programming skills. But still… no sane man or woman uses Comic Sans in a logo. Not even jokingly. Actually, using Comic Sans at all should be considered an act of felony.
-references:
+ references:
+
 Quest Software Continues Its Value Add to Microsoft System Center
 Quest Software Completes Acquisition of VizionCore…
 

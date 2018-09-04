@@ -173,15 +173,16 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
+            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
 As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.
-We will pretty quickly go “advanced” this time, so buckle up. ;)
+We will pretty quickly go “advanced” this time, so buckle up. 😉
 
 Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.
-Why Is It Faster?We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
-I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
+ Why Is It Faster?
+We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
+I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
 Using this method saves us a bunch of over-head and a couple of round-trips to the SDK-service.
-The Challenge
+ The Challenge
         </p>
     </div>
 </article>
@@ -208,15 +209,18 @@ The Challenge
     
 
         <p class="article-excerpt">
-            In the last post, OpsMgr 2012 Agent &amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.
-To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.
+            In the last post, OpsMgr 2012 Agent &amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.
+To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.
 
-InputsTo use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.
+ Inputs
+To use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.
 # Input SCOM Management Server to connect to in this session[string]$inputScomMS = "scomms01.domain.local"# Input an existing agent you want to modify[string]$inputTargetAgent = "*.domain.local"
 
-Note: If you are using load-balanced SDK-services, or “Data Access Services”, pointing $inputScomMS to that virtual host-name will work perfectly fine.This example uses a wild-card for the agent selection and I guess it’s the most likely scenario for this script, but a single host-name obviously works fine as well. Supported wildcard selections are documented at TechNet. An array of computer-names or a comma-separated list, however, will not work. You could easily add that functionality but it’s out of scope for this example.
+Note: If you are using load-balanced SDK-services, or “Data Access Services”, pointing $inputScomMS to that virtual host-name will work perfectly fine.
+This example uses a wild-card for the agent selection and I guess it’s the most likely scenario for this script, but a single host-name obviously works fine as well. Supported wildcard selections are documented at TechNet. An array of computer-names or a comma-separated list, however, will not work. You could easily add that functionality but it’s out of scope for this example.
 
-Connect to Your Management GroupTo run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the $inputScomMS setting. If loading the module fails–maybe it is not installed–we will exit the script.
+ Connect to Your Management Group
+To run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the $inputScomMS setting. If loading the module fails–maybe it is not installed–we will exit the script.
 # Check if OperationsManager module is loadedIf (Get-Module -Name "OperationsManager") &#123;    try &#123;        # Try to load the module        Import-Module -Name "OperationsManager"    &#125; catch &#123;        # Did not work, exit the script        Write-Output "Could not load Operations Manager module"        exit    &#125;&#125;# Module is loaded, connect to Management Group/ServerNew-SCOMManagementGroupConnection -ComputerName $inputScomMS
         </p>
     </div>
@@ -251,7 +255,8 @@ Connect to Your Management GroupTo run any script against an Operations Manager 
             I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2.
 Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.
 
-The cmdletFirst of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOMnoun and to list them all in the console you can execute the following command:
+ The cmdlet
+First of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOM_noun_ and to list them all in the console you can execute the following command:
 get-command *SCOM*
 The cmdlet we are looking for to set and manage primary and fail-over management servers is
 Get-SCOMParentManagementServer
@@ -263,7 +268,8 @@ SYNTAX
 Set-SCOMParentManagementServer -Agent -PrimaryServer [-PassThru ] [-Confirm ] [-WhatIf ] []
 Set-SCOMParentManagementServer -Agent -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []
 Set-SCOMParentManagementServer -GatewayServer -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []
-Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []But that’s so boring to read the manual is a bit sketchy on how it behaves and the limitations.
+Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []
+But that’s so boring to read the manual is a bit sketchy on how it behaves and the limitations.
 
         </p>
     </div>

@@ -173,16 +173,25 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -Operations Manager
-PreparationThe usual routine applies. Check the KB for instructions and take not ofknown issues. Check if Kevin Holman has written something about it. As thisis an update roll up, I pre-emptively expect that gotchas in UR3 mayapply. Remember to open the update catalog in IE as the downloader is notworking in other browsers.
+            Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -
+Operations Manager
+ Preparation
+The usual routine applies. Check the KB for instructions and take not of
+known issues. Check if Kevin Holman has written something about it. As this
+is an update roll up, I pre-emptively expect that gotchas in UR3 may
+apply. Remember to open the update catalog in IE as the downloader is not
+working in other browsers.
 Download, unpack, toss what languages that does not apply to your organization.
-It is advised to disable any mail-generating alert subscriptions during theupgrade process to avoid unnecessary spammage.
-Issues - So Far[updated: 2014-11-03]
+It is advised to disable any mail-generating alert subscriptions during the
+upgrade process to avoid unnecessary spammage.
+ Issues - So Far
+[updated: 2014-11-03]
 
 Got a few problems with cross-platform monitoring templates not working after the update. This was due to missing files in the update package. Make sure you download the updated version!
 
-Have not updated a customer using gateways yet, so unless theyhave fixed the issues in UR3, expect an update to this section soon.
-Planning
+Have not updated a customer using gateways yet, so unless they
+have fixed the issues in UR3, expect an update to this section soon.
+ Planning
         </p>
     </div>
 </article>
@@ -209,14 +218,19 @@ Planning
     
 
         <p class="article-excerpt">
-            Story-timeI saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some DB-queries. I kind of liked the look of their product though and have kept an eye on them now and then.Fast-forward to may 21st this year and the release of version 1.8 and a whole slew of nifty little features. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… other products for. That, coupled with some new videos on their Youtube-channel, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.
+             Story-time
+I saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some DB-queries. I kind of liked the look of their product though and have kept an eye on them now and then.
+Fast-forward to may 21st this year and the release of version 1.8 and a whole slew of nifty little features. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… other products for. That, coupled with some new videos on their Youtube-channel, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.
 One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – PDT is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.
-The InstallationFirst, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.
+
+ The Installation
+First, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.
+
 Doubleclicked the installation packaged and it now tells me it will install a few pre-requisites and configure the website for me. Next!
 
 The EULA I am sure each one of you are reading. Next!
-Installing, or rather configuring, IIS and pre-requisites for me. Very nice. Next!
 
+Installing, or rather configuring, IIS and pre-requisites for me. Very nice. Next!
         </p>
     </div>
 </article>
@@ -248,23 +262,32 @@ Installing, or rather configuring, IIS and pre-requisites for me. Very nice. Nex
 
         <p class="article-excerpt">
             Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.
-PreparationUsual routine, check the KB for instructions and known issues. Double-check with Holman’s blog and take note of any irregularities.Download, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.
+ Preparation
+Usual routine, check the KB for instructions and known issues. Double-check with Holman’s blog and take note of any irregularities.
+Download, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.
 Notify affected parts of the organisation, I’ve had the benefit to work with good release managers at all clients so far, so no biggie. Then try to close as many consoles as possible to avoid any blocks in database.
 Make sure you have the credentials for the Data Access service account at hand.
-Issues - So Far(updated 2014-09-02)
+ Issues - So Far
+(updated 2014-09-02)
+
 
 The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.
+
+
 A few dashboards (the 2012 versions) went blank. Self-healed after some aggregation job over night. From what I’ve noticed, only the SLA Dashboards are affected but never all of them.
+
 
 Agents behind daisy-chained Gateways is not identified as in need of an update. “Repairing” them from the Console is one work-around that seems to work consistently.
 
+
 A few agents that was updated using Windows Update did not report as updated. Repair fixed that nuisance.
+
 
 Had to flush the cache on a few Gateways to avoid heartbeat failures from their agents. Only daisy-chained ones if I recall correctly.
 
 
 
-Planning
+ Planning
         </p>
     </div>
 </article>
@@ -291,12 +314,16 @@ Planning
     
 
         <p class="article-excerpt">
-            BackgroundI have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home network/lab. Browsing around the CloudFlare JSON API I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by Mikrotik’s routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.
-AttributionMy current script is a modified version of a script developed by Konstantin Antselovich.
-Original script: http://konstant1n.livejournal.com/9759.html
-Original Author website: http://konstantin.antselovich.com/
+             Background
+I have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home network/lab. Browsing around the CloudFlare JSON API I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by Mikrotik’s routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.
+ Attribution
+My current script is a modified version of a script developed by Konstantin Antselovich.
+Original script: http://konstant1n.livejournal.com/9759.html
+Original Author website: http://konstantin.antselovich.com/
 Thanks!
-How you do itWhat you need
+ How you do it
+ What you need
+
 RouterOS v6+ for HTTPS support
 Cloudflare API key, aka “Token”, found at the account page
 Cloudflare DNS Zone name
@@ -384,15 +411,16 @@ It is a fairly simple task to complete b
     
 
         <p class="article-excerpt">
-            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
+            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
 As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.
-We will pretty quickly go “advanced” this time, so buckle up. ;)
+We will pretty quickly go “advanced” this time, so buckle up. 😉
 
 Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.
-Why Is It Faster?We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
-I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
+ Why Is It Faster?
+We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
+I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
 Using this method saves us a bunch of over-head and a couple of round-trips to the SDK-service.
-The Challenge
+ The Challenge
         </p>
     </div>
 </article>
@@ -419,15 +447,18 @@ The Challenge
     
 
         <p class="article-excerpt">
-            In the last post, OpsMgr 2012 Agent &amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.
-To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.
+            In the last post, OpsMgr 2012 Agent &amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactive setting. This is absolutely useful when you got this specific agent that you need to configure with a specific fail-over management server.
+To spice it up a little, we are going to add a little intelligence to it and enable wild-card selections while at it. The scenario we are building this script for is that now and then you want to make sure that certain agents have fail-over management servers configured. You also want to make sure that all management servers that are not the primary management server of any selected agent will be in that list of fail-over servers. This would include any new management servers as well as exclude any removed ones. In short, make sure your agent fail-over settings are up-to-date with the current environment.
 
-InputsTo use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.
+ Inputs
+To use this script you need to know which management server you should connect your powershell session to and which agent, or agents, you want to check and configure.
 # Input SCOM Management Server to connect to in this session[string]$inputScomMS = "scomms01.domain.local"# Input an existing agent you want to modify[string]$inputTargetAgent = "*.domain.local"
 
-Note: If you are using load-balanced SDK-services, or “Data Access Services”, pointing $inputScomMS to that virtual host-name will work perfectly fine.This example uses a wild-card for the agent selection and I guess it’s the most likely scenario for this script, but a single host-name obviously works fine as well. Supported wildcard selections are documented at TechNet. An array of computer-names or a comma-separated list, however, will not work. You could easily add that functionality but it’s out of scope for this example.
+Note: If you are using load-balanced SDK-services, or “Data Access Services”, pointing $inputScomMS to that virtual host-name will work perfectly fine.
+This example uses a wild-card for the agent selection and I guess it’s the most likely scenario for this script, but a single host-name obviously works fine as well. Supported wildcard selections are documented at TechNet. An array of computer-names or a comma-separated list, however, will not work. You could easily add that functionality but it’s out of scope for this example.
 
-Connect to Your Management GroupTo run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the $inputScomMS setting. If loading the module fails–maybe it is not installed–we will exit the script.
+ Connect to Your Management Group
+To run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the $inputScomMS setting. If loading the module fails–maybe it is not installed–we will exit the script.
 # Check if OperationsManager module is loadedIf (Get-Module -Name "OperationsManager") &#123;    try &#123;        # Try to load the module        Import-Module -Name "OperationsManager"    &#125; catch &#123;        # Did not work, exit the script        Write-Output "Could not load Operations Manager module"        exit    &#125;&#125;# Module is loaded, connect to Management Group/ServerNew-SCOMManagementGroupConnection -ComputerName $inputScomMS
         </p>
     </div>
@@ -462,7 +493,7 @@ Connect to Your Management GroupTo run any script against an Operations Manager 
             The menus are looking a bit off as you may have noticed.
 I guess it’s an issue with WordPress 3.4 and Superfish and are trying to figure out where it goes haywire.
 Sorry for the inconvenience.
-UpdateI
+ Update
         </p>
     </div>
 </article>
@@ -492,7 +523,8 @@ UpdateI
             I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2.
 Now that System Center 2012 Operations Manager is RTM and users are starting to explore the differences between the versions I see more and more questions on how you do, in OpsMgr 2012, what you did in OpsMgr 2007. In a few posts henceforth I will go through Agent and Gateway server fail-over configuration and management. In this first post I’ll look at the very basics of fail-over configuration, the cmdlets to use and some one-liners.
 
-The cmdletFirst of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOMnoun and to list them all in the console you can execute the following command:
+ The cmdlet
+First of all, the cmdlets of OpsMgr powershell have all got new names looking like Verb-SCOM_noun_ and to list them all in the console you can execute the following command:
 get-command *SCOM*
 The cmdlet we are looking for to set and manage primary and fail-over management servers is
 Get-SCOMParentManagementServer
@@ -504,7 +536,8 @@ SYNTAX
 Set-SCOMParentManagementServer -Agent -PrimaryServer [-PassThru ] [-Confirm ] [-WhatIf ] []
 Set-SCOMParentManagementServer -Agent -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []
 Set-SCOMParentManagementServer -GatewayServer -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []
-Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []But that’s so boring to read the manual is a bit sketchy on how it behaves and the limitations.
+Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []
+But that’s so boring to read the manual is a bit sketchy on how it behaves and the limitations.
 
         </p>
     </div>
@@ -536,13 +569,16 @@ Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confi
     
 
         <p class="article-excerpt">
-            PreludeNow that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fully Highly Available SCOM-environment both complex and frustrating to support and with little gain at that. With that gone and the SDK Service, or Data Access Service, thriving on all the Management Servers HA suddenly became pretty simple. All you have to do in SCOM2012 to make sure your management groups keep on kicking is to have at-least two Management Servers and your databases clustered.
+             Prelude
+Now that System Center Operations Manager no longer has that pesky Root Management Server role; a server role that in larger environments quickly became the choking point and made creating a fully Highly Available SCOM-environment both complex and frustrating to support and with little gain at that. With that gone and the SDK Service, or Data Access Service, thriving on all the Management Servers HA suddenly became pretty simple. All you have to do in SCOM2012 to make sure your management groups keep on kicking is to have at-least two Management Servers and your databases clustered.
 This new distributed architecture does not only give easy HA, it also makes it possible to connect to the SDK-service—be it using the Operations Console or powershell to name two options—on any Management Server. This, in turn, provides for a completely new level of scalability. Choked on sessions? Deploy a new Management Server!
-Anyway… given all this scalability and HA, would it not be nice if you could load-balance all these SDK-sessions you will be running from System Center Virtual Machine Manager, System Center Service Manager, System Center Orchestrator, regular scheduled powershell scripts and what-not?
-Of course it would! And you can! The simple solution is to use the built-in Network Load Balancer (NLB for short) feature in Windows Server and that’s what we’re going to discuss in this post.Before we go, I’d like to point to a great article written by Justin Cook that is covering most bases but in a less for-dummies way. So, yeah… I suppose this is the for-dummies version then. ;)
+Anyway… given all this scalability and HA, would it not be nice if you could load-balance all these SDK-sessions you will be running from System Center Virtual Machine Manager, System Center Service Manager, System Center Orchestrator, regular scheduled powershell scripts and what-not?
+Of course it would! And you can! The simple solution is to use the built-in Network Load Balancer (NLB for short) feature in Windows Server and that’s what we’re going to discuss in this post.
+Before we go, I’d like to point to a great article written by Justin Cook that is covering most bases but in a less for-dummies way. So, yeah… I suppose this is the for-dummies version then. 😉
 Enjoy!
 
-PrerequisitesWe need to have the Network Load Balancing feature installed on all our targeted Management servers. The quick way to do this is using command-line (Windows Server 2008 R2 or later?).
+ Prerequisites
+We need to have the Network Load Balancing feature installed on all our targeted Management servers. The quick way to do this is using command-line (Windows Server 2008 R2 or later?).
 dism /online /enable-feature /featurename:NetworkLoadBalancingFullServer
         </p>
     </div>

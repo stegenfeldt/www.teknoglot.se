@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="This update hasn’t showed up in the MP Catalog yet, but the System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here. Besides SUSE 11 support, here’s the short overview.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Microsoft Adds support for SUSE 11 in OpsMgr R2">
 <meta name="twitter:description" content="This update hasn’t showed up in the MP Catalog yet, but the System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here. Besides SUSE 11 support, here’s the short overview.">
@@ -170,14 +170,21 @@ ga('send', 'pageview');
                     <p>This update hasn’t showed up in the <acronym title="Management Pack">MP</acronym> Catalog yet, but the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=4a41a8be-0a37-4bd2-b5b1-026468b317fb" target="_blank" rel="noopener">System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here</a>.</p>
 <p>Besides SUSE 11 support, here’s the short overview.</p>
 <blockquote>
-<p>The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.<br><strong>Feature Summary:</strong><br>The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:</p>
+<p>The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.<br>
+<strong>Feature Summary:</strong><br>
+The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:</p>
+</blockquote>
+<blockquote>
 <ul>
-<li>Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions)<em> Support of Solaris Zones</em> Fix for defunct Process issue<em> The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks.</em> The Cross Platform Agent may not restart after the AIX server reboots.</li>
+<li>Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions)* Support of Solaris Zones* Fix for defunct Process issue* The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks.* The Cross Platform Agent may not restart after the AIX server reboots.</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>The latest versions of all the Operations Manager 2007 R2 Unix/Linux agents are included in this update.</p>
 </blockquote>
-<p>Perfect timing, I must say, since I really need this today. :D</p>
-<p><strong><em>Update:</em></strong><br>This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.</p>
+<p>Perfect timing, I must say, since I really need this today. 😄</p>
+<p><em><strong>Update:</strong></em><br>
+This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.</p>
 <p>So, the installation goes somewhat like this:</p>
 <ol>
 <li>Install the Software Update (pick the right Architecture) on all OpsMgr R2 Servers</li>
@@ -207,7 +214,7 @@ ga('send', 'pageview');
 </ul>
 <p>Files added:</p>
 <ul>
-<li>Microsoft.Linux.SLES.11.MP</li>
+<li><a href="http://Microsoft.Linux.SLES.11.MP" target="_blank" rel="noopener">Microsoft.Linux.SLES.11.MP</a></li>
 </ul>
 <p>All in all, the update contains the following fixes:</p>
 <ul>
@@ -223,7 +230,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/" data-id="cjldoxydt001tp8gixocv5sji" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/" data-id="cjlnme5qo001rm0gi21a9lskt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

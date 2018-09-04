@@ -173,12 +173,16 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            BackgroundI have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home network/lab. Browsing around the CloudFlare JSON API I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by Mikrotik’s routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.
-AttributionMy current script is a modified version of a script developed by Konstantin Antselovich.
-Original script: http://konstant1n.livejournal.com/9759.html
-Original Author website: http://konstantin.antselovich.com/
+             Background
+I have, for a time, been using CloudFlare for CDN, Optimizations and DNS Management for this and a few other domains. At the same time, I’ve been using DynDNS to provide name resolution to my home network/lab. Browsing around the CloudFlare JSON API I noticed that I can update DNS records through some fairly simple HTTP GET requests, and since the RouterOS (the operating system used by Mikrotik’s routerboards) has support for some pretty decent scripting I decided to let my router update CloudFlare for some custom and free dynamic DNS resolution.
+ Attribution
+My current script is a modified version of a script developed by Konstantin Antselovich.
+Original script: http://konstant1n.livejournal.com/9759.html
+Original Author website: http://konstantin.antselovich.com/
 Thanks!
-How you do itWhat you need
+ How you do it
+ What you need
+
 RouterOS v6+ for HTTPS support
 Cloudflare API key, aka “Token”, found at the account page
 Cloudflare DNS Zone name
@@ -224,15 +228,16 @@ Name of the external router interface
     
 
         <p class="article-excerpt">
-            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
+            Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure that they all have up-to-date fail-over settings. We are doing the same thing in this one, but making it go faster. In my lab, it’s about five times faster in fact and I only have about 20 agents to play with. Not really a big deal, but scale it up a bit and add a few thousand agents and the pay-off will be very significant.
 As usual, the script will work as is, but it really is more to show the concept. You would have to add filtering to make sure you don’t mix agents behind gateway servers and agents behind management servers. Giving an agent behind a gateway a management servers as it’s fail-over server will likely not help you in any way.
-We will pretty quickly go “advanced” this time, so buckle up. ;)
+We will pretty quickly go “advanced” this time, so buckle up. 😉
 
 Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.
-Why Is It Faster?We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
-I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
+ Why Is It Faster?
+We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the Set-SCOMParentManagementServer cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.
+I don’t like that. A brief look at the agent object class, Microsoft.EnterpriseManagement.Administration.AgentManagedComputer, revealed a method called SetManagementServers. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!
 Using this method saves us a bunch of over-head and a couple of round-trips to the SDK-service.
-The Challenge
+ The Challenge
         </p>
     </div>
 </article>
@@ -279,7 +284,8 @@ Although you do configure your forwarders using Operations Manager, removing the
 DisableACSForwarders
 It is zipped to avoid security alerts, but as with any script found on the internet I implore to to read the code before actually running it.
 Anyway, you can use it in a couple of ways.
-To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.For example:
+To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.
+For example:
 C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglot.localACS Forwarder name (wildcard): *.teknoglot.local
         </p>
     </div>
@@ -359,7 +365,9 @@ This time I’ve basically put parameter support in it to make it e
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+             Description of problem
+If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.
+You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
 Here’s basically what happens:
 
 You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
@@ -368,10 +376,12 @@ GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops 
 OpsMgr then tells GW2 to start accepting communication from AGENTX.
 OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
 
-Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+Spotted the problem?
+This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
 How do I get around this little feature then?
 No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are out there allready, but in different contexts, hence this post.
-First step:  Install the new GatewayDocumentation on this from Microsoft is good enough, but here’s the short version.
+ First step:  Install the new Gateway
+Documentation on this from Microsoft is good enough, but here’s the short version.
 
 Verify name resolution to and from Gateway server and Management Server
 Create certificate for the Gateway server
@@ -407,12 +417,17 @@ Wait
     
 
         <p class="article-excerpt">
-            ProblemHere’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
-SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
+             Problem
+Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.
+This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
+ Symptoms
+This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
 
-Probable CauseI am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
+ Probable Cause
+I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.
+Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
 wscript.echo "Line XX:" &amp; Err.Number
         </p>
     </div>
@@ -484,7 +499,8 @@ Read more about it at Jon
     
 
         <p class="article-excerpt">
-            I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c
+            I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.
+Since we’re not in VB6 och .Net i 
         </p>
     </div>
 </article>

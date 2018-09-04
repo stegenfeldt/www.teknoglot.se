@@ -181,7 +181,10 @@ SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has 
 Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
 
 It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
-Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
+ Let’s get to it
+When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.
+I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.
+The only error I got this time was the following:
 Log Name:      Operations ManagerSource:        Health Service ModulesDate:          2010-09-02 11:19:12Event ID:      11001Task Category: NoneLevel:         ErrorKeywords:      ClassicUser:          N/AComputer:      CENSOREDDescription:Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.One or more workflows were affected by this.Workflow name: CENSORED.MP.CLASS.DISCOVERYInstance name: CENSORED_DEVICENAMEInstance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;Management group: CENSORED
 I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the PowerMIB into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.
 After a bit of intense staring i noticed what you see in the screenshot.
@@ -212,12 +215,14 @@ After a bit of intense staring i noticed what you see in the screenshot.
     
 
         <p class="article-excerpt">
-            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
-PreparationsRead the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)
+            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
+ Preparations
+Read the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. 😉
 I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
 # yum groupinstall "Development Tools"# yum install kernel-headers
 I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
-The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.Thank you for making it easy for us Microsoft!
+The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.
+Thank you for making it easy for us Microsoft!
 
 Here’s a direct link to the search on the current name.
 And here’s a direct link to the actual download page.
@@ -316,7 +321,7 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the 
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>

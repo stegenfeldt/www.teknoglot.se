@@ -7,134 +7,134 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/code/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/code/vbs/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/tb/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/sql/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/winvista/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/code/posh/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/windows/winxp/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/Linux/sles/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/Linux/ubuntu/</loc>
-        <lastmod>2017-06-05T12:55:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/opsmgr2012/</loc>
-        <lastmod>2017-09-28T15:57:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/topics/Events/</loc>
-        <lastmod>2017-09-28T22:16:40.000Z</lastmod>
+        <lastmod>2018-09-04T11:15:17.712Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/topics/Events/MSIgnite-2017/</loc>
-        <lastmod>2017-09-28T22:16:40.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/opsmgr2007/</loc>
-        <lastmod>2018-08-28T12:35:24.351Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/mikrotik/</loc>
-        <lastmod>2018-08-28T12:36:56.478Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/Linux/</loc>
-        <lastmod>2018-08-28T13:02:24.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/Linux/rhes/</loc>
-        <lastmod>2018-08-28T13:02:24.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/windows/</loc>
-        <lastmod>2018-08-28T13:23:19.952Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/topics/ms/</loc>
-        <lastmod>2018-09-03T08:37:51.948Z</lastmod>
+        <lastmod>2018-09-04T11:15:17.712Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.teknoglot.se/topics/ms/opsmgr2016/</loc>
-        <lastmod>2018-09-03T08:37:51.948Z</lastmod>
+        <lastmod>2018-09-04T11:15:17.713Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/mikrotik/</loc>
+        <lastmod>2018-09-04T11:15:17.718Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Linux/rhes/</loc>
+        <lastmod>2018-09-04T11:15:17.721Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/winvista/</loc>
+        <lastmod>2018-09-04T11:15:17.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Linux/sles/</loc>
+        <lastmod>2018-09-04T11:15:17.728Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Linux/ubuntu/</loc>
+        <lastmod>2018-09-04T11:15:17.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/code/posh/</loc>
+        <lastmod>2018-09-04T11:15:17.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/windows/</loc>
+        <lastmod>2018-09-04T11:15:17.751Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/windows/winxp/</loc>
+        <lastmod>2018-09-04T11:15:17.751Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/tb/</loc>
+        <lastmod>2018-09-04T11:15:17.752Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/opsmgr2012/</loc>
+        <lastmod>2018-09-04T11:15:17.754Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Linux/</loc>
+        <lastmod>2018-09-04T11:15:17.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/code/</loc>
+        <lastmod>2018-09-04T11:15:17.762Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/code/vbs/</loc>
+        <lastmod>2018-09-04T11:15:17.762Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/sql/</loc>
+        <lastmod>2018-09-04T11:15:17.763Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/</loc>
+        <lastmod>2018-09-04T11:15:17.764Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/opsmgr2007/</loc>
+        <lastmod>2018-09-04T11:15:17.764Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server. This time I’ve basically put parameter support in it to make it e">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Change Gateway Powershell Script">
 <meta name="twitter:description" content="This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server. This time I’ve basically put parameter support in it to make it e">
@@ -172,7 +172,8 @@ ga('send', 'pageview');
 <p>Here’s the script anyway.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Param</span>(<span class="variable">$OldGW</span>,<span class="variable">$NewGW</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable">$OldMS</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$OldGW</span>&#125;</span><br><span class="line"><span class="variable">$NewMS</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$NewGW</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.PrimaryManagementServerName <span class="nomarkup">-eq</span> <span class="variable">$OldGW</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = <span class="variable">$agents</span></span><br><span class="line"><span class="string">"Moving "</span> + <span class="variable">$agents</span>.count + <span class="string">" agents from "</span> + <span class="variable">$OldMS</span>.Name + <span class="string">" to "</span> + <span class="variable">$NewMS</span>.Name</span><br><span class="line"><span class="built_in">Start-Sleep</span> -m <span class="number">200</span></span><br><span class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$NewMS</span> -FailoverServer: <span class="variable">$OldMS</span></span><br></pre></td></tr></table></figure>
 <p>To use it, create a textfile called ChangeGW.ps1 and paste the code into it. Save the file somewhere neat (maybe C:Scripts) for easy access. If you don’t feel like copy/pasting, you can <a href="http://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/attachment/changegw/">download the script here</a>.</p>
-<p>To use it, open the Operations Manager Command Shell and type:<br><code>C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;</code></p>
+<p>To use it, open the Operations Manager Command Shell and type:<br>
+<code>C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;</code></p>
 <p>For example:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local</span><br></pre></td></tr></table></figure>
                 </div>
@@ -181,7 +182,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/" data-id="cjldoxycz000mp8gi7gkno0kb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/" data-id="cjlnme5ps000im0gil0q7n20f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

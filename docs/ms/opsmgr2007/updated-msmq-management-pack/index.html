@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Microsoft has released an update to the MSMQ (version 3) management pack. System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Updated MSMQ Management Pack v6.0.6615.0!">
 <meta name="twitter:description" content="Microsoft has released an update to the MSMQ (version 3) management pack. System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on:  12/14/2009Message Queuing (also known as MSMQ">
@@ -172,17 +172,23 @@ ga('send', 'pageview');
 <p>Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.</p>
 <blockquote>
 <p>The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.</p>
+</blockquote>
+<blockquote>
 <p>The Message Queuing Management Pack supports the following platforms:</p>
 <ul>
 <li>Windows Server 2003</li>
 <li>Windows XP</li>
 </ul>
-<p><strong><em>The Message Queuing Management Pack also supports monitoring clustered MSMQ components</em></strong></p>
+</blockquote>
+<blockquote>
+<p><em><strong>The Message Queuing Management Pack also supports monitoring clustered MSMQ components</strong></em></p>
 </blockquote>
 <p>Emphasis by me.</p>
 <p>Finally, MSMQ monitoring seems to be cluster aware, which might mean that the home-made pack i did to have those (numerous) queues covered could be passed on to the scrap-heap. This is also confirmed under “Changes in This Update”.</p>
 <blockquote>
 <p>The December 2009 update to this management pack includes the following change:</p>
+</blockquote>
+<blockquote>
 <ul>
 <li>Fixed a problem when working with an instance of MSMQ in a Cluster. The MP is now able to discover and monitor public and private queues in a cluster.</li>
 <li>Fixed a problem when discovering the local and cluster instance of MSMQ. The MP is now able to discover and monitor both instances.</li>
@@ -190,7 +196,8 @@ ga('send', 'pageview');
 </blockquote>
 <p>The confusing double RunAs profiles seems to have been cleaned up too (you only have to worry about one now) as well as fixing some sloppy mistakes in the previous scripts (no Option Explicit? C’mon Microsoft! You <em>write</em> the best practices, try to stick to them.) and generally improving display and documentation.</p>
 <p>Gonna import this to our staging environment today and let it roll during the holidays.</p>
-<p>Download and documentation:<br><a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en" title="http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en" target="_blank" rel="noopener">http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en</a></p>
+<p>Download and documentation:<br>
+<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en" title="http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en" target="_blank" rel="noopener">http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en</a></p>
 <p>Cheers! Oh, and happy holidays!</p>
 
                 </div>
@@ -199,7 +206,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/" data-id="cjldoxyfm004jp8giovmhmrj6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/" data-id="cjlnme5sm004km0gi7gzpeev7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Here’s a little something-something for the wicked. Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Managemen">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-28T15:57:00.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bulk disable ACS Forwarders (with wildcards)">
 <meta name="twitter:description" content="Here’s a little something-something for the wicked. Me and my apprentice is currently decommissioning an entire Management Group with a thousand (-ish) agents. Long story short, we got a new Managemen">
@@ -175,11 +175,13 @@ ga('send', 'pageview');
 <p><a href="http://teknoglotse.nfshost.com/wp-content/uploads/2011/07/DisableACSForwarders.zip" target="_blank" rel="noopener">DisableACSForwarders</a></p>
 <p>It is zipped to avoid security alerts, but as with any script found on the internet I implore to to read the code before actually running it.</p>
 <p>Anyway, you can use it in a couple of ways.</p>
-<p>To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.<br>For example:</p>
+<p>To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.<br>
+For example:</p>
 <figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\..\<span class="title">Scripts</span>&gt; .\<span class="title">DisableACSForwarders.ps1</span></span></span><br><span class="line"><span class="function"><span class="title">Root</span> <span class="title">Management</span> <span class="title">Server</span>: <span class="title">rms.teknoglot.local</span></span></span><br><span class="line"><span class="function"><span class="title">ACS</span> <span class="title">Forwarder</span> <span class="title">name</span> (<span class="title">wildcard</span>): *.<span class="title">teknoglot.local</span></span></span><br></pre></td></tr></table></figure>
 <p>You can also run it with parameters (for scheduling?) like this:</p>
 <figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\..\<span class="title">Scripts</span>&gt; .\<span class="title">DisableACSForwarders.ps1</span> <span class="title">rms.teknoglot.local</span> *.<span class="title">teknoglot.local</span></span></span><br></pre></td></tr></table></figure>
-<p>If you need to run the task with different credentials there’s a switch for that. Just add -UseCredentials to the command and you will be prompted for it.<br>Like this:</p>
+<p>If you need to run the task with different credentials there’s a switch for that. Just add -UseCredentials to the command and you will be prompted for it.<br>
+Like this:</p>
 <figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\..\<span class="title">Scripts</span>&gt; .\<span class="title">DisableACSForwarders.ps1</span> -<span class="title">UseCredentials</span></span></span><br></pre></td></tr></table></figure>
 <p>As you might already have realized, the wildcard search does not require actual wildcards. If you only want to disable the ACS forwarder on a single machine, just enter it’s FQDN. As for what wildcards it will accept; <a href="http://msdn.microsoft.com/en-us/library/aa717088%28VS.85%29.aspx" title="Supporting Wildcard Characters in Cmdlet Parameters" target="_blank" rel="noopener">anything supported by the powershell -like operator</a> is valid.</p>
 <p>[UPDATE!] You might get false failures when running the script on clustered machines because of a <a href="https://connect.microsoft.com/OpsMgr/feedback/details/523453/bug-with-microsoft-audit-collection-services-management-pack" title="Bug with Microsoft Audit Collection Services Management Pack" target="_blank" rel="noopener">bug in the AC Management Pack</a></p>
@@ -194,7 +196,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/" data-id="cjldoxycq000ep8gi905sv4ry" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/" data-id="cjlnme5pp000fm0gi58ky2diw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

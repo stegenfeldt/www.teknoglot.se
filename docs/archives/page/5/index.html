@@ -283,14 +283,21 @@ http://support.microsoft.com/kb/320081
             This update hasn’t showed up in the MP Catalog yet, but the System Center Operations Manager 2007 R2 Cross Platform Update can be downloaded here.
 Besides SUSE 11 support, here’s the short overview.
 
-The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.Feature Summary:The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:
+The System Center Operations Manager 2007 R2 Cross Platform Update adds fixes for a defunct process issue on Unix/Linux Servers, as well as, adds support for SUSE Linux Enterprise Server 11 (both 32-bit and 64-bit versions) and Solaris Zone support.
+Feature Summary:
+The System Center Operations Manager 2007 R2 Cross Platform Update supports the monitoring of Unix/Linux Servers including:
 
-Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions) Support of Solaris Zones Fix for defunct Process issue The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks. The Cross Platform Agent may not restart after the AIX server reboots.
+
+
+Monitoring of SUSE Linux Enterprise Server 11 servers (both 32-bit and 64-bit versions)* Support of Solaris Zones* Fix for defunct Process issue* The Cross Platform Agent may not discover soft partitions on Solaris systems. Therefore, the disk provider may be unloaded, and the Cross Platform Agent may stop collecting information from the system disks.* The Cross Platform Agent may not restart after the AIX server reboots.
+
+
 
 The latest versions of all the Operations Manager 2007 R2 Unix/Linux agents are included in this update.
 
-Perfect timing, I must say, since I really need this today. :D
-Update:This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.
+Perfect timing, I must say, since I really need this today. 😄
+Update:
+This is no small MP-update, which probably is the reason that we do not find it in the MP Catalog, but a ~250MB OpsMgr R2 Software Update. You need to run this on all Operations Manager Servers (RMS/MS, GW?) since it actually updates many of the agent Cross Platform binaries. It does add a new MP för SUSE 11 that you have to import from disk if you need it.
 So, the installation goes somewhat like this:
 
 Install the Software Update (pick the right Architecture) on all OpsMgr R2 Servers
@@ -298,27 +305,6 @@ Import the SUSE 11 MP if necessary
 Re-discover your Unix/Linux machines.
 
 Files updated in this update for R2:
-
-.Microsoft.Enterprisemanagement.UI.Administration.dll (Version 6.1.7043.1)
-.AgentManagementUnixAgentsscx-1.0.4-248.aix.5.ppc.lpp.gz
-.AgentManagementUnixAgentsscx-1.0.4-248.aix.6.ppc.lpp.gz
-.AgentManagementUnixAgentsscx-1.0.4-248.hpux.11iv2.ia64.depot.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.hpux.11iv2.parisc.depot.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.hpux.11iv3.ia64.depot.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.hpux.11iv3.parisc.depot.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.rhel.4.x64.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.rhel.4.x86.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.rhel.5.x64.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.rhel.5.x86.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.sles.10.x64.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.sles.10.x86.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.sles.9.x86.rpm
-.AgentManagementUnixAgentsscx-1.0.4-248.solaris.10.sparc.pkg.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.solaris.10.x86.pkg.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.solaris.8.sparc.pkg.Z
-.AgentManagementUnixAgentsscx-1.0.4-248.solaris.9.sparc.pkg.Z
-
-Files added:
         </p>
     </div>
 </article>
@@ -437,7 +423,9 @@ Fixed a
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+             Description of problem
+If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.
+You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
 Here’s basically what happens:
 
 You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
@@ -446,10 +434,12 @@ GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops 
 OpsMgr then tells GW2 to start accepting communication from AGENTX.
 OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
 
-Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+Spotted the problem?
+This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
 How do I get around this little feature then?
 No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are out there allready, but in different contexts, hence this post.
-First step:  Install the new GatewayDocumentation on this from Microsoft is good enough, but here’s the short version.
+ First step:  Install the new Gateway
+Documentation on this from Microsoft is good enough, but here’s the short version.
 
 Verify name resolution to and from Gateway server and Management Server
 Create certificate for the Gateway server
@@ -489,7 +479,8 @@ Wait
     
 
         <p class="article-excerpt">
-            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedor
+            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.
+Managed to get the Citrix client running (way more easy on Ubuntu than Fedo
         </p>
     </div>
 </article>

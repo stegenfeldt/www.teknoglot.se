@@ -213,12 +213,18 @@ It is a fairly simple task to complete b
     
 
         <p class="article-excerpt">
-            …and why you should not use itA DisclaimerI have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
-The Good NewsYes, you can use parameter replacement in you AlertName.
-With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like $Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$ into your alert description.
-In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.Of course I could not refrain from copy-pasting a $Data/Context…$ into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
-Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.
-How To Do ItIn simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.
+             …and why you should not use it
+ A Disclaimer
+I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
+ The Good News
+Yes, you can use parameter replacement in you AlertName.
+With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like Data/Context/Property[@Name=′SomeDataFromAPropertyBag′]Data/Context/Property[@Name=&#x27;SomeDataFromAPropertyBag&#x27;]Data/Context/Property[@Name=′SomeDataFromAPropertyBag′] into your alert description.
+In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.
+Of course I could not refrain from copy-pasting a Data/Context...Data/Context...Data/Context... into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
+Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.
+As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.
+ How To Do It
+In simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.
         </p>
     </div>
 </article>
@@ -293,7 +299,8 @@ Although you do configure your forwarders using Operations Manager, removing the
 DisableACSForwarders
 It is zipped to avoid security alerts, but as with any script found on the internet I implore to to read the code before actually running it.
 Anyway, you can use it in a couple of ways.
-To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.For example:
+To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.
+For example:
 C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglot.localACS Forwarder name (wildcard): *.teknoglot.local
         </p>
     </div>
@@ -326,7 +333,7 @@ C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglo
 
         <p class="article-excerpt">
             I’ve had this little visio drawing lying around on my desktop for a while now and I thought that it might be a nice thing to share.
-It is nothing ground breaking at all and all the information is avai
+It is nothing ground breaking at all and all the information is avai
         </p>
     </div>
 </article>
@@ -373,7 +380,10 @@ SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has 
 Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
 
 It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
-Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
+ Let’s get to it
+When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.
+I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.
+The only error I got this time was the following:
 Log Name:      Operations ManagerSource:        Health Service ModulesDate:          2010-09-02 11:19:12Event ID:      11001Task Category: NoneLevel:         ErrorKeywords:      ClassicUser:          N/AComputer:      CENSOREDDescription:Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.One or more workflows were affected by this.Workflow name: CENSORED.MP.CLASS.DISCOVERYInstance name: CENSORED_DEVICENAMEInstance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;Management group: CENSORED
 I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the PowerMIB into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.
 After a bit of intense staring i noticed what you see in the screenshot.
@@ -466,7 +476,7 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the 
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>
@@ -512,10 +522,14 @@ System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on: 
 Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
 
 The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+
+
 The Message Queuing Management Pack supports the following platforms:
 
 Windows Server 2003
 Windows XP
+
+
 
 The Message Queuing Management Pack also supports monitoring clustered MSMQ components
 
@@ -524,13 +538,12 @@ Finally, MSMQ monitoring seems to be cluster aware, which might mean that the ho
 
 The December 2009 update to this management pack includes the following change:
 
+
+
 Fixed a problem when working with an instance of MSMQ in a Cluster. The MP is now able to discover and monitor public and private queues in a cluster.
 Fixed a problem when discovering the local and cluster instance of MSMQ. The MP is now able to discover and monitor both instances.
 
 
-The confusing double RunAs profiles seems to have been cleaned up too (you only have to worry about one now) as well as fixing some sloppy mistakes in the previous scripts (no Option Explicit? C’mon Microsoft! You write the best practices, try to stick to them.) and generally improving display and documentation.
-Gonna import this to our staging environment today and let it roll during the holidays.
-Download and documentation:http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en
         </p>
     </div>
 </article>

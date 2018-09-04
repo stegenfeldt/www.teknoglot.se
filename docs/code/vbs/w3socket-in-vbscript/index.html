@@ -8,18 +8,18 @@
     
         <meta name="keywords" content="Script" />
     
-    <meta name="description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c">
+    <meta name="description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
 <meta name="keywords" content="Script">
 <meta property="og:type" content="article">
 <meta property="og:title" content="w3Socket in VBScript">
 <meta property="og:url" content="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c">
+<meta property="og:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="w3Socket in VBScript">
-<meta name="twitter:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.Since we’re not in VB6 och .Net i c">
+<meta name="twitter:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
     
 
     
@@ -167,11 +167,14 @@ ga('send', 'pageview');
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <p>I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.<br>Since we’re not in VB6 och .Net i cannot simply user Winsock as normally due to the lack of licensing features in <acronym title="VisualBasic Script">VBS</acronym>/<acronym title="Windows Scripting Host">WSH.</acronym></p>
+                    <p>I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.<br>
+Since we’re not in VB6 och .Net i cannot simply user Winsock as normally due to the lack of licensing features in <acronym title="VisualBasic Script">VBS</acronym>/<acronym title="Windows Scripting Host">WSH.</acronym></p>
 <p>Thankfully for me, <a href="http://www.dimac.com/" title="Dimac" target="_blank" rel="noopener">Dimac</a> has release a <a href="http://www.dimac.com/default3.asp?M=FreeDownloads/Menu.asp&amp;P=FreeDownloads/FreeDownloadsstart.asp" title="Dimac - Free Downloads" target="_blank" rel="noopener">nifty little component</a> for free that makes talking telnet in VBS very simple.</p>
-<p>I thought that, hey! I must share this!<br>So here’s an example in Classic VBS:</p>
+<p>I thought that, hey! I must share this!<br>
+So here’s an example in Classic VBS:</p>
 <figure class="highlight vbs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> oTelnet</span><br><span class="line">oTelnet = <span class="built_in">CreateObject</span>(Socket.Tcp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> oTelnet</span><br><span class="line">.DoTelnetEmulation = <span class="literal">True</span></span><br><span class="line">.TelnetEmulation = TTY</span><br><span class="line">.Host = <span class="number">192.168</span><span class="number">.242</span><span class="number">.1</span>:<span class="number">23</span></span><br><span class="line">.Open</span><br><span class="line">.WaitFor SLUSSEN login:</span><br><span class="line">.SendLine ANiftyUsename</span><br><span class="line">.WaitFor Password:</span><br><span class="line">.SendLine TEHP@ssw0rd</span><br><span class="line">.WaitFor ~ #</span><br><span class="line">.SendLine ifconfig</span><br><span class="line"><span class="built_in">MsgBox</span> .Buffer</span><br><span class="line">.Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> oTelnet = <span class="literal">Nothing</span></span><br></pre></td></tr></table></figure>
-<p>Not very hard at all. This one is connecting to my router (with fake user/pwd… DUH!) and there’s no support for setting the prompt type there, thus the “~ #”.<br>The result of running this script with correct login info gives me a popup with the routers <acronym title="Network Interface Card">NIC</acronym>-configuration.</p>
+<p>Not very hard at all. This one is connecting to my router (with fake user/pwd… DUH!) and there’s no support for setting the prompt type there, thus the “~ #”.<br>
+The result of running this script with correct login info gives me a popup with the routers <acronym title="Network Interface Card">NIC</acronym>-configuration.</p>
 
                 </div>
                 <footer class="article-footer">
@@ -179,7 +182,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/" data-id="cjldoxyfu004sp8gicg2zmilq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/" data-id="cjlnme5xr00g7m0giqyg1ky3w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

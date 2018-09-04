@@ -201,7 +201,7 @@ But now it’d done. T
     
 
         <p class="article-excerpt">
-            If you’re seeing this, the move went OK. :P
+            If you’re seeing this, the move went OK. 😛
 Anyway, I have tried to make sure that all the links, images and urls are still intact and that people are automatically redirected to the correct address on the new site too. I think I got it right, but who knows?
 Still fiddling with the themes thought.
 Sorry for the inconvenience!
@@ -209,8 +209,8 @@ ps. Post from the old site is a jump ahead.
 
 Hi all,
 I’m finally getting my male donkey out of the wagon and has started moving this blog to a new self-hosted server.
-The current host is cheap and delivers quite the good service, but since I already have servers running 24/7 at home, with attached electric bills, and more than enough bandwidth for a couple of websites I find it silly paying for yet-another hosting solution.
-Also, it is a good time to do some spring-cleaning and actually start using that teknoglot.se domain i bought some time ago. :P
+The current host is cheap and delivers quite the good service, but since I already have servers running 24/7 at home, with attached electric bills, and more than enough bandwidth for a couple of websites I find it silly paying for yet-another hosting solution.
+Also, it is a good time to do some spring-cleaning and actually start using that teknoglot.se domain i bought some time ago. 😛
         </p>
     </div>
 </article>
@@ -259,7 +259,10 @@ SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has 
 Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
 
 It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
-Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
+ Let’s get to it
+When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.
+I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.
+The only error I got this time was the following:
 Log Name:      Operations ManagerSource:        Health Service ModulesDate:          2010-09-02 11:19:12Event ID:      11001Task Category: NoneLevel:         ErrorKeywords:      ClassicUser:          N/AComputer:      CENSOREDDescription:Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.One or more workflows were affected by this.Workflow name: CENSORED.MP.CLASS.DISCOVERYInstance name: CENSORED_DEVICENAMEInstance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;Management group: CENSORED
 I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the PowerMIB into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.
 After a bit of intense staring i noticed what you see in the screenshot.
@@ -290,12 +293,14 @@ After a bit of intense staring i noticed what you see in the screenshot.
     
 
         <p class="article-excerpt">
-            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
-PreparationsRead the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. ;)
+            Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s a little How-To.
+ Preparations
+Read the documentation provided in the Linux Integration Services download. Much of the information in this article is in there, but some parts are not. Otherwise I would not have bothered writing about it. 😉
 I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.
 # yum groupinstall "Development Tools"# yum install kernel-headers
 I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.
-The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.Thank you for making it easy for us Microsoft!
+The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on http://download.microsoft.com for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.
+Thank you for making it easy for us Microsoft!
 
 Here’s a direct link to the search on the current name.
 And here’s a direct link to the actual download page.
@@ -394,7 +399,7 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the 
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>
@@ -438,10 +443,14 @@ System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on: 
 Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
 
 The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+
+
 The Message Queuing Management Pack supports the following platforms:
 
 Windows Server 2003
 Windows XP
+
+
 
 The Message Queuing Management Pack also supports monitoring clustered MSMQ components
 
@@ -450,13 +459,12 @@ Finally, MSMQ monitoring seems to be cluster aware, which might mean that the ho
 
 The December 2009 update to this management pack includes the following change:
 
+
+
 Fixed a problem when working with an instance of MSMQ in a Cluster. The MP is now able to discover and monitor public and private queues in a cluster.
 Fixed a problem when discovering the local and cluster instance of MSMQ. The MP is now able to discover and monitor both instances.
 
 
-The confusing double RunAs profiles seems to have been cleaned up too (you only have to worry about one now) as well as fixing some sloppy mistakes in the previous scripts (no Option Explicit? C’mon Microsoft! You write the best practices, try to stick to them.) and generally improving display and documentation.
-Gonna import this to our staging environment today and let it roll during the holidays.
-Download and documentation:http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en
         </p>
     </div>
 </article>
@@ -483,12 +491,16 @@ Download and documentation:http://www.microsoft.com/downloads/details.aspx?Famil
     
 
         <p class="article-excerpt">
-            Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:
+             Error Description
+Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:
 &lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;DataItem type="Microsoft.SSH.SSHCommandData" time="2009-08-05T11:15:01.5800358-04:00" sourceHealthServiceId="0EB1D6DA-202C-7FC5-3D46-BDBB9208547D"&gt;&lt;SSHCommandData&gt;&lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;/SSHCommandData&gt;&lt;/DataItem&gt;
 But first, a little background on the actual “problem”. To generate the certificate, the entropy needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the MS. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What we need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use PuTTY to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.
-Workaround1. Check you current entropycat /proc/sys/kernel/random/entropy_avail
+ Workaround
+ 1. Check you current entropy
+cat /proc/sys/kernel/random/entropy_avail
 Is it less than, or close to, 256? It probably is. If you don’t feel like connecting a mouse and start wiggling it around—not really feasible in a data center—and see if the entropy increases, you can generate your own random data.
-2. Generate you own random data.Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:
+ 2. Generate you own random data.
+Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:
         </p>
     </div>
 </article>

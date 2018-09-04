@@ -173,7 +173,9 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+             Description of problem
+If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.
+You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
 Here’s basically what happens:
 
 You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
@@ -182,10 +184,12 @@ GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops 
 OpsMgr then tells GW2 to start accepting communication from AGENTX.
 OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
 
-Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+Spotted the problem?
+This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
 How do I get around this little feature then?
 No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are out there allready, but in different contexts, hence this post.
-First step:  Install the new GatewayDocumentation on this from Microsoft is good enough, but here’s the short version.
+ First step:  Install the new Gateway
+Documentation on this from Microsoft is good enough, but here’s the short version.
 
 Verify name resolution to and from Gateway server and Management Server
 Create certificate for the Gateway server
@@ -221,7 +225,8 @@ Wait
     
 
         <p class="article-excerpt">
-            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.Managed to get the Citrix client running (way more easy on Ubuntu than Fedor
+            Ok, so I reinstalled my linux partition with Ubuntu 9.04 x64 and decided to try EXT4 on the root partition. Like, yesterday.
+Managed to get the Citrix client running (way more easy on Ubuntu than Fedo
         </p>
     </div>
 </article>
@@ -280,11 +285,16 @@ Some customers have notices the the system-logs on some Unix machines are comple
     
 
         <p class="article-excerpt">
-            BackgroundI get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.
-Don’t get me wrong now.SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.
-My ChecklistHere’s my list of questions you have to ask to find if SQL Express is the correct choice.
-1. Do your applications support SQL Express?If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.
-2. Do your applications fit the hardware limitations?SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems a bit tight to me for any production data. Also, on SQL Express 2005, according to Microsoft, you cannot run parallel queries.
+             Background
+I get this question every now and then and every time I find myself completely flabbergasted and having to look things up once again. To avoid wasting my time on the same question once again and perhaps help others doing the same, here’s a little guidance.
+Don’t get me wrong now.
+SQL Express has it’s applications and for a free database server, it’s not half-bad. Small development sites, minor, not that extremely important systems with lower performance and feature demands, minor website databases et cetera could do well with SQL Express.
+ My Checklist
+Here’s my list of questions you have to ask to find if SQL Express is the correct choice.
+ 1. Do your applications support SQL Express?
+If your application developers cannot say “Yes” to this, you’re out of luck. You could probably get their applications to run on SQL Express anyway, but application support if something goes bad will most likely be zilch.
+ 2. Do your applications fit the hardware limitations?
+SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems a bit tight to me for any production data. Also, on SQL Express 2005, according to Microsoft, you cannot run parallel queries.
 
 ”SQL Server Express can install and run on multiprocessor machines, but only a single CPU is used at any time. Internally, the engine limits the number of user scheduler threads to 1 so that only 1 CPU is used at a time. Features such as parallel query execution are not supported because of the single CPU limit.”
 
@@ -377,8 +387,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
+ Quick Details
+              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI         
         </p>
     </div>
 </article>
@@ -405,12 +416,17 @@ Quick Details              File Name:        Message Queuing System Center Opera
     
 
         <p class="article-excerpt">
-            ProblemHere’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
-SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
+             Problem
+Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.
+This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
+ Symptoms
+This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
 
-Probable CauseI am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
+ Probable Cause
+I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.
+Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
 wscript.echo "Line XX:" &amp; Err.Number
         </p>
     </div>

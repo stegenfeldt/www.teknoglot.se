@@ -175,17 +175,19 @@ ga('send', 'pageview');
         <p class="article-excerpt">
             Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is.
 What this script does is to send a text message using a GSM/GPRS modem connected to a local (or LAN-connected with local drivers) serial port using Powershell.
-Disclaimer!This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.
+ Disclaimer!
+This script “works” but is not fit for production. See it as an example of the general concept to evolve and adapt into something worthy of production use.
 What’s missing in the latest iteration is:
 
-A working Event-Handler to deal with asynchronous call-backs.
+A working Event-Handler to deal with asynchronous call-backs.
 Support for AT+MSGW (write to modem memory)
 Reusing messages in modem memory for multiple recipients.
 Various error- and exeption-handlers.
 Actually verifying that the modem is AT-capable.
 Querying the system for available modems and their ports.
 
-The ScriptSo, a short note before digging into the script. Prerequisites for this script is that you have identified which COM-port to use and it’s supported baud-rates and whether it supports DTR or not. If you do not know what the hell I am talking about, you could probably have it work with my preconfigured settings anyway. If you are unsure about if your modem supports AT commands you could open a serial connection to the modem using Hyperterminal or PuTTY and run AT+CMGF=1. If supported, the return should be OK. If it is not supported (you get ERROR instead) you would have to use PDU-mode which require a bit of hex-encoding of your messages. This is nothing I have had to do yet and will not be including in this script. Maybe in the future. Maybe.
+ The Script
+So, a short note before digging into the script. Prerequisites for this script is that you have identified which COM-port to use and it’s supported baud-rates and whether it supports DTR or not. If you do not know what the hell I am talking about, you could probably have it work with my preconfigured settings anyway. If you are unsure about if your modem supports AT commands you could open a serial connection to the modem using Hyperterminal or PuTTY and run AT+CMGF=1. If supported, the return should be OK. If it is not supported (you get ERROR instead) you would have to use PDU-mode which require a bit of hex-encoding of your messages. This is nothing I have had to do yet and will not be including in this script. Maybe in the future. Maybe.
 So, looking a some powershelling then. First thing would be to connect to the modem.
 # Create your instance of the SerialPort Class$serialPort = new-Object System.IO.Ports.SerialPort# Set various COM-port settings$serialPort.PortName = "COM1"$serialPort.BaudRate = 19200$serialPort.WriteTimeout = 500$serialPort.ReadTimeout = 3000$serialPort.DtrEnable = "true"# Open the connection$serialPort.Open()
         </p>
@@ -214,13 +216,18 @@ So, looking a some powershelling then. First thing would be to connect to the mo
     
 
         <p class="article-excerpt">
-            BackgroundHaving visited a few conferences in the last years I have spotted a trend I didn’t think I would see in the IT-Pro sphere. You could probably call me naïve for that but logically we should not encourage this trend. This is my appeal to all exhibitors of future conferences to re-evaluate the concept of booth-babes.
+             Background
+Having visited a few conferences in the last years I have spotted a trend I didn’t think I would see in the IT-Pro sphere. You could probably call me naïve for that but logically we should not encourage this trend. This is my appeal to all exhibitors of future conferences to re-evaluate the concept of booth-babes.
 I will not go into the genus-political part of this discussion as of now–others are more eloquent and fit to handle that–but rather some of the more pragmatic sides to ditch the BB (short for Booth-Babe) and how that would gain us visitors as well as the exhibitors. I will also keep a pretty frank, and perhaps impolite, tone in this rant of mine.
 So, here’s my top reasons, in no particular order, to give up the BBs.
 
-Reason #1 - BBs is disrupting the purpose of the exhibitionWhen I go to a conference, I am there for the tech, to network and shake paws with the people I collaborate with on-line. It is also a good place to meet the actual corporations that I do business with and discuss their products between four eyes.I do not want to plow through a crowd of great white whales [Oops! I meant “males”] ogling the BBs to get to someone with actual knowledge about the products and solutions at hand.
-Reason #2 - BBs are alienating the visitorsIf you are a heterosexual male or a homosexual female, the BBs can actually make you embarrassed, shy and unwilling to approach the exhibitor for that sole reason.If you are not, you might find an exhibitor with BBs appalling and take another route for that sole reason.
-Reason #3 - BBs are intimidating the female visitors
+ Reason #1 - BBs is disrupting the purpose of the exhibition
+When I go to a conference, I am there for the tech, to network and shake paws with the people I collaborate with on-line. It is also a good place to meet the actual corporations that I do business with and discuss their products between four eyes.
+I do not want to plow through a crowd of great white whales [Oops! I meant “males”] ogling the BBs to get to someone with actual knowledge about the products and solutions at hand.
+ Reason #2 - BBs are alienating the visitors
+If you are a heterosexual male or a homosexual female, the BBs can actually make you embarrassed, shy and unwilling to approach the exhibitor for that sole reason.
+If you are not, you might find an exhibitor with BBs appalling and take another route for that sole reason.
+ Reason #3 - BBs are intimidating the female visitors
         </p>
     </div>
 </article>
@@ -251,12 +258,18 @@ Reason #3 - BBs are intimidating the female visitors
     
 
         <p class="article-excerpt">
-            …and why you should not use itA DisclaimerI have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
-The Good NewsYes, you can use parameter replacement in you AlertName.
-With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like $Data/Context/Property[@Name=’SomeDataFromAPropertyBag’]$ into your alert description.
-In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.Of course I could not refrain from copy-pasting a $Data/Context…$ into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
-Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.
-How To Do ItIn simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.
+             …and why you should not use it
+ A Disclaimer
+I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discovered this “feature” as well–maybe “hack” would be a better name for it–I feel the need to explain how it works and also why you should not use it. Knowledge is power, and even if I advice against using this technique it is also a good way to understand how SCOM uses display-strings in management packs.
+ The Good News
+Yes, you can use parameter replacement in you AlertName.
+With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like Data/Context/Property[@Name=′SomeDataFromAPropertyBag′]Data/Context/Property[@Name=&#x27;SomeDataFromAPropertyBag&#x27;]Data/Context/Property[@Name=′SomeDataFromAPropertyBag′] into your alert description.
+In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.
+Of course I could not refrain from copy-pasting a Data/Context...Data/Context...Data/Context... into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.
+Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.
+As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.
+ How To Do It
+In simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.
         </p>
     </div>
 </article>
@@ -362,7 +375,8 @@ Although you do configure your forwarders using Operations Manager, removing the
 DisableACSForwarders
 It is zipped to avoid security alerts, but as with any script found on the internet I implore to to read the code before actually running it.
 Anyway, you can use it in a couple of ways.
-To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.For example:
+To run it interactively, just go to the directory where you unpacked it and run it. You will be requested to enter the FQDN of you Root Management Server and a wildcard search for ACS Forwarders.
+For example:
 C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglot.localACS Forwarder name (wildcard): *.teknoglot.local
         </p>
     </div>
@@ -391,7 +405,7 @@ C:\..\Scripts&gt; .\DisableACSForwarders.ps1Root Management Server: rms.teknoglo
 
         <p class="article-excerpt">
             I’ve had this little visio drawing lying around on my desktop for a while now and I thought that it might be a nice thing to share.
-It is nothing ground breaking at all and all the information is avai
+It is nothing ground breaking at all and all the information is avai
         </p>
     </div>
 </article>
@@ -422,9 +436,12 @@ It is nothing ground breaking at all and all the information is avai
     
 
         <p class="article-excerpt">
-            BackgroundFor quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those “do you think we could monitor our …-system too?” questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.
-PurposeMy idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.
-The TG WinAutoSvc Management PackTo give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:
+             Background
+For quite some time now I’ve had this idea spinning around in my head to write a couple of blog-posts about some of the more useful techniques available when building management packs. Many of these techniques are already described on MSDN and Technet- or other blogs as well as on various forums, but often no more than small bits and pieces of them and I have yet to see some humanly readable information about how to tie them together into a useful management pack. I say “humanly readable” because the information you do find online so far may be clear and somewhat easy to understand for someone with a system development background and a pretty good idea of how object oriented development models tend to work. But the real life System Center Operations Manager engineer–you know the one who get those “do you think we could monitor our …-system too?” questions a couple of times a week, you know… you (most likely, being here)–tend to have a completely different background. Yet as their OpsMgr environment grows, so does the demand for custom monitoring and all of a sudden the former server engineer are now also a developer. A developer who has never before had the need to grasp such abstract concepts as classes, instances, inheritance and who probably never before have had any reason whatsoever to write any XML code.
+ Purpose
+My idea for this series of posts is to shed some light into the world of the authoring console and modules and cookdown and so forth. I am by no means an accredited author, but I will do my best to stay human in this venture and in plain english try to explain why and how you do certain things when going from Management Pack templates, rules, monitors and the safe haven that is authoring in the Operations Console into making your scripts resuable, easy to extend and prime for cookdown using the Authoring Console and XML.
+ The TG WinAutoSvc Management Pack
+To give the series some kind of context and at the same time not only be a matter of examples I will base them on a fully functional management pack that discovers and monitors all Windows services that are set to automatic startup. I know there is other similar management packs out there but I haven’t fancied any one of them yet, and since I had the idea of writing this series I decided that building a new one would be a good way to go. Some of the interesting features with this management pack is:
 
 You will get an instance of the service classes for each and every service.
 It uses different classes for Own Process services and Shared Process services (svchost for example).
@@ -434,9 +451,12 @@ There is only one discovery script for all kinds of windows services.
 Extending the discovery to include different kinds of windows services, like kernel processes, is a matter of filtering.
 It is Open Source and licensed under the Eclipse Public License v1.
 
-Most of these features will be described thoroughly in later posts in the series and as development of it progresses I will document what I do, how I do it and why I do it in certain ways. Hopefully you will learn something new through this and get closer to becoming that MP Dev the organization asks for.In the mean time, feel free to download, look at the source code (which it by no means perfect) and try it out.
-The TG WinAutoSvc monitoring management pack is available for download here:http://code.google.com/p/tg-winautosvc/downloads/detail?name=TG.WinAutoSvc.xml
-The latest revision of the source code is located here:http://code.google.com/p/tg-winautosvc/source/browse/trunk/TG.WinAutoSvc.xml
+Most of these features will be described thoroughly in later posts in the series and as development of it progresses I will document what I do, how I do it and why I do it in certain ways. Hopefully you will learn something new through this and get closer to becoming that MP Dev the organization asks for.
+In the mean time, feel free to download, look at the source code (which it by no means perfect) and try it out.
+The TG WinAutoSvc monitoring management pack is available for download here:
+http://code.google.com/p/tg-winautosvc/downloads/detail?name=TG.WinAutoSvc.xml
+The latest revision of the source code is located here:
+http://code.google.com/p/tg-winautosvc/source/browse/trunk/TG.WinAutoSvc.xml
         </p>
     </div>
 </article>

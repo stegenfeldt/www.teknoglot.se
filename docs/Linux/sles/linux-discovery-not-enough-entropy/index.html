@@ -8,18 +8,18 @@
     
         <meta name="keywords" content="OpsMgr,How-To,Linux,TroubleShooting,X-Plat" />
     
-    <meta name="description" content="Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostnam">
+    <meta name="description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
 <meta name="keywords" content="OpsMgr,How-To,Linux,TroubleShooting,X-Plat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Discovery – Not Enough Entropy">
 <meta property="og:url" content="https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostnam">
+<meta property="og:description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Discovery – Not Enough Entropy">
-<meta name="twitter:description" content="Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostnam">
+<meta name="twitter:description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
     
 
     
@@ -167,25 +167,36 @@ ga('send', 'pageview');
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <h1 id="Error-Description"><a href="#Error-Description" class="headerlink" title="Error Description"></a>Error Description</h1><p>Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:</p>
+                    <h1 id="error-description"><a class="markdownIt-Anchor" href="#error-description"></a> Error Description</h1>
+<p>Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">stdout</span>&gt;</span>Generating certificate with hostname="COMPUTERNAME"</span><br><span class="line"></span><br><span class="line">[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]</span><br><span class="line"></span><br><span class="line">Failed to allocate resource of type random data: Failed to get random data - not enough entropy</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stdout</span>&gt;</span><span class="tag">&lt;<span class="name">stderr</span>&gt;</span>error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stderr</span>&gt;</span><span class="tag">&lt;<span class="name">returnCode</span>&gt;</span>1<span class="tag">&lt;/<span class="name">returnCode</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">DataItem</span> <span class="attr">type</span>=<span class="string">"Microsoft.SSH.SSHCommandData"</span> <span class="attr">time</span>=<span class="string">"2009-08-05T11:15:01.5800358-04:00"</span> <span class="attr">sourceHealthServiceId</span>=<span class="string">"0EB1D6DA-202C-7FC5-3D46-BDBB9208547D"</span>&gt;</span><span class="tag">&lt;<span class="name">SSHCommandData</span>&gt;</span><span class="tag">&lt;<span class="name">stdout</span>&gt;</span>Generating certificate with hostname="COMPUTERNAME"</span><br><span class="line"></span><br><span class="line">[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]</span><br><span class="line"></span><br><span class="line">Failed to allocate resource of type random data: Failed to get random data - not enough entropy</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stdout</span>&gt;</span><span class="tag">&lt;<span class="name">stderr</span>&gt;</span>error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">stderr</span>&gt;</span><span class="tag">&lt;<span class="name">returnCode</span>&gt;</span>1<span class="tag">&lt;/<span class="name">returnCode</span>&gt;</span><span class="tag">&lt;/<span class="name">SSHCommandData</span>&gt;</span><span class="tag">&lt;/<span class="name">DataItem</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>But first, a little background on the actual “problem”. To generate the certificate, the <em>entropy</em> needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the <acronym title="Management Server">MS</acronym>. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What <em>we</em> need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="noopener">PuTTY</a> to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.</p>
-<h1 id="Workaround"><a href="#Workaround" class="headerlink" title="Workaround"></a>Workaround</h1><h2 id="1-Check-you-current-entropy"><a href="#1-Check-you-current-entropy" class="headerlink" title="1. Check you current entropy"></a>1. Check you current entropy</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat /proc/sys/kernel/random/entropy_avail</span><br></pre></td></tr></table></figure>
+<h1 id="workaround"><a class="markdownIt-Anchor" href="#workaround"></a> Workaround</h1>
+<h2 id="1-check-you-current-entropy"><a class="markdownIt-Anchor" href="#1-check-you-current-entropy"></a> 1. Check you current entropy</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat /proc/sys/kernel/random/entropy_avail</span><br></pre></td></tr></table></figure>
 <p>Is it less than, or close to, 256? It probably is. If you don’t feel like connecting a mouse and start wiggling it around—not really feasible in a data center—and see if the entropy increases, you can generate your own random data.</p>
-<h2 id="2-Generate-you-own-random-data"><a href="#2-Generate-you-own-random-data" class="headerlink" title="2. Generate you own random data."></a>2. Generate you own random data.</h2><p>Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:</p>
+<h2 id="2-generate-you-own-random-data"><a class="markdownIt-Anchor" href="#2-generate-you-own-random-data"></a> 2. Generate you own random data.</h2>
+<p>Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dd if=/dev/urandom of=~/.rnd bs=1 count=1024</span><br></pre></td></tr></table></figure>
 <p>This creates a .rnd file with 1024B of random data that the certificate creation process will use instead of the system entropy if the file exists.</p>
-<h2 id="3-Uninstall-and-re-discover"><a href="#3-Uninstall-and-re-discover" class="headerlink" title="3. Uninstall and re-discover"></a>3. Uninstall and re-discover</h2><p>The first failed attempt of discovery will most likely leave a non-working agent installation that we have to remove. Otherwise we will just be stuck with an “Access Denied” error. Run:</p>
+<h2 id="3-uninstall-and-re-discover"><a class="markdownIt-Anchor" href="#3-uninstall-and-re-discover"></a> 3. Uninstall and re-discover</h2>
+<p>The first failed attempt of discovery will most likely leave a non-working agent installation that we have to remove. Otherwise we will just be stuck with an “Access Denied” error. Run:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm –e scx</span><br></pre></td></tr></table></figure>
 <p>Now, try to discover the system again.</p>
-<h2 id="4-Failed-again"><a href="#4-Failed-again" class="headerlink" title="4. Failed again?"></a>4. Failed again?</h2><p>Try generating the certificate manually by running:</p>
+<h2 id="4-failed-again"><a class="markdownIt-Anchor" href="#4-failed-again"></a> 4. Failed again?</h2>
+<p>Try generating the certificate manually by running:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/opt/microsoft/scx/bin/tools/scxsslconfig -f –v</span><br><span class="line">/opt/microsoft/scx/bin/tools/scxadmin –restart</span><br></pre></td></tr></table></figure>
 <p>Retry discovery again.</p>
-<h2 id="5-Still-fails"><a href="#5-Still-fails" class="headerlink" title="5. Still fails?"></a>5. Still fails?</h2><p>Uninstall the agent once more as instructed in step 3.<br>Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully they will help you too.</p>
+<h2 id="5-still-fails"><a class="markdownIt-Anchor" href="#5-still-fails"></a> 5. Still fails?</h2>
+<p>Uninstall the agent once more as instructed in step 3.<br>
+Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully they will help you too.</p>
 <p>Interestingely enough, these problems seems to be connected to some changes in the 2.6 kernel and basically everything that uses SSL-ish certificates will be affected. Even though the symptoms may be a bit more subtle, like time-outs and disconnects. For “headless” servers like those I usually to administer where the random data tend to be much lower, there’s even specialised hardware whose sole purpose is to generate random data, like the <a href="http://www.entropykey.co.uk/" target="_blank" rel="noopener">Entropy Key</a>. I have also been told that new servers is likely to be equipped with entropy chipsets to make sure that there’s chaos enough to avoid these new-found oddities.</p>
 <blockquote>
-<p>Sources:<br><a href="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" title="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" target="_blank" rel="noopener">http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357</a></p>
-<p><a href="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" title="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" target="_blank" rel="noopener">http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html
+<p>Sources:<br>
+<a href="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" title="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" target="_blank" rel="noopener">http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" title="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" target="_blank" rel="noopener">http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html<br>
 </a></p>
 </blockquote>
 
@@ -195,7 +206,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/" data-id="cjldoxydo001lp8gif6io97sd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/" data-id="cjlnme5qj001jm0giuj5r4kff" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

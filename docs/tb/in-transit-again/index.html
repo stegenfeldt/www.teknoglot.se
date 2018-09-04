@@ -8,18 +8,18 @@
     
         <meta name="keywords" content="Teknoglot,Hexo,Wordpress" />
     
-    <meta name="description" content="We’re moving!Yep. Again. Although, it’s been a year or two since the last time. The reason(s)Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly.It’s a fairly solid platfo">
+    <meta name="description" content="We’re moving! Yep. Again. Although, it’s been a year or two since the last time.  The reason(s) Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly. It’s a fairly solid p">
 <meta name="keywords" content="Teknoglot,Hexo,Wordpress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="In transit, again">
 <meta property="og:url" content="https://www.teknoglot.se/tb/in-transit-again/index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="We’re moving!Yep. Again. Although, it’s been a year or two since the last time. The reason(s)Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly.It’s a fairly solid platfo">
+<meta property="og:description" content="We’re moving! Yep. Again. Although, it’s been a year or two since the last time.  The reason(s) Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly. It’s a fairly solid p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-06-05T12:55:35.000Z">
+<meta property="og:updated_time" content="2018-09-04T11:15:17.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="In transit, again">
-<meta name="twitter:description" content="We’re moving!Yep. Again. Although, it’s been a year or two since the last time. The reason(s)Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly.It’s a fairly solid platfo">
+<meta name="twitter:description" content="We’re moving! Yep. Again. Although, it’s been a year or two since the last time.  The reason(s) Ok, so I’ve using Wordpress for quite a long time now and it’s been good. Mostly. It’s a fairly solid p">
     
 
     
@@ -167,26 +167,63 @@ ga('send', 'pageview');
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <h1 id="We’re-moving"><a href="#We’re-moving" class="headerlink" title="We’re moving!"></a>We’re moving!</h1><p>Yep. Again. Although, it’s been a year or two since the last time.</p>
-<h2 id="The-reason-s"><a href="#The-reason-s" class="headerlink" title="The reason(s)"></a>The reason(s)</h2><p>Ok, so I’ve using <a href="https://www.wordpress.org" target="_blank" rel="noopener">Wordpress</a> for quite a long time now and it’s been good. Mostly.<br>It’s a fairly solid platform and has a whole slew of feautures that work nicely.</p>
-<p>Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with <a href="https://en.wikipedia.org/wiki/Textile_(markup_language)" target="_blank" rel="noopener">textile</a> and<br>similar markup/writing/notation languages. For those unaware, textile is not unlike <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">markdown</a>.<br>Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.<br>Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.</p>
+                    <h1 id="were-moving"><a class="markdownIt-Anchor" href="#were-moving"></a> We’re moving!</h1>
+<p>Yep. Again. Although, it’s been a year or two since the last time.</p>
+<h2 id="the-reasons"><a class="markdownIt-Anchor" href="#the-reasons"></a> The reason(s)</h2>
+<p>Ok, so I’ve using <a href="https://www.wordpress.org" target="_blank" rel="noopener">Wordpress</a> for quite a long time now and it’s been good. Mostly.<br>
+It’s a fairly solid platform and has a whole slew of feautures that work nicely.</p>
+<p>Before Wordpress I used Textpattern, a very slimmed, minimalistic authoring experience and my first contact with <a href="https://en.wikipedia.org/wiki/Textile_(markup_language)" target="_blank" rel="noopener">textile</a> and<br>
+similar markup/writing/notation languages. For those unaware, textile is not unlike <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">markdown</a>.<br>
+Or should we say that markdown is not unlike textile? Considering that textile was invented by Dean Allen two years before markdown.<br>
+Anyhow. Both work pretty much as good as the other, allowing the author to write in any text-editor, using easily readable and fairly logical formatting.</p>
 <p>Before that I used Movable Type, and prior to that either Dreamweaver or… well, notepad or vim.</p>
-<p>Problem with all of those platforms, however, is that they require dynamically generated webpages and technologies like PHP, Perl, .NET, Java and whatnot.<br>That, in itself, has been a very minor issue until lately. Sure, it requires servers with logics, engines, add-ons, execution rights to the local filesystem etc, but<br>still a minor nuisance. Mostly a financial nuisance really as active servers tend to cost money while finding static hosting for free is still pretty easy.<br>Hell! I could put a webserver on a RaspberryPi and get good performance for a small-ish blog like mine if all I am using is static content.</p>
-<p>But, again. Not a major problem in itself. The main instigating factors to move away from Wordpress are the increasing size of the package, the lack of personal control,<br>the lack of ease to extend my platform due to ever-expanding APIs and the fact that it is so popular that every “hacker” and it’s mother knows how to find exploits on it.<br>My webhost, <a href="https://www.nearlyfreespeech.net/" target="_blank" rel="noopener">NFSN</a> has been very good at detecting probing and brute-force attempts and automatically block public access to stuff like the login-pages and XML-RPC interfaces when that happens.<br>I am just so sick and tired of having to constantly be on top of it with software updates, plugin updates, theme updates, security updates, spam-filtering, re-enabling the login page…</p>
-<h2 id="Back-to-the-basics"><a href="#Back-to-the-basics" class="headerlink" title="Back to the basics"></a>Back to the basics</h2><p>Teknoglot.se will be served statically from now on, and it will be hosted for free on <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.<br>Using <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo.io</a> I can write my posts using markdown, then with a simple <code>hexo generate --deploy</code> generate and update the static files and publish them.<br>No login pages to hack, no dynamic pages to exploit, no server security to worry about.</p>
+<p>Problem with all of those platforms, however, is that they require dynamically generated webpages and technologies like PHP, Perl, .NET, Java and whatnot.<br>
+That, in itself, has been a very minor issue until lately. Sure, it requires servers with logics, engines, add-ons, execution rights to the local filesystem etc, but<br>
+still a minor nuisance. Mostly a financial nuisance really as active servers tend to cost money while finding static hosting for free is still pretty easy.<br>
+Hell! I could put a webserver on a RaspberryPi and get good performance for a small-ish blog like mine if all I am using is static content.</p>
+<p>But, again. Not a major problem in itself. The main instigating factors to move away from Wordpress are the increasing size of the package, the lack of personal control,<br>
+the lack of ease to extend my platform due to ever-expanding APIs and the fact that it is so popular that every “hacker” and it’s mother knows how to find exploits on it.<br>
+My webhost, <a href="https://www.nearlyfreespeech.net/" target="_blank" rel="noopener">NFSN</a> has been very good at detecting probing and brute-force attempts and automatically block public access to stuff like the login-pages and XML-RPC interfaces when that happens.<br>
+I am just so sick and tired of having to constantly be on top of it with software updates, plugin updates, theme updates, security updates, spam-filtering, re-enabling the login page…</p>
+<h2 id="back-to-the-basics"><a class="markdownIt-Anchor" href="#back-to-the-basics"></a> Back to the basics</h2>
+<p><a href="http://Teknoglot.se" target="_blank" rel="noopener">Teknoglot.se</a> will be served statically from now on, and it will be hosted for free on <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.<br>
+Using <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo.io</a> I can write my posts using markdown, then with a simple <code>hexo generate --deploy</code> generate and update the static files and publish them.<br>
+No login pages to hack, no dynamic pages to exploit, no server security to worry about.</p>
 <p>Hexo is built using node.js, which I have installed for other reasons anyway, and since the actual website is build from a git repository I obviously have proper versioning on everything I do per default.</p>
-<p>There’s obviously not as many plugins, helpers, themes and features available as in Wordpress. And blogging will require some command-line stuff.<br>But I am totally fine with that. I means I can write offline, generate offline to preview. And when finished, push to the public repo.</p>
-<h2 id="But-comments"><a href="#But-comments" class="headerlink" title="But, comments?"></a>But, comments?</h2><p>Using Disqus. All client-side.<br>You need javascript, obviously, but I don’t see me losing many readers for that to be frank. ;)</p>
-<h2 id="The-kinks"><a href="#The-kinks" class="headerlink" title="The kinks"></a>The kinks</h2><p>No, not <a href="https://en.wikipedia.org/wiki/The_Kinks" target="_blank" rel="noopener">the band</a>. The stuff I have missed while migrating the posts from Wordpress to Hexo.<br>Here’s what to expect.</p>
-<h3 id="Permalinks-may-not-work"><a href="#Permalinks-may-not-work" class="headerlink" title="Permalinks may not work"></a>Permalinks may not work</h3><p>I have done my best to ensure that my old permalink structure from the old site is intact.<br>Hexo have some limitations to categories though, meaning that I cannot yet have two main categories on the same post.<br>This do affect those articles that were available through both /code/posh/my-post, /ms/scom2012/my-post.<br>For those, I have had to pick one to be main and rely on tags to group stuff more freely. </p>
-<h3 id="Code-highlight-artefacts"><a href="#Code-highlight-artefacts" class="headerlink" title="Code-highlight artefacts"></a>Code-highlight artefacts</h3><p>Wordpress highlight plugins and markdown have different syntax, and the migration plugin did not handle that.<br>This means that you might find a few <code>[powershell]</code>, <code>[sql]</code> or <code>[plain]</code> tags littered throughout the post for a while.<br>If you spot one, do comment to let me know. But I will try to convert them all as I find them.</p>
-<h3 id="Images-and-galleries"><a href="#Images-and-galleries" class="headerlink" title="Images and galleries"></a>Images and galleries</h3><p>Not sure I ever used a gallery, but some images may be missing as I have to migrate them manually and I am absolutely certain that I have missed at least one. Maybe two. ^That’s ^a ^joke.</p>
+<p>There’s obviously not as many plugins, helpers, themes and features available as in Wordpress. And blogging will require some command-line stuff.<br>
+But I am totally fine with that. I means I can write offline, generate offline to preview. And when finished, push to the public repo.</p>
+<h2 id="but-comments"><a class="markdownIt-Anchor" href="#but-comments"></a> But, comments?</h2>
+<p>Using Disqus. All client-side.<br>
+You need javascript, obviously, but I don’t see me losing many readers for that to be frank. 😉</p>
+<h2 id="the-kinks"><a class="markdownIt-Anchor" href="#the-kinks"></a> The kinks</h2>
+<p>No, not <a href="https://en.wikipedia.org/wiki/The_Kinks" target="_blank" rel="noopener">the band</a>. The stuff I have missed while migrating the posts from Wordpress to Hexo.<br>
+Here’s what to expect.</p>
+<h3 id="permalinks-may-not-work"><a class="markdownIt-Anchor" href="#permalinks-may-not-work"></a> Permalinks may not work</h3>
+<p>I have done my best to ensure that my old permalink structure from the old site is intact.<br>
+Hexo have some limitations to categories though, meaning that I cannot yet have two main categories on the same post.<br>
+This do affect those articles that were available through both /code/posh/my-post, /ms/scom2012/my-post.<br>
+For those, I have had to pick one to be main and rely on tags to group stuff more freely.</p>
+<h3 id="code-highlight-artefacts"><a class="markdownIt-Anchor" href="#code-highlight-artefacts"></a> Code-highlight artefacts</h3>
+<p>Wordpress highlight plugins and markdown have different syntax, and the migration plugin did not handle that.<br>
+This means that you might find a few <code>[powershell]</code>, <code>[sql]</code> or <code>[plain]</code> tags littered throughout the post for a while.<br>
+If you spot one, do comment to let me know. But I will try to convert them all as I find them.</p>
+<h3 id="images-and-galleries"><a class="markdownIt-Anchor" href="#images-and-galleries"></a> Images and galleries</h3>
+<p>Not sure I ever used a gallery, but some images may be missing as I have to migrate them manually and I am absolutely certain that I have missed at least one. Maybe two. ^That’s ^a ^joke.</p>
 <p>Once again, if you find a missing one you are welcome to post a comment to let me know.</p>
-<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><p>Nope, no such thing in Hexo at the moment.<br>May be able to use some other structure, but for now it will be normal posts with links. Probably missing a few there as well.</p>
-<h3 id="Post-tabs"><a href="#Post-tabs" class="headerlink" title="Post tabs"></a>Post tabs</h3><p>Also not available in Hexo.<br>I have converted those posts to regular posts. I am working on a proper TOC to make them easier to browse.</p>
-<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><p>As with the images, links I have created manually may point to old wordpress folders and have to be redirected.<br>I know for a fact that I have missed a few.</p>
-<h3 id="Graphics"><a href="#Graphics" class="headerlink" title="Graphics"></a>Graphics</h3><p>Using a new theme will take a few adaptations to logos and other graphics.<br>This will change over time, so don’t laugh too hard. </p>
-<h1 id="The-Last-Word"><a href="#The-Last-Word" class="headerlink" title="The Last Word"></a>The Last Word</h1><p>Things be wonky. Have patience. Thanks!</p>
+<h3 id="series"><a class="markdownIt-Anchor" href="#series"></a> Series</h3>
+<p>Nope, no such thing in Hexo at the moment.<br>
+May be able to use some other structure, but for now it will be normal posts with links. Probably missing a few there as well.</p>
+<h3 id="post-tabs"><a class="markdownIt-Anchor" href="#post-tabs"></a> Post tabs</h3>
+<p>Also not available in Hexo.<br>
+I have converted those posts to regular posts. I am working on a proper TOC to make them easier to browse.</p>
+<h3 id="links"><a class="markdownIt-Anchor" href="#links"></a> Links</h3>
+<p>As with the images, links I have created manually may point to old wordpress folders and have to be redirected.<br>
+I know for a fact that I have missed a few.</p>
+<h3 id="graphics"><a class="markdownIt-Anchor" href="#graphics"></a> Graphics</h3>
+<p>Using a new theme will take a few adaptations to logos and other graphics.<br>
+This will change over time, so don’t laugh too hard.</p>
+<h1 id="the-last-word"><a class="markdownIt-Anchor" href="#the-last-word"></a> The Last Word</h1>
+<p>Things be wonky. Have patience. Thanks!</p>
 
                 </div>
                 <footer class="article-footer">
@@ -194,7 +231,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/tb/in-transit-again/" data-id="cjldoxydb0012p8gikcgo2qvi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/tb/in-transit-again/" data-id="cjlnme5q70010m0gij2af9b8b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

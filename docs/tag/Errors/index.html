@@ -181,7 +181,10 @@ SNMP Management Pack Example: NetApp Management Pack - Part 4 actually, but has 
 Creating SNMP Probe Based Monitors - No custom discovery, but a good and simple guide to SNMP Probes
 
 It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.
-Let’s get to itWhen building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.The only error I got this time was the following:
+ Let’s get to it
+When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.
+I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.
+The only error I got this time was the following:
 Log Name:      Operations ManagerSource:        Health Service ModulesDate:          2010-09-02 11:19:12Event ID:      11001Task Category: NoneLevel:         ErrorKeywords:      ClassicUser:          N/AComputer:      CENSOREDDescription:Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.One or more workflows were affected by this.Workflow name: CENSORED.MP.CLASS.DISCOVERYInstance name: CENSORED_DEVICENAMEInstance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;Management group: CENSORED
 I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the PowerMIB into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.
 After a bit of intense staring i noticed what you see in the screenshot.
@@ -214,7 +217,7 @@ After a bit of intense staring i noticed what you see in the screenshot.
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the 
+This seems to be  most common on Windows 2008 and i guess it’s because of the 
         </p>
     </div>
 </article>
@@ -391,12 +394,17 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            ProblemHere’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
-SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
+             Problem
+Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.
+This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
+ Symptoms
+This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
 
-Probable CauseI am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
+ Probable Cause
+I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.
+Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
 wscript.echo "Line XX:" &amp; Err.Number
         </p>
     </div>

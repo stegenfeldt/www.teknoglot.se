@@ -174,21 +174,28 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             [updated, scroll down if you want to skip some nonsense]
-So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
+So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  Release upgrade to Normal Releases (you find it under the Updates tab).
+After that you get the option to do a Distribution Upgrade, which I did (took some 45 minutes to finish).
 I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.
 What I have come down to right now is doing the following:
 
-sudo apt-get install module-assistantThis will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
+sudo apt-get install module-assistant
+This will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.
 
-Going back to the “Software Sources” under i check the “Unsopported updates”.Then i execute
+Going back to the “Software Sources” under i check the “Unsopported updates”.
+Then i execute
 
-sudo apt-get autoremovesudo apt-get install nvidia-177-kernel-sourcem-a auto-install nvidiaUPDATE!
+sudo apt-get autoremove
+sudo apt-get install nvidia-177-kernel-source
+m-a auto-install nvidia
+UPDATE!
 
 After fiddling around with this Laptop (Lenovo Thinkpad T61) I really just needed these three steps to fix the problem. All of them from X using the regular nv-drivers.
 
 In a terminal, run sudo apt-get install module assistant
 In a terminal, run sudo m-a auto-install nvidia
-Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.Hopefully, this might help someone. It did work for me and I am now able to work with wobbly windows and all that crap. (Besides some serious 3d stuff ;) )
+Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.
+Hopefully, this might help someone. It did work for me and I am now able to work with wobbly windows and all that crap. (Besides some serious 3d stuff 😉 )
 
 Anyway. Since I did not save the urls, I cannot give credit to those who have pointed to stuff that did help me on the way, but I’ve actually not find information anywhere yet that solve the problem totally and, well… that’s why I did decide to post in here.
         </p>
@@ -221,13 +228,15 @@ Anyway. Since I did not save the urls, I cannot give credit to those who have po
 Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recovery Manager for SharePoint – but also database and application servers like SAP and Oracle E-business.
 I have lately been working with some of their MOSS-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.
 Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. eXc does it’s thing in the Microsoft SCOM/MOM arena while VizionCore dances with virtualization techniques. At least, that’s where I’ve come across them both.
-How will this affect me, then?Not very much it would seem. Here’s what VizionCore says about their part:
+How will this affect me, then?
+Not very much it would seem. Here’s what VizionCore says about their part:
 
 “The completion of this acquisition signals another major step in Vizioncore’s evolution and growth in the virtualization market,” said David Bieneman, CEO of VizionCore. “While maintaining the autonomy that has made us successful, we will also be able to leverage technologies developed by and acquired by Quest, such as Invirtus and Provision Networks, to enhance and expand the feature sets of VizionCore products. This is very positive news for virtualization customers who will enjoy a richer and robust product set that will help them achieve greater levels of ROI from their investments in virtualization platforms.”
 
 In my head, this means that VizionCore will still be VizionCore but with, perhaps, tighter integration with Invirtus. Invirtus was, by the way, a “Strategic Partner” to VizionCore even before the acquisition.
 eXc then? Well. It is not clearly stated in the press-release as far as I can tell. We can only hope that they will make the decision to rebuild their not-even-web1.0 excuse for a website. And what the hell is up with that logo? Fortunately for us, their design skills – or lack thereof – does not reflect their programming skills. But still… no sane man or woman uses Comic Sans in a logo. Not even jokingly. Actually, using Comic Sans at all should be considered an act of felony.
-references:
+ references:
+
 Quest Software Continues Its Value Add to Microsoft System Center
 Quest Software Completes Acquisition of VizionCore…
 

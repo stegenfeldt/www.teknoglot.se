@@ -173,7 +173,9 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Description of problemIf you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
+             Description of problem
+If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.
+You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.
 Here’s basically what happens:
 
 You tell Operations Manager to change Primary Management Server for AGENTX from GW1 to GW2.
@@ -182,10 +184,12 @@ GW1 acknowledges this and stops talking to AGENTX.  And I mean Completely stops 
 OpsMgr then tells GW2 to start accepting communication from AGENTX.
 OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.
 
-Spotted the problem?This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
+Spotted the problem?
+This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent before the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.
 How do I get around this little feature then?
 No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are out there allready, but in different contexts, hence this post.
-First step:  Install the new GatewayDocumentation on this from Microsoft is good enough, but here’s the short version.
+ First step:  Install the new Gateway
+Documentation on this from Microsoft is good enough, but here’s the short version.
 
 Verify name resolution to and from Gateway server and Management Server
 Create certificate for the Gateway server
@@ -312,8 +316,9 @@ The MSMQ Management Pack seems to have a few problems with it’s discovery scri
     
 
         <p class="article-excerpt">
-            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
-Quick Details              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI           
+            Last friday, 24/4 -09,  Microsoft released an updated Management Pack for MSMQ 3.0.
+ Quick Details
+              File Name:        Message Queuing System Center Operations Manager 2007 MP.MSI         
         </p>
     </div>
 </article>
@@ -340,12 +345,17 @@ Quick Details              File Name:        Message Queuing System Center Opera
     
 
         <p class="article-excerpt">
-            ProblemHere’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
-SymptomsThis “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
+             Problem
+Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to create System.PropertyBagData error i wrote about earlier.
+This information in also available on https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446
+ Symptoms
+This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:
 The process started at 14:29:26 failed to create System.PropertyBagData, no errors detected in the output. The process exited with 0Command executed: &quot;C:WINNTsystem32cscript.exe&quot; /nologo &quot;NetworkAdapterCheck.vbs&quot; MASKEDCOMPUTERNAME 0 false true falseWorking Directory: C:Program FilesSystem Center Operations Manager 2007Health Service StateMonitoring Host Temporary Files 2882781One or more workflows were affected by this.Workflow name: Microsoft.Windows.Server.2000.NetworkAdapter.NetworkAdapterConnectionHealthInstance name: 0Instance ID: &#123;F4C478D3-38E5-8C29-3957-E3B7F486216E&#125;Management group: MASKED
 This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.
 
-Probable CauseI am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
+ Probable Cause
+I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.
+Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added
 wscript.echo "Line XX:" &amp; Err.Number
         </p>
     </div>
@@ -421,13 +431,15 @@ Read more about it at Jon
 Quest Software is a rather nice software developer with some interesting products for a wide range of Microsoft systems – like Site Administrator and Recovery Manager for SharePoint – but also database and application servers like SAP and Oracle E-business.
 I have lately been working with some of their MOSS-related products that, neglecting the somewhat goofy and unspecific manuals, are stable and well worth taking a look at.
 Quite recently they have acquired two other companies also worth paying attention to as they, too, tend to deliver products that ease things up. eXc does it’s thing in the Microsoft SCOM/MOM arena while VizionCore dances with virtualization techniques. At least, that’s where I’ve come across them both.
-How will this affect me, then?Not very much it would seem. Here’s what VizionCore says about their part:
+How will this affect me, then?
+Not very much it would seem. Here’s what VizionCore says about their part:
 
 “The completion of this acquisition signals another major step in Vizioncore’s evolution and growth in the virtualization market,” said David Bieneman, CEO of VizionCore. “While maintaining the autonomy that has made us successful, we will also be able to leverage technologies developed by and acquired by Quest, such as Invirtus and Provision Networks, to enhance and expand the feature sets of VizionCore products. This is very positive news for virtualization customers who will enjoy a richer and robust product set that will help them achieve greater levels of ROI from their investments in virtualization platforms.”
 
 In my head, this means that VizionCore will still be VizionCore but with, perhaps, tighter integration with Invirtus. Invirtus was, by the way, a “Strategic Partner” to VizionCore even before the acquisition.
 eXc then? Well. It is not clearly stated in the press-release as far as I can tell. We can only hope that they will make the decision to rebuild their not-even-web1.0 excuse for a website. And what the hell is up with that logo? Fortunately for us, their design skills – or lack thereof – does not reflect their programming skills. But still… no sane man or woman uses Comic Sans in a logo. Not even jokingly. Actually, using Comic Sans at all should be considered an act of felony.
-references:
+ references:
+
 Quest Software Continues Its Value Add to Microsoft System Center
 Quest Software Completes Acquisition of VizionCore…
 

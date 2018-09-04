@@ -173,16 +173,25 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -Operations Manager
-PreparationThe usual routine applies. Check the KB for instructions and take not ofknown issues. Check if Kevin Holman has written something about it. As thisis an update roll up, I pre-emptively expect that gotchas in UR3 mayapply. Remember to open the update catalog in IE as the downloader is notworking in other browsers.
+            Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -
+Operations Manager
+ Preparation
+The usual routine applies. Check the KB for instructions and take not of
+known issues. Check if Kevin Holman has written something about it. As this
+is an update roll up, I pre-emptively expect that gotchas in UR3 may
+apply. Remember to open the update catalog in IE as the downloader is not
+working in other browsers.
 Download, unpack, toss what languages that does not apply to your organization.
-It is advised to disable any mail-generating alert subscriptions during theupgrade process to avoid unnecessary spammage.
-Issues - So Far[updated: 2014-11-03]
+It is advised to disable any mail-generating alert subscriptions during the
+upgrade process to avoid unnecessary spammage.
+ Issues - So Far
+[updated: 2014-11-03]
 
 Got a few problems with cross-platform monitoring templates not working after the update. This was due to missing files in the update package. Make sure you download the updated version!
 
-Have not updated a customer using gateways yet, so unless theyhave fixed the issues in UR3, expect an update to this section soon.
-Planning
+Have not updated a customer using gateways yet, so unless they
+have fixed the issues in UR3, expect an update to this section soon.
+ Planning
         </p>
     </div>
 </article>
@@ -210,23 +219,32 @@ Planning
 
         <p class="article-excerpt">
             Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.
-PreparationUsual routine, check the KB for instructions and known issues. Double-check with Holman’s blog and take note of any irregularities.Download, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.
+ Preparation
+Usual routine, check the KB for instructions and known issues. Double-check with Holman’s blog and take note of any irregularities.
+Download, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.
 Notify affected parts of the organisation, I’ve had the benefit to work with good release managers at all clients so far, so no biggie. Then try to close as many consoles as possible to avoid any blocks in database.
 Make sure you have the credentials for the Data Access service account at hand.
-Issues - So Far(updated 2014-09-02)
+ Issues - So Far
+(updated 2014-09-02)
+
 
 The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.
+
+
 A few dashboards (the 2012 versions) went blank. Self-healed after some aggregation job over night. From what I’ve noticed, only the SLA Dashboards are affected but never all of them.
+
 
 Agents behind daisy-chained Gateways is not identified as in need of an update. “Repairing” them from the Console is one work-around that seems to work consistently.
 
+
 A few agents that was updated using Windows Update did not report as updated. Repair fixed that nuisance.
+
 
 Had to flush the cache on a few Gateways to avoid heartbeat failures from their agents. Only daisy-chained ones if I recall correctly.
 
 
 
-Planning
+ Planning
         </p>
     </div>
 </article>

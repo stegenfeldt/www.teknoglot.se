@@ -178,10 +178,14 @@ System Center Pack for: Message Queuing 3.0Version:      6.0.6615.0Released on: 
 Now, what’s really interesting is what you will find in the MP Guide under “Supported Configurations”.
 
 The Message Queuing Management Pack for Operations Manager 2007 is designed to monitor Message Queuing version 3 only.
+
+
 The Message Queuing Management Pack supports the following platforms:
 
 Windows Server 2003
 Windows XP
+
+
 
 The Message Queuing Management Pack also supports monitoring clustered MSMQ components
 
@@ -190,13 +194,12 @@ Finally, MSMQ monitoring seems to be cluster aware, which might mean that the ho
 
 The December 2009 update to this management pack includes the following change:
 
+
+
 Fixed a problem when working with an instance of MSMQ in a Cluster. The MP is now able to discover and monitor public and private queues in a cluster.
 Fixed a problem when discovering the local and cluster instance of MSMQ. The MP is now able to discover and monitor both instances.
 
 
-The confusing double RunAs profiles seems to have been cleaned up too (you only have to worry about one now) as well as fixing some sloppy mistakes in the previous scripts (no Option Explicit? C’mon Microsoft! You write the best practices, try to stick to them.) and generally improving display and documentation.
-Gonna import this to our staging environment today and let it roll during the holidays.
-Download and documentation:http://www.microsoft.com/downloads/details.aspx?FamilyId=1D2B4398-8BC2-4A43-850C-852EBB0D983B&amp;displaylang=en&amp;displaylang=en
         </p>
     </div>
 </article>
@@ -223,12 +226,16 @@ Download and documentation:http://www.microsoft.com/downloads/details.aspx?Famil
     
 
         <p class="article-excerpt">
-            Error DescriptionHere’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:
+             Error Description
+Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard:
 &lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;DataItem type="Microsoft.SSH.SSHCommandData" time="2009-08-05T11:15:01.5800358-04:00" sourceHealthServiceId="0EB1D6DA-202C-7FC5-3D46-BDBB9208547D"&gt;&lt;SSHCommandData&gt;&lt;stdout&gt;Generating certificate with hostname="COMPUTERNAME"[/home/serviceb/TfsCoreWrkSpcRedhat/source/code/tools/scx_ssl_config/scxsslcert.cpp:198]Failed to allocate resource of type random data: Failed to get random data - not enough entropy&lt;/stdout&gt;&lt;stderr&gt;error: %post(scx-1.0.4-248.i386) scriptlet failed, exit status 1&lt;/stderr&gt;&lt;returnCode&gt;1&lt;/returnCode&gt;&lt;/SSHCommandData&gt;&lt;/DataItem&gt;
 But first, a little background on the actual “problem”. To generate the certificate, the entropy needs to be high enough to generate random data for the certificate creation. Without the certificate, the OpsMgr agent won’t be able to open up communications with the MS. So, what creates this entropy we need? Bluntly put, a selection of hardware components that are likely to produce non-predictable data. Like a keyboard, mouse and a monitor or videocard. Of course, there’s a lot more to it, but we really don’t need to know this. What we need to know is that there has to be a “bit bucket” of more than 256bytes of entropy for the certificate creation process to succeed. We also need to know that more enterprise-ish servers, like rack- or blade-servers tend to be void of things like directly attached keyboards, mouses and monitors that the linux kernel needs to be able to generate entropy. And herein lies the problem. If you have a new server that is not in full service (likely since we are trying to deploy the monitoring on it) which means that there’s not much random data flowing through the hardware and there’s no keyboard or mouse or monitor connected to it there is quite the risk that the system entropy is going to be very low. Of the linux systems that I have been deploying OpsMgr agents to, about half have failed because of “Not enough entropy”. So, here’s the steps I usually takes to ensure that discovery works. I use PuTTY to connect to the soon-to-be-monitored servers. This guide also assumes that you have SU rights on the system since all of these steps (except #1) needs it.
-Workaround1. Check you current entropycat /proc/sys/kernel/random/entropy_avail
+ Workaround
+ 1. Check you current entropy
+cat /proc/sys/kernel/random/entropy_avail
 Is it less than, or close to, 256? It probably is. If you don’t feel like connecting a mouse and start wiggling it around—not really feasible in a data center—and see if the entropy increases, you can generate your own random data.
-2. Generate you own random data.Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:
+ 2. Generate you own random data.
+Be advised that this forced entropy will not be as random as the system-created on and thus not as secure. How much more insecure it is, I don’t know, and quite frankly I prefer to have my systems monitored yet slightly less secure than not monitored at all. Anyway, you can force your own random data by running:
         </p>
     </div>
 </article>
