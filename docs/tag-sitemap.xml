@@ -254,20 +254,6 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/Windows-Installer/</loc>
-        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tag/WMI/</loc>
-        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.teknoglot.se/tag/Exchange/</loc>
         <lastmod>2018-09-04T11:15:17.719Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -276,6 +262,20 @@
 
     <url>
         <loc>https://www.teknoglot.se/tag/TechNet/</loc>
+        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Windows-Installer/</loc>
+        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/WMI/</loc>
         <lastmod>2018-09-04T11:15:17.719Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -499,14 +499,14 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/PoSH/</loc>
+        <loc>https://www.teknoglot.se/tag/How-To/</loc>
         <lastmod>2018-09-04T11:15:17.750Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tag/How-To/</loc>
+        <loc>https://www.teknoglot.se/tag/PoSH/</loc>
         <lastmod>2018-09-04T11:15:17.750Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -648,6 +648,13 @@
     <url>
         <loc>https://www.teknoglot.se/tag/Management-Pack/</loc>
         <lastmod>2018-09-04T11:15:17.764Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/tag/Fieldnotes/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

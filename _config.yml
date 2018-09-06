@@ -56,7 +56,8 @@ category_map:
   OpsMgr 2012: opsmgr2012
   OpsMgr 2016: opsmgr2016
   OpsMgr 1801: opsmgr1801
-  Linix: linux
+  OpsMgr 1807: opsmgr1807
+  Linux: linux
   SQL 2005: sql2005
   SQL 2008: sql2008
   SQL 2012: sql2012
@@ -80,6 +81,7 @@ category_map:
   SLES: sles
   Debian: debian
   Ubuntu: ubuntu
+  Field Notes: fieldnotes
   
 tag_map:
 
