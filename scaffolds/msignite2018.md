@@ -5,8 +5,7 @@ tags:
     - MSIgnite
     - Presentation Notes
 categories:
-    - Events
-    - MSIgnite 2018
+    - [Events, MSIgnite 2018]
 ---
 
 # {{ title }}

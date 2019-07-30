@@ -56,13 +56,18 @@ category_map:
   OpsMgr 2012: opsmgr2012
   OpsMgr 2016: opsmgr2016
   OpsMgr 1801: opsmgr1801
-  Linix: linux
+  OpsMgr 2019: opsmgr2019
+  SCSM 2012: scsm2012
+  SCSM 2016: scsm2016
+  SCSM 2019: scsm2019
+  Linux: linux
   SQL 2005: sql2005
   SQL 2008: sql2008
   SQL 2012: sql2012
   SQL 2014: sql2014
   SQL 2016: sql2016
   SQL 2017: sql2017
+  SQL 2019: sql2019
   SQL Server: sql
   Windows: windows
   Windows 2008: win2008
@@ -70,6 +75,7 @@ category_map:
   Windows XP: winxp
   Windows 2012: win2012
   Windows 2016: win2016
+  Windows 2019: win2019
   Windows Nano: winnano
   Docker: docker
   "Hyper-V": hyperv
