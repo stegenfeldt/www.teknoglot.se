@@ -56,6 +56,7 @@ category_map:
   OpsMgr 2012: opsmgr2012
   OpsMgr 2016: opsmgr2016
   OpsMgr 1801: opsmgr1801
+  OpsMgr 1807: opsmgr1807
   OpsMgr 2019: opsmgr2019
   SCSM 2012: scsm2012
   SCSM 2016: scsm2016
@@ -86,6 +87,7 @@ category_map:
   SLES: sles
   Debian: debian
   Ubuntu: ubuntu
+  Field Notes: fieldnotes
   
 tag_map:
 

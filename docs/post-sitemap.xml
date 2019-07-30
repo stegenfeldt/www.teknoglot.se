@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr1801/Upgrading-OpsMgr-1801-to-1807-Fieldnotes/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</loc>
         <lastmod>2018-09-04T11:15:17.764Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,7 +39,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/virtual-openvpn-server-at-home/</loc>
+        <loc>https://www.teknoglot.se/linux/virtual-openvpn-server-at-home/</loc>
         <lastmod>2018-09-04T11:15:17.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +47,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/</loc>
         <lastmod>2018-09-04T11:15:17.760Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -47,7 +55,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/</loc>
         <lastmod>2018-09-04T11:15:17.760Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -231,7 +239,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/ubuntu/nvidia-problems-in-ubuntu-810/</loc>
+        <loc>https://www.teknoglot.se/linux/ubuntu/nvidia-problems-in-ubuntu-810/</loc>
         <lastmod>2018-09-04T11:15:17.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -239,7 +247,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/my-impression-of-ext4-wth/</loc>
+        <loc>https://www.teknoglot.se/linux/my-impression-of-ext4-wth/</loc>
         <lastmod>2018-09-04T11:15:17.735Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -311,7 +319,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
+        <loc>https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/</loc>
         <lastmod>2018-09-04T11:15:17.728Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -319,7 +327,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/sles/linux-discovery-not-enough-entropy/</loc>
+        <loc>https://www.teknoglot.se/tb/lets-split/</loc>
         <lastmod>2018-09-04T11:15:17.728Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -351,7 +359,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Linux/rhes/install-linuxis21-rhes5/</loc>
+        <loc>https://www.teknoglot.se/linux/rhes/install-linuxis21-rhes5/</loc>
         <lastmod>2018-09-04T11:15:17.721Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -375,7 +383,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</loc>
         <lastmod>2018-09-04T11:15:17.719Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +391,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
         <lastmod>2018-09-04T11:15:17.719Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -399,7 +407,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
         <lastmod>2018-09-04T11:15:17.717Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -407,7 +415,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
         <lastmod>2018-09-04T11:15:17.717Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -431,7 +439,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</loc>
         <lastmod>2018-09-04T11:15:17.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -439,7 +447,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</loc>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/</loc>
         <lastmod>2018-09-04T11:15:17.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -463,7 +471,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</loc>
         <lastmod>2018-09-04T11:15:17.711Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -471,7 +479,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</loc>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
         <lastmod>2018-09-04T11:15:17.711Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

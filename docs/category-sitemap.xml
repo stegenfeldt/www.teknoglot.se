@@ -35,7 +35,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/Linux/rhes/</loc>
+        <loc>https://www.teknoglot.se/topics/linux/rhes/</loc>
         <lastmod>2018-09-04T11:15:17.721Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -49,14 +49,14 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/Linux/sles/</loc>
+        <loc>https://www.teknoglot.se/topics/linux/sles/</loc>
         <lastmod>2018-09-04T11:15:17.728Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/Linux/ubuntu/</loc>
+        <loc>https://www.teknoglot.se/topics/linux/ubuntu/</loc>
         <lastmod>2018-09-04T11:15:17.736Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -98,7 +98,7 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/Linux/</loc>
+        <loc>https://www.teknoglot.se/topics/linux/</loc>
         <lastmod>2018-09-04T11:15:17.761Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -126,15 +126,43 @@
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/ms/</loc>
+        <loc>https://www.teknoglot.se/topics/ms/opsmgr2007/</loc>
         <lastmod>2018-09-04T11:15:17.764Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/topics/ms/opsmgr2007/</loc>
-        <lastmod>2018-09-04T11:15:17.764Z</lastmod>
+        <loc>https://www.teknoglot.se/topics/ms/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Fieldnotes/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/Fieldnotes/OpsMgr/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/opsmgr1807/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/topics/ms/opsmgr1801/</loc>
+        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
