@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Quick-Hack: Send SMS through Powershell [#powershell] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="PoSH,GSM,Quick-hack,SMS" />
+        <meta name="keywords" content="PoSH,GSM,Quick-hack,SMS">
     
     <meta name="description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
 <meta name="keywords" content="PoSH,GSM,Quick-hack,SMS">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-04T11:15:17.748Z">
+<meta property="og:updated_time" content="2018-09-05T07:14:39.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quick-Hack: Send SMS through Powershell [#powershell]">
 <meta name="twitter:description" content="Decided to do a quick-hack/fast-publish on this one as I have had a bit less time to create a nice clean production-ready version as of yet… and people has been asking about how far off the article is">
@@ -25,7 +25,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -50,14 +50,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -191,7 +191,7 @@ ga('send', 'pageview');
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$serialPort</span>.Close()</span><br></pre></td></tr></table></figure>
 <h2 id="the-copypaste-part"><a class="markdownIt-Anchor" href="#the-copypaste-part"></a> The Copy/Paste part</h2>
 <p>Here’s the entire script with some added control-features and check to avoid trying to send text messages with no serial connection.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">### DISCLAIMER ###</span></span><br><span class="line"><span class="comment">## This script is a quick-hack to demonstrate</span></span><br><span class="line"><span class="comment">## the basics of sending an SMS using an AT-</span></span><br><span class="line"><span class="comment">## compatible GSM modem connected a local</span></span><br><span class="line"><span class="comment">## serial port through PowerShell.</span></span><br><span class="line"><span class="comment">## No error-handling is implemented and this</span></span><br><span class="line"><span class="comment">## is NOT a script fit for production.</span></span><br><span class="line"><span class="comment">##################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your instance of the SerialPort Class</span></span><br><span class="line"><span class="variable">$serialPort</span> = <span class="built_in">new-Object</span> System.IO.Ports.SerialPort</span><br><span class="line"><span class="comment"># Set various COM-port settings</span></span><br><span class="line"><span class="variable">$serialPort</span>.PortName = <span class="string">"COM1"</span></span><br><span class="line"><span class="variable">$serialPort</span>.BaudRate = <span class="number">19200</span></span><br><span class="line"><span class="variable">$serialPort</span>.WriteTimeout = <span class="number">500</span></span><br><span class="line"><span class="variable">$serialPort</span>.ReadTimeout = <span class="number">3000</span></span><br><span class="line"><span class="variable">$serialPort</span>.DtrEnable = <span class="string">"true"</span></span><br><span class="line"><span class="comment"># Open the connection</span></span><br><span class="line"><span class="variable">$serialPort</span>.Open()</span><br><span class="line"><span class="comment"># Add variables for phone number and the message.</span></span><br><span class="line"><span class="variable">$phoneNumber</span> = <span class="string">"+46888888888"</span></span><br><span class="line"><span class="variable">$textMessage</span> = <span class="string">"This is a test message!"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"> <span class="variable">$serialPort</span>.Open()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> &#123;</span><br><span class="line"> <span class="comment"># Wait for 5s and try again</span></span><br><span class="line"> <span class="comment"># Told you this is a quick-hack, right?</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">5</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Open()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">If</span> (<span class="variable">$serialPort</span>.IsOpen <span class="nomarkup">-eq</span> <span class="literal">$true</span>) &#123;</span><br><span class="line"> <span class="comment"># Tell the modem you want to use AT-mode</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"AT+CMGF=1`r`n"</span>)</span><br><span class="line"> <span class="comment"># Start feeding message data to the modem</span></span><br><span class="line"> <span class="comment"># Begin with the phone number, international</span></span><br><span class="line"> <span class="comment"># style and a &lt;CL&gt;... that's the `r`n part</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"AT+CMGS=`"<span class="variable">$phoneNumber</span>`"`r`n"</span>)</span><br><span class="line"> <span class="comment"># Give the modem some time to react...</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">1</span></span><br><span class="line"> <span class="comment"># Now, write the message to the modem</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"<span class="variable">$textMessage</span>`r`n"</span>)</span><br><span class="line"> <span class="comment"># Send a Ctrl+Z to end the message.</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write($([char] <span class="number">26</span>))</span><br><span class="line"> <span class="comment"># Wait for modem to send it</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Close the Serial Port connection</span></span><br><span class="line"><span class="variable">$serialPort</span>.Close()</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$serialPort</span>.IsOpen <span class="nomarkup">-eq</span> <span class="literal">$false</span>) &#123;</span><br><span class="line"> echo <span class="string">"Port Closed!"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># That's all folks</span></span><br><span class="line"><span class="comment"># Now, add call-backs, event-handlers, and return-</span></span><br><span class="line"><span class="comment"># message handling.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">### DISCLAIMER ###</span></span><br><span class="line"><span class="comment">## This script is a quick-hack to demonstrate</span></span><br><span class="line"><span class="comment">## the basics of sending an SMS using an AT-</span></span><br><span class="line"><span class="comment">## compatible GSM modem connected a local</span></span><br><span class="line"><span class="comment">## serial port through PowerShell.</span></span><br><span class="line"><span class="comment">## No error-handling is implemented and this</span></span><br><span class="line"><span class="comment">## is NOT a script fit for production.</span></span><br><span class="line"><span class="comment">##################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your instance of the SerialPort Class</span></span><br><span class="line"><span class="variable">$serialPort</span> = <span class="built_in">new-Object</span> System.IO.Ports.SerialPort</span><br><span class="line"><span class="comment"># Set various COM-port settings</span></span><br><span class="line"><span class="variable">$serialPort</span>.PortName = <span class="string">"COM1"</span></span><br><span class="line"><span class="variable">$serialPort</span>.BaudRate = <span class="number">19200</span></span><br><span class="line"><span class="variable">$serialPort</span>.WriteTimeout = <span class="number">500</span></span><br><span class="line"><span class="variable">$serialPort</span>.ReadTimeout = <span class="number">3000</span></span><br><span class="line"><span class="variable">$serialPort</span>.DtrEnable = <span class="string">"true"</span></span><br><span class="line"><span class="comment"># Open the connection</span></span><br><span class="line"><span class="variable">$serialPort</span>.Open()</span><br><span class="line"><span class="comment"># Add variables for phone number and the message.</span></span><br><span class="line"><span class="variable">$phoneNumber</span> = <span class="string">"+46888888888"</span></span><br><span class="line"><span class="variable">$textMessage</span> = <span class="string">"This is a test message!"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"> <span class="variable">$serialPort</span>.Open()</span><br><span class="line">&#125;</span><br><span class="line">catch &#123;</span><br><span class="line"> <span class="comment"># Wait for 5s and try again</span></span><br><span class="line"> <span class="comment"># Told you this is a quick-hack, right?</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">5</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Open()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">If</span> (<span class="variable">$serialPort</span>.IsOpen <span class="nomarkup">-eq</span> <span class="literal">$true</span>) &#123;</span><br><span class="line"> <span class="comment"># Tell the modem you want to use AT-mode</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"AT+CMGF=1`r`n"</span>)</span><br><span class="line"> <span class="comment"># Start feeding message data to the modem</span></span><br><span class="line"> <span class="comment"># Begin with the phone number, international</span></span><br><span class="line"> <span class="comment"># style and a &lt;CL&gt;... that's the `r`n part</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"AT+CMGS=`"<span class="variable">$phoneNumber</span>`"`r`n"</span>)</span><br><span class="line"> <span class="comment"># Give the modem some time to react...</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">1</span></span><br><span class="line"> <span class="comment"># Now, write the message to the modem</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write(<span class="string">"<span class="variable">$textMessage</span>`r`n"</span>)</span><br><span class="line"> <span class="comment"># Send a Ctrl+Z to end the message.</span></span><br><span class="line"> <span class="variable">$serialPort</span>.Write($([char] <span class="number">26</span>))</span><br><span class="line"> <span class="comment"># Wait for modem to send it</span></span><br><span class="line"> <span class="built_in">Start-Sleep</span> -Seconds <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Close the Serial Port connection</span></span><br><span class="line"><span class="variable">$serialPort</span>.Close()</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$serialPort</span>.IsOpen <span class="nomarkup">-eq</span> <span class="literal">$false</span>) &#123;</span><br><span class="line"> echo <span class="string">"Port Closed!"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># That's all folks</span></span><br><span class="line"><span class="comment"># Now, add call-backs, event-handlers, and return-</span></span><br><span class="line"><span class="comment"># message handling.</span></span><br></pre></td></tr></table></figure>
 <p>Enjoy!</p>
 
                 </div>
@@ -200,7 +200,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/" data-id="cjlqmhxsz0030lwgizhtylbbc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/" data-id="cjypuwbtf0017ncqqxwg0rznu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -464,7 +464,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -499,6 +499,6 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

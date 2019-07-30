@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Category: Microsoft | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,7 +21,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -46,14 +46,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -173,12 +173,7 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-             Upgrading #OpsMgr 1801 to 1807 - Fieldnotes
-
-My Fieldnotes are quick, unrefined notations and reflections from the field.
-Content may be obvious and unnecessary to some, useful to others. The main purpose is for them to be used as a searchable notebook.
-These Notes are not to be seen as a manual, a how-to or a set of instructions, but rather a collection of thoughts, reflections and experiences from my field-work.
-
+            My Fieldnotes are quick, unrefined notations and reflections from the field.  Content may be obvious and unnecessary to some, useful to others.The main purpose is for them to be used as a searchable notebook.These Notes are not to be seen as a manual, a how-to or a set ofinstructions, but rather a collection of thoughts, reflectionsand experiences from my field-work.
  Abstract
 Upgrades from OpsMgr (SCOM) 1801 to 1807 is generally a safe operation. Can be done using Windows Update if you want to, but I would suggest only letting Management Servers, Reporting Servers and Web Console servers pre-load the update for a controlled update at a suitable time.
 I general, the updates goes smooth, but you still have to run the SQL-script(s) and import the updated Management Packs provided with the update. This should be done directly after updating the last Management Server.
@@ -193,6 +188,8 @@ List of fixes
  Notes
  Updating the Management Servers
 Fairly quick update, may need a restart afterwards.
+On occasion, especially if the patch has to wait on shutting down the management server services (healthservice, omsdk, cshost) due to backlogs or high load, it might fail at replacing the binaries. You will notice this as the management server will go grey in the SCOM Console and you might find connectivity errors in the OperationsManager eventlog.
+If this happens, can be fixed by simply applying the patch again after a reboot.
         </p>
     </div>
 </article>
@@ -275,6 +272,12 @@ Make sure all SCOM Management Servers have .NET Framework 3.5 installed before a
         <p class="article-excerpt">
              Untimely, perhaps
 While most of us are waiting for SCOM 2016 RTM to be generally available i’ve completely forgot to blog about my little Set-SCOMMaintenanceModeDeluxe.ps1 script I wrote a while ago.
+It is pretty much a small extension to the regular Set-SCOMMaintenanceMode cmdlet that allows you to set Computers, Groups or specific Windows Services into maintenance mode.
+I have yet to make it a proper module (although I have promised myself to do so) so you’d still have to manually download the script and execute it the old-fashioned way.
+I’ve uploaded it as a public gist on github, so feel free to add adapt it to your needs.
+ Here’s the gist
+
+
         </p>
     </div>
 </article>
@@ -351,7 +354,14 @@ Select Grid type, and layout
         <p class="article-excerpt">
             Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.
 The event is the generic “Health Service Script” with id 4001.
-Management G
+Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;Error occured during CPU Usage for SQL Instances data source executing.Computer: REDACTEDReason: Cannot add type. Compilation errors occurred.Position:256Offset:21Detailed error output: Cannot add type. Compilation errors occurred.--------(0) : No source files specified(1) : using System;--------(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found(1) : using System;
+There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention “Cannot add type. Compilation errors occured.”
+In a thread on the Technet Forums it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the C:\Windows\TEMP folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.
+We took a quick look using procmon, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.
+ A wild work-around appears!
+The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.
+Now you just have to manage this on all your SQL-servers! (yaaaay)
+
         </p>
     </div>
 </article>
@@ -544,7 +554,10 @@ Had to flush the cache on a few Gateways to avoid heartbeat failures from their 
 
         <p class="article-excerpt">
             By request, I uploaded a short clip demonstrating how you would add a windows performance counter to a performance collection rule using the Authoring Console.
-It is a fairly simple task to complete b
+It is a fairly simple task to complete but does require the Authoring Console, obviously, and a better target class than what I use in the demo. The demo also assumes that this counter exist on all the targeted servers in your environment. It would be wise, when making your management pack, to check that it’s there on all targeted operating systems, and that’s what I use Performance Monitor for. (just search for perfmon in your start menu or run perfmon.exe)
+Enjoy.
+
+
         </p>
     </div>
 </article>
@@ -769,7 +782,7 @@ Using this method saves us a bunch of over-head and a couple of round-trips to t
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -802,6 +815,6 @@ Using this method saves us a bunch of over-head and a couple of round-trips to t
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

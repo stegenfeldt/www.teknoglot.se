@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Category: SQL Server | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,7 +21,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -46,14 +46,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -173,7 +173,32 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin
+            In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.
+In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.
+What to do!?
+Thanks to Raul Carcia’s blog post it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.
+Here’s what to do:
+
+Open the SQL Server Configuration Manager.
+In SQL Server Services, open the properties for the SQL Server instance you need access to.
+In the Advanced tab, find Startup Parameters.
+Add “;-m” to the end of that line.
+Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first 😉)
+Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn
+(C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)
+Execute sqlcmd /A /E /S &lt;INSTANCE&gt;
+(use . for local default instance and .INSTANCE for local named instance)
+In the CLI, execute:
+
+  EXEC sp_addsrvrolemember 'DOMAIN\yourusername', 'sysadmin';GO
+
+Return to the SQL Server Configuration Manager and restore the Startup Parameters to it’s previous settings.
+Restart the SQL Server instance to allow users to get access to it again.
+
+Now, you should be able to login to the SQL server with sysadmin rights using your current user. This would also be a good time to actually set up a SQL Server Admins group (local or domain) to add to the sysadmin role to avoid having others to the above steps when you, yourself, are on vacation. 😉
+As Raul Carcia point out in his original post, this is really a disaster recovery procedure and there’s definitely nothing sneaky about it since it leaves a lot of trails in the event logs.
+All in all, a Great article by Raul and all credit should go his way.
+
         </p>
     </div>
 </article>
@@ -201,7 +226,9 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             Let’s say you have followed this guide: http://support.microsoft.com/kb/938245/
-Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic
+Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website application pool to “Classic .NET AppPool”. It is actually noted in KB938245 but only after the installation, during the configuration. For some reason I have not been able to install Reporting Services 2005 on Windows 2008 without changing this prior to the installation.
+Maybe I am doing it wrong but this seems to be working all right for me.
+
         </p>
     </div>
 </article>
@@ -418,7 +445,7 @@ SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems 
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -451,6 +478,6 @@ SQL Express is limited to 1GB RAM, 1 CPU and 4GB of databases. 1GB of RAM seems 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

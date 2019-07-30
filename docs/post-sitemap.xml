@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
     <url>
         <loc>https://www.teknoglot.se</loc>
         <changefreq>daily</changefreq>
@@ -7,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2016/om1801-upgrade-gotchas/</loc>
+        <lastmod>2019-07-30T13:47:19.693Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.teknoglot.se/ms/opsmgr1801/Upgrading-OpsMgr-1801-to-1807-Fieldnotes/</loc>
-        <lastmod>2018-09-06T14:06:40.820Z</lastmod>
+        <lastmod>2019-07-30T13:45:19.303Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +25,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/windows-server-2008-nlb-m-for-opsmgr-released/</loc>
-        <lastmod>2018-09-04T11:15:17.764Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.370Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,15 +33,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/sql/whynotusesqlexpress-itsforfree/</loc>
-        <lastmod>2018-09-04T11:15:17.763Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/</loc>
-        <lastmod>2018-09-04T11:15:17.762Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.369Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +41,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/linux/virtual-openvpn-server-at-home/</loc>
-        <lastmod>2018-09-04T11:15:17.761Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.367Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/</loc>
+        <lastmod>2018-09-05T07:14:39.367Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +57,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-operations-manager-2007-r2-management-pack/</loc>
-        <lastmod>2018-09-04T11:15:17.760Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.366Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,15 +65,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-msmq-management-pack/</loc>
-        <lastmod>2018-09-04T11:15:17.760Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</loc>
-        <lastmod>2018-09-04T11:15:17.759Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.365Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -72,7 +73,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/tcp-port-check-use-with-caution/</loc>
-        <lastmod>2018-09-04T11:15:17.755Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,15 +81,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/squaredup-installation/</loc>
-        <lastmod>2018-09-04T11:15:17.754Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
-        <lastmod>2018-09-04T11:15:17.753Z</lastmod>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/updated-mp-for-system-center-configurations-manager-2007-sp2-on-x64/</loc>
+        <lastmod>2018-09-05T07:14:39.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -96,7 +97,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/sql-managementpack-survey-make-your-voice-heard/</loc>
-        <lastmod>2018-09-04T11:15:17.753Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.363Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/</loc>
+        <lastmod>2018-09-05T07:14:39.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -104,7 +113,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/sluggish-performance-on-teknoglot/</loc>
-        <lastmod>2018-09-04T11:15:17.752Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -112,15 +121,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/windows/winxp/silly-hibernation-doo-doo-on-winxp/</loc>
-        <lastmod>2018-09-04T11:15:17.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/</loc>
-        <lastmod>2018-09-04T11:15:17.750Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -128,7 +129,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/server-problems-fixed-hopefully/</loc>
-        <lastmod>2018-09-04T11:15:17.750Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.359Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/</loc>
+        <lastmod>2018-09-05T07:14:39.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -136,15 +145,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/</loc>
-        <lastmod>2018-09-04T11:15:17.749Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/</loc>
-        <lastmod>2018-09-04T11:15:17.748Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.357Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -152,15 +153,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/rant-the-concept-of-booth-babes/</loc>
-        <lastmod>2018-09-04T11:15:17.748Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.357Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</loc>
-        <lastmod>2018-09-04T11:15:17.746Z</lastmod>
+        <loc>https://www.teknoglot.se/code/posh/quick-hack-send-sms-through-powershell-powershell/</loc>
+        <lastmod>2018-09-05T07:14:39.356Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -168,15 +169,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/quick-demo-add-windows-performance-collection-rule-opsmgr-mpauthoring/</loc>
-        <lastmod>2018-09-04T11:15:17.746Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
-        <lastmod>2018-09-04T11:15:17.745Z</lastmod>
+        <loc>https://www.teknoglot.se/tb/quest-software-acquires-exc-and-vizioncore/</loc>
+        <lastmod>2018-09-05T07:14:39.354Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -184,7 +185,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/</loc>
-        <lastmod>2018-09-04T11:15:17.744Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.353Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/</loc>
+        <lastmod>2018-09-05T07:14:39.353Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -192,7 +201,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/</loc>
-        <lastmod>2018-09-04T11:15:17.743Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.352Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -200,15 +209,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/</loc>
-        <lastmod>2018-09-04T11:15:17.742Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</loc>
-        <lastmod>2018-09-04T11:15:17.740Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -216,15 +217,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/</loc>
-        <lastmod>2018-09-04T11:15:17.738Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/opsmgr-2007-connectivity-map/</loc>
-        <lastmod>2018-09-04T11:15:17.737Z</lastmod>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/</loc>
+        <lastmod>2018-09-05T07:14:39.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -232,7 +233,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/opsmgr-2007-r2-documentation/</loc>
-        <lastmod>2018-09-04T11:15:17.737Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.348Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/opsmgr-2007-connectivity-map/</loc>
+        <lastmod>2018-09-05T07:14:39.347Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -240,7 +249,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/linux/ubuntu/nvidia-problems-in-ubuntu-810/</loc>
-        <lastmod>2018-09-04T11:15:17.736Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.346Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -248,7 +257,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/linux/my-impression-of-ext4-wth/</loc>
-        <lastmod>2018-09-04T11:15:17.735Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.345Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -256,7 +265,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/</loc>
-        <lastmod>2018-09-04T11:15:17.735Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.345Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -264,7 +273,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-mp-subscriptoutofrange/</loc>
-        <lastmod>2018-09-04T11:15:17.734Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -272,23 +281,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-4-and-msmq-5-mp-for-opsmgr-released-finally/</loc>
-        <lastmod>2018-09-04T11:15:17.733Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</loc>
-        <lastmod>2018-09-04T11:15:17.732Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/</loc>
-        <lastmod>2018-09-04T11:15:17.731Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.343Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -296,7 +289,23 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/move-complete-welcome-to-teknoglot-se/</loc>
-        <lastmod>2018-09-04T11:15:17.731Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.342Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/msmq-3-mp-for-opsmgr-v6065870-released/</loc>
+        <lastmod>2018-09-05T07:14:39.342Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/microsoft-adds-support-for-suse-11-in-opsmgr-r2/</loc>
+        <lastmod>2018-09-05T07:14:39.341Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -304,7 +313,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/menu-problems/</loc>
-        <lastmod>2018-09-04T11:15:17.730Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.340Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -312,15 +321,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/load-balanced-scom2012-sdk-services-for-network-illiterates-opsmgr-nlb/</loc>
-        <lastmod>2018-09-04T11:15:17.729Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/</loc>
-        <lastmod>2018-09-04T11:15:17.728Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -328,7 +329,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/lets-split/</loc>
-        <lastmod>2018-09-04T11:15:17.728Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/</loc>
+        <lastmod>2018-09-05T07:14:39.338Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -336,7 +345,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/introduction-to-tg-winautosvc-v1/</loc>
-        <lastmod>2018-09-04T11:15:17.727Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.337Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -344,7 +353,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/winvista/intel-drivers-causes-old-school-freezes-on-windows-vista/</loc>
-        <lastmod>2018-09-04T11:15:17.726Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.336Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -352,7 +361,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/</loc>
-        <lastmod>2018-09-04T11:15:17.724Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.335Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -360,15 +369,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/linux/rhes/install-linuxis21-rhes5/</loc>
-        <lastmod>2018-09-04T11:15:17.721Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/tb/im-moving-finally/</loc>
-        <lastmod>2018-09-04T11:15:17.720Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.335Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -376,15 +377,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/tb/in-transit-again/</loc>
-        <lastmod>2018-09-04T11:15:17.720Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.334Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</loc>
-        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
+        <loc>https://www.teknoglot.se/tb/im-moving-finally/</loc>
+        <lastmod>2018-09-05T07:14:39.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -392,7 +393,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/esent-error-when-modifying-opsmgr-agent/</loc>
-        <lastmod>2018-09-04T11:15:17.719Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/health-rollup-not-working-in-exchange-management-pack/</loc>
+        <lastmod>2018-09-05T07:14:39.332Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -400,7 +409,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/</loc>
-        <lastmod>2018-09-04T11:15:17.718Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.331Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -408,15 +417,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/clearing-disabled-discovery/</loc>
-        <lastmod>2018-09-04T11:15:17.717Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
-        <lastmod>2018-09-04T11:15:17.717Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.330Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -424,7 +425,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/</loc>
-        <lastmod>2018-09-04T11:15:17.716Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.329Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/ms/opsmgr2007/change-gateway-powershell-script/</loc>
+        <lastmod>2018-09-05T07:14:39.329Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -432,15 +441,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2007/bulk-disable-acs-forwarders-with-wildcards/</loc>
-        <lastmod>2018-09-04T11:15:17.715Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</loc>
-        <lastmod>2018-09-04T11:15:17.714Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.328Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -448,23 +449,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/PoSH-Grid-Dashboard-for-RDSH/</loc>
-        <lastmod>2018-09-04T11:15:17.714Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://www.teknoglot.se/ms/opsmgr2016/om1801-upgrade-gotchas/</loc>
-        <lastmod>2018-09-04T11:15:17.713Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</loc>
-        <lastmod>2018-09-04T11:15:17.712Z</lastmod>
+        <loc>https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/</loc>
+        <lastmod>2018-09-05T07:14:39.326Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -472,7 +465,15 @@
 
     <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-KEY01-Vision-Keynote/</loc>
-        <lastmod>2018-09-04T11:15:17.711Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.324Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-TK01-Create-a-Modern-Workplace-with-Microsoft-365/</loc>
+        <lastmod>2018-09-05T07:14:39.324Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -480,7 +481,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-GS01-Microsoft-for-the-Modern-Data-Estate/</loc>
-        <lastmod>2018-09-04T11:15:17.711Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.323Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -488,7 +489,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/Events/MSIgnite-2017/MSIgnite-2017-BRK1039-Windows-Server-Software-Defined/</loc>
-        <lastmod>2018-09-04T11:15:17.710Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.322Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -496,7 +497,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/ms/opsmgr2012/Set-SCOMMaintenanceModeDeluxe/</loc>
-        <lastmod>2018-09-04T11:15:17.709Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.321Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -504,7 +505,7 @@
 
     <url>
         <loc>https://www.teknoglot.se/code/vbs/Resize-all-images-in-a-Word-document-with-vbs-macro/</loc>
-        <lastmod>2018-09-04T11:15:17.708Z</lastmod>
+        <lastmod>2018-09-05T07:14:39.320Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

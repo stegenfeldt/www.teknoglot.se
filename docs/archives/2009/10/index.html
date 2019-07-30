@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Archive: 2009/10 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,7 +21,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -46,14 +46,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -273,7 +273,11 @@ Files updated in this update for R2:
     
 
         <p class="article-excerpt">
-            I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I 
+            I’ve wrestled a bit with a critical status on one of the Organization States at a clients site that wont go back to green despite all the underlying monitors have gone back to green. And apparently I am not alone on this one. Others, like me, has read and re-read the MP-guide i search for a monitor/rule/discovery for overrides forgotten, and I don’t know how many times I’ve made a small change and tried resetting the health once again. Anyhow.
+Marius Sutara posted an answer on TechNet forums last week with a “fix” (-ish), or rather the acknowledgement that the problem is not a 40c. The problem might be related to other MP as well, but I’ve only seen it on the new Exchange MP so far. In that same post, Pete Zerger provided some links to two nifty little tools that will help you reset the health of the monitor.
+In case you wonder why on earth I post when there’s allready a “solution” out there; Pagerank, baby!
+Not for me, but for the forum post making it show up earlier on google.
+
         </p>
     </div>
 </article>
@@ -303,7 +307,14 @@ Files updated in this update for R2:
             Microsoft released an updated MP (v6.1.7533.0, released on 10/8/2009) for monitoring the health the Operations Manager components.
 Most significant updates, according to me, would seem to be:
 
-Fixed a
+Fixed an issue that was previously preventing all rules related to agentless exception monitoring from generating alerts.
+Added the rule “Collects Opsmgr SDK ServiceClient Connections” to collect the number of connected clients for a given management group. This data is shown in the view “Console and SDK Connection Count” under the folder “Operations ManagerManagement Server Performance”.
+Updated a number of monitors and rules to ensure that data is reported to the correct management group for multihomed agents.
+Fixed the configuration of the rule “IIS Discovery Probe Module Execution Failure” to so that the parameter replacement will now work correctly for alert suppression and generating the details of the alert’s description.
+
+The rest is mostly polishing, fine-tuning and complementary updates. Nothing really ground-breaking here, but still a welcome update.
+Download at: http://www.microsoft.com/downloads/details.aspx?FamilyID=61365290-3c38-4004-b717-e90bb0f6c148
+
         </p>
     </div>
 </article>
@@ -334,7 +345,9 @@ Fixed a
     
 
         <p class="article-excerpt">
-            According to the OpsMgr Team blog, Microsoft wants to know what you think about their SQL Server MP. It’s really hard to come by a better opportunity to express your feelings and desires about monitor
+            According to the OpsMgr Team blog, Microsoft wants to know what you think about their SQL Server MP. It’s really hard to come by a better opportunity to express your feelings and desires about monitoring SQL Server, so don’t miss this one out.
+http://blogs.technet.com/momteam/archive/2009/09/25/sql-management-pack-survey-live-on-connect.aspx
+
         </p>
     </div>
 </article>
@@ -507,7 +520,7 @@ Fixed a
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -540,6 +553,6 @@ Fixed a
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

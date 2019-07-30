@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,PoSH,Fail-over" />
+        <meta name="keywords" content="OpsMgr,PoSH,Fail-over">
     
     <meta name="description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
 <meta name="keywords" content="OpsMgr,PoSH,Fail-over">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-04T11:15:17.740Z">
+<meta property="og:updated_time" content="2018-09-05T07:14:39.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpsMgr 2012 Agent Failover - Simple Script with Wildcards [#opsmgr, #powershell]">
 <meta name="twitter:description" content="In the last post, OpsMgr 2012 Agent &amp;amp; Gateway Failover – The Basics, we looked at the basics of the Agent and Gateway fail-over configuration cmdlets and how to use them in a direct and interactiv">
@@ -25,7 +25,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -50,14 +50,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -179,7 +179,7 @@ This example uses a wild-card for the agent selection and I guess it’s the mos
 </blockquote>
 <h3 id="connect-to-your-management-group"><a class="markdownIt-Anchor" href="#connect-to-your-management-group"></a> Connect to Your Management Group</h3>
 <p>To run any script against an Operations Manager 2012 Management Group we need a connection to one. To connect to a management group we have to load the OperationsManager module. Lets check for a loaded module, load it if necessary and connect to the Management Server from the <code>$inputScomMS</code> setting. If loading the module fails–maybe it is not installed–we will exit the script.</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check if OperationsManager module is loaded</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment"># Try to load the module</span></span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="comment"># Did not work, exit the script</span></span><br><span class="line">        <span class="built_in">Write-Output</span> <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Module is loaded, connect to Management Group/Server</span></span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check if OperationsManager module is loaded</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment"># Try to load the module</span></span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; catch &#123;</span><br><span class="line">        <span class="comment"># Did not work, exit the script</span></span><br><span class="line">        <span class="built_in">Write-Output</span> <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Module is loaded, connect to Management Group/Server</span></span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br></pre></td></tr></table></figure>
 <p>A good idea would, of course, be to first check if we already have an existing management group connection before creating a new one. But that’s up to you.</p>
 <h3 id="rally-your-agents-and-management-servers"><a class="markdownIt-Anchor" href="#rally-your-agents-and-management-servers"></a> Rally Your Agents (and Management Servers)</h3>
 <p>Since we cannot manage manually installed agents–that would be AD-integrated or installed locally using Configuration Manager or maybe the wizard–through powershell we don’t even want to try. So we’ll exclude them.</p>
@@ -195,7 +195,7 @@ This example uses a wild-card for the agent selection and I guess it’s the mos
 <p>The nice thing about loading the agents and the management servers into variables is that all the information you need for this script is pre-cached in memory. You don’t have to connect to the management group to find out which management server happens is the primary for each agent. And you don’t have to run <code>Get-SCOMManagementServer</code> for each agent to select which ones that will be fail-over management servers. All that information is in memory, and memory is fast.</p>
 <h3 id="the-copypaste-part"><a class="markdownIt-Anchor" href="#the-copypaste-part"></a> The Copy/Paste Part</h3>
 <p>As usual, here’s the entire script for you to copy. Read it, try it, adapt it…</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Input SCOM Management Server to connect to in this session</span></span><br><span class="line">[string]<span class="variable">$inputScomMS</span> = <span class="string">"scomms02.domain.local"</span></span><br><span class="line"><span class="comment"># Input an existing agent you want to modify</span></span><br><span class="line">[string]<span class="variable">$inputTargetAgent</span> = <span class="string">"*.domain.local"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### Connect to SCOM 2012 Management Group ###</span></span><br><span class="line"><span class="comment"># Check if OperationsManager module is loaded</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment"># Try to load the module</span></span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="comment"># Did not work, exit the script</span></span><br><span class="line">        <span class="built_in">Write-Output</span> <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Module is loaded, connect to Management Group/Server</span></span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br><span class="line"><span class="comment">### END ###</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Select matching remotely manageable agents</span></span><br><span class="line"><span class="variable">$scomAgents</span> = Get-SCOMAgent -DNSHostName <span class="variable">$inputTargetAgent</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.ManuallyInstalled <span class="nomarkup">-ne</span> <span class="literal">$true</span>&#125;</span><br><span class="line"><span class="comment"># Get all management servers</span></span><br><span class="line"><span class="variable">$scomManagementServers</span> = Get-SCOMManagementServer</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$scomAgent</span> <span class="keyword">in</span> <span class="variable">$scomAgents</span>) &#123;</span><br><span class="line">    <span class="comment"># Get the primary management server for the agent</span></span><br><span class="line">    <span class="variable">$scomPrimaryMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$scomAgent</span>.PrimaryManagementServerName&#125;</span><br><span class="line">    <span class="comment"># Remove the primary MS from "all MS" array to use it for FailOver servers</span></span><br><span class="line">    <span class="variable">$scomFailOverMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-ne</span> <span class="variable">$scomPrimaryMS</span>.Name&#125;</span><br><span class="line">    <span class="comment"># Set Primary Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -PrimaryServer <span class="variable">$scomPrimaryMS</span></span><br><span class="line">    <span class="comment"># Set Fail-over Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -FailoverServer <span class="variable">$scomFailOverMS</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">### Done!</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Input SCOM Management Server to connect to in this session</span></span><br><span class="line">[string]<span class="variable">$inputScomMS</span> = <span class="string">"scomms02.domain.local"</span></span><br><span class="line"><span class="comment"># Input an existing agent you want to modify</span></span><br><span class="line">[string]<span class="variable">$inputTargetAgent</span> = <span class="string">"*.domain.local"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### Connect to SCOM 2012 Management Group ###</span></span><br><span class="line"><span class="comment"># Check if OperationsManager module is loaded</span></span><br><span class="line"><span class="keyword">If</span> (<span class="built_in">Get-Module</span> -Name <span class="string">"OperationsManager"</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment"># Try to load the module</span></span><br><span class="line">        <span class="built_in">Import-Module</span> -Name <span class="string">"OperationsManager"</span></span><br><span class="line">    &#125; catch &#123;</span><br><span class="line">        <span class="comment"># Did not work, exit the script</span></span><br><span class="line">        <span class="built_in">Write-Output</span> <span class="string">"Could not load Operations Manager module"</span></span><br><span class="line">        <span class="keyword">exit</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Module is loaded, connect to Management Group/Server</span></span><br><span class="line">New-SCOMManagementGroupConnection -ComputerName <span class="variable">$inputScomMS</span></span><br><span class="line"><span class="comment">### END ###</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Select matching remotely manageable agents</span></span><br><span class="line"><span class="variable">$scomAgents</span> = Get-SCOMAgent -DNSHostName <span class="variable">$inputTargetAgent</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.ManuallyInstalled <span class="nomarkup">-ne</span> <span class="literal">$true</span>&#125;</span><br><span class="line"><span class="comment"># Get all management servers</span></span><br><span class="line"><span class="variable">$scomManagementServers</span> = Get-SCOMManagementServer</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$scomAgent</span> <span class="keyword">in</span> <span class="variable">$scomAgents</span>) &#123;</span><br><span class="line">    <span class="comment"># Get the primary management server for the agent</span></span><br><span class="line">    <span class="variable">$scomPrimaryMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="variable">$scomAgent</span>.PrimaryManagementServerName&#125;</span><br><span class="line">    <span class="comment"># Remove the primary MS from "all MS" array to use it for FailOver servers</span></span><br><span class="line">    <span class="variable">$scomFailOverMS</span> = <span class="variable">$scomManagementServers</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-ne</span> <span class="variable">$scomPrimaryMS</span>.Name&#125;</span><br><span class="line">    <span class="comment"># Set Primary Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -PrimaryServer <span class="variable">$scomPrimaryMS</span></span><br><span class="line">    <span class="comment"># Set Fail-over Management Server</span></span><br><span class="line">    Set-SCOMParentManagementServer -Agent <span class="variable">$scomAgent</span> -FailoverServer <span class="variable">$scomFailOverMS</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">### Done!</span></span><br></pre></td></tr></table></figure>
 <p>GLHF!</p>
 
                 </div>
@@ -204,7 +204,7 @@ This example uses a wild-card for the agent selection and I guess it’s the mos
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" data-id="cjlqmhxsz002ylwgilhk9zfub" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-simple-script-with-wildcards-opsmgr-powershell/" data-id="cjypuwbuq001tncqq6z278oyc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -468,7 +468,7 @@ This example uses a wild-card for the agent selection and I guess it’s the mos
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -503,6 +503,6 @@ This example uses a wild-card for the agent selection and I guess it’s the mos
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

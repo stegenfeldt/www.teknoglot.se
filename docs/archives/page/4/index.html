@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Archive | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,7 +21,7 @@
     
 
     
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -46,14 +46,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-382656-8', 'auto');
 ga('send', 'pageview');
 
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 
 </head>
-
+</html>
 <body>
-    <div id="wrap">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
     <div id="header-outer" class="outer">
         <div class="container">
@@ -174,6 +174,10 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             I, as well as others, have noticed some slow performance from my blog lately and I just wanted to let you know that the root cause have been identified as a bug in on of the crypto libs on the server.
+I haven’t found a working solution yet but are trying to keep an eye on the site regularly to be able to bounce the problematic services when they start to act up.
+Hopefully there will be a fix available soon.
+Sorry for any inconvenience in the meantime.
+
         </p>
     </div>
 </article>
@@ -201,7 +205,10 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             Oh my God, I actually moved my blog for real. I think I’ve been putting this upp for nearly half a year now and even though I actually went and bought a “real” domain-name for it.
-But now it’d done. T
+But now it’d done. The server is now self-hosted and self-maintained. Now, that obviously gives me a bit more to do, but on the other hand. I can fix any problems myself and not have to create tickets and hope someone responding to them knows what they’re talking about.
+The design is mostly borrowed, for now, but it works and I hope I did all the HTACCESS rules on the old server correct so that they forward all the old links to the same post on the new one.
+So, welcome!
+
         </p>
     </div>
 </article>
@@ -367,7 +374,25 @@ This download contains an ISO file that you can mount using the Hyper-V- or VMM-
 
         <p class="article-excerpt">
             After a long wait (definitely more than 90 days) the management packs for MSMQ 4 (Windows 2008) and MSMQ 5 (Windows 2008 R2) are finally released.
-Both seem to be fully Cluster aware and pretty much h
+Both seem to be fully Cluster aware and pretty much holds the same monitoring as the the latest MSMQ 3 MP.
+ Message Queuing 4.0 Management Pack for Operations Manager 2007
+&gt; **Quick Details**
+
+
+Version: 6.0.6700.83
+Date Published: 4/5/2010
+Language: English
+
+Download here: http://www.microsoft.com/downloads/details.aspx?FamilyID=cfc103b8-7185-4721-8098-110885fe9e9e&amp;displaylang=en
+ Message Queuing 5.0 Management Pack for Operations Manager 2007
+
+Quick Details
+Version: 6.0.6700.88
+Date Published: 4/5/2010
+Language: English
+
+Download here: http://www.microsoft.com/downloads/details.aspx?FamilyID=28349b78-8329-44aa-8a1f-81f4e3f84d0c&amp;displaylang=en
+
         </p>
     </div>
 </article>
@@ -395,7 +420,14 @@ Both seem to be fully Cluster aware and pretty much h
 
         <p class="article-excerpt">
             This script has pretty much already been covered in my previous post about Changing or Replacing an Operations Manager Gateway Server.
-This time I’ve basically put parameter support in it to make it e
+This time I’ve basically put parameter support in it to make it easier to use.
+Here’s the script anyway.
+Param($OldGW,$NewGW)$OldMS= Get-ManagementServer | where &#123;$_.Name -eq $OldGW&#125;$NewMS = Get-ManagementServer | where &#123;$_.Name -eq $NewGW&#125;$agents = Get-Agent | where &#123;$_.PrimaryManagementServerName -eq $OldGW&#125;$agents = $agents"Moving " + $agents.count + " agents from " + $OldMS.Name + " to " + $NewMS.NameStart-Sleep -m 200Set-ManagementServer -AgentManagedComputer: $agents -PrimaryManagementServer: $NewMS -FailoverServer: $OldMS
+To use it, create a textfile called ChangeGW.ps1 and paste the code into it. Save the file somewhere neat (maybe C:Scripts) for easy access. If you don’t feel like copy/pasting, you can download the script here.
+To use it, open the Operations Manager Command Shell and type:
+C:\ScriptsChangeGW.ps1 &lt;old.gatewayserver.dns.name&gt; &lt;new.gatewayserver.dns.name&gt;
+For example:
+C:\ScriptsChangeGW.ps1 gwserver01.domainname.local gwserver02.domainname.local
         </p>
     </div>
 </article>
@@ -428,7 +460,18 @@ This time I’ve basically put parameter support in it to make it e
         <p class="article-excerpt">
             Getting ESENT Kerys are required to install this application when you are trying to modify/change an agent installation?
 
-This seems to be  most common on Windows 2008 and i guess it’s because of the 
+This seems to be  most common on Windows 2008 and i guess it’s because of the UAC and the fact that opening the Control Panel isn’t running in administrative mode.
+To work around this you need to run the msiexec command on the correct installation GUID from an administrative command prompt.
+Besides running through the registry to find the GUID, one of the easier ways is this:
+
+Open an administrative command prompt.
+run wmic product
+Locate your product by its name, the GUID (looks a bit like this {25097770-2B1F-49F6-AB9D-1C708B96262A}) directly after that is the one you want. Copy it.
+run msiexec /i &lt;PASTEYOURGUIDHERE&gt;
+Modify the agent as pleased
+
+That’s pretty much it. Good luck.
+
         </p>
     </div>
 </article>
@@ -707,7 +750,7 @@ Be advised that this forced entropy will not be as random as the system-created 
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 Samuel Tegenfeldt</p>
+                <p>&copy; 2019 Samuel Tegenfeldt</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
@@ -740,6 +783,6 @@ Be advised that this forced entropy will not be as random as the system-created 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
