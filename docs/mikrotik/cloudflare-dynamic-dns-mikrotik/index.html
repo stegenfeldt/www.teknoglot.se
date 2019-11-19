@@ -192,7 +192,7 @@ ga('send', 'pageview');
 <h2 id="building-the-script"><a class="markdownIt-Anchor" href="#building-the-script"></a> Building the Script</h2>
 <p>I’m not going to go into the <a href="http://wiki.mikrotik.com/wiki/Manual:Scripting" target="_blank" rel="noopener" title="RouterOS Scripting Manual">syntax of ros scripts</a>, but I’ll try to explain the different building block to some degree.</p>
 <h3 id="defining-our-variables"><a class="markdownIt-Anchor" href="#defining-our-variables"></a> Defining our variables</h3>
-<p>First, we’ll define out variables used for the script. The global <em><span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039; &#039; at position 59: … I could derive ̲the FQDN from  …'>hostname_ variable is actually redundant as I could derive the FQDN from  _</span>CFDomain</em> and <em>$CFZone</em>, but it’s used in other scripts in my router so it’s included for that purpose alone.</p>
+<p>First, we’ll define out variables used for the script. The global <em><span class='katex-error' title='ParseError: KaTeX parse error: Expected group after &#039;_&#039; at position 75: …the FQDN from  _̲'>hostname_ variable is actually redundant as I could derive the FQDN from  _</span>CFDomain</em> and <em>$CFZone</em>, but it’s used in other scripts in my router so it’s included for that purpose alone.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">######## Set and collect general variables #########</span><br><span class="line">:global hostname &quot;homelab.example.com&quot;</span><br><span class="line">:global resolvedIP &quot;&quot;</span><br><span class="line">:global externalIP &quot;&quot;</span><br><span class="line">:global WANInterface &quot;eth1-ext-internet&quot;</span><br><span class="line"></span><br><span class="line">######## Set CloudFlare variables #################</span><br><span class="line">:local CFemail &quot;&lt;same email as in the powershell script&quot;</span><br><span class="line">:local CFtkn &quot;&lt;your API key/token&gt;&quot;</span><br><span class="line">:local CFzone &quot;example.com&quot;</span><br><span class="line">:local CFid &quot;16606003&quot;</span><br><span class="line">:local CFtype &quot;A&quot;</span><br><span class="line">:local CFttl &quot;1&quot;</span><br><span class="line">:local CFservicemode &quot;0&quot;</span><br><span class="line">:local CFDomain &quot;homelab&quot;</span><br><span class="line">:local CFDebug &quot;true&quot;</span><br></pre></td></tr></table></figure>
 <p>Take care to verify and compare the CFxx variables with the ones used in and received from the previous powershell script, but also the <em>$hostname</em> variable.</p>
 <ul>
@@ -250,7 +250,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/" data-id="ck35oq56j000f88gkg23zbaa1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/mikrotik/cloudflare-dynamic-dns-mikrotik/" data-id="ck35pwgmy000ft0gkauew5ed8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
