@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>(re)Gain sysadmin access to SQL2005 or SQL2008 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="How-To,SQL Server,SQL Server 2005,SQL Server 2008">
+        <meta name="keywords" content="How-To,SQL Server,SQL Server 2005,SQL Server 2008" />
     
     <meta name="description" content="In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin">
 <meta name="keywords" content="How-To,SQL Server,SQL Server 2005,SQL Server 2008">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(re)Gain sysadmin access to SQL2005 or SQL2008">
-<meta property="og:url" content="https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;sql&#x2F;regain-sysadmin-access-to-sql2005-or-sql2008&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.357Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(re)Gain sysadmin access to SQL2005 or SQL2008">
-<meta name="twitter:description" content="In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admin">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,14 +161,14 @@ ga('send', 'pageview');
     <time datetime="2009-11-19T13:08:10.000Z" itemprop="datePublished">2009-11-19</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server/">SQL Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2005/">SQL Server 2005</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2008/">SQL Server 2008</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server/" rel="tag">SQL Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2005/" rel="tag">SQL Server 2005</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SQL-Server-2008/" rel="tag">SQL Server 2008</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <p>In SQL Server 2005 and 2008 the local Administrators account is not sysadmin by default. This makes it even more important that the one setting up the Database also remembers to add a SQL Server admins group to the sysadmin role. If this step is forgotten, the user installing the database server is the only one that will ever be sysadmin.</p>
-<p>In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.<br>
+<p>In some extreme cases I’ve seen situations where no one except some dude on vacation is sysadmin and I need to install or upgrade a bunch of applications and services. In these cases I have also been assigned Local Administrator rights on the server, but since the local Administrators group isn’t sysadmin either I still cannot login to the SQL server.<br />
 What to do!?</p>
-<p>Thanks to <a href="http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx" target="_blank" rel="noopener">Raul Carcia’s blog post</a> it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.<br>
+<p>Thanks to <a href="http://blogs.msdn.com/raulga/archive/2007/07/12/disaster-recovery-what-to-do-when-the-sa-account-password-is-lost-in-sql-server-2005.aspx" target="_blank" rel="noopener">Raul Carcia’s blog post</a> it’s not that a big deal. The instructions are written for SQL Server 2005 but works equally fine on SQL Server 2008 and the only pre-requirement is that you are a local server administrator.<br />
 Here’s what to do:</p>
 <ol>
 <li>Open the <em>SQL Server Configuration Manager.</em></li>
@@ -178,9 +176,9 @@ Here’s what to do:</p>
 <li>In the <em>Advanced</em> tab, find <em>Startup Parameters</em>.</li>
 <li>Add “;-m” to the end of that line.</li>
 <li>Press OK and restart the SQL Server into “Maintenance Mode” or “Single User Mode” if you like. (check that a restart is OK first 😉)</li>
-<li>Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn<br>
+<li>Open a command prompt (right-click, “Run as Administrator” in Windows 2008) and go to C:\Program Files\Microsoft SQL Server\100\Tools\Binn<br />
 (C:\Program Files\Microsoft SQL Server_90_\Tools\Binn for SQL2005)</li>
-<li>Execute <code>sqlcmd /A /E /S &lt;INSTANCE&gt;</code><br>
+<li>Execute <code>sqlcmd /A /E /S &lt;INSTANCE&gt;</code><br />
 (use . for local default instance and .INSTANCE for local named instance)</li>
 <li>In the CLI, execute:</li>
 </ol>
@@ -199,7 +197,7 @@ Here’s what to do:</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/" data-id="cjypuwbtf0018ncqqgq0jz2dl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/sql/regain-sysadmin-access-to-sql2005-or-sql2008/" data-id="ck35oq573001b88gk82roaac0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -440,7 +438,7 @@ Here’s what to do:</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -458,7 +456,7 @@ Here’s what to do:</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

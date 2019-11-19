@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>w3Socket in VBScript | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Script">
+        <meta name="keywords" content="Script" />
     
     <meta name="description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
 <meta name="keywords" content="Script">
 <meta property="og:type" content="article">
 <meta property="og:title" content="w3Socket in VBScript">
-<meta property="og:url" content="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;code&#x2F;vbs&#x2F;w3socket-in-vbscript&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.367Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="w3Socket in VBScript">
-<meta name="twitter:description" content="I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff. Since we’re not in VB6 och .Net i">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,17 +161,17 @@ ga('send', 'pageview');
     <time datetime="2007-04-21T14:10:05.000Z" itemprop="datePublished">2007-04-21</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/" rel="tag">Script</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <p>I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.<br>
+                    <p>I’ve been doing quite a lot of VBScripting in a couple of projects lately. The current one requires med to connect to a couple of telnet servers and look for… stuff.<br />
 Since we’re not in VB6 och .Net i cannot simply user Winsock as normally due to the lack of licensing features in <acronym title="VisualBasic Script">VBS</acronym>/<acronym title="Windows Scripting Host">WSH.</acronym></p>
-<p>Thankfully for me, <a href="http://www.dimac.com/" title="Dimac" target="_blank" rel="noopener">Dimac</a> has release a <a href="http://www.dimac.com/default3.asp?M=FreeDownloads/Menu.asp&amp;P=FreeDownloads/FreeDownloadsstart.asp" title="Dimac - Free Downloads" target="_blank" rel="noopener">nifty little component</a> for free that makes talking telnet in VBS very simple.</p>
-<p>I thought that, hey! I must share this!<br>
+<p>Thankfully for me, <a href="http://www.dimac.com/" target="_blank" rel="noopener" title="Dimac">Dimac</a> has release a <a href="http://www.dimac.com/default3.asp?M=FreeDownloads/Menu.asp&amp;P=FreeDownloads/FreeDownloadsstart.asp" target="_blank" rel="noopener" title="Dimac - Free Downloads">nifty little component</a> for free that makes talking telnet in VBS very simple.</p>
+<p>I thought that, hey! I must share this!<br />
 So here’s an example in Classic VBS:</p>
 <figure class="highlight vbs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> oTelnet</span><br><span class="line">oTelnet = <span class="built_in">CreateObject</span>(Socket.Tcp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> oTelnet</span><br><span class="line">.DoTelnetEmulation = <span class="literal">True</span></span><br><span class="line">.TelnetEmulation = TTY</span><br><span class="line">.Host = <span class="number">192.168</span><span class="number">.242</span><span class="number">.1</span>:<span class="number">23</span></span><br><span class="line">.Open</span><br><span class="line">.WaitFor SLUSSEN login:</span><br><span class="line">.SendLine ANiftyUsename</span><br><span class="line">.WaitFor Password:</span><br><span class="line">.SendLine TEHP@ssw0rd</span><br><span class="line">.WaitFor ~ #</span><br><span class="line">.SendLine ifconfig</span><br><span class="line"><span class="built_in">MsgBox</span> .Buffer</span><br><span class="line">.Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> oTelnet = <span class="literal">Nothing</span></span><br></pre></td></tr></table></figure>
-<p>Not very hard at all. This one is connecting to my router (with fake user/pwd… DUH!) and there’s no support for setting the prompt type there, thus the “~ #”.<br>
+<p>Not very hard at all. This one is connecting to my router (with fake user/pwd… DUH!) and there’s no support for setting the prompt type there, thus the “~ #”.<br />
 The result of running this script with correct login info gives me a popup with the routers <acronym title="Network Interface Card">NIC</acronym>-configuration.</p>
 
                 </div>
@@ -182,7 +180,7 @@ The result of running this script with correct login info gives me a popup with 
 
 
 
-    <a data-url="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/" data-id="cjypuwbto001lncqqea0x74xo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/code/vbs/w3socket-in-vbscript/" data-id="ck35oq57c001p88gk9e1105xx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -423,7 +421,7 @@ The result of running this script with correct login info gives me a popup with 
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -441,7 +439,7 @@ The result of running this script with correct login info gives me a popup with 
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

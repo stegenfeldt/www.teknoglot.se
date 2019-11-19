@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>NetworkAdapterCheck.vbs fails on Windows 2000 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,Script,Errors,Management Pack">
+        <meta name="keywords" content="OpsMgr,Script,Errors,Management Pack" />
     
     <meta name="description" content="Problem Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to">
 <meta name="keywords" content="OpsMgr,Script,Errors,Management Pack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NetworkAdapterCheck.vbs fails on Windows 2000">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2007&#x2F;networkadaptercheck-fails-on-win2k&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Problem Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.345Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NetworkAdapterCheck.vbs fails on Windows 2000">
-<meta name="twitter:description" content="Problem Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the failed to">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,12 +161,12 @@ ga('send', 'pageview');
     <time datetime="2009-04-26T09:21:18.000Z" itemprop="datePublished">2009-04-26</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Management-Pack/">Management Pack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/" rel="tag">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Management-Pack/" rel="tag">Management Pack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/" rel="tag">Script</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <h1 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h1>
-<p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData">failed to create System.PropertyBagData</a> error i wrote about earlier.<br>
+<p>Here’s my summary of the problems with the NetworkAdapterCheck.vbs script in the Windows Server 2000 Operating System Management Pack för Operations Manager 2007 that is causing the <a href="http://www.teknoglot.se/ms/opsmgr2007/failed-to-create-propertybagdata-opsmgr/" title="failed to create System.PropertyBagData">failed to create System.PropertyBagData</a> error i wrote about earlier.<br />
 This information in also available on <a href="https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446" target="_blank" rel="noopener">https://connect.microsoft.com/feedback/ViewFeedback.aspx?FeedbackID=432627&amp;SiteID=446</a></p>
 <h1 id="symptoms"><a class="markdownIt-Anchor" href="#symptoms"></a> Symptoms</h1>
 <p>This “research” comes from getting an obscene amounts of Script or Executable Failed to run in the Operations Console. Each time it was the NetworkAdapterCheck.vbs script that could not create PropertyBagData. The error message copied from one of the alerts looks like this:</p>
@@ -176,10 +174,10 @@ This information in also available on <a href="https://connect.microsoft.com/fee
 <p>This error repeats almost as often as the script is scheduled to run and appears on almost every Windows 2000 server.</p>
 <a id="more"></a>
 <h1 id="probable-cause"><a class="markdownIt-Anchor" href="#probable-cause"></a> Probable Cause</h1>
-<p>I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.<br>
+<p>I am not really sure, but after a quite a bit of troubleshooting I am pretty sure it all boils down to a malformed WMI-query. What I basically did was to extract the script from the MP and dry-run it to see if I could find anything obvious, which I didn’t.<br />
 Since I didn’t have a good debugging too available, like in PrimalScript, I added the VBS equivalent of old-school printf debugging. I basically added</p>
 <figure class="highlight vbs"><table><tr><td class="code"><pre><span class="line">wscript.echo <span class="string">"Line XX:"</span> &amp; <span class="built_in">Err</span>.Number</span><br></pre></td></tr></table></figure>
-<p>after each object/function call in the Main Sub.<br>
+<p>after each object/function call in the Main Sub.<br />
 The problem seems to be at line 118:</p>
 <figure class="highlight vbs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span> WMISet = WMIGetInstance(<span class="string">"winmgmts:"</span> + TargetComputer + <span class="string">"rootcimv2"</span>, query)</span><br></pre></td></tr></table></figure>
 <p>At line 119 I had a debug line that never executes and it would seem like the script is unable to process the query and exits without any error codes.</p>
@@ -200,7 +198,7 @@ The problem seems to be at line 118:</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/" data-id="cjypuwbtb000yncqq8363i9c3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/networkadaptercheck-fails-on-win2k/" data-id="ck35oq56v000x88gk3tlqb38p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -441,7 +439,7 @@ The problem seems to be at line 118:</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -459,7 +457,7 @@ The problem seems to be at line 118:</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

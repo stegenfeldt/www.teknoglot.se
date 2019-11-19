@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="">
+        <meta name="keywords" content="" />
     
     <meta name="description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0. The event is the generic “Health Service Script” with id 4001. Management G">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0. The event is the generic “Health Service Script” with id 4001. Management G">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.326Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Event Id 4001 – “Cannot Add Type” in [#SQL] MP 6.6.4.0 for [#OpsMgr2012]">
-<meta name="twitter:description" content="Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0. The event is the generic “Health Service Script” with id 4001. Management G">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -54,7 +52,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -158,7 +156,7 @@ ga('send', 'pageview');
             </header>
             
                 <div class="article-subtitle">
-                    <a href="/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="article-date">
+                    <a href="/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" class="article-date">
     <time datetime="2016-02-15T11:22:28.000Z" itemprop="datePublished">2016-02-15</time>
 </a>
                         
@@ -167,11 +165,11 @@ ga('send', 'pageview');
                     <p>Was troubleshooting this little error message for a customer after deploying the SQL Server Management Pack version 6.6.4.0.</p>
 <p>The event is the generic “Health Service Script” with id 4001.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Management Group: REDACTED. Script: Main Module: CPUUsagePercentDataSource.ps1 :</span><br><span class="line">Computer Name = &quot;REDACTED.redacted.com&quot; WMI = &quot;ComputerManagement11&quot; Service Name = &quot;MSSQLSERVER&quot; SQL Instance Name = &quot;MSSQLSERVER&quot;</span><br><span class="line">Error occured during CPU Usage for SQL Instances data source executing.</span><br><span class="line">Computer: REDACTED</span><br><span class="line">Reason: Cannot add type. Compilation errors occurred.</span><br><span class="line">Position:256</span><br><span class="line">Offset:21</span><br><span class="line">Detailed error output: Cannot add type. Compilation errors occurred.</span><br><span class="line">--------</span><br><span class="line">(0) : No source files specified</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line">(0) : Source file &quot;C:\Windows\TEMP\njdqtgfb.0.cs&quot; could not be found</span><br><span class="line"></span><br><span class="line">(1) : using System;</span><br></pre></td></tr></table></figure>
-<p>There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention <em>“Cannot add type. Compilation errors occured.”</em><br>
-In a <a href="https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa" target="_blank" rel="noopener">thread on the Technet Forums</a> it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the <code>C:\Windows\TEMP</code> folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.<br>
+<p>There are some known errors to the 6.6.4.0 version of the SQL management packs, and one of them does mention <em>“Cannot add type. Compilation errors occured.”</em><br />
+In a <a href="https://social.technet.microsoft.com/Forums/en-US/operationsmanagergeneral/thread/92796ead-739d-4128-9afb-1e6f770099d6/#3004a2fc-88ad-4c74-936a-8ed3c8aa70fa" target="_blank" rel="noopener">thread on the Technet Forums</a> it was suggested that it has to do with rights, but focusing mainly on the SQL instance. What caught our eyes, however, was the fact that the script is using the <code>C:\Windows\TEMP</code> folder instead of its private one. And this seems to be because it is using a few .Net components that do some sort of JIT compilation.<br />
 We took a quick look using <em>procmon</em>, filtered on C:\Windows\TEMP\ and yes indeed. The monitoring account used is trying to create and delete its temporary files in that very folder.</p>
 <h1 id="a-wild-work-around-appears"><a class="markdownIt-Anchor" href="#a-wild-work-around-appears"></a> A wild work-around appears!</h1>
-<p>The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.<br>
+<p>The work-around is simple, but cumbersome. Just make sure that the assigned RunAs account have read/write/delete rights on C:\Windows\TEMP.<br />
 Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
 
                 </div>
@@ -180,7 +178,7 @@ Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" data-id="cjypuwbsx000ancqq559l7g3d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" data-id="ck35oq56d000a88gk0xxhdvz4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -421,7 +419,7 @@ Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -439,7 +437,7 @@ Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
@@ -456,7 +454,7 @@ Now you just have to manage this on all your SQL-servers! (yaaaay)</p>
     var disqus_shortname = 'teknoglotse';
     
     
-    var disqus_url = 'https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/';
+    var disqus_url = 'https://www.teknoglot.se/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/';
     
     (function() {
     var dsq = document.createElement('script');

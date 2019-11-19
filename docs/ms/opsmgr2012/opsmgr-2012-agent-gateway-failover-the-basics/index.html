@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>OpsMgr 2012 Agent &amp; Gateway Failover - The Basics [#opsmgr, #powershell] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,PoSH,How-To,Fail-over,Scripts">
+        <meta name="keywords" content="OpsMgr,PoSH,How-To,Fail-over,Scripts" />
     
     <meta name="description" content="I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2. Now that System Center 2012 Operatio">
 <meta name="keywords" content="OpsMgr,PoSH,How-To,Fail-over,Scripts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpsMgr 2012 Agent &amp; Gateway Failover - The Basics [#opsmgr, #powershell]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;opsmgr-2012-agent-gateway-failover-the-basics&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2. Now that System Center 2012 Operatio">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.351Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpsMgr 2012 Agent &amp; Gateway Failover - The Basics [#opsmgr, #powershell]">
-<meta name="twitter:description" content="I have previously posted a few scripts on managing and configuring fail-over management servers on gateways and agents in System Center Operations Manager 2007 R2. Now that System Center 2012 Operatio">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2012-05-30T12:12:37.000Z" itemprop="datePublished">2012-05-30</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Scripts/">Scripts</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/" rel="tag">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/" rel="tag">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Scripts/" rel="tag">Scripts</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -183,7 +181,7 @@ ga('send', 'pageview');
 <p>Set-SCOMParentManagementServer -Agent -PrimaryServer [-PassThru ] [-Confirm ] [-WhatIf ] []</p>
 <p>Set-SCOMParentManagementServer -Agent -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []</p>
 <p>Set-SCOMParentManagementServer -GatewayServer -FailoverServer [-PassThru ] [-Confirm ] [-WhatIf ] []</p>
-<p>Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []<br>
+<p>Set-SCOMParentManagementServer -GatewayServer -PrimaryServer [-PassThru] [-Confirm] [-WhatIf] []<br />
 But that’s so boring to read the manual is a bit sketchy on how it behaves and the limitations.</p>
 </blockquote>
 <h4 id="the-one-liners"><a class="markdownIt-Anchor" href="#the-one-liners"></a> The One-Liners!</h4>
@@ -216,7 +214,7 @@ But that’s so boring to read the manual is a bit sketchy on how it behaves and
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/" data-id="cjypuwbtc0011ncqqwgio3gpp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-gateway-failover-the-basics/" data-id="ck35oq570001588gkc2ap3ege" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -457,7 +455,7 @@ But that’s so boring to read the manual is a bit sketchy on how it behaves and
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -475,7 +473,7 @@ But that’s so boring to read the manual is a bit sketchy on how it behaves and
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

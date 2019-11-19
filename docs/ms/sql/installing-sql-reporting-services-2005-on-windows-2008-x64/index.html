@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Installing SQL Reporting Services 2005 on Windows 2008 x64 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="How-To,IIS7,Reporting Services,x64,OpsMgr 2007">
+        <meta name="keywords" content="How-To,IIS7,Reporting Services,x64,OpsMgr 2007" />
     
-    <meta name="description" content="Let’s say you have followed this guide: http://support.microsoft.com/kb/938245/ Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic">
+    <meta name="description" content="Let’s say you have followed this guide: http:&#x2F;&#x2F;support.microsoft.com&#x2F;kb&#x2F;938245&#x2F; Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic">
 <meta name="keywords" content="How-To,IIS7,Reporting Services,x64,OpsMgr 2007">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Installing SQL Reporting Services 2005 on Windows 2008 x64">
-<meta property="og:url" content="https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;sql&#x2F;installing-sql-reporting-services-2005-on-windows-2008-x64&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
-<meta property="og:description" content="Let’s say you have followed this guide: http://support.microsoft.com/kb/938245/ Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic">
+<meta property="og:description" content="Let’s say you have followed this guide: http:&#x2F;&#x2F;support.microsoft.com&#x2F;kb&#x2F;938245&#x2F; Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.335Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Installing SQL Reporting Services 2005 on Windows 2008 x64">
-<meta name="twitter:description" content="Let’s say you have followed this guide: http://support.microsoft.com/kb/938245/ Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website applic">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,11 +161,11 @@ ga('send', 'pageview');
     <time datetime="2009-11-02T13:33:27.000Z" itemprop="datePublished">2009-11-02</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/IIS7/">IIS7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr-2007/">OpsMgr 2007</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Reporting-Services/">Reporting Services</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/x64/">x64</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/IIS7/" rel="tag">IIS7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr-2007/" rel="tag">OpsMgr 2007</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Reporting-Services/" rel="tag">Reporting Services</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/x64/" rel="tag">x64</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <p>Let’s say you have followed this guide: <a href="http://support.microsoft.com/kb/938245/" title="http://support.microsoft.com/kb/938245/" target="_blank" rel="noopener">http://support.microsoft.com/kb/938245/</a></p>
+                    <p>Let’s say you have followed this guide: <a href="http://support.microsoft.com/kb/938245/" target="_blank" rel="noopener" title="http://support.microsoft.com/kb/938245/">http://support.microsoft.com/kb/938245/</a></p>
 <p>Still not working? The one thing I forgot, or rather did not find in any of the guides, was to change the website application pool to “Classic .NET AppPool”. It is actually noted in <a href="http://support.microsoft.com/kb/938245/" target="_blank" rel="noopener">KB938245</a> but only after the installation, during the configuration. For some reason I have not been able to install Reporting Services 2005 on Windows 2008 without changing this prior to the installation.</p>
 <p>Maybe I am doing it wrong but this seems to be working all right for me.</p>
 
@@ -177,7 +175,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/" data-id="cjypuwbt4000lncqqe8w3r8pi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/sql/installing-sql-reporting-services-2005-on-windows-2008-x64/" data-id="ck35oq56m000k88gk0vbt00c8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -418,7 +416,7 @@ ga('send', 'pageview');
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -436,7 +434,7 @@ ga('send', 'pageview');
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

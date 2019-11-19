@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Installing Linux Integration Services v2.1 on Red Hat ES 5 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="How-To,Hyper-V,Linux,RedHat,RHES5">
+        <meta name="keywords" content="How-To,Hyper-V,Linux,RedHat,RHES5" />
     
     <meta name="description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
 <meta name="keywords" content="How-To,Hyper-V,Linux,RedHat,RHES5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Installing Linux Integration Services v2.1 on Red Hat ES 5">
-<meta property="og:url" content="https://www.teknoglot.se/linux/rhes/install-linuxis21-rhes5/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;linux&#x2F;rhes&#x2F;install-linuxis21-rhes5&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.335Z">
+<meta property="og:updated_time" content="2019-11-19T09:50:33.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Installing Linux Integration Services v2.1 on Red Hat ES 5">
-<meta name="twitter:description" content="Ok, so I got the task to install the Linux Integration Service for Hyper-V R2 on a RedHat Enterprise Server 5. Something that turned out to be a bit more to handle than I would have thought. So here’s">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2010-08-31T10:06:04.000Z" itemprop="datePublished">2010-08-31</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Hyper-V/">Hyper-V</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RHES5/">RHES5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RedHat/">RedHat</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Hyper-V/" rel="tag">Hyper-V</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RHES5/" rel="tag">RHES5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/RedHat/" rel="tag">RedHat</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -173,7 +171,7 @@ ga('send', 'pageview');
 <p>I’m not going to go through the OS installation process here, but make sure to select the “Software Development” packages since you will be needing it. In case you missed it, you can install them later by running these commands.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># yum groupinstall "Development Tools"</span></span><br><span class="line"><span class="comment"># yum install kernel-headers</span></span><br></pre></td></tr></table></figure>
 <p>I’m not actually sure that you need to run the kernel-headers install manually or if it’s included in the “Development Tools” package.</p>
-<p>The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on <a href="http://download.microsoft.com" target="_blank" rel="noopener">http://download.microsoft.com</a> for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.<br>
+<p>The first gotcha i ran into was the fact that the link to the Linux Integration Services–previously known as Linux Integration Components or LinuxIC–on RedHat’s information pages gave me a 404 and a redirect to a bing-search that returned the exact same 404. The page have simply been removed by Microsoft without any form of redirection to the new page. Anyway, a search on <a href="http://download.microsoft.com" target="_blank" rel="noopener">http://download.microsoft.com</a> for “Linux Integration Components” do return the new page, and that’s where I learned about the new name.<br />
 Thank you for making it easy for us Microsoft!</p>
 <ul>
 <li>Here’s a <a href="http://www.microsoft.com/downloads/en/results.aspx?freetext=linux+integration+services&amp;displaylang=en&amp;stype=s_basic" target="_blank" rel="noopener">direct link to the search on the current name.</a></li>
@@ -181,13 +179,13 @@ Thank you for making it easy for us Microsoft!</p>
 </ul>
 <p>This download contains an ISO file that you can mount using the Hyper-V- or VMM-console, or you can do as I did and download the ISO to the virtual machine, mount it locally, copy the files and unmount it. Like this.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mkdir /mnt/ISO</span></span><br><span class="line"><span class="comment"># mount -o loop /root/LinuxIC v21.iso /mnt/ISO</span></span><br><span class="line"><span class="comment"># mkdir /opt/linux_ic_v21_rtm</span></span><br><span class="line"><span class="comment"># cp /mnt/ISO/* -R /opt/linux_ic_v21_rtm/</span></span><br><span class="line"><span class="comment"># umount /mnt/ISO</span></span><br></pre></td></tr></table></figure>
-<p>You probably have to be root to do this by the way.<br>
+<p>You probably have to be root to do this by the way.<br />
 With that done, let’s get to the installation.</p>
 <h1 id="installation"><a class="markdownIt-Anchor" href="#installation"></a> Installation</h1>
 <p>As root, do the following:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># export PATH=$PATH:/sbin</span></span><br><span class="line"><span class="comment"># cd /opt/linux_ic_v21_rtm/</span></span><br><span class="line"><span class="comment"># make</span></span><br><span class="line"> make install</span><br><span class="line"><span class="comment"># reboot</span></span><br></pre></td></tr></table></figure>
-<p>Why the export PATH command? Apparently, on RHES5, /sbin is not in the PATH by default and this is something that the make scripts are completely unaware of. The <code>make install</code> will try to run <code>depmod</code> which will fail since it’s not in the default path.<br>
-You could also add <code>PATH=$PATH/sbin</code> to the root users ~/.bashrc which will put it back in the PATH but only for the root user, but I don’t know if that’s recommended.<br>
+<p>Why the export PATH command? Apparently, on RHES5, /sbin is not in the PATH by default and this is something that the make scripts are completely unaware of. The <code>make install</code> will try to run <code>depmod</code> which will fail since it’s not in the default path.<br />
+You could also add <code>PATH=$PATH/sbin</code> to the root users ~/.bashrc which will put it back in the PATH but only for the root user, but I don’t know if that’s recommended.<br />
 And, yes. You DO have to reboot after the install.</p>
 <p>If you are running RHES5 64bit you also have to install the <code>adjtimex</code> package. It is in the RHN repository but also on the RHES5 Installation CD in case you have no internet connection. Install it with yum like this:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># yum install adjtimex</span></span><br></pre></td></tr></table></figure>
@@ -198,13 +196,13 @@ And, yes. You DO have to reboot after the install.</p>
 <p>How do you know that the driver are installed?</p>
 <p>Aftr the reboot, try running <code>modinfo vmbus</code> which should return something like this:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># modinfo vmbus</span></span><br><span class="line">filename:       /lib/modules/2.6.18-194.11.1.el5/kernel/drivers/vmbus/vmbus.ko</span><br><span class="line">verion:        2.1.25</span><br><span class="line">licnse:        GPL</span><br><span class="line">srcversion:     3C1899C419665CB2514F2D0</span><br><span class="line">depends:</span><br><span class="line">vermagic:       2.6.18-194.11.1.el5 SMP mod_unload gcc-4.1</span><br><span class="line">parm:           vmbus_irq:int</span><br><span class="line">par:           vmbus_loglevel:int</span><br></pre></td></tr></table></figure>
-<p>Try that with netvsc, storvsc and blkvsc too (replace the <em>vmbus</em> part) and you should get something similar. If you don’t, the installation did not succeed.<br>
+<p>Try that with netvsc, storvsc and blkvsc too (replace the <em>vmbus</em> part) and you should get something similar. If you don’t, the installation did not succeed.<br />
 The documentation also tells us to check that the components are running with <code>/sbin/lsmod | grep vsc</code> which should return:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /bin/lsmod | grep vsc</span></span><br><span class="line">blkvsc                 70184  3</span><br><span class="line">storvsc                64264  0</span><br><span class="line">netvsc                 73504  0</span><br><span class="line">vmbus                  88304  3 blkvsc,storvsc,netvsc</span><br><span class="line">scs_mod              196953  6 scsi_dh,sg,blkvsc,storvsc,libata,sd_mod</span><br></pre></td></tr></table></figure>
 <p>The numbers will probably differ from installation to installation depending on blocksizes and allocation.</p>
 <h1 id="configuration"><a class="markdownIt-Anchor" href="#configuration"></a> Configuration</h1>
 <p>Configuration is pretty straight-forward so I’ll keep this short.</p>
-<p>When you install the drivers you will get a new network card called <code>seth0</code>, which I presume stands for <strong>S</strong>ynthetic <strong>ETH</strong>ernet. There’s nothing magic about it regarding configuration and <code>system-configuration-network</code> will work just fine.<br>
+<p>When you install the drivers you will get a new network card called <code>seth0</code>, which I presume stands for <strong>S</strong>ynthetic <strong>ETH</strong>ernet. There’s nothing magic about it regarding configuration and <code>system-configuration-network</code> will work just fine.<br />
 The drivers will also give you a couple of SCSI-devices (if you have one attached) with the regular <code>/dev/sd*</code> naming. Simply configure these using fdisk or whatever GUI you might prefer.</p>
 <p>There is also a note in the documentation about changing the grub configuration in the “Additional Information…” section. Do read that section.</p>
 <h1 id="additional-comments"><a class="markdownIt-Anchor" href="#additional-comments"></a> Additional Comments</h1>
@@ -221,7 +219,7 @@ The drivers will also give you a couple of SCSI-devices (if you have one attache
 
 
 
-    <a data-url="https://www.teknoglot.se/linux/rhes/install-linuxis21-rhes5/" data-id="cjypuwbt5000mncqqbsuh2rio" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/linux/rhes/install-linuxis21-rhes5/" data-id="ck35oq56l000i88gk9e0hclqq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -462,7 +460,7 @@ The drivers will also give you a couple of SCSI-devices (if you have one attache
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -480,7 +478,7 @@ The drivers will also give you a couple of SCSI-devices (if you have one attache
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

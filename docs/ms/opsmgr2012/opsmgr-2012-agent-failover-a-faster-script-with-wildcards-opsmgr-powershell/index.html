@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,PoSH,Script,Fail-over">
+        <meta name="keywords" content="OpsMgr,PoSH,Script,Fail-over" />
     
     <meta name="description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
 <meta name="keywords" content="OpsMgr,PoSH,Script,Fail-over">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.349Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpsMgr 2012 Agent Failover – A Faster Script with Wildcards [#opsmgr, #powershell]">
-<meta name="twitter:description" content="Now we’re gonna make things even faster! In the previous post on the subject of Agent Fail-over in Operations Manager 2012 we created a script that will go through a selection of agents and make sure">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2012-06-28T12:28:36.000Z" itemprop="datePublished">2012-06-28</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fail-over/" rel="tag">Fail-over</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/" rel="tag">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/" rel="tag">Script</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -174,17 +172,17 @@ ga('send', 'pageview');
 <p>Being a slight modification of the script in the last post I am not going to go through those details. Use that post if you need references to the Inputs, the OpsMgr 2012 Modules, Management Group connection and gathering your agents and management servers.</p>
 <h3 id="why-is-it-faster"><a class="markdownIt-Anchor" href="#why-is-it-faster"></a> Why Is It Faster?</h3>
 <p>We are doing the same thing, on the same agents and with the same servers. And we already did some optimization by loading them all into memory and working from there. How do you make it faster? Basically, I’m cutting the over-head of the cmdlets and how they work. You may have noticed that in the “Do Stuff” section, we are actually calling the <code>Set-SCOMParentManagementServer</code> cmdlet twice! Once for the primary Management Server and once for the fail-over Management Servers. In effect, we connect, fire a command, wait for result, and disconnect two times for each agent. And pretty much only because the cmdlet does not offer support to set primary and fail-over management servers at the same time. Any attempt to do so will return an ambiguous parameter error.</p>
-<p>I don’t like that. A brief look at the agent object class, <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.aspx" target="_blank" rel="noopener">Microsoft.EnterpriseManagement.Administration.AgentManagedComputer</a>, revealed a method called <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.setmanagementservers" title="AgentManagedComputer.SetManagementServers Method" target="_blank" rel="noopener">SetManagementServers</a>. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!</p>
+<p>I don’t like that. A brief look at the agent object class, <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.aspx" target="_blank" rel="noopener">Microsoft.EnterpriseManagement.Administration.AgentManagedComputer</a>, revealed a method called <a href="http://msdn.microsoft.com/en-us/library/microsoft.enterprisemanagement.administration.agentmanagedcomputer.setmanagementservers" target="_blank" rel="noopener" title="AgentManagedComputer.SetManagementServers Method">SetManagementServers</a>. This method takes, or actually “requires”, two parameters. One for primary and one for fail-over management servers. Yay!</p>
 <p>Using this method saves us a bunch of over-head and a couple of round-trips to the SDK-service.</p>
 <h3 id="the-challenge"><a class="markdownIt-Anchor" href="#the-challenge"></a> The Challenge</h3>
 <p>Unfortunately, you cannot simply toss an array of management servers at the SetManagementServers method. With a bit of knowledge or keen eyes you will spot the problem right away. I didn’t and was pulling my hair for a while until I realized what caused the errors. Looking closer at how the method is defined we see this:</p>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetManagementServers</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params"> ManagementServer managementServer,</span></span></span><br><span class="line"><span class="function"><span class="params"> IList failoverManagementServers</span></span></span><br><span class="line"><span class="function"><span class="params"> </span>)</span></span><br></pre></td></tr></table></figure>
-<p>You see that <code>IList&lt;ManagementServer&gt;</code> part?<br>
+<p>You see that <code>IList&lt;ManagementServer&gt;</code> part?<br />
 That’s the problem. When you run <code>Get-SCOMManagementServer</code> and save the result to a powershell variable, you will get a powershell “Enumerable”. In C#, that would be a class that implements the <code>IEnumerable</code> interface. Sad part is, it does not also implement <code>IList</code>. If you are thinking “IList… IEnumerable… Interface… Whaaaaa…???” right now, don’t worry. You don’t have to understand this to read the script later on, just think of it as different types of data.</p>
 <p>To get around this, we create a new object based on the dotNET List type and populate it with the management servers in our $scomFailOverMS array.</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$scomMSList</span> = <span class="built_in">New-Object</span> <span class="string">'Collections.Generic.List[Microsoft.EnterpriseManagement.Administration.ManagementServer]'</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$scomMS</span> <span class="keyword">in</span> <span class="variable">$scomFailOverMS</span>) &#123;</span><br><span class="line"> <span class="comment"># Loop through the array and add your failover MSs to the list</span></span><br><span class="line"> <span class="variable">$scomMSList</span>.Add(<span class="variable">$scomMS</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>Note:We have to do that foreach loop since our $scomMSList object do not implement IEnumerable<br>
+<p>Note:We have to do that foreach loop since our $scomMSList object do not implement IEnumerable<br />
 Still with me?</p>
 </blockquote>
 <h3 id="configuring-the-agent"><a class="markdownIt-Anchor" href="#configuring-the-agent"></a> Configuring the Agent</h3>
@@ -203,7 +201,7 @@ Still with me?</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" data-id="cjypuwbtc0012ncqqqaa37obb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-agent-failover-a-faster-script-with-wildcards-opsmgr-powershell/" data-id="ck35oq56y001388gkavkgdn8s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -444,7 +442,7 @@ Still with me?</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -462,7 +460,7 @@ Still with me?</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

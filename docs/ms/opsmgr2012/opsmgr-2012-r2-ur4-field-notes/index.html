@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Field Notes,OpsMgr,Update Rollup">
+        <meta name="keywords" content="OpsMgr,Field Notes,Update Rollup" />
     
     <meta name="description" content="Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 - Operations Manager  Preparation The usual routine applies. Check the KB for instructions and take not of known issues. Check i">
-<meta name="keywords" content="Field Notes,OpsMgr,Update Rollup">
+<meta name="keywords" content="OpsMgr,Field Notes,Update Rollup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;opsmgr-2012-r2-ur4-field-notes&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 - Operations Manager  Preparation The usual routine applies. Check the KB for instructions and take not of known issues. Check i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.352Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpsMgr 2012 R2 UR4 - Field Notes [#opsmgr]">
-<meta name="twitter:description" content="Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 - Operations Manager  Preparation The usual routine applies. Check the KB for instructions and take not of known issues. Check i">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,31 +161,31 @@ ga('send', 'pageview');
     <time datetime="2014-10-30T10:41:47.000Z" itemprop="datePublished">2014-10-30</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Update-Rollup/">Update Rollup</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/" rel="tag">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Update-Rollup/" rel="tag">Update Rollup</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
-                    <p><em>Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -<br>
+                    <p><em>Quick and unrefined notes on Update Roll-up 4 for System Center 2012 R2 -<br />
 Operations Manager</em></p>
 <h2 id="preparation"><a class="markdownIt-Anchor" href="#preparation"></a> Preparation</h2>
-<p>The usual routine applies. Check the <a href="http://support.microsoft.com/kb/2992020" target="_blank" rel="noopener">KB</a> for instructions and take not of<br>
-known issues. Check if <a href="http://blogs.technet.com/b/kevinholman/" target="_blank" rel="noopener">Kevin Holman</a> has written something about it. As this<br>
-is an update <em>roll up</em>, I pre-emptively expect that <a href="http://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/">gotchas in UR3</a> may<br>
-apply. Remember to open the update catalog in IE as the downloader is not<br>
+<p>The usual routine applies. Check the <a href="http://support.microsoft.com/kb/2992020" target="_blank" rel="noopener">KB</a> for instructions and take not of<br />
+known issues. Check if <a href="http://blogs.technet.com/b/kevinholman/" target="_blank" rel="noopener">Kevin Holman</a> has written something about it. As this<br />
+is an update <em>roll up</em>, I pre-emptively expect that <a href="http://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/">gotchas in UR3</a> may<br />
+apply. Remember to open the update catalog in IE as the downloader is not<br />
 working in other browsers.</p>
 <p>Download, unpack, toss what languages that does not apply to your organization.</p>
-<p>It is advised to disable any mail-generating alert subscriptions during the<br>
+<p>It is advised to disable any mail-generating alert subscriptions during the<br />
 upgrade process to avoid unnecessary spammage.</p>
 <h2 id="issues-so-far"><a class="markdownIt-Anchor" href="#issues-so-far"></a> Issues - So Far</h2>
 <p>[updated: 2014-11-03]</p>
 <ul>
 <li>Got a few problems with cross-platform monitoring templates not working after the update. This was due to <a href="https://social.technet.microsoft.com/Forums/en-US/e2378c57-02fb-43ac-b263-f28f26e21161/2012-r2-ur4-missing-files" target="_blank" rel="noopener">missing files</a> in the update package. Make sure you download the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=29696" target="_blank" rel="noopener">updated version</a>!</li>
 </ul>
-<p>Have not updated a customer using gateways yet, so unless they<br>
+<p>Have not updated a customer using gateways yet, so unless they<br />
 have fixed the issues in UR3, expect an update to this section soon.</p>
 <h2 id="planning"><a class="markdownIt-Anchor" href="#planning"></a> Planning</h2>
-<p>As with all update roll-ups, you’ve got a number of MSP files to install on<br>
-the different server roles, some SQL-scripts for the OpsDB and OpsDW and a few<br>
+<p>As with all update roll-ups, you’ve got a number of MSP files to install on<br />
+the different server roles, some SQL-scripts for the OpsDB and OpsDW and a few<br />
 updated management packs. I’ve updated the components in the following order.</p>
 <ul>
 <li>Management Servers (and consoles installed on them)</li>
@@ -198,47 +196,47 @@ updated management packs. I’ve updated the components in the following order.<
 <li>Web Console</li>
 <li>Agents</li>
 </ul>
-<p>As usual, the first management server update takes the longest as that’s<br>
-when the process is updating the databases. You absolutely <em>must</em> wait for it to<br>
-complete before updating anything else. Feel free to prepare the other<br>
-management servers by copying installations files, logging in and starting up<br>
-your command prompts as admin. I never update more than one management server at<br>
+<p>As usual, the first management server update takes the longest as that’s<br />
+when the process is updating the databases. You absolutely <em>must</em> wait for it to<br />
+complete before updating anything else. Feel free to prepare the other<br />
+management servers by copying installations files, logging in and starting up<br />
+your command prompts as admin. I never update more than one management server at<br />
 the time anyway. Less to worry about that way.</p>
 <h2 id="installation"><a class="markdownIt-Anchor" href="#installation"></a> Installation</h2>
 <h3 id="management-servers"><a class="markdownIt-Anchor" href="#management-servers"></a> Management Servers</h3>
-<p>Open a command prompt (powershell will work just fine) as Administrator and<br>
-execute the MSP-file. First management server will take some time, so be<br>
-patient. If a management server has multiple roles, you can update those while<br>
+<p>Open a command prompt (powershell will work just fine) as Administrator and<br />
+execute the MSP-file. First management server will take some time, so be<br />
+patient. If a management server has multiple roles, you can update those while<br />
 logged in as well.</p>
 <h3 id="sql-scripts"><a class="markdownIt-Anchor" href="#sql-scripts"></a> SQL-Scripts</h3>
-<p>The installation package will unpack these scripts under <code>%SystemDrive%\Program Files\System Center 2012 R2\Operations Manager\Server\SQL Script for Update Rollups</code>. Run the <code>UR_Datawarehouse.sql</code> one on the OpsDW first, then the<br>
-<code>Update_rollup_mom_db.sql</code> on OpsDB. If you’re getting deadlocks, try again. If<br>
-that don’t help, stop the management server services and try again. <em>Do not<br>
+<p>The installation package will unpack these scripts under <code>%SystemDrive%\Program Files\System Center 2012 R2\Operations Manager\Server\SQL Script for Update Rollups</code>. Run the <code>UR_Datawarehouse.sql</code> one on the OpsDW first, then the<br />
+<code>Update_rollup_mom_db.sql</code> on OpsDB. If you’re getting deadlocks, try again. If<br />
+that don’t help, stop the management server services and try again. <em>Do not<br />
 continue with the next script ​until you’ve succeeded with the first.</em></p>
-<p>If you’ve installed UR3, the OpsDW-script is pretty quick (not sure if<br>
+<p>If you’ve installed UR3, the OpsDW-script is pretty quick (not sure if<br />
 it’s changed at all) and the OpsDB is a bit less prone to deadlocks.</p>
 <h3 id="management-packs"><a class="markdownIt-Anchor" href="#management-packs"></a> Management Packs</h3>
-<p>Just import the management packs from the %SystemDrive%\Program Files\System<br>
-Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups<br>
-folder. Might have to retry as the console can do a little poor job of<br>
+<p>Just import the management packs from the %SystemDrive%\Program Files\System<br />
+Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups<br />
+folder. Might have to retry as the console can do a little poor job of<br />
 calculating the dependencies.</p>
 <h3 id="console"><a class="markdownIt-Anchor" href="#console"></a> Console</h3>
 <p>The easiest one, just install the MSP-file.</p>
 <h3 id="gateway"><a class="markdownIt-Anchor" href="#gateway"></a> Gateway</h3>
-<p>Installation is a breeze. Make sure to check <code>%SystemDrive%\Program Files\System Center Operations Manager\Gateway\AgentManagement\&lt;architecture&gt;</code> for updated<br>
+<p>Installation is a breeze. Make sure to check <code>%SystemDrive%\Program Files\System Center Operations Manager\Gateway\AgentManagement\&lt;architecture&gt;</code> for updated<br />
 agent files. If not, copy from same folder on any management server.</p>
 <h3 id="web-console"><a class="markdownIt-Anchor" href="#web-console"></a> Web Console</h3>
-<p>Installation is very simple. Install the MSP from an administrative command<br>
-prompt. If you’re affected by <a href="http://support.microsoft.com/kb/911722" target="_blank" rel="noopener">KB911722</a> and need the web console fixes, you<br>
-need to edit <code>%windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG\web.config</code><br>
+<p>Installation is very simple. Install the MSP from an administrative command<br />
+prompt. If you’re affected by <a href="http://support.microsoft.com/kb/911722" target="_blank" rel="noopener">KB911722</a> and need the web console fixes, you<br />
+need to edit <code>%windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG\web.config</code><br />
 by adding the following line:</p>
 <p><code>&lt;machineKey validationKey=&quot;AutoGenerate,IsolateApps&quot; decryptionKey=&quot;AutoGenerate,IsolateApps&quot; validation=&quot;3DES&quot; decryption=&quot;3DES&quot;/&gt;</code></p>
 <h3 id="agents"><a class="markdownIt-Anchor" href="#agents"></a> Agents</h3>
-<p>Normal update procedure applies. Use “Pending Management”, SCCM, manual<br>
+<p>Normal update procedure applies. Use “Pending Management”, SCCM, manual<br />
 installations or whatever method you’d like.</p>
 <h2 id="summary"><a class="markdownIt-Anchor" href="#summary"></a> Summary</h2>
-<p>If you already have UR3, this one is very quick. If you are updating a fresh<br>
-installation, wait a day or your management group may end up uninitialized for<br>
+<p>If you already have UR3, this one is very quick. If you are updating a fresh<br />
+installation, wait a day or your management group may end up uninitialized for<br />
 reasons. Remember to enable your subscriptions when done.</p>
 <p>GLHF!</p>
 
@@ -248,7 +246,7 @@ reasons. Remember to enable your subscriptions when done.</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/" data-id="cjypuwbtd0013ncqqx99mq7zf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr-2012-r2-ur4-field-notes/" data-id="ck35oq56z001488gk1jb76dli" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -383,7 +381,7 @@ reasons. Remember to enable your subscriptions when done.</p>
         
 <nav id="article-nav">
     
-        <a href="/ms/opsmgr2012/Event-Id-4001-–-“Cannot-Add-Type”-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/ms/opsmgr2012/Event-Id-4001-%E2%80%93-%E2%80%9CCannot-Add-Type%E2%80%9D-in-SQL-MP-6-6-4-0-for-OpsMgr2012/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
@@ -489,7 +487,7 @@ reasons. Remember to enable your subscriptions when done.</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -507,7 +505,7 @@ reasons. Remember to enable your subscriptions when done.</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>NVidia problems in Ubuntu 8.10 | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Drivers,NVidia">
+        <meta name="keywords" content="Drivers,NVidia" />
     
     <meta name="description" content="[updated, scroll down if you want to skip some nonsense] So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski">
 <meta name="keywords" content="Drivers,NVidia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NVidia problems in Ubuntu 8.10">
-<meta property="og:url" content="https://www.teknoglot.se/linux/ubuntu/nvidia-problems-in-ubuntu-810/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;linux&#x2F;ubuntu&#x2F;nvidia-problems-in-ubuntu-810&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="[updated, scroll down if you want to skip some nonsense] So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.346Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NVidia problems in Ubuntu 8.10">
-<meta name="twitter:description" content="[updated, scroll down if you want to skip some nonsense] So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a ski">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,32 +161,32 @@ ga('send', 'pageview');
     <time datetime="2008-11-10T08:20:14.000Z" itemprop="datePublished">2008-11-10</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Drivers/">Drivers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/NVidia/">NVidia</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Drivers/" rel="tag">Drivers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/NVidia/" rel="tag">NVidia</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <p>[updated, scroll down if you want to skip some nonsense]</p>
-<p>So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  <em>Release upgrade</em> to <strong>Normal Releases</strong> (you find it under the <em>Updates</em> tab).<br>
+<p>So, I did an upgrade to Ubuntu Studio 8.10 (basically Ubuntu with rt-kernel and lots of nice media-related packages easily accessible and a skin that rocks) from the earlier 8.04. And the upgrade itself was really easy. I just opened the “Software Sources”, set the  <em>Release upgrade</em> to <strong>Normal Releases</strong> (you find it under the <em>Updates</em> tab).<br />
 After that you get the option to do a <em>Distribution Upgrade</em>, which I did (took some 45 minutes to finish).</p>
 <p>I did however run into some serious problems with the NVidia Drivers after the upgrade. Basically, the new drivers dont seem to install correctly under the new kernel. This conclusion took me a day of laborating with settings, installing packages, uninstalling packages, reinstalling packages and a whole lot of googling.</p>
 <p>What I have come down to right now is doing the following:</p>
 <blockquote>
-<p><strong>sudo apt-get install module-assistant</strong><br>
+<p><strong>sudo apt-get install module-assistant</strong><br />
 This will install the module assistant and it will also make sure that you have all the correct linux headers to install the NVidia drivers.</p>
 </blockquote>
-<p><span style="text-decoration: line-through;">Going back to the “Software Sources” under i check the “Unsopported updates”.</span><br>
+<p><span style="text-decoration: line-through;">Going back to the “Software Sources” under i check the “Unsopported updates”.</span><br />
 Then i execute</p>
 <blockquote>
-<p><span style="text-decoration: line-through;">sudo apt-get autoremove</span><br>
-<span style="text-decoration: line-through;">sudo apt-get install nvidia-177-kernel-source</span><br>
-<strong>m-a auto-install nvidia</strong><br>
+<p><span style="text-decoration: line-through;">sudo apt-get autoremove</span><br />
+<span style="text-decoration: line-through;">sudo apt-get install nvidia-177-kernel-source</span><br />
+<strong>m-a auto-install nvidia</strong><br />
 <strong>UPDATE!</strong></p>
 </blockquote>
 <p>After fiddling around with this Laptop (Lenovo Thinkpad T61) I really just needed these three steps to fix the problem. All of them from X using the regular nv-drivers.</p>
 <ol>
 <li>In a terminal, run <em>sudo apt-get install module assistant</em></li>
 <li>In a terminal, run <em>sudo m-a auto-install nvidia</em></li>
-<li>Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.<br>
+<li>Open the “Hardware Drivers” application and pick the driver you want (177 in my case) and click Activate. If it worked alright, you’ll get the green recycle icon and be asked to reboot to activate the settings.<br />
 Hopefully, this might help someone. It did work for me and I am now able to work with wobbly windows and all that crap. (Besides some serious 3d stuff 😉 )</li>
 </ol>
 <p>Anyway. Since I did not save the urls, I cannot give credit to those who have pointed to stuff that did help me on the way, but I’ve actually not find information anywhere yet that solve the problem totally and, well… that’s why I did decide to post in here.</p>
@@ -200,7 +198,7 @@ Hopefully, this might help someone. It did work for me and I am now able to work
 
 
 
-    <a data-url="https://www.teknoglot.se/linux/ubuntu/nvidia-problems-in-ubuntu-810/" data-id="cjypuwbta000xncqqwq1iuzuy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/linux/ubuntu/nvidia-problems-in-ubuntu-810/" data-id="ck35oq56x001088gk4j7x3rt6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -441,7 +439,7 @@ Hopefully, this might help someone. It did work for me and I am now able to work
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -459,7 +457,7 @@ Hopefully, this might help someone. It did work for me and I am now able to work
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

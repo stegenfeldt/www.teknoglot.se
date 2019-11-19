@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Linux Discovery – Not Enough Entropy | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,How-To,Linux,TroubleShooting,X-Plat">
+        <meta name="keywords" content="OpsMgr,How-To,Linux,TroubleShooting,X-Plat" />
     
     <meta name="description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
 <meta name="keywords" content="OpsMgr,How-To,Linux,TroubleShooting,X-Plat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Discovery – Not Enough Entropy">
-<meta property="og:url" content="https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;linux&#x2F;sles&#x2F;linux-discovery-not-enough-entropy&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.338Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Discovery – Not Enough Entropy">
-<meta name="twitter:description" content="Error Description Here’s a little trouble-shooting guide for discovering Linux systems from OpsMgr R2 when getting the following error from the wizard: &amp;lt;stdout&amp;gt;Generating certificate with hostn">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2009-12-02T11:37:08.000Z" itemprop="datePublished">2009-12-02</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/TroubleShooting/">TroubleShooting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/X-Plat/">X-Plat</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/TroubleShooting/" rel="tag">TroubleShooting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/X-Plat/" rel="tag">X-Plat</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -188,15 +186,15 @@ ga('send', 'pageview');
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/opt/microsoft/scx/bin/tools/scxsslconfig -f –v</span><br><span class="line">/opt/microsoft/scx/bin/tools/scxadmin –restart</span><br></pre></td></tr></table></figure>
 <p>Retry discovery again.</p>
 <h2 id="5-still-fails"><a class="markdownIt-Anchor" href="#5-still-fails"></a> 5. Still fails?</h2>
-<p>Uninstall the agent once more as instructed in step 3.<br>
+<p>Uninstall the agent once more as instructed in step 3.<br />
 Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully they will help you too.</p>
 <p>Interestingely enough, these problems seems to be connected to some changes in the 2.6 kernel and basically everything that uses SSL-ish certificates will be affected. Even though the symptoms may be a bit more subtle, like time-outs and disconnects. For “headless” servers like those I usually to administer where the random data tend to be much lower, there’s even specialised hardware whose sole purpose is to generate random data, like the <a href="http://www.entropykey.co.uk/" target="_blank" rel="noopener">Entropy Key</a>. I have also been told that new servers is likely to be equipped with entropy chipsets to make sure that there’s chaos enough to avoid these new-found oddities.</p>
 <blockquote>
-<p>Sources:<br>
-<a href="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" title="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" target="_blank" rel="noopener">http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357</a></p>
+<p>Sources:<br />
+<a href="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357" target="_blank" rel="noopener" title="http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357">http://social.technet.microsoft.com/Forums/en-US/crossplatformsles/thread/f94ec905-23ac-4444-b9f8-644fec3ae357</a></p>
 </blockquote>
 <blockquote>
-<p><a href="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" title="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" target="_blank" rel="noopener">http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html<br>
+<p><a href="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html" target="_blank" rel="noopener" title="http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html">http://www.askrenzo.com/oracle/SCOM/SCOM_discovering_nodes.html<br />
 </a></p>
 </blockquote>
 
@@ -206,7 +204,7 @@ Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully t
 
 
 
-    <a data-url="https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/" data-id="cjypuwbt7000qncqqkrtf3e1p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/linux/sles/linux-discovery-not-enough-entropy/" data-id="ck35oq56p000p88gkau4yhtdk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -447,7 +445,7 @@ Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully t
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -465,7 +463,7 @@ Stese steps have solved my problems 100% on both SUSE and RedHat and hopefully t
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

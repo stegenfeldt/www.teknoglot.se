@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Upgrading #OpsMgr 1801 to 1807 - Fieldnotes | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Fieldnotes">
+        <meta name="keywords" content="Fieldnotes" />
     
     <meta name="description" content="My Fieldnotes are quick, unrefined notations and reflections from the field.  Content may be obvious and unnecessary to some, useful to others.The main purpose is for them to be used as a searchable n">
 <meta name="keywords" content="Fieldnotes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Upgrading #OpsMgr 1801 to 1807 - Fieldnotes">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr1801/Upgrading-OpsMgr-1801-to-1807-Fieldnotes/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr1801&#x2F;Upgrading-OpsMgr-1801-to-1807-Fieldnotes&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="My Fieldnotes are quick, unrefined notations and reflections from the field.  Content may be obvious and unnecessary to some, useful to others.The main purpose is for them to be used as a searchable n">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-30T13:45:19.303Z">
+<meta property="og:updated_time" content="2019-11-19T09:50:33.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Upgrading #OpsMgr 1801 to 1807 - Fieldnotes">
-<meta name="twitter:description" content="My Fieldnotes are quick, unrefined notations and reflections from the field.  Content may be obvious and unnecessary to some, useful to others.The main purpose is for them to be used as a searchable n">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2018-09-06T12:42:51.000Z" itemprop="datePublished">2018-09-06</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fieldnotes/">Fieldnotes</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Fieldnotes/" rel="tag">Fieldnotes</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -182,14 +180,14 @@ ga('send', 'pageview');
 <h2 id="notes"><a class="markdownIt-Anchor" href="#notes"></a> Notes</h2>
 <h3 id="updating-the-management-servers"><a class="markdownIt-Anchor" href="#updating-the-management-servers"></a> Updating the Management Servers</h3>
 <p>Fairly quick update, may need a restart afterwards.</p>
-<p>On occasion, especially if the patch has to wait on shutting down the management server services (healthservice, omsdk, cshost) due to backlogs or high load, it might fail at replacing the binaries. You will notice this as the management server will go grey in the SCOM Console and you might find connectivity errors in the OperationsManager eventlog.<br>
+<p>On occasion, especially if the patch has to wait on shutting down the management server services (healthservice, omsdk, cshost) due to backlogs or high load, it might fail at replacing the binaries. You will notice this as the management server will go grey in the SCOM Console and you might find connectivity errors in the OperationsManager eventlog.<br />
 If this happens, can be fixed by simply applying the patch again after a reboot.</p>
 <h3 id="updating-the-databases"><a class="markdownIt-Anchor" href="#updating-the-databases"></a> Updating the database(s)</h3>
 <p>The official documentation say that you should “Apply SQL scripts” (plural) then only mentions the <code>Update_rollup_mom_db.sql</code> script. Not entirely sure what gives? I’ve only applied the mentioned script file, and that’s been working so far. The DW-script don’t seem to be doing very much anyway.</p>
 <h2 id="afterthoughts"><a class="markdownIt-Anchor" href="#afterthoughts"></a> Afterthoughts</h2>
 <p>Apart from the vague instructions regarding the SQL-scripts, the 1807 upgrade is pretty straight-forward. Alhough, given the recent experiences with 1801, I am far more cautious going into these semi-annual updates going forth.</p>
 <p>I am a bit dissapointed with the actual update, though. There’s <em>very</em> little going on between these, supposedly larger, updates compared to what we got with the old Update Rollups.</p>
-<p>Not much more to say on that front, perhaps there will be something interesting in SCOM 2019…<br>
+<p>Not much more to say on that front, perhaps there will be something interesting in SCOM 2019…<br />
 ¯\<em>(ツ)</em>/¯</p>
 
                 </div>
@@ -198,7 +196,7 @@ If this happens, can be fixed by simply applying the patch again after a reboot.
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr1801/Upgrading-OpsMgr-1801-to-1807-Fieldnotes/" data-id="cjypuwbsv0006ncqqjzejb486" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr1801/Upgrading-OpsMgr-1801-to-1807-Fieldnotes/" data-id="ck35oq56b000888gk85g832lt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -429,7 +427,7 @@ If this happens, can be fixed by simply applying the patch again after a reboot.
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -447,7 +445,7 @@ If this happens, can be fixed by simply applying the patch again after a reboot.
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

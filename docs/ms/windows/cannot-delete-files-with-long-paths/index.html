@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Cannot Delete Files with Long Paths? | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Windows,Errors,KB,Windows 2008,Windows Vista,Windows XP">
+        <meta name="keywords" content="Windows,Errors,KB,Windows 2008,Windows Vista,Windows XP" />
     
     <meta name="description" content="What do you do when you cannot delete a file or folder on a windows server? Check the file permissions! And if that doesn’t help? Check the share permissions! Yes, if it is a shared folder. And if tha">
 <meta name="keywords" content="Windows,Errors,KB,Windows 2008,Windows Vista,Windows XP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cannot Delete Files with Long Paths?">
-<meta property="og:url" content="https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;windows&#x2F;cannot-delete-files-with-long-paths&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="What do you do when you cannot delete a file or folder on a windows server? Check the file permissions! And if that doesn’t help? Check the share permissions! Yes, if it is a shared folder. And if tha">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.329Z">
+<meta property="og:updated_time" content="2019-11-19T09:50:33.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cannot Delete Files with Long Paths?">
-<meta name="twitter:description" content="What do you do when you cannot delete a file or folder on a windows server? Check the file permissions! And if that doesn’t help? Check the share permissions! Yes, if it is a shared folder. And if tha">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,7 +161,7 @@ ga('send', 'pageview');
     <time datetime="2009-10-21T07:39:17.000Z" itemprop="datePublished">2009-10-21</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/KB/">KB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows/">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-2008/">Windows 2008</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-Vista/">Windows Vista</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-XP/">Windows XP</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/" rel="tag">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/KB/" rel="tag">KB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows/" rel="tag">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-2008/" rel="tag">Windows 2008</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-Vista/" rel="tag">Windows Vista</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Windows-XP/" rel="tag">Windows XP</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -171,19 +169,19 @@ ga('send', 'pageview');
 <p>Check the file permissions! And if that doesn’t help?</p>
 <p>Check the share permissions! Yes, if it is a shared folder. And if that doesn’t help?</p>
 <p>Check the file ownership! Great! But then what?</p>
-<p>Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).<br>
+<p>Well, the file could be in use, and then you would have to shut the locking process down and perhaps kick a user out. In a really bad scenario it could also be a symptom of a broken filesystem, a reserved filename (like “lpt1” or “PRN”) or even an invalid name (silly things like a space in the beginning or the end of a filename).<br />
 Another possible reason could actually be that the path to the file or folder is too long. You won’t actually get an error telling you that the filepath exceeds the 255 characters Windows can handle but a simple “Acces Denied”.</p>
 <p>There are some, more or less tedious, work-arounds for the problem. Like renaming, starting from the root, all the directories to shorter ones or using the old DOS (8.3, like “dokume~1.doc”) names that windows can auto-generate for you. Personally, I have two favourite ways of handling this.</p>
 <ol>
-<li>Map the parent-directory of the file/folder you are trying to access/delete as a network drive and access your files that way.<br>
+<li>Map the parent-directory of the file/folder you are trying to access/delete as a network drive and access your files that way.<br />
 This is particularly useful if the folder you are trying to access a <abbr title="Distributed File System">DFS</abbr>-share or perhaps a share on the central fileserver filepaths like <code>\\servername01\Central Projects\Central Services\IT Department\Develop Methods for Automatically Deploying New Central Servers\2.2.1 Auto-Deploying SQL-Server 2005 Cluster\Documents\Preparations\Whitepapers\SQL Server 2005 Failover Clustering White Paper.doc</code></li>
-<li>Create a new share to a folder further down the hierarchy.<br>
+<li>Create a new share to a folder further down the hierarchy.<br />
 This works locally too if you are logged on to, say, SRV01, you create a new share on <code>D:\\Central Projects\Central Services\IT Department\Develop Methods for Automatically Deploying New Central Servers\</code> called <code>Autodeploymethods</code> and access it from <code>\\SRV01\Autodeploymethods</code>. That way the filepath doesn’t exceed 255 characters.</li>
 </ol>
 <p>Now. When designing fileservers, you really should think about how deep the filepaths may get. This is especially true on <abbr title="Distributed File System">DFS</abbr>-shares since you might have to deal with the full <abbr title="Fully Qualified Domain Name">FQDN</abbr> too, and not only the actual folder structure. Many big corporations I know uses “codes” for departments and assign a project ID (quite simply a number or maybe an abbreviation) to each project and uses theese for the fileshares too. Another scenario that could lead to similar problems are intranet sites where users can create and manage their own subsites and where filenames and folders are not stored in a database.</p>
 <p>I have only seen this phenomena on Windows systems so far, and I’ve actually used a linux Live-CD on occasion when admin access is denied.</p>
 <blockquote>
-<p>Read More:<br>
+<p>Read More:<br />
 <a href="http://support.microsoft.com/kb/320081" target="_blank" rel="noopener">http://support.microsoft.com/kb/320081</a></p>
 </blockquote>
 
@@ -193,7 +191,7 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/" data-id="cjypuwbt0000cncqqb3n7ajlc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/windows/cannot-delete-files-with-long-paths/" data-id="ck35oq56g000c88gk8ii317sp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -434,7 +432,7 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -452,7 +450,7 @@ This works locally too if you are logged on to, say, SRV01, you create a new sha
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Field Notes,OpsMgr,SquaredUp">
+        <meta name="keywords" content="OpsMgr,Field Notes,SquaredUp" />
     
     <meta name="description" content="Story-time I saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never cli">
-<meta name="keywords" content="Field Notes,OpsMgr,SquaredUp">
+<meta name="keywords" content="OpsMgr,Field Notes,SquaredUp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/squaredup-installation/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;squaredup-installation&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Story-time I saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never cli">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.364Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.teknoglot.se&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;152402_0001.png">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SquaredUp Installation - Manual? Pfffft! [#opsmgr #squaredup]">
-<meta name="twitter:description" content="Story-time I saw SquaredUp some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never cli">
-<meta name="twitter:image" content="http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;www.teknoglot.se&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;09&#x2F;152402_0001.png">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -57,7 +55,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -165,36 +163,36 @@ ga('send', 'pageview');
     <time datetime="2014-09-09T14:38:36.000Z" itemprop="datePublished">2014-09-09</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SquaredUp/">SquaredUp</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/" rel="tag">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/SquaredUp/" rel="tag">SquaredUp</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <h1 id="story-time"><a class="markdownIt-Anchor" href="#story-time"></a> Story-time</h1>
-<p>I saw <a href="http://www.squaredup.com/" title="SquaredUp" target="_blank" rel="noopener">SquaredUp</a> some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some <abbr title="Database">DB</abbr>-queries. I kind of liked the look of their product though and have kept an eye on them now and then.<br>
-Fast-forward to may 21st this year and the <a href="http://www.squaredup.com/blog/proudly-announcing-squared-v18" title="Proudly Announcing v1.8" target="_blank" rel="noopener">release of version 1.8</a> and a whole slew of <a href="http://www.squaredup.com/blog/squared-v18-new-features" title="New Features in v1.8" target="_blank" rel="noopener">nifty little features</a>. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… <em>other products</em> for. That, coupled with some new videos on their <a href="https://www.youtube.com/user/SquaredUpLtd" title="SquaredUp YouTube Channel" target="_blank" rel="noopener">Youtube-channel</a>, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.</p>
+<p>I saw <a href="http://www.squaredup.com/" target="_blank" rel="noopener" title="SquaredUp">SquaredUp</a> some year or two ago while googling about on behalf of a customer looking for a dashboard kind of thingy. It looked good and fairly simple, but for some reason it never clicked with the customer and we ended up going for some custom-made dashboards with a little scripting and some <abbr title="Database">DB</abbr>-queries. I kind of liked the look of their product though and have kept an eye on them now and then.<br />
+Fast-forward to may 21st this year and the <a href="http://www.squaredup.com/blog/proudly-announcing-squared-v18" target="_blank" rel="noopener" title="Proudly Announcing v1.8">release of version 1.8</a> and a whole slew of <a href="http://www.squaredup.com/blog/squared-v18-new-features" target="_blank" rel="noopener" title="New Features in v1.8">nifty little features</a>. What specifically piqued my interest was the linked dashboards, SharePoint integration and the included SLA and Map plugins. This basically ticked a lot of boxes many of my customers have looked for and something we’ve normally been looking into… err… <em>other products</em> for. That, coupled with some new videos on their <a href="https://www.youtube.com/user/SquaredUpLtd" target="_blank" rel="noopener" title="SquaredUp YouTube Channel">Youtube-channel</a>, a few well-placed tweets and a little mail-correspondence had me setting it up in my portable little lab.</p>
 <p>One of the interesting points is how, supposedly easy, it is to set the portal up. So I reset my lab – <abbr title="Powershell Deployment Toolkit">PDT</abbr> is just wonderful – and decided to go for the hail-dummy approach. No manual, no preparations, no check-lists… Next-next-next then hopefully a working portal.</p>
 <a id="more"></a>
 <h1 id="the-installation"><a class="markdownIt-Anchor" href="#the-installation"></a> The Installation</h1>
-<p>First, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.<br>
-<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png" alt="SquaredUp - Installation Package" title="SquaredUp - Installation Package"></p>
+<p>First, download the installation file (yes, singular) through the link you’ve got in your email and save it somewhere proper.<br />
+<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152402_0001.png" alt="SquaredUp - Installation Package" title="SquaredUp - Installation Package" /></p>
 <p>Doubleclicked the installation packaged and it now tells me it will install a few pre-requisites and configure the website for me. Next!</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152428_0002.png" alt="Installation Information" title="SquaredUp - Something something components"></p>
-<p>The <abbr title="End User License Agreement">EULA</abbr> I am sure each one of you are reading. Next!<br>
-<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152447_0003.png" alt="EULA" title="SquaredUp - Yeah, mhm... Read it."></p>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152428_0002.png" alt="Installation Information" title="SquaredUp - Something something components" /></p>
+<p>The <abbr title="End User License Agreement">EULA</abbr> I am sure each one of you are reading. Next!<br />
+<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152447_0003.png" alt="EULA" title="SquaredUp - Yeah, mhm... Read it." /></p>
 <p>Installing, or rather configuring, <abbr title="Internet Information Services">IIS</abbr> and pre-requisites for me. Very nice. Next!</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152506_0004.png" alt="Installing/Configuring IIS" title="SquaredUp - installing IIS for me... nice."></p>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152506_0004.png" alt="Installing/Configuring IIS" title="SquaredUp - installing IIS for me... nice." /></p>
 <p>Quick summary before actual installation. Next!</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152525_0005.png" alt="Installation Summary" title="SquaredUp - Webroot... ok, sure."></p>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152525_0005.png" alt="Installation Summary" title="SquaredUp - Webroot... ok, sure." /></p>
 <p>This step actually requires a little action on your part. In this installation, the default setting “localhost” would actually work but I prefer to actually configure these things properly. I only have a single Management Server in this lab, so testing a load-balanced highly available scenario was not possible. Enter Management Server name, then Next!</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152612_0006.png" alt="Configuring the Management Server" title="SquaredUp - Configure Management Server"></p>
-<p>After a slight case of progress-bar the installation is now complete. Click link and exit the installer. Time spent so far is less than ten minutes, probably closer to five.<br>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152612_0006.png" alt="Configuring the Management Server" title="SquaredUp - Configure Management Server" /></p>
+<p>After a slight case of progress-bar the installation is now complete. Click link and exit the installer. Time spent so far is less than ten minutes, probably closer to five.<br />
 Now it’s time to login using your normal <abbr title="System Center 2012 - Operations Manager">SCOM</abbr> credentials.</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152750_0008.png" alt="Login Screen" title="SquaredUp - Login Screen"></p>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/152750_0008.png" alt="Login Screen" title="SquaredUp - Login Screen" /></p>
 <p>First login will bring you to the Activation Screen. Simply paste the activation key from the email and Activate. This requires a working internet connection.</p>
-<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/153833_0010.png" alt="Activation Screen" title="SquaredUp - Activation Screen"></p>
-<p>That’s it! Well… not really. Navigating the portal I noticed that the spark-lines aren’t showing, and hitting the “View Performance” link on an object view gives me a “Login failed for user…” error. I know I saw something about configuring the Data Warehouse in the email, so I check the blissfully simple Settings panel.<br>
-<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/154502_0012.png" alt="Settings Panel - DW Configuration" title="SquaredUp - Configure DW Help"></p>
-<p>Followed the <a href="http://support.squaredup.com/support/solutions/articles/27999" title="Squared Up - Configuring Data Warehouse Permissions" target="_blank" rel="noopener">instructions</a> to configure the security of the OperationsManagerDW database for the SquaredUp web application, and that’s really it. Portal is up and running, spark-lines working. Ready to go.</p>
+<p><img src="http://www.teknoglot.se/wp-content/uploads/2014/09/153833_0010.png" alt="Activation Screen" title="SquaredUp - Activation Screen" /></p>
+<p>That’s it! Well… not really. Navigating the portal I noticed that the spark-lines aren’t showing, and hitting the “View Performance” link on an object view gives me a “Login failed for user…” error. I know I saw something about configuring the Data Warehouse in the email, so I check the blissfully simple Settings panel.<br />
+<img src="http://www.teknoglot.se/wp-content/uploads/2014/09/154502_0012.png" alt="Settings Panel - DW Configuration" title="SquaredUp - Configure DW Help" /></p>
+<p>Followed the <a href="http://support.squaredup.com/support/solutions/articles/27999" target="_blank" rel="noopener" title="Squared Up - Configuring Data Warehouse Permissions">instructions</a> to configure the security of the OperationsManagerDW database for the SquaredUp web application, and that’s really it. Portal is up and running, spark-lines working. Ready to go.</p>
 <h1 id="conclusion"><a class="markdownIt-Anchor" href="#conclusion"></a> Conclusion</h1>
 <p>I wish more products and “add-ons” to <abbr title="System Center 2012 - Operations Manager">SCOM</abbr> were this easy to install. No extra databases, no extra permissions, no extra infrastructure. I would like to try it out in a larger environment and see what the load on the website, the databases and the data access service will be. It would also be necessary to verify that it works properly when the management servers are behind a load balancer and maybe even putting the SquaredUp portal behind one itself. Since there is not a lot of configuration to be done and no database, it <em>should</em> work. We’ll see.</p>
 <p>Next up will be fiddling about with custom dashboards, maps, and generally figuring out what else we can do.</p>
@@ -205,7 +203,7 @@ Now it’s time to login using your normal <abbr title="System Center 2012 - Ope
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/squaredup-installation/" data-id="cjypuwbtj001gncqqw4aexzlr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/squaredup-installation/" data-id="ck35oq578001j88gk2of5ffei" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -446,7 +444,7 @@ Now it’s time to login using your normal <abbr title="System Center 2012 - Ope
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -464,7 +462,7 @@ Now it’s time to login using your normal <abbr title="System Center 2012 - Ope
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

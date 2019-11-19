@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Replace/Change a Gateway Server | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,PoSH,Script,How-To">
+        <meta name="keywords" content="OpsMgr,PoSH,Script,How-To" />
     
     <meta name="description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
 <meta name="keywords" content="OpsMgr,PoSH,Script,How-To">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Replace&#x2F;Change a Gateway Server">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2007&#x2F;replacechange-a-gateway-server&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.359Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Replace&#x2F;Change a Gateway Server">
-<meta name="twitter:description" content="Description of problem If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just r">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,12 +161,12 @@ ga('send', 'pageview');
     <time datetime="2009-09-24T10:32:35.000Z" itemprop="datePublished">2009-09-24</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/">Script</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/How-To/" rel="tag">How-To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/PoSH/" rel="tag">PoSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Script/" rel="tag">Script</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <h1 id="description-of-problem"><a class="markdownIt-Anchor" href="#description-of-problem"></a> Description of problem</h1>
-<p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br>
+<p>If you are looking into replacing an (or just switching to another primary) Operations Manager 2007 Gateway Server for any reason, there’s a little more to consider than just right-clicking the clients and selecting “Change Primary Management Server” in the Operations Console.<br />
 You could end up with agents not being able to connect to the Management Group at all due to a small problem with the order in which Operations Manager do things.</p>
 <p>Here’s basically what happens:</p>
 <ol>
@@ -178,15 +176,15 @@ You could end up with agents not being able to connect to the Management Group a
 <li>OpsMgr then tells GW2 to start accepting communication from AGENTX.</li>
 <li>OpsMgr tries to tell AGENTX that it should talk to GW2 since GW1 won’t listen.</li>
 </ol>
-<p>Spotted the problem?<br>
+<p>Spotted the problem?<br />
 This modus operandi probably works when agents are on the same network and in the same domain where fail-over is sort of automatic.  The problem we are facing now is that the server are telling the Gateway to stop accepting communications to and from the agent <em>before</em> the agent is notified that there is a new Gateway server to talk to. The agent will continue to talk to GW1 but will be completely ignored and you will probably start seeing events in the Operations Manager eventlog on GW1 with EventID 20000.</p>
 <p>How do I get around this little <em>feature</em> then?</p>
-<p>No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are <a href="http://www.systemcentercentral.com/Forums/tabid/60/IndexID/19305/Default.aspx#vwcComments19305" title="System Center Central" target="_blank" rel="noopener">out there</a> allready, but in different contexts, hence this post.</p>
+<p>No matter if you found this article after running into the mentioned troubles or if you are googling ahead of time to be prepared, the fix is the same and consists of a few powershell scripts. These scripts are <a href="http://www.systemcentercentral.com/Forums/tabid/60/IndexID/19305/Default.aspx#vwcComments19305" target="_blank" rel="noopener" title="System Center Central">out there</a> allready, but in different contexts, hence this post.</p>
 <h2 id="first-step-install-the-new-gateway"><a class="markdownIt-Anchor" href="#first-step-install-the-new-gateway"></a> First step:  Install the new Gateway</h2>
-<p><a href="http://technet.microsoft.com/en-us/library/bb432149.aspx" title="Deploying Gateway Server in the Multiple Server, Single Management Group Scenario" target="_blank" rel="noopener">Documentation on this</a> from Microsoft is good enough, but here’s the short version.</p>
+<p><a href="http://technet.microsoft.com/en-us/library/bb432149.aspx" target="_blank" rel="noopener" title="Deploying Gateway Server in the Multiple Server, Single Management Group Scenario">Documentation on this</a> from Microsoft is good enough, but here’s the short version.</p>
 <ol>
 <li>Verify name resolution to and from Gateway server and Management Server</li>
-<li><a href="http://technet.microsoft.com/en-us/library/bb735408.aspx" title="Authentication and Data Encryption for Windows Computers in Operations Manager 2007" target="_blank" rel="noopener">Create certificate</a> for the Gateway server</li>
+<li><a href="http://technet.microsoft.com/en-us/library/bb735408.aspx" target="_blank" rel="noopener" title="Authentication and Data Encryption for Windows Computers in Operations Manager 2007">Create certificate</a> for the Gateway server</li>
 <li>Approve the Gateway server</li>
 <li>Install Gateway server</li>
 <li>Import certificates on Windows system</li>
@@ -195,7 +193,7 @@ This modus operandi probably works when agents are on the same network and in th
 </ol>
 <p>The wait is for the gateway server to get all needed configuration from RMS and to download all neccesary management packs, run all the discovery scripts and so on. When the Operations Manager event log has calmed down a bit, move to step two.</p>
 <h2 id="second-step-configure-agent-failover"><a class="markdownIt-Anchor" href="#second-step-configure-agent-failover"></a> Second step: Configure Agent Failover</h2>
-<p>Connect to an Operations Manager Command Shell. Any will do, as long as it’s connected to the correct Management Group.<br>
+<p>Connect to an Operations Manager Command Shell. Any will do, as long as it’s connected to the correct Management Group.<br />
 Then run the following script:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$primaryGW</span>= Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW2.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$failoverGw</span> = Get-ManagementServer | where &#123;<span class="variable">$_</span>.Name <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line"><span class="variable">$agents</span> = Get-Agent | where &#123;<span class="variable">$_</span>.primarymanagementservername <span class="nomarkup">-eq</span> <span class="string">'GW1.domain.local'</span>&#125;</span><br><span class="line">Set-ManagementServer -AgentManagedComputer: <span class="variable">$agents</span> -PrimaryManagementServer: <span class="variable">$primaryGW</span> -FailoverServer: <span class="variable">$failoverGw</span></span><br></pre></td></tr></table></figure>
 <p>Remember to change “GW1.domain.local” to you OLD Gateway servername and “GW2.domain.local” to your NEW Gateway servername.</p>
@@ -207,7 +205,7 @@ Then run the following script:</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/" data-id="cjypuwbtg001bncqqrzapa51c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/replacechange-a-gateway-server/" data-id="ck35oq575001d88gk91lx649k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -448,7 +446,7 @@ Then run the following script:</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -466,7 +464,7 @@ Then run the following script:</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

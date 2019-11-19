@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>SNMP GET Errors in OpsMgr EventLog | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,Errors,Management Pack,TroubleShooting">
+        <meta name="keywords" content="OpsMgr,Errors,Management Pack,TroubleShooting" />
     
     <meta name="description" content="I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl">
 <meta name="keywords" content="OpsMgr,Errors,Management Pack,TroubleShooting">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SNMP GET Errors in OpsMgr EventLog">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2007&#x2F;snmp-get-errors-in-eventlog&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://teknoglotse.nfshost.com/wp-content/uploads/2010/09/snmp_error_wireshark.png">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.362Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;teknoglotse.nfshost.com&#x2F;wp-content&#x2F;uploads&#x2F;2010&#x2F;09&#x2F;snmp_error_wireshark.png">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SNMP GET Errors in OpsMgr EventLog">
-<meta name="twitter:description" content="I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostl">
-<meta name="twitter:image" content="http://teknoglotse.nfshost.com/wp-content/uploads/2010/09/snmp_error_wireshark.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;teknoglotse.nfshost.com&#x2F;wp-content&#x2F;uploads&#x2F;2010&#x2F;09&#x2F;snmp_error_wireshark.png">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -57,7 +55,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -165,26 +163,26 @@ ga('send', 'pageview');
     <time datetime="2010-09-02T20:28:07.000Z" itemprop="datePublished">2010-09-02</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Management-Pack/">Management Pack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/TroubleShooting/">TroubleShooting</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Errors/" rel="tag">Errors</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Management-Pack/" rel="tag">Management Pack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/TroubleShooting/" rel="tag">TroubleShooting</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <p>I’ve been building a little SNMP Management Pack in the past few days to discover and monitor a bunch of PowerWare UPS’s, which turned out to take quite a lot more energy and time than expected. Mostly due to the facts that I am really bad with SNMP and how it works, I’ve never really looked into the inner working of building an SNMP management pack and also because we ran into a couple of errors preventing the discovery process to work alright.</p>
 <p>To make it clear right away, this is not going to be a “Building an SNMP Management Pack Tutorial” since there’s plentiful good ones out there already, and to be extra helpful I’m gonna include a few links right away:</p>
 <ul>
-<li><a href="http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/66140/Default.aspx" title="SNMP Setup and Simple Custom SNMP Discovery" target="_blank" rel="noopener">SNMP Setup and Simple Custom SNMP Discovery</a> - Pretty much the basics</li>
-<li><a href="http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/58919/Default.aspx" title="SNMP Management Pack Example: NetApp Management Pack for SCOM 2007 R2 part 4" target="_blank" rel="noopener">SNMP Management Pack Example: NetApp Management Pack</a> - Part 4 actually, but has the links to the other parts</li>
-<li><a href="http://www.systemcentercentral.com/Details/tabid/147/IndexID/58815/Default.aspx" title="Creating SNMP Probe Based Monitors" target="_blank" rel="noopener">Creating SNMP Probe Based Monitors</a> - No custom discovery, but a good and simple guide to SNMP Probes</li>
+<li><a href="http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/66140/Default.aspx" target="_blank" rel="noopener" title="SNMP Setup and Simple Custom SNMP Discovery">SNMP Setup and Simple Custom SNMP Discovery</a> - Pretty much the basics</li>
+<li><a href="http://www.systemcentercentral.com/BlogDetails/tabid/143/IndexID/58919/Default.aspx" target="_blank" rel="noopener" title="SNMP Management Pack Example: NetApp Management Pack for SCOM 2007 R2 part 4">SNMP Management Pack Example: NetApp Management Pack</a> - Part 4 actually, but has the links to the other parts</li>
+<li><a href="http://www.systemcentercentral.com/Details/tabid/147/IndexID/58815/Default.aspx" target="_blank" rel="noopener" title="Creating SNMP Probe Based Monitors">Creating SNMP Probe Based Monitors</a> - No custom discovery, but a good and simple guide to SNMP Probes</li>
 </ul>
 <p>It’s the second, the NetApp one, I’ve used as a guide to building the UPS management pack since it goes through the process of building your own filtered discovery using SystemOID to identify your hardware-classes and then building the monitors on top of those.</p>
 <h1 id="lets-get-to-it"><a class="markdownIt-Anchor" href="#lets-get-to-it"></a> Let’s get to it</h1>
-<p>When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.<br>
-I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.<br>
+<p>When building the discovery of my hardware classes I ran into problems. The discovery simply did not work. At first I got some strange errors about “invalid queries”, something that turned out to be related to me reading two guides–seriously though, pick one guide that is closest to what you want to achieve and stick to it–and mixing up the XPathQuery variables. Silly me.<br />
+I got those errors to go away and I was able to get a few objects to my base-class, but none of the hardware classes who was populated through the return value of an SNMP OID got discovered.<br />
 The only error I got this time was the following:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Log Name:      Operations Manager</span><br><span class="line">Source:        Health Service Modules</span><br><span class="line">Date:          2010-09-02 11:19:12</span><br><span class="line">Event ID:      11001</span><br><span class="line">Task Category: None</span><br><span class="line">Level:         Error</span><br><span class="line">Keywords:      Classic</span><br><span class="line">User:          N/A</span><br><span class="line">Computer:      CENSORED</span><br><span class="line">Description:</span><br><span class="line">Error sending an SNMP GET message to IP Address XX.XX.XX.XX, Community String:=CENSORED, Status 0x6c.</span><br><span class="line"></span><br><span class="line">One or more workflows were affected by this.</span><br><span class="line"></span><br><span class="line">Workflow name: CENSORED.MP.CLASS.DISCOVERY</span><br><span class="line">Instance name: CENSORED_DEVICENAME</span><br><span class="line">Instance ID: &#123;5C7EFB30-D885-8843-0DD7-EA86B4FD2311&#125;</span><br><span class="line">Management group: CENSORED</span><br></pre></td></tr></table></figure>
-<p>I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the <a href="http://www.networkupstools.org/protocols/eaton/" title="EATON Protocol Library" target="_blank" rel="noopener">PowerMIB</a> into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.</p>
+<p>I went through all the other logical steps of troubleshooting an error like that which include double-checking firewall settings, OIDs, IP-addresses, allowed hosts and so forth. It wasn’t until I loaded the <a href="http://www.networkupstools.org/protocols/eaton/" target="_blank" rel="noopener" title="EATON Protocol Library">PowerMIB</a> into a MIB Browser installed on the proxy machine (in this case a Management Server) I realized that there was no problem sending an SNMP GET to the UPS from that server. I launched Wireshark and had it listen to SNMP traffic between the UPS and the Management Server. The thing that struck me right-away was the fact that I could see the a bunch of “SNMP Get-Request” but no “SNMP Get-Response” which means that Operations Manager did send an SNMP GET but there was no response.</p>
 <p>After a bit of intense staring i noticed what you see in the screenshot.</p>
-<p><img src="http://teknoglotse.nfshost.com/wp-content/uploads/2010/09/snmp_error_wireshark.png" alt="SNMP Error in Wireshark" title="SNMP Error in Wireshark"></p>
+<p><img src="http://teknoglotse.nfshost.com/wp-content/uploads/2010/09/snmp_error_wireshark.png" alt="SNMP Error in Wireshark" title="SNMP Error in Wireshark" /></p>
 <p>For some reason Operations Manager does not care about what SNMP version you configure when you do the initial discovery of a network device. Even if you do specify SNMP v1, you probes may very well be using SNMP v2c instead and in many cases that will result in these SNMP GET errors in the Operations Manager event log.</p>
 <p>To avoid this, you haves to specify which SNMP version to use in your System.SnmpProbe according to the information provided here: <a href="http://msdn.microsoft.com/en-us/library/ee809331.aspx" target="_blank" rel="noopener">http://msdn.microsoft.com/en-us/library/ee809331.aspx</a></p>
 <p>Since I am such a nice guy, here’s an example of the working probe with the added line highlighted.</p>
@@ -198,7 +196,7 @@ The only error I got this time was the following:</p>
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/" data-id="cjypuwbth001dncqq921hxswy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/snmp-get-errors-in-eventlog/" data-id="ck35oq577001h88gk41df27sk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -439,7 +437,7 @@ The only error I got this time was the following:</p>
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -457,7 +455,7 @@ The only error I got this time was the following:</p>
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

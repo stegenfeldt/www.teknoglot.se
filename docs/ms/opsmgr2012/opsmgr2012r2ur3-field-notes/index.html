@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr] | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Field Notes,OpsMgr,Update Rollup">
+        <meta name="keywords" content="OpsMgr,Field Notes,Update Rollup" />
     
     <meta name="description" content="Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.  Preparation Usual routine, check the KB for instructions and known issues. Double-check with Holman’s blo">
-<meta name="keywords" content="Field Notes,OpsMgr,Update Rollup">
+<meta name="keywords" content="OpsMgr,Field Notes,Update Rollup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2012&#x2F;opsmgr2012r2ur3-field-notes&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.  Preparation Usual routine, check the KB for instructions and known issues. Double-check with Holman’s blo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.353Z">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpsMgr 2012 R2 UR3 - Field Notes [#opsmgr]">
-<meta name="twitter:description" content="Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.  Preparation Usual routine, check the KB for instructions and known issues. Double-check with Holman’s blo">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,7 +53,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -163,21 +161,21 @@ ga('send', 'pageview');
     <time datetime="2014-09-02T09:30:18.000Z" itemprop="datePublished">2014-09-02</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Update-Rollup/">Update Rollup</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Field-Notes/" rel="tag">Field Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Update-Rollup/" rel="tag">Update Rollup</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <p><em>Quick and unrefined notes on Update Roll-up 3 for System Center 2012 R2 - Operations Manager.</em></p>
 <h2 id="preparation"><a class="markdownIt-Anchor" href="#preparation"></a> Preparation</h2>
-<p>Usual routine, check the <a href="http://support.microsoft.com/kb/2965445" title="Update Roll-up 3 for System Center 2012 R2 Operations Manager" target="_blank" rel="noopener">KB</a> for instructions and known issues. Double-check with <a href="http://blogs.technet.com/b/kevinholman/archive/2014/08/07/ur3-for-scom-2012-r2-step-by-step.aspx" title="UR3 for SCOM 2012 R2 – Step by Step" target="_blank" rel="noopener">Holman’s</a> blog and take note of any irregularities.<br>
-<a href="http://catalog.update.microsoft.com/v7/site/Search.aspx?q=2965445" title="Hell-spawn" target="_blank" rel="noopener">Download</a>, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.</p>
+<p>Usual routine, check the <a href="http://support.microsoft.com/kb/2965445" target="_blank" rel="noopener" title="Update Roll-up 3 for System Center 2012 R2 Operations Manager">KB</a> for instructions and known issues. Double-check with <a href="http://blogs.technet.com/b/kevinholman/archive/2014/08/07/ur3-for-scom-2012-r2-step-by-step.aspx" target="_blank" rel="noopener" title="UR3 for SCOM 2012 R2 – Step by Step">Holman’s</a> blog and take note of any irregularities.<br />
+<a href="http://catalog.update.microsoft.com/v7/site/Search.aspx?q=2965445" target="_blank" rel="noopener" title="Hell-spawn">Download</a>, curse your favourite deity and re-try in IE. Unpack the CAB-files (why do you keep putting them in CAB-files?) and throw away all the unnecessary language-specific console patches.</p>
 <p>Notify affected parts of the organisation, I’ve had the benefit to work with good release managers at all clients so far, so no biggie. Then try to close as many consoles as possible to avoid any blocks in database.</p>
 <p>Make sure you have the credentials for the Data Access service account at hand.</p>
 <h3 id="issues-so-far"><a class="markdownIt-Anchor" href="#issues-so-far"></a> Issues - So Far</h3>
 <p><em>(updated 2014-09-02)</em></p>
 <ul>
 <li>
-<p>The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.</p><p></p>
+<p>The SQL Script for the OpsDW was deadlocked at all sites and customers without exception. It’s easily fixed by stopping the management server services.</p></p>
 </li>
 <li>
 <p>A few dashboards (the 2012 versions) went blank. Self-healed after some aggregation job over night. From what I’ve noticed, only the SLA Dashboards are affected but never all of them.</p>
@@ -204,7 +202,7 @@ ga('send', 'pageview');
 <li>Web Console<sup id="fnref3:818-1"><a href="#fn-818-1">2</a></sup></li>
 <li>Agents<sup id="fnref4:818-1"><a href="#fn-818-1">2</a></sup></li>
 </ul>
-</p><p>The first management server takes the longest time as it will update the databases as well and you <em>must</em> wait for it to complete before hitting any extra management servers. Otherwise the databases isn’t marked as updated and multiple installations will try to update the same stuff at the same time, and that’s generally bad. I’d recommend to never update more than one management server at the same time, although it is possible.</p>
+<p>The first management server takes the longest time as it will update the databases as well and you <em>must</em> wait for it to complete before hitting any extra management servers. Otherwise the databases isn’t marked as updated and multiple installations will try to update the same stuff at the same time, and that’s generally bad. I’d recommend to never update more than one management server at the same time, although it is possible.</p>
 <h2 id="installation"><a class="markdownIt-Anchor" href="#installation"></a> Installation</h2>
 <h3 id="management-servers"><a class="markdownIt-Anchor" href="#management-servers"></a> Management Servers</h3>
 <p>Fairly straight-forward. Run the <abbr title="Microsoft Patch">msp</abbr>-file for the server update in an administrative command prompt and follow the wizard. First server takes a while (anything from 10-40 minutes depending on management group size and load in my experience). When that’s done, move on to the next management server. If your management servers have multiple roles, like Console, Web Console or Reporting, go ahead and update those at once.</p>
@@ -224,7 +222,7 @@ ga('send', 'pageview');
 <p>Fairly simple update, the SQL Scripts can catch your off-guard if you do not know about them. Had some issues with Gateways, but it’s a pretty quick update in most environments. Have not experienced any reboots or service outages on updated systems.</p>
 <p>GLHF!</p>
 <div class="footnotes">
-<hr>
+<hr />
 <ol>
 <li>
 <p>You’re going to need at least one updated console to import the MP-updates. <a href="#fnref-818-2">↩</a></p>
@@ -240,7 +238,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/" data-id="cjypuwbtd0014ncqqskl4rk4t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2012/opsmgr2012r2ur3-field-notes/" data-id="ck35oq570001688gk6u6l6lyd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -481,7 +479,7 @@ ga('send', 'pageview');
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -499,7 +497,7 @@ ga('send', 'pageview');
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>Parameter Replacement in AlertName | teknoglot:</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="OpsMgr,MP Development">
+        <meta name="keywords" content="OpsMgr,MP Development" />
     
     <meta name="description" content="…and why you should not use it  A Disclaimer I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discove">
 <meta name="keywords" content="OpsMgr,MP Development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Parameter Replacement in AlertName">
-<meta property="og:url" content="https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.teknoglot.se&#x2F;ms&#x2F;opsmgr2007&#x2F;parameter-replacement-in-alertname&#x2F;index.html">
 <meta property="og:site_name" content="teknoglot:">
 <meta property="og:description" content="…and why you should not use it  A Disclaimer I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discove">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://teknoglotse.nfshost.com/wp-content/uploads/2012/04/ParamReplacement_AlertDescriptionDialog.png">
-<meta property="og:updated_time" content="2018-09-05T07:14:39.353Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;teknoglotse.nfshost.com&#x2F;wp-content&#x2F;uploads&#x2F;2012&#x2F;04&#x2F;ParamReplacement_AlertDescriptionDialog.png">
+<meta property="og:updated_time" content="2019-11-19T09:13:29.089Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Parameter Replacement in AlertName">
-<meta name="twitter:description" content="…and why you should not use it  A Disclaimer I have had serious doubts about actually writing this article for almost a year now for reasons that I will explain further on. But as others have discove">
-<meta name="twitter:image" content="http://teknoglotse.nfshost.com/wp-content/uploads/2012/04/ParamReplacement_AlertDescriptionDialog.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;teknoglotse.nfshost.com&#x2F;wp-content&#x2F;uploads&#x2F;2012&#x2F;04&#x2F;ParamReplacement_AlertDescriptionDialog.png">
     
 
     
 
     
-        <link rel="icon" href="/favicon.png">
+        <link rel="icon" href="/favicon.png" />
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
@@ -57,7 +55,7 @@ ga('send', 'pageview');
     
 
 </head>
-</html>
+
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
         <header id="header">
@@ -165,7 +163,7 @@ ga('send', 'pageview');
     <time datetime="2012-04-09T20:04:48.000Z" itemprop="datePublished">2012-04-09</time>
 </a>
                         
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/MP-Development/">MP Development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/">OpsMgr</a></li></ul>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/MP-Development/" rel="tag">MP Development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/OpsMgr/" rel="tag">OpsMgr</a></li></ul>
 
                 </div>
                 <div class="article-entry" itemprop="articleBody">
@@ -175,26 +173,26 @@ ga('send', 'pageview');
 <h2 id="the-good-news"><a class="markdownIt-Anchor" href="#the-good-news"></a> The Good News</h2>
 <p>Yes, you can use parameter replacement in you AlertName.</p>
 <p>With “parameter replacement” i mean using some kind of substitute text, or mnemonic if you like, that at run-time get translated into something useful. If you have written any kind of alert generating rules or monitors, you most like included something like <em><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>C</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>y</mi><mo>[</mo><mi mathvariant="normal">@</mi><mi>N</mi><mi>a</mi><mi>m</mi><mi>e</mi><msup><mo>=</mo><mo mathvariant="normal">′</mo></msup><mi>S</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>D</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi>F</mi><mi>r</mi><mi>o</mi><mi>m</mi><mi>A</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>y</mi><mi>B</mi><mi>a</mi><msup><mi>g</mi><mo mathvariant="normal">′</mo></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">Data/Context/Property[@Name=&#x27;SomeDataFromAPropertyBag&#x27;]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.751892em;"></span><span class="strut bottom" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mord mathit">t</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">o</span><span class="mord mathit">p</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mopen">[</span><span class="mord">@</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">o</span><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">o</span><span class="mord mathit">m</span><span class="mord mathit">A</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">o</span><span class="mord mathit">p</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord mathit">a</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></em> into your alert description.</p>
-<p>In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.<br>
+<p>In this dialog, you also have the possibility to set the Alert Name. And if you are lazy, like I am, you probably also noticed that it is impossible to insert any kind of dynamic data into that field as well. This is especially annoying when you are writing a management pack that needs to look different in the Alert Views in the console, and you want to monitor 50 different Events or Performance counters or Log entries that are pretty much the same apart from a Name or ID.<br />
 Of course I could not refrain from copy-pasting a <em><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>C</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">Data/Context...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mord mathit">t</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span></em> into the alert name only to realize that it simply is not being parsed and translated into the value of the specified parameter. Over time I have settled for a stand-point that it’s probably a performance issue and I have also used that as an argument for this apparent lack of simplicity that some of my customers have been questioning.</p>
-<p>Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.<br>
+<p>Two, maybe three, years later. Microsoft releases an update to the core agent monitoring packs. Much to my surprise, one performance monitor suddenly generated alerts with a dynamic performance value in the Alert Name. You know, that field that is not gettingt parsed I was mentioning in the earlier paragraph. It actually looked pretty bad and made it very much impossible to practice any kind of alert supression, but still. It actually had a parsed value in the Alert Name.<br />
 As the lack of this feature had me irked before, I exported the core MP and started reading through the XML to find out how they did it. To my surprise, it was actually pretty simple if you ditched the Authoring Console and used your trusty text-editor instead.</p>
 <h2 id="how-to-do-it"><a class="markdownIt-Anchor" href="#how-to-do-it"></a> How To Do It</h2>
 <p>In simple terms, if you know your SCOM XML out-side-in, you add the parameters to your “Alert” and modify your DisplayString, the one under LanguagePacks, to call that parameter by it’s relative ID.</p>
 <p>Just in case you happen to be a regular mortal, here’s the step-by-step guide. 😉</p>
 <p>In this example I have created a silly-simple Alert Generating EventLog rule in wich I have added some parameters to the description. It pretty much looks like this:</p>
-<p><img src="http://teknoglotse.nfshost.com/wp-content/uploads/2012/04/ParamReplacement_AlertDescriptionDialog.png" alt="Alert Description Dialog"></p>
-<p>Saving the MP at this point I will have a new WriteAlert action with a bunch of parameters and a displaystring with a unique ID.<br>
+<p><img src="http://teknoglotse.nfshost.com/wp-content/uploads/2012/04/ParamReplacement_AlertDescriptionDialog.png" alt="Alert Description Dialog" /></p>
+<p>Saving the MP at this point I will have a new WriteAlert action with a bunch of parameters and a displaystring with a unique ID.<br />
 The resulting XML-code for the WriteAlert action looks like this:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">[xml highlight="7,8,9,10,11,12,13"]</span><br><span class="line"><span class="tag">&lt;<span class="name">WriteAction</span> <span class="attr">ID</span>=<span class="string">"Alert"</span> <span class="attr">TypeID</span>=<span class="string">"Health!System.Health.GenerateAlert"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Priority</span>&gt;</span>1<span class="tag">&lt;/<span class="name">Priority</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Severity</span>&gt;</span>2<span class="tag">&lt;/<span class="name">Severity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">AlertName</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">AlertDescription</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">AlertOwner</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">AlertMessageId</span>&gt;</span>$MPElement[Name="TestMP.MyEventlogAlertRule.AlertMessage"]$<span class="tag">&lt;/<span class="name">AlertMessageId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">AlertParameters</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AlertParameter1</span>&gt;</span>$Data/EventDescription$<span class="tag">&lt;/<span class="name">AlertParameter1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AlertParameter2</span>&gt;</span>$Data/LoggingComputer$<span class="tag">&lt;/<span class="name">AlertParameter2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AlertParameter3</span>&gt;</span>$Data/UserName$<span class="tag">&lt;/<span class="name">AlertParameter3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AlertParameter4</span>&gt;</span>$Data/EventNumber$<span class="tag">&lt;/<span class="name">AlertParameter4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">AlertParameters</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Suppression</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom1</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom2</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom3</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom4</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom5</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom6</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom7</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom8</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom9</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Custom10</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">WriteAction</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>In this slab of code, you’ve got the Parameters, their “relative ID” (the number in the Tag), and also the which is what you would need to search for among the displaystrings. Take note of the you want to use in your AlertName since you are going to need it later. A quick search for “TestMP.MyEventlogAlertRule.AlertMessage” will lead you to the actual message, which should looke similar to this:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">DisplayString</span> <span class="attr">ElementID</span>=<span class="string">"TestMP.MyEventlogAlertRule.AlertMessage"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Name</span>&gt;</span>I want Parameter Replacement here:<span class="tag">&lt;/<span class="name">Name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Description</span>&gt;</span>Event Description: &#123;0&#125;</span><br><span class="line">&#123;1&#125;</span><br><span class="line">&#123;2&#125;</span><br><span class="line">&#123;3&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">Description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">DisplayString</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>You should have one of these for every language you have configured in your management pack.<br>
+<p>You should have one of these for every language you have configured in your management pack.<br />
 As you may notice, the Description does not contain any XPaths of any kind but rather references to the parameters defined in the WriteAction. That would be the {X} thingies within the description tags. You may also notice that the AlertParameters starts from “1” while the parameter references begin with “0”. In practice, that means that <em>{0}</em> in the displaystring definition equals to <em>AlertParameter1</em> and so forth.</p>
-<p>Now, with this in mind, adding a Parameter to AlertName if very simple and straight-forward. Simply decide which parameter your want to use and add it’s reference to the Name definition.<br>
-So, let’s say I have the above alert message and I want to include <em>UserName</em> in the Alert Name, I would change the <name> tag to:</name></p>
+<p>Now, with this in mind, adding a Parameter to AlertName if very simple and straight-forward. Simply decide which parameter your want to use and add it’s reference to the Name definition.<br />
+So, let’s say I have the above alert message and I want to include <em>UserName</em> in the Alert Name, I would change the <Name> tag to:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Name</span>&gt;</span>I want Parameter Replacement here:&#123;2&#125;<span class="tag">&lt;/<span class="name">Name</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>That’s it folks!<br>
+<p>That’s it folks!<br />
 Save the XML, make sure you verify it and import it into your Operations Manager LAB and watch the magic. Just make sure you continue reading this post as the next part about the downsides is pretty important.</p>
 <h2 id="the-downside"><a class="markdownIt-Anchor" href="#the-downside"></a> The Downside</h2>
 <p>The negative effects of using Parameter Replacement in AlertName really boils down to two main perspectives. These are, if I may say to, pretty major and is the reason I have been reluctant on posting this, sort of, how-to.</p>
@@ -220,7 +218,7 @@ Save the XML, make sure you verify it and import it into your Operations Manager
 
 
 
-    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/" data-id="cjypuwbur001wncqqghovrb4u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://www.teknoglot.se/ms/opsmgr2007/parameter-replacement-in-alertname/" data-id="ck35oq572001888gk1glmc6sn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -461,7 +459,7 @@ Save the XML, make sure you verify it and import it into your Operations Manager
             <ul>
                 
                     <li>
-                        <a href="http://www.atea.se/">Atea</a>
+                        <a href="http://www.atea.se/" target="_blank" rel="noopener">Atea</a>
                     </li>
                 
             </ul>
@@ -479,7 +477,7 @@ Save the XML, make sure you verify it and import it into your Operations Manager
         <footer id="footer">
     <div class="container">
         <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
